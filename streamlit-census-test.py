@@ -29,10 +29,14 @@ all_census_vars = {'Median Household Income': 'B19013_001E'}
 selected_census_var = st.selectbox("Select a demographic", all_census_vars.keys())
 census_var = all_census_vars[selected_census_var]
 
-df = get_census_data(state_fips, census_var)
-st.dataframe(df[['NAME', census_var]], hide_index=True)
+col1, col2 = st.columns(2)
 
-fig = cem.plot_map(df, 'B19013_001E', legend=True, with_background=True, alpha=.5)
-st.pyplot(fig.figure)
+with col1:
+    df = get_census_data(state_fips, census_var)
+    st.dataframe(df[['NAME', census_var]], hide_index=True)
+
+with col2:
+    fig = cem.plot_map(df, 'B19013_001E', legend=True, with_background=True, alpha=.5)
+    st.pyplot(fig.figure)
 
 st.write("View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

@@ -30,7 +30,7 @@ state_fips = states.IDS_FROM_NAMES[state_name]
 
 df = get_median_income(state_fips)
 st.dataframe(df[['NAME', 'B19013_001E']], hide_index=True)
-cem.plot_map(df, 'B19013_001E', legend=True, with_background=True)
-st.pyplot()
+fig = cem.plot_map(df, 'B19013_001E', legend=True, with_background=True)
+st.pyplot(fig.figure)
 
 st.write("[github](https://github.com/arilamstein/censusdis-streamlit)")

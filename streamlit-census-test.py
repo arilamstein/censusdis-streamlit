@@ -32,3 +32,5 @@ st.write("You selected ", state_name)
 st.write("The FIPS code of that that state is ", state_fips)
 
 st.write(get_median_income(state_fips))
+
+st.write("[github](https://github.com/arilamstein/censusdis-streamlit)")

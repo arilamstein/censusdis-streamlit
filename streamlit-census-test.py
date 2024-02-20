@@ -22,18 +22,14 @@ def get_median_income(state_fips):
         county='*',
         with_geometry=True)
 
-st.header('My first census explorer thingy!')
-st.write('Displaying Median Income')
+st.header('2022 County-Level Median Income')
 
 all_state_names = list(states.NAMES_FROM_IDS.values())
-state_name = st.selectbox("Select a State to get data on: ",all_state_names)
+state_name = st.selectbox("Select a State: ",all_state_names)
 state_fips = states.IDS_FROM_NAMES[state_name]
 
-st.write("You selected ", state_name)
-st.write("The FIPS code of that that state is ", state_fips)
-
 df = get_median_income(state_fips)
-st.write(df)
+st.dataframe(df[['NAME', 'B19013_001E']], hide_index=True)
 cem.plot_map(df, 'B19013_001E', legend=True, with_background=True)
 st.pyplot()
 

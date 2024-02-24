@@ -5,38 +5,49 @@ from censusdis.datasets import ACS5
 from censusdis import states
 
 @st.cache_data
-def get_census_data(state_fips, census_var):
+def get_census_data(state_fips, var_table, var_label):
  
-    return ced.download(
+    df = ced.download(
         dataset=ACS5,
         vintage=2022,         
-        download_variables=['NAME', census_var], 
+        download_variables=['NAME', var_table], 
         state=state_fips,
         county='*',
         with_geometry=True)
 
-st.header('2022 County-Level Median Income')
+    # "San Francisco, California" -> "San Francisco"
+    df['NAME'] = df['NAME'].apply(lambda x: x.split(',')[0])
+
+    # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
+    # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
+    df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
+
+    return df
+
+st.header('Selected County Demographics (2022)')
 
 all_state_names = list(states.NAMES_FROM_IDS.values())
-state_name = st.selectbox("Select a State: ",all_state_names)
+state_name = st.selectbox("Select a State: ", all_state_names, index=4) # Default to California
 state_fips = states.IDS_FROM_NAMES[state_name]
 
-# all_census_vars = {'Median Household Income': 'B19013_001E',
-#                'Median Rent': 'B25058_E',
-#                'Median Age': 'B01002_E'}
-all_census_vars = {'Median Household Income': 'B19013_001E'}
+census_vars = {
+    # var_label                var_table
+    'Total Population'       : 'B01001_001E',
+    'Median Household Income': 'B19013_001E',
+    'Median Rent'            : 'B25058_001E' }
 
-selected_census_var = st.selectbox("Select a demographic", all_census_vars.keys())
-census_var = all_census_vars[selected_census_var]
+var_label = st.selectbox("Select a demographic", census_vars.keys())
+var_table = census_vars[var_label]
 
 col1, col2 = st.columns(2)
 
 with col1:
-    df = get_census_data(state_fips, census_var)
-    st.dataframe(df[['NAME', census_var]], hide_index=True)
+    df = get_census_data(state_fips, var_table, var_label)
+    df = df.sort_values(var_label, ascending=False)
+    st.dataframe(df[['County', var_label]], hide_index=True)
 
 with col2:
-    fig = cem.plot_map(df, 'B19013_001E', legend=True, with_background=True, alpha=.5)
+    fig = cem.plot_map(df, var_label, legend=True, with_background=True, alpha=.5)
     st.pyplot(fig.figure)
 
-st.write("View the code [here](https://github.com/arilamstein/censusdis-streamlit).")
+st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

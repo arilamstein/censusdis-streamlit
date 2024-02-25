@@ -47,7 +47,7 @@ with col1:
     st.dataframe(df[['County', var_label]], hide_index=True)
 
 with col2:
-    fig = cem.plot_map(df, var_label, legend=True, with_background=True, alpha=.5)
-    st.pyplot(fig.figure)
+    ax = cem.plot_map(df, var_label, legend=True, with_background=True, alpha=.5)
+    st.pyplot(ax.figure)
 
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

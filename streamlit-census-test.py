@@ -33,8 +33,8 @@ state_fips = states.IDS_FROM_NAMES[state_name]
 
 census_vars = {
     # var_label                var_table
-    'Total Population'       : 'B01001_001E',
     'Median Household Income': 'B19013_001E',
+    'Total Population'       : 'B01001_001E',
     'Median Rent'            : 'B25058_001E' }
 
 var_label = st.selectbox("Select a demographic", census_vars.keys())

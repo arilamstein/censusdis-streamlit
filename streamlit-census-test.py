@@ -1,35 +1,34 @@
 import streamlit as st
 import censusdis.data as ced
-import censusdis.maps as cem
 from censusdis.datasets import ACS5
-from censusdis import states
 import plotly.express as px
+import pandas as pd
 
-@st.cache_data
-def get_census_data(state_fips, var_table, var_label):
- 
-    df = ced.download(
-        dataset=ACS5,
-        vintage=2022,         
-        download_variables=['NAME', var_table], 
-        state=state_fips,
-        county='*',
-        with_geometry=True)
+# Leading zeros can be important in FIPS codes, so read all columns in as strings
+df_county_names = pd.read_csv('county_names.csv', dtype=str)
 
-    # "San Francisco, California" -> "San Francisco"
-    df['NAME'] = df['NAME'].apply(lambda x: x.split(',')[0])
+def get_state_names():
+    return df_county_names['state.name'].unique()
 
-    # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
-    # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
-    df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
+def get_county_names(state_name):
+    return (
+        df_county_names
+        .loc[df_county_names['state.name'] == state_name]
+        ['county.name']
+    )
 
-    return df
+def get_county_fips_codes(state_name, county_name):
+    return (
+        df_county_names
+        .loc[(df_county_names['state.name'] == state_name) & (df_county_names['county.name'] == county_name)] # The row
+        [['state.fips', 'county.fips']] # The columns we care about
+        .values.tolist() # As a list of lists (one list per row)
+        [0] # There is only 1 row, so return the first element
+    )
 
 st.header('Selected County Demographics (2022)')
-
-all_state_names = list(states.NAMES_FROM_IDS.values())
-state_name = st.selectbox("Select a State: ", all_state_names, index=4) # Default to California
-state_fips = states.IDS_FROM_NAMES[state_name]
+state_name = st.selectbox("Select a State:", get_state_names()) 
+county_name = st.selectbox("Select a County:", get_county_names(state_name))
 
 census_vars = {
     # var_label                var_table
@@ -40,7 +39,29 @@ census_vars = {
 var_label = st.selectbox("Select a demographic", census_vars.keys())
 var_table = census_vars[var_label]
 
-df = get_census_data(state_fips, var_table, var_label)
+@st.cache_data
+def get_census_data(state_name, county_name, var_table, var_label):
+ 
+    state_fips, county_fips = get_county_fips_codes(state_name, county_name)
+    df = ced.download(
+        dataset=ACS5,
+        vintage=2022,         
+        download_variables=['NAME', var_table], 
+        state=state_fips,
+        county=county_fips,
+        tract='*',
+        with_geometry=True)
+
+    # "San Francisco, California" -> "San Francisco"
+    df['NAME'] = df['NAME'].apply(lambda x: x.split(';')[0])
+
+    # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
+    # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
+    df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
+
+    return df
+
+df = get_census_data(state_name, county_name, var_table, var_label)
 
 col1, col2 = st.columns(2)
 

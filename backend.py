@@ -1,4 +1,3 @@
-import streamlit as st
 import pandas as pd
 import censusdis.data as ced
 from censusdis.datasets import ACS5
@@ -31,7 +30,6 @@ census_vars = {
     'Total Population'       : 'B01001_001E',
     'Median Rent'            : 'B25058_001E' }
 
-@st.cache_data
 def get_census_data(state_name, county_name, var_table, var_label):
  
     state_fips, county_fips = get_county_fips_codes(state_name, county_name)

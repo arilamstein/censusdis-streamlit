@@ -1,18 +1,21 @@
 import streamlit as st
 import plotly.express as px
+import backend as be
 
-from backend import *
+@st.cache_data
+def get_census_data(state_name, county_name, var_table, var_label):
+    return be.get_census_data(state_name, county_name, var_table, var_label)
 
 st.header('Selected County Demographics (2022)')
 
 # State index 4 is California, and county index 37 is San Francisco
-state_name = st.selectbox("Select a State:", get_state_names(), index=4) 
-county_name = st.selectbox("Select a County:", get_county_names(state_name), index=37)
+state_name = st.selectbox("Select a State:", be.get_state_names(), index=4) 
+county_name = st.selectbox("Select a County:", be.get_county_names(state_name))
 
 # var_label is something human readable like 'Median Household Income'
 # var_table is the actual table in the Census Bureau that contains the data (e.g. 'B19013_001E')
-var_label = st.selectbox("Select a demographic", census_vars.keys())
-var_table = census_vars[var_label]
+var_label = st.selectbox("Select a demographic", be.census_vars.keys())
+var_table = be.census_vars[var_label]
 
 # We need all 4 pieces of information to get the data we want to visualize
 df = get_census_data(state_name, county_name, var_table, var_label)

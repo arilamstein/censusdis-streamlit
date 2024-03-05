@@ -1,6 +1,7 @@
 import pandas as pd
 import censusdis.data as ced
 from censusdis.datasets import ACS5
+from geopy.geocoders import Nominatim
 
 # Leading zeros can be important in FIPS codes, so read all columns in as strings
 df_county_names = pd.read_csv('county_names.csv', dtype=str)
@@ -50,3 +51,11 @@ def get_census_data(state_name, county_name, var_table, var_label):
     df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
 
     return df
+
+# Based on https://gist.github.com/ramnathv/348091984eff52aa4fbbe31861a2a50f#file-backend-py-L77
+def get_county_center_lat_lon(state_name, county_name):
+  """Get lat,lon for center of county"""
+  geolocator = Nominatim(user_agent="county_center_locator")
+  query = f"Center of {county_name}, {state_name}, USA"
+  location = geolocator.geocode(query)
+  return {"lat": location.latitude, "lon": location.longitude}

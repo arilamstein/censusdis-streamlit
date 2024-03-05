@@ -30,10 +30,16 @@ with col1:
 # Column 2 is a choropleth map
 with col2:
     df = df.set_index('County')
-    fig = px.choropleth(df, geojson=df.geometry, locations=df.index, 
-                        color=var_label, color_continuous_scale="Viridis",
-                        projection="mercator")
-    fig.update_geos(fitbounds="locations", visible=False)
+    fig = px.choropleth_mapbox(df, 
+                               geojson=df.geometry, 
+                               locations=df.index, 
+                               center=be.get_county_center_lat_lon(state_name, county_name), 
+                               color=var_label, 
+                               color_continuous_scale="Viridis", 
+                               mapbox_style="carto-positron", 
+                               opacity=0.5)
+
+    #fig.update_geos(fitbounds="locations", visible=False)
     st.plotly_chart(fig)
 
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

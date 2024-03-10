@@ -106,6 +106,7 @@ rpds-py==0.18.0
 Rtree==1.2.0
 scikit-learn==1.4.1.post1
 scipy==1.12.0
+seaborn==0.13.2
 shapely==2.0.3
 six==1.16.0
 smmap==5.0.1

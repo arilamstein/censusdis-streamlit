@@ -10,8 +10,9 @@ def get_census_data(state_name, county_name, var_table, var_label):
 st.header('Census Tract Demographics (2022)')
 
 # State index 4 is California, and county index 37 is San Francisco
-state_name = st.selectbox("Select a State:", be.get_state_names(), index=4) 
-county_name = st.selectbox("Select a County:", be.get_county_names(state_name))
+state_name = st.selectbox("Select a State:", be.get_state_names(), index=4)
+county_name_index = 37 if state_name == "California" else 0
+county_name = st.selectbox("Select a County:", be.get_county_names(state_name), index=county_name_index)
 
 # var_label is something human readable like 'Median Household Income'
 # var_table is the actual table in the Census Bureau that contains the data (e.g. 'B19013_001E')

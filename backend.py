@@ -31,6 +31,13 @@ census_vars = {
     'Total Population'       : 'B01001_001E',
     'Median Rent'            : 'B25058_001E' }
 
+# See https://github.com/arilamstein/censusdis-streamlit/issues/3#issuecomment-1986709449
+def get_hover_data_for_var_label(var_label):
+    if var_label == 'Total Population':
+        return ":,"
+    else:
+        return ":$,"
+
 def get_census_data(state_name, county_name, var_table, var_label):
  
     state_fips, county_fips = get_county_fips_codes(state_name, county_name)
@@ -44,11 +51,14 @@ def get_census_data(state_name, county_name, var_table, var_label):
         with_geometry=True)
 
     # "San Francisco, California" -> "San Francisco"
-    df['NAME'] = df['NAME'].apply(lambda x: x.split(';')[0])
+    # df['NAME'] = df['NAME'].apply(lambda x: x.split(';')[0])
 
     # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
     # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
-    df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
+    df = df.rename(columns={var_table: var_label})
+    
+    # See https://stackoverflow.com/questions/78133591/plotly-express-choropleth-of-census-data-fails
+    df = df.dropna()
 
     return df
 

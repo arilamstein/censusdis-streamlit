@@ -50,13 +50,11 @@ def get_census_data(state_name, county_name, var_table, var_label):
         tract='*',
         with_geometry=True)
 
-    # "San Francisco, California" -> "San Francisco"
-    # df['NAME'] = df['NAME'].apply(lambda x: x.split(';')[0])
-
     # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
     # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
     df = df.rename(columns={var_table: var_label})
     
+    # Some rows have NA for geometry.
     # See https://stackoverflow.com/questions/78133591/plotly-express-choropleth-of-census-data-fails
     df = df.dropna()
 

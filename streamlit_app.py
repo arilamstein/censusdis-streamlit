@@ -36,7 +36,7 @@ with col2:
                                geojson=df.geometry,
                                hover_data={var_label:be.get_hover_data_for_var_label(var_label)},
                                locations=df.index, 
-                               center=be.get_county_center_lat_lon(state_name, county_name), 
+                               center=be.get_df_center_lat_lon(df), 
                                color=var_label, 
                                color_continuous_scale="Viridis", 
                                mapbox_style="carto-positron", 

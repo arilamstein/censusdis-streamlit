@@ -1,14 +1,9 @@
+import pandas as pd
 from backend import census_vars
 
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
-
-def add_suffix_to_colname(colname, year):
-    if colname in ['STATE', 'COUNTY']:
-        return colname
-    else:
-        return f"{colname}_{year}"
 
 df_all = None
 
@@ -24,11 +19,11 @@ for one_year in years:
         county='*'
     )
     df_new = df_new.set_index(['STATE', 'COUNTY'])
-    df_new = df_new.add_suffix(f"_{one_year}")
+    df_new['YEAR'] = one_year
 
     if df_all is None:
         df_all = df_new
     else:
-        df_all = df_all.join(df_new)
+        df_all = pd.concat([df_all, df_new])
 
 df_all.to_csv('county_data_for_all_years.csv')

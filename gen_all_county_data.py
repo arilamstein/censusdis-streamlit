@@ -19,7 +19,9 @@ for one_year in years:
         state=ALL_STATES_AND_DC,
         county='*'
     )
-    df_new = df_new.set_index(['STATE', 'COUNTY'])
+    df_new['fips'] = df_new['STATE'] + df_new['COUNTY']
+    df_new['fips'] = pd.to_numeric(df_new['fips'])
+    df_new = df_new.set_index(['fips', 'STATE', 'COUNTY'])
     df_new['YEAR'] = one_year
 
     if df_all is None:

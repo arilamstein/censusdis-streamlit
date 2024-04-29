@@ -1,48 +1,35 @@
 import backend as be
 import streamlit as st
-import plotly.express as px
-import seaborn as sns
+import matplotlib.pyplot as plt
 
-@st.cache_data
-def get_census_data(state_name, county_name, var_table, var_label):
-    return be.get_census_data(state_name, county_name, var_table, var_label)
+st.header('Census Covid Explorer')
+st.write('This goal of this app is to shine a light on how US Demographics changed as a result of Covid-19. The app is still under development. Data comes from the American Community Survey 1-year estimates.')
 
-st.header('Census Tract Demographics (2022)')
-
-# State index 4 is California, and county index 37 is San Francisco
+# State index 4 is California
 state_name = st.selectbox("Select a State:", be.get_state_names(), index=4)
-county_name_index = 37 if state_name == "California" else 0
+county_name_index = 0
+if state_name == "California":
+    county_name_index = 25 # San Francisco
+elif state_name == "New York":
+    county_name_index = 15 # New York
 county_name = st.selectbox("Select a County:", be.get_county_names(state_name), index=county_name_index)
 
 # var_label is something human readable like 'Median Household Income'
 # var_table is the actual table in the Census Bureau that contains the data (e.g. 'B19013_001E')
 var_label = st.selectbox("Select a demographic", be.census_vars.keys())
-var_table = be.census_vars[var_label]
 
-# We need all 4 pieces of information to get the data we want to visualize
-df = get_census_data(state_name, county_name, var_table, var_label)
+# We need 3 pieces of information to get the data we want to visualize
+df = be.get_census_data(state_name, county_name, var_label)
 
 col1, col2 = st.columns(2)
 
-# Column 1 is a simple histogram
+# Column 1 is a bar plot showing % change
 with col1:
-    plot = sns.boxplot(data=df, y=var_label)
-    st.pyplot(plot.figure)
+    df['Percent Change'] = df[var_label].pct_change() * 100
+    st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
-# Column 2 is a choropleth map
+# Column 2 is a line graph 
 with col2:
-    df = df.set_index('NAME')
-    fig = px.choropleth_mapbox(df, 
-                               geojson=df.geometry,
-                               hover_data={var_label:be.get_hover_data_for_var_label(var_label)},
-                               locations=df.index, 
-                               center=be.get_df_center_lat_lon(df), 
-                               color=var_label, 
-                               color_continuous_scale="Viridis", 
-                               mapbox_style="carto-positron", 
-                               opacity=0.5,
-                               zoom=10)
-    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    st.plotly_chart(fig)
+    st.pyplot(df.plot(x='YEAR', y=var_label).figure)
 
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

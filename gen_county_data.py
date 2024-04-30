@@ -20,7 +20,7 @@ import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
 
-print("I'm doing something I swear")
+print("Generating data. Please wait.")
 
 start_time = time.time()
 df_county_data = None
@@ -34,6 +34,7 @@ vars = list(census_vars.values())
 vars.append('NAME')
 
 for one_year in years: 
+    print('.', end='', flush=True) # Provide some feedback on progress to the user
     df_new = ced.download(
         dataset = ACS1,
         vintage = one_year,
@@ -53,7 +54,7 @@ for one_year in years:
     else:
         df_county_data = pd.concat([df_county_data, df_new])
 
-print(f"Generating all historic data took {(time.time() - start_time):.1f} seconds")
+print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds")
 print(f"The resulting dataframe has {len(df_county_data.index)} rows with {len(df_county_data.index.unique())} unique counties")
 
 # Step 2: Get a list of all counties which exist today

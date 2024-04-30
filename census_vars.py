@@ -5,5 +5,3 @@ census_vars = {
     'Median Rent'            : 'B25058_001E' 
     # TODO: Maybe add B08006_017E - Work from Home?
 }
-
-census_vars_reverse = {v: k for k, v in census_vars.items()}

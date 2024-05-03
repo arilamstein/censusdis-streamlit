@@ -75,4 +75,7 @@ df_merge = df_current_counties.join(df_county_data, how='left')
 
 print(f"After filtering df_county_data to only current counties, the resulting dataframe has {len(df_merge.index)} rows with {len(df_merge.index.unique())} unique counties")
 
+# The data appears to already be sorted this way, but I want to ensure that.
+df_merge = df_merge.sort_values(['STATE', 'COUNTY', 'YEAR'])
+
 df_merge.to_csv('county_data.csv')

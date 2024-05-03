@@ -21,11 +21,11 @@ var_label = st.selectbox("Select a demographic", be.census_vars.keys())
 df = be.get_census_data(state_name, county_name, var_label)
 col1, col2 = st.columns(2)
 with col1:
+    # Line graph of raw data
+    st.pyplot(df.plot(x='YEAR', y=var_label).figure)
+with col2:
     # Bar plot showing % change
     df['Percent Change'] = df[var_label].pct_change() * 100
     st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
-with col2:
-    # Line graph of raw data
-    st.pyplot(df.plot(x='YEAR', y=var_label).figure)
 
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

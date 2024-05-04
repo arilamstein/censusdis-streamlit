@@ -15,7 +15,7 @@
 # Step 1: Generate all data for all states and all counties over the time period that we're interested in
 import pandas as pd
 import time
-from census_vars import census_vars
+from census_vars import census_vars, get_census_vars_for_year
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
@@ -34,7 +34,13 @@ vars = list(census_vars.values())
 vars.append('NAME')
 
 for one_year in years: 
-    print('.', end='', flush=True) # Provide some feedback on progress to the user
+    # Provide some feedback on progress to the user
+    print('.', end='', flush=True) 
+
+    # Something like 'B01001'
+    vars = list(get_census_vars_for_year(one_year).values())
+    vars.append('NAME')
+
     df_new = ced.download(
         dataset = ACS1,
         vintage = one_year,
@@ -42,6 +48,10 @@ for one_year in years:
         state = ALL_STATES_AND_DC,
         county = '*')
     
+    # Convert the columns from something like 'B01001' to 'Total Population'
+    new_col_names = {v: k for k, v in get_census_vars_for_year(one_year).items()}
+    df_new = df_new.rename(columns = new_col_names)
+
     # Add in some new columns to make working with the data a bit easier
     df_new['COUNTY_NAME'] = df_new['NAME'].apply(lambda name: name.split(', ')[0])
     df_new['STATE_NAME']  = df_new['NAME'].apply(lambda name: name.split(', ')[1])

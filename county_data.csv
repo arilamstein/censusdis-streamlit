@@ -1,4 +1,4 @@
-STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,STATE_NAME,YEAR
+STATE,COUNTY,Total Population,Worked from Home,Median Household Income,Median Rent,NAME,COUNTY_NAME,STATE_NAME,YEAR
 01,003,160354,,42119,555,"Baldwin County, Alabama",Baldwin County,Alabama,2005
 01,003,169162,,44878,641,"Baldwin County, Alabama",Baldwin County,Alabama,2006
 01,003,171769,,49119,653,"Baldwin County, Alabama",Baldwin County,Alabama,2007
@@ -118,7 +118,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 01,069,105882,,50103,533,"Houston County, Alabama",Houston County,Alabama,2019
 01,069,107458,,46931,609,"Houston County, Alabama",Houston County,Alabama,2021
 01,069,108079,2338.0,56705,613,"Houston County, Alabama",Houston County,Alabama,2022
-01,073,641690,163.0,42013,496,"Jefferson County, Alabama",Jefferson County,Alabama,2005
+01,073,641690,7366.0,42013,496,"Jefferson County, Alabama",Jefferson County,Alabama,2005
 01,073,656700,7661.0,41691,506,"Jefferson County, Alabama",Jefferson County,Alabama,2006
 01,073,658779,6199.0,44925,521,"Jefferson County, Alabama",Jefferson County,Alabama,2007
 01,073,659503,6654.0,46305,547,"Jefferson County, Alabama",Jefferson County,Alabama,2008
@@ -339,7 +339,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 01,125,209355,,52243,691,"Tuscaloosa County, Alabama",Tuscaloosa County,Alabama,2019
 01,125,227007,,56559,728,"Tuscaloosa County, Alabama",Tuscaloosa County,Alabama,2021
 01,125,236780,,61097,772,"Tuscaloosa County, Alabama",Tuscaloosa County,Alabama,2022
-02,020,266281,212.0,61217,810,"Anchorage Municipality, Alaska",Anchorage Municipality,Alaska,2005
+02,020,266281,5638.0,61217,810,"Anchorage Municipality, Alaska",Anchorage Municipality,Alaska,2005
 02,020,278700,5599.0,63656,864,"Anchorage Municipality, Alaska",Anchorage Municipality,Alaska,2006
 02,020,279671,6152.0,68726,910,"Anchorage Municipality, Alaska",Anchorage Municipality,Alaska,2007
 02,020,279243,4733.0,75637,914,"Anchorage Municipality, Alaska",Anchorage Municipality,Alaska,2008
@@ -441,7 +441,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 04,005,143476,4684.0,58085,1176,"Coconino County, Arizona",Coconino County,Arizona,2019
 04,005,145052,10478.0,64533,1172,"Coconino County, Arizona",Coconino County,Arizona,2021
 04,005,144060,6625.0,62622,1177,"Coconino County, Arizona",Coconino County,Arizona,2022
-04,013,3590804,6397.0,48711,656,"Maricopa County, Arizona",Maricopa County,Arizona,2005
+04,013,3590804,70153.0,48711,656,"Maricopa County, Arizona",Maricopa County,Arizona,2005
 04,013,3768123,78803.0,52521,718,"Maricopa County, Arizona",Maricopa County,Arizona,2006
 04,013,3880181,87396.0,54730,761,"Maricopa County, Arizona",Maricopa County,Arizona,2007
 04,013,3954598,90089.0,56499,811,"Maricopa County, Arizona",Maricopa County,Arizona,2008
@@ -492,7 +492,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 04,017,110924,,38897,518,"Navajo County, Arizona",Navajo County,Arizona,2019
 04,017,108147,,49449,521,"Navajo County, Arizona",Navajo County,Arizona,2021
 04,017,108650,,49487,669,"Navajo County, Arizona",Navajo County,Arizona,2022
-04,019,902720,1190.0,41521,547,"Pima County, Arizona",Pima County,Arizona,2005
+04,019,902720,15542.0,41521,547,"Pima County, Arizona",Pima County,Arizona,2005
 04,019,946362,18989.0,42984,568,"Pima County, Arizona",Pima County,Arizona,2006
 04,019,967089,19500.0,43546,610,"Pima County, Arizona",Pima County,Arizona,2007
 04,019,1012018,18513.0,46599,630,"Pima County, Arizona",Pima County,Arizona,2008
@@ -744,7 +744,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 05,145,78753,,43399,483,"White County, Arkansas",White County,Arkansas,2019
 05,145,77207,,51402,543,"White County, Arkansas",White County,Arkansas,2021
 05,145,77755,,57015,606,"White County, Arkansas",White County,Arkansas,2022
-06,001,1421308,1340.0,61014,987,"Alameda County, California",Alameda County,California,2005
+06,001,1421308,23566.0,61014,987,"Alameda County, California",Alameda County,California,2005
 06,001,1457426,35228.0,64424,1015,"Alameda County, California",Alameda County,California,2006
 06,001,1464202,33904.0,68740,1038,"Alameda County, California",Alameda County,California,2007
 06,001,1474368,33907.0,70395,1122,"Alameda County, California",Alameda County,California,2008
@@ -778,7 +778,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,007,219186,5322.0,62563,935,"Butte County, California",Butte County,California,2019
 06,007,208309,11627.0,64738,1067,"Butte County, California",Butte County,California,2021
 06,007,207303,11409.0,64426,1135,"Butte County, California",Butte County,California,2022
-06,013,1006486,1813.0,69487,1047,"Contra Costa County, California",Contra Costa County,California,2005
+06,013,1006486,17294.0,69487,1047,"Contra Costa County, California",Contra Costa County,California,2005
 06,013,1024319,25264.0,74241,1086,"Contra Costa County, California",Contra Costa County,California,2006
 06,013,1019640,25195.0,76436,1115,"Contra Costa County, California",Contra Costa County,California,2007
 06,013,1029703,23108.0,78618,1179,"Contra Costa County, California",Contra Costa County,California,2008
@@ -812,7 +812,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,017,192843,7232.0,87059,1153,"El Dorado County, California",El Dorado County,California,2019
 06,017,193221,22047.0,87491,1394,"El Dorado County, California",El Dorado County,California,2021
 06,017,192646,,105982,1394,"El Dorado County, California",El Dorado County,California,2022
-06,019,858948,836.0,41899,602,"Fresno County, California",Fresno County,California,2005
+06,019,858948,13696.0,41899,602,"Fresno County, California",Fresno County,California,2005
 06,019,891756,11719.0,42732,626,"Fresno County, California",Fresno County,California,2006
 06,019,899348,12617.0,47298,679,"Fresno County, California",Fresno County,California,2007
 06,019,909153,12252.0,43737,684,"Fresno County, California",Fresno County,California,2008
@@ -863,7 +863,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,025,181215,,48472,677,"Imperial County, California",Imperial County,California,2019
 06,025,179851,,51809,751,"Imperial County, California",Imperial County,California,2021
 06,025,178713,2823.0,57310,804,"Imperial County, California",Imperial County,California,2022
-06,029,724206,568.0,40224,555,"Kern County, California",Kern County,California,2005
+06,029,724206,7503.0,40224,555,"Kern County, California",Kern County,California,2005
 06,029,780117,8545.0,43106,604,"Kern County, California",Kern County,California,2006
 06,029,790710,7357.0,47105,641,"Kern County, California",Kern County,California,2007
 06,029,800458,8014.0,44733,679,"Kern County, California",Kern County,California,2008
@@ -914,7 +914,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,033,64386,,47138,831,"Lake County, California",Lake County,California,2019
 06,033,68766,,61221,920,"Lake County, California",Lake County,California,2021
 06,033,68191,,51259,892,"Lake County, California",Lake County,California,2022
-06,037,9758886,9936.0,48248,852,"Los Angeles County, California",Los Angeles County,California,2005
+06,037,9758886,168484.0,48248,852,"Los Angeles County, California",Los Angeles County,California,2005
 06,037,9948081,185965.0,51315,905,"Los Angeles County, California",Los Angeles County,California,2006
 06,037,9878554,189537.0,53573,957,"Los Angeles County, California",Los Angeles County,California,2007
 06,037,9862049,200402.0,55499,1006,"Los Angeles County, California",Los Angeles County,California,2008
@@ -948,7 +948,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,039,157327,,64827,832,"Madera County, California",Madera County,California,2019
 06,039,159410,,63454,873,"Madera County, California",Madera County,California,2021
 06,039,160256,,76920,993,"Madera County, California",Madera County,California,2022
-06,041,235609,109.0,78919,1323,"Marin County, California",Marin County,California,2005
+06,041,235609,12073.0,78919,1323,"Marin County, California",Marin County,California,2005
 06,041,248742,11830.0,81761,1383,"Marin County, California",Marin County,California,2006
 06,041,248096,12438.0,83870,1363,"Marin County, California",Marin County,California,2007
 06,041,248794,11057.0,91982,1515,"Marin County, California",Marin County,California,2008
@@ -999,7 +999,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,047,277680,4636.0,61167,893,"Merced County, California",Merced County,California,2019
 06,047,286461,7903.0,53992,970,"Merced County, California",Merced County,California,2021
 06,047,290014,7797.0,66164,989,"Merced County, California",Merced County,California,2022
-06,053,389004,153.0,57081,946,"Monterey County, California",Monterey County,California,2005
+06,053,389004,4965.0,57081,946,"Monterey County, California",Monterey County,California,2005
 06,053,410206,7979.0,55045,950,"Monterey County, California",Monterey County,California,2006
 06,053,407637,7507.0,57056,989,"Monterey County, California",Monterey County,California,2007
 06,053,408238,8564.0,59375,998,"Monterey County, California",Monterey County,California,2008
@@ -1050,7 +1050,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,057,99755,,68818,1213,"Nevada County, California",Nevada County,California,2019
 06,057,103487,,79519,1287,"Nevada County, California",Nevada County,California,2021
 06,057,102293,9825.0,78401,1335,"Nevada County, California",Nevada County,California,2022
-06,059,2944537,3102.0,65953,1161,"Orange County, California",Orange County,California,2005
+06,059,2944537,63312.0,65953,1161,"Orange County, California",Orange County,California,2005
 06,059,3002048,60187.0,70232,1228,"Orange County, California",Orange County,California,2006
 06,059,2997033,70629.0,73263,1293,"Orange County, California",Orange County,California,2007
 06,059,3010759,68614.0,75078,1345,"Orange County, California",Orange County,California,2008
@@ -1084,7 +1084,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,061,398329,20287.0,97723,1507,"Placer County, California",Placer County,California,2019
 06,061,412300,46209.0,103659,1659,"Placer County, California",Placer County,California,2021
 06,061,417772,43792.0,105445,1719,"Placer County, California",Placer County,California,2022
-06,065,1911281,3071.0,52253,823,"Riverside County, California",Riverside County,California,2005
+06,065,1911281,32203.0,52253,823,"Riverside County, California",Riverside County,California,2005
 06,065,2026803,39346.0,53508,892,"Riverside County, California",Riverside County,California,2006
 06,065,2073571,44424.0,58145,944,"Riverside County, California",Riverside County,California,2007
 06,065,2100516,43389.0,57792,1005,"Riverside County, California",Riverside County,California,2008
@@ -1101,7 +1101,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,065,2470546,61731.0,73260,1328,"Riverside County, California",Riverside County,California,2019
 06,065,2458395,141189.0,79024,1408,"Riverside County, California",Riverside County,California,2021
 06,065,2473902,130812.0,86748,1555,"Riverside County, California",Riverside County,California,2022
-06,067,1337942,1402.0,51793,785,"Sacramento County, California",Sacramento County,California,2005
+06,067,1337942,25406.0,51793,785,"Sacramento County, California",Sacramento County,California,2005
 06,067,1374724,26967.0,53930,823,"Sacramento County, California",Sacramento County,California,2006
 06,067,1386667,24836.0,56987,847,"Sacramento County, California",Sacramento County,California,2007
 06,067,1394154,29814.0,56984,870,"Sacramento County, California",Sacramento County,California,2008
@@ -1120,7 +1120,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,067,1584169,144719.0,84211,1485,"Sacramento County, California",Sacramento County,California,2022
 06,069,66677,,101923,1488,"San Benito County, California",San Benito County,California,2021
 06,069,67579,,111544,1448,"San Benito County, California",San Benito County,California,2022
-06,071,1916665,2469.0,49026,817,"San Bernardino County, California",San Bernardino County,California,2005
+06,071,1916665,26612.0,49026,817,"San Bernardino County, California",San Bernardino County,California,2005
 06,071,1999332,31800.0,52941,855,"San Bernardino County, California",San Bernardino County,California,2006
 06,071,2007800,34340.0,56428,919,"San Bernardino County, California",San Bernardino County,California,2007
 06,071,2015355,33608.0,55021,957,"San Bernardino County, California",San Bernardino County,California,2008
@@ -1137,7 +1137,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,071,2180085,55550.0,67903,1190,"San Bernardino County, California",San Bernardino County,California,2019
 06,071,2194710,126327.0,74846,1343,"San Bernardino County, California",San Bernardino County,California,2021
 06,071,2193656,106858.0,79091,1442,"San Bernardino County, California",San Bernardino County,California,2022
-06,073,2824259,5109.0,56335,999,"San Diego County, California",San Diego County,California,2005
+06,073,2824259,57894.0,56335,999,"San Diego County, California",San Diego County,California,2005
 06,073,2941454,90866.0,59591,1052,"San Diego County, California",San Diego County,California,2006
 06,073,2974859,86625.0,61794,1089,"San Diego County, California",San Diego County,California,2007
 06,073,3001072,83077.0,63026,1132,"San Diego County, California",San Diego County,California,2008
@@ -1154,7 +1154,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,073,3338330,125346.0,83985,1662,"San Diego County, California",San Diego County,California,2019
 06,073,3286069,351947.0,91003,1805,"San Diego County, California",San Diego County,California,2021
 06,073,3276208,308923.0,98928,1905,"San Diego County, California",San Diego County,California,2022
-06,075,719077,2557.0,57496,1068,"San Francisco County, California",San Francisco County,California,2005
+06,075,719077,24141.0,57496,1068,"San Francisco County, California",San Francisco County,California,2005
 06,075,744041,29832.0,65497,1128,"San Francisco County, California",San Francisco County,California,2006
 06,075,764976,28262.0,68023,1141,"San Francisco County, California",San Francisco County,California,2007
 06,075,808976,33150.0,73798,1206,"San Francisco County, California",San Francisco County,California,2008
@@ -1171,7 +1171,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,075,881549,39124.0,123859,1889,"San Francisco County, California",San Francisco County,California,2019
 06,075,815201,200083.0,121826,2072,"San Francisco County, California",San Francisco County,California,2021
 06,075,808437,151314.0,136692,2226,"San Francisco County, California",San Francisco County,California,2022
-06,077,646259,543.0,49391,755,"San Joaquin County, California",San Joaquin County,California,2005
+06,077,646259,6995.0,49391,755,"San Joaquin County, California",San Joaquin County,California,2005
 06,077,673170,9572.0,51951,762,"San Joaquin County, California",San Joaquin County,California,2006
 06,077,670990,9031.0,52470,801,"San Joaquin County, California",San Joaquin County,California,2007
 06,077,672388,11254.0,54882,800,"San Joaquin County, California",San Joaquin County,California,2008
@@ -1188,7 +1188,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,077,762148,13269.0,68997,1082,"San Joaquin County, California",San Joaquin County,California,2019
 06,077,789410,36307.0,80681,1247,"San Joaquin County, California",San Joaquin County,California,2021
 06,077,793229,37857.0,86056,1330,"San Joaquin County, California",San Joaquin County,California,2022
-06,079,239638,537.0,49721,936,"San Luis Obispo County, California",San Luis Obispo County,California,2005
+06,079,239638,6455.0,49721,936,"San Luis Obispo County, California",San Luis Obispo County,California,2005
 06,079,257005,5257.0,50209,961,"San Luis Obispo County, California",San Luis Obispo County,California,2006
 06,079,262436,7977.0,56952,990,"San Luis Obispo County, California",San Luis Obispo County,California,2007
 06,079,265297,7691.0,60534,1009,"San Luis Obispo County, California",San Luis Obispo County,California,2008
@@ -1205,7 +1205,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,079,283111,11756.0,77265,1533,"San Luis Obispo County, California",San Luis Obispo County,California,2019
 06,079,283159,,80615,1600,"San Luis Obispo County, California",San Luis Obispo County,California,2021
 06,079,282013,21445.0,90216,1712,"San Luis Obispo County, California",San Luis Obispo County,California,2022
-06,081,689271,1008.0,74546,1199,"San Mateo County, California",San Mateo County,California,2005
+06,081,689271,17688.0,74546,1199,"San Mateo County, California",San Mateo County,California,2005
 06,081,705499,15867.0,77914,1251,"San Mateo County, California",San Mateo County,California,2006
 06,081,706984,16107.0,83109,1369,"San Mateo County, California",San Mateo County,California,2007
 06,081,712690,15270.0,85153,1371,"San Mateo County, California",San Mateo County,California,2008
@@ -1222,7 +1222,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,081,766573,25374.0,138500,2415,"San Mateo County, California",San Mateo County,California,2019
 06,081,737888,122795.0,131796,2394,"San Mateo County, California",San Mateo County,California,2021
 06,081,729181,95427.0,145388,2572,"San Mateo County, California",San Mateo County,California,2022
-06,083,383393,1316.0,55970,1052,"Santa Barbara County, California",Santa Barbara County,California,2005
+06,083,383393,7479.0,55970,1052,"Santa Barbara County, California",Santa Barbara County,California,2005
 06,083,400335,10092.0,53477,1067,"Santa Barbara County, California",Santa Barbara County,California,2006
 06,083,404197,11896.0,58401,1117,"Santa Barbara County, California",Santa Barbara County,California,2007
 06,083,405396,12079.0,61543,1200,"Santa Barbara County, California",Santa Barbara County,California,2008
@@ -1239,7 +1239,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,083,446499,13606.0,75653,1558,"Santa Barbara County, California",Santa Barbara County,California,2019
 06,083,446475,31586.0,84846,1752,"Santa Barbara County, California",Santa Barbara County,California,2021
 06,083,443837,27638.0,90894,1838,"Santa Barbara County, California",Santa Barbara County,California,2022
-06,085,1669890,2110.0,76810,1145,"Santa Clara County, California",Santa Clara County,California,2005
+06,085,1669890,31495.0,76810,1145,"Santa Clara County, California",Santa Clara County,California,2005
 06,085,1731281,37145.0,80838,1169,"Santa Clara County, California",Santa Clara County,California,2006
 06,085,1748976,33568.0,84360,1244,"Santa Clara County, California",Santa Clara County,California,2007
 06,085,1764499,37783.0,88846,1339,"Santa Clara County, California",Santa Clara County,California,2008
@@ -1256,7 +1256,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,085,1927852,48468.0,133076,2295,"Santa Clara County, California",Santa Clara County,California,2019
 06,085,1885508,330900.0,141562,2355,"Santa Clara County, California",Santa Clara County,California,2021
 06,085,1870945,240372.0,150839,2496,"Santa Clara County, California",Santa Clara County,California,2022
-06,087,240367,937.0,58640,1109,"Santa Cruz County, California",Santa Cruz County,California,2005
+06,087,240367,10335.0,58640,1109,"Santa Cruz County, California",Santa Cruz County,California,2005
 06,087,249705,9011.0,62193,1090,"Santa Cruz County, California",Santa Cruz County,California,2006
 06,087,251747,8045.0,63778,1094,"Santa Cruz County, California",Santa Cruz County,California,2007
 06,087,253137,7501.0,67466,1203,"Santa Cruz County, California",Santa Cruz County,California,2008
@@ -1290,7 +1290,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,089,180080,4305.0,63091,868,"Shasta County, California",Shasta County,California,2019
 06,089,182139,,61125,874,"Shasta County, California",Shasta County,California,2021
 06,089,180930,6403.0,68276,900,"Shasta County, California",Shasta County,California,2022
-06,095,395426,393.0,62213,989,"Solano County, California",Solano County,California,2005
+06,095,395426,6117.0,62213,989,"Solano County, California",Solano County,California,2005
 06,095,411680,6781.0,61533,965,"Solano County, California",Solano County,California,2006
 06,095,408599,5468.0,66880,1025,"Solano County, California",Solano County,California,2007
 06,095,407515,6430.0,70635,1100,"Solano County, California",Solano County,California,2008
@@ -1307,7 +1307,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,095,447643,10488.0,86652,1585,"Solano County, California",Solano County,California,2019
 06,095,451716,25953.0,87770,1685,"Solano County, California",Solano County,California,2021
 06,095,448747,26569.0,92959,1826,"Solano County, California",Solano County,California,2022
-06,097,453850,549.0,58330,974,"Sonoma County, California",Sonoma County,California,2005
+06,097,453850,13140.0,58330,974,"Sonoma County, California",Sonoma County,California,2005
 06,097,466891,14638.0,60821,1045,"Sonoma County, California",Sonoma County,California,2006
 06,097,464435,16433.0,62399,1069,"Sonoma County, California",Sonoma County,California,2007
 06,097,466741,15577.0,62238,1078,"Sonoma County, California",Sonoma County,California,2008
@@ -1324,7 +1324,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,097,494336,20384.0,87828,1648,"Sonoma County, California",Sonoma County,California,2019
 06,097,485887,47845.0,94295,1773,"Sonoma County, California",Sonoma County,California,2021
 06,097,482650,35126.0,96830,1775,"Sonoma County, California",Sonoma County,California,2022
-06,099,497804,601.0,47525,697,"Stanislaus County, California",Stanislaus County,California,2005
+06,099,497804,7021.0,47525,697,"Stanislaus County, California",Stanislaus County,California,2005
 06,099,512138,10494.0,48566,715,"Stanislaus County, California",Stanislaus County,California,2006
 06,099,511263,9027.0,50616,782,"Stanislaus County, California",Stanislaus County,California,2007
 06,099,510694,7732.0,50359,789,"Stanislaus County, California",Stanislaus County,California,2008
@@ -1361,7 +1361,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,103,65084,,53475,824,"Tehama County, California",Tehama County,California,2019
 06,103,65498,,48810,806,"Tehama County, California",Tehama County,California,2021
 06,103,65245,,58884,839,"Tehama County, California",Tehama County,California,2022
-06,107,404909,282.0,38722,508,"Tulare County, California",Tulare County,California,2005
+06,107,404909,4426.0,38722,508,"Tulare County, California",Tulare County,California,2005
 06,107,419909,5691.0,41933,536,"Tulare County, California",Tulare County,California,2006
 06,107,421553,4822.0,40595,576,"Tulare County, California",Tulare County,California,2007
 06,107,426276,6103.0,45117,617,"Tulare County, California",Tulare County,California,2008
@@ -1378,7 +1378,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,107,466195,6197.0,57692,837,"Tulare County, California",Tulare County,California,2019
 06,107,477054,12841.0,58209,845,"Tulare County, California",Tulare County,California,2021
 06,107,477544,10375.0,64722,930,"Tulare County, California",Tulare County,California,2022
-06,111,782759,1163.0,66859,1097,"Ventura County, California",Ventura County,California,2005
+06,111,782759,17149.0,66859,1097,"Ventura County, California",Ventura County,California,2005
 06,111,799720,16893.0,72107,1193,"Ventura County, California",Ventura County,California,2006
 06,111,798364,18148.0,73250,1243,"Ventura County, California",Ventura County,California,2007
 06,111,797740,19351.0,76860,1311,"Ventura County, California",Ventura County,California,2008
@@ -1395,7 +1395,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 06,111,846006,25193.0,92236,1759,"Ventura County, California",Ventura County,California,2019
 06,111,839784,74119.0,96454,1910,"Ventura County, California",Ventura County,California,2021
 06,111,832605,63378.0,102569,2033,"Ventura County, California",Ventura County,California,2022
-06,113,176609,325.0,50157,853,"Yolo County, California",Yolo County,California,2005
+06,113,176609,2428.0,50157,853,"Yolo County, California",Yolo County,California,2005
 06,113,188085,3079.0,51128,826,"Yolo County, California",Yolo County,California,2006
 06,113,195844,3087.0,59384,888,"Yolo County, California",Yolo County,California,2007
 06,113,197658,2569.0,60001,976,"Yolo County, California",Yolo County,California,2008
@@ -1446,7 +1446,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 08,001,517421,13691.0,75804,1250,"Adams County, Colorado",Adams County,Colorado,2019
 08,001,522140,43369.0,81258,1424,"Adams County, Colorado",Adams County,Colorado,2021
 08,001,527575,47533.0,91367,1505,"Adams County, Colorado",Adams County,Colorado,2022
-08,005,524207,690.0,54838,685,"Arapahoe County, Colorado",Arapahoe County,Colorado,2005
+08,005,524207,12819.0,54838,685,"Arapahoe County, Colorado",Arapahoe County,Colorado,2005
 08,005,537197,13774.0,55161,692,"Arapahoe County, Colorado",Arapahoe County,Colorado,2006
 08,005,545089,14688.0,58795,719,"Arapahoe County, Colorado",Arapahoe County,Colorado,2007
 08,005,554282,15581.0,58334,776,"Arapahoe County, Colorado",Arapahoe County,Colorado,2008
@@ -1487,7 +1487,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 08,014,70465,,111400,1723,"Broomfield County, Colorado",Broomfield County,Colorado,2019
 08,014,75325,,107638,1818,"Broomfield County, Colorado",Broomfield County,Colorado,2021
 08,014,76121,,115833,1846,"Broomfield County, Colorado",Broomfield County,Colorado,2022
-08,031,545198,660.0,42370,629,"Denver County, Colorado",Denver County,Colorado,2005
+08,031,545198,12702.0,42370,629,"Denver County, Colorado",Denver County,Colorado,2005
 08,031,566974,13692.0,40900,639,"Denver County, Colorado",Denver County,Colorado,2006
 08,031,588349,14732.0,44444,654,"Denver County, Colorado",Denver County,Colorado,2007
 08,031,598707,16066.0,45831,686,"Denver County, Colorado",Denver County,Colorado,2008
@@ -1504,7 +1504,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 08,031,727211,37217.0,75646,1352,"Denver County, Colorado",Denver County,Colorado,2019
 08,031,711463,130374.0,81630,1449,"Denver County, Colorado",Denver County,Colorado,2021
 08,031,713252,115001.0,88213,1623,"Denver County, Colorado",Denver County,Colorado,2022
-08,035,248950,130.0,87670,862,"Douglas County, Colorado",Douglas County,Colorado,2005
+08,035,248950,12028.0,87670,862,"Douglas County, Colorado",Douglas County,Colorado,2005
 08,035,263621,10028.0,92125,910,"Douglas County, Colorado",Douglas County,Colorado,2006
 08,035,272117,13634.0,92824,941,"Douglas County, Colorado",Douglas County,Colorado,2007
 08,035,280621,17587.0,98871,1080,"Douglas County, Colorado",Douglas County,Colorado,2008
@@ -1521,7 +1521,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 08,035,351154,26210.0,122867,1637,"Douglas County, Colorado",Douglas County,Colorado,2019
 08,035,368990,69699.0,129299,1724,"Douglas County, Colorado",Douglas County,Colorado,2021
 08,035,375988,63935.0,140003,1885,"Douglas County, Colorado",Douglas County,Colorado,2022
-08,041,550130,1135.0,50714,648,"El Paso County, Colorado",El Paso County,Colorado,2005
+08,041,550130,13767.0,50714,648,"El Paso County, Colorado",El Paso County,Colorado,2005
 08,041,576884,14083.0,53240,651,"El Paso County, Colorado",El Paso County,Colorado,2006
 08,041,587272,15966.0,55210,670,"El Paso County, Colorado",El Paso County,Colorado,2007
 08,041,596053,17858.0,59216,719,"El Paso County, Colorado",El Paso County,Colorado,2008
@@ -1538,7 +1538,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 08,041,720403,29157.0,72830,1125,"El Paso County, Colorado",El Paso County,Colorado,2019
 08,041,737867,66559.0,79427,1301,"El Paso County, Colorado",El Paso County,Colorado,2021
 08,041,740567,67923.0,82389,1404,"El Paso County, Colorado",El Paso County,Colorado,2022
-08,059,519071,847.0,60944,742,"Jefferson County, Colorado",Jefferson County,Colorado,2005
+08,059,519071,15370.0,60944,742,"Jefferson County, Colorado",Jefferson County,Colorado,2005
 08,059,526994,15508.0,60483,697,"Jefferson County, Colorado",Jefferson County,Colorado,2006
 08,059,529354,17914.0,64416,747,"Jefferson County, Colorado",Jefferson County,Colorado,2007
 08,059,533339,17915.0,66344,802,"Jefferson County, Colorado",Jefferson County,Colorado,2008
@@ -1649,7 +1649,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 10,001,180786,3573.0,58001,953,"Kent County, Delaware",Kent County,Delaware,2019
 10,001,184149,,64308,1015,"Kent County, Delaware",Kent County,Delaware,2021
 10,001,186946,6153.0,72675,1063,"Kent County, Delaware",Kent County,Delaware,2022
-10,003,505271,113.0,59270,726,"New Castle County, Delaware",New Castle County,Delaware,2005
+10,003,505271,8159.0,59270,726,"New Castle County, Delaware",New Castle County,Delaware,2005
 10,003,525587,6493.0,58043,739,"New Castle County, Delaware",New Castle County,Delaware,2006
 10,003,528218,8962.0,59600,777,"New Castle County, Delaware",New Castle County,Delaware,2007
 10,003,529641,8681.0,63288,781,"New Castle County, Delaware",New Castle County,Delaware,2008
@@ -1683,7 +1683,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 10,005,234225,,65155,779,"Sussex County, Delaware",Sussex County,Delaware,2019
 10,005,247527,12907.0,70556,904,"Sussex County, Delaware",Sussex County,Delaware,2021
 10,005,255956,15222.0,81792,897,"Sussex County, Delaware",Sussex County,Delaware,2022
-11,001,515118,124.0,47221,768,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2005
+11,001,515118,11110.0,47221,768,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2005
 11,001,581530,11498.0,51847,822,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2006
 11,001,588292,14608.0,54317,871,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2007
 11,001,591833,14084.0,57936,918,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2008
@@ -1700,7 +1700,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 11,001,705749,28402.0,92266,1514,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2019
 11,001,670050,170971.0,90088,1586,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2021
 11,001,671803,126259.0,101027,1768,"District of Columbia, District of Columbia",District of Columbia,District of Columbia,2022
-12,001,210323,428.0,35576,576,"Alachua County, Florida",Alachua County,Florida,2005
+12,001,210323,3737.0,35576,576,"Alachua County, Florida",Alachua County,Florida,2005
 12,001,227120,4251.0,36899,632,"Alachua County, Florida",Alachua County,Florida,2006
 12,001,240082,2324.0,37286,644,"Alachua County, Florida",Alachua County,Florida,2007
 12,001,241364,6352.0,43098,718,"Alachua County, Florida",Alachua County,Florida,2008
@@ -1734,7 +1734,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,005,174705,,59450,1007,"Bay County, Florida",Bay County,Florida,2019
 12,005,179168,,60557,1072,"Bay County, Florida",Bay County,Florida,2021
 12,005,185134,10781.0,66245,1102,"Bay County, Florida",Bay County,Florida,2022
-12,009,521226,644.0,43281,643,"Brevard County, Florida",Brevard County,Florida,2005
+12,009,521226,5760.0,43281,643,"Brevard County, Florida",Brevard County,Florida,2005
 12,009,534359,7668.0,46335,703,"Brevard County, Florida",Brevard County,Florida,2006
 12,009,536161,9638.0,50354,759,"Brevard County, Florida",Brevard County,Florida,2007
 12,009,536521,9478.0,49411,773,"Brevard County, Florida",Brevard County,Florida,2008
@@ -1751,7 +1751,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,009,601942,16105.0,57305,985,"Brevard County, Florida",Brevard County,Florida,2019
 12,009,616628,42495.0,65333,1076,"Brevard County, Florida",Brevard County,Florida,2021
 12,009,630693,46972.0,75320,1273,"Brevard County, Florida",Brevard County,Florida,2022
-12,011,1757590,1355.0,46673,842,"Broward County, Florida",Broward County,Florida,2005
+12,011,1757590,27918.0,46673,842,"Broward County, Florida",Broward County,Florida,2005
 12,011,1787636,37611.0,50499,894,"Broward County, Florida",Broward County,Florida,2006
 12,011,1759591,37520.0,52670,964,"Broward County, Florida",Broward County,Florida,2007
 12,011,1751234,36483.0,51623,994,"Broward County, Florida",Broward County,Florida,2008
@@ -1852,7 +1852,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,023,71686,,47094,611,"Columbia County, Florida",Columbia County,Florida,2019
 12,023,70385,,54077,625,"Columbia County, Florida",Columbia County,Florida,2021
 12,023,71908,,53985,753,"Columbia County, Florida",Columbia County,Florida,2022
-12,031,810698,471.0,44740,637,"Duval County, Florida",Duval County,Florida,2005
+12,031,810698,9346.0,44740,637,"Duval County, Florida",Duval County,Florida,2005
 12,031,837964,15353.0,45756,643,"Duval County, Florida",Duval County,Florida,2006
 12,031,849159,10769.0,49230,704,"Duval County, Florida",Duval County,Florida,2007
 12,031,850962,14451.0,50696,723,"Duval County, Florida",Duval County,Florida,2008
@@ -1937,7 +1937,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,055,106221,,48698,644,"Highlands County, Florida",Highlands County,Florida,2019
 12,055,103296,,48564,714,"Highlands County, Florida",Highlands County,Florida,2021
 12,055,105618,2571.0,52799,801,"Highlands County, Florida",Highlands County,Florida,2022
-12,057,1111717,815.0,45129,659,"Hillsborough County, Florida",Hillsborough County,Florida,2005
+12,057,1111717,22276.0,45129,659,"Hillsborough County, Florida",Hillsborough County,Florida,2005
 12,057,1157738,21477.0,46766,698,"Hillsborough County, Florida",Hillsborough County,Florida,2006
 12,057,1174727,28172.0,50572,761,"Hillsborough County, Florida",Hillsborough County,Florida,2007
 12,057,1180784,29474.0,49766,768,"Hillsborough County, Florida",Hillsborough County,Florida,2008
@@ -1988,7 +1988,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,069,367118,,57588,929,"Lake County, Florida",Lake County,Florida,2019
 12,069,395804,23661.0,64795,1197,"Lake County, Florida",Lake County,Florida,2021
 12,069,410139,,67559,1196,"Lake County, Florida",Lake County,Florida,2022
-12,071,539097,475.0,46053,744,"Lee County, Florida",Lee County,Florida,2005
+12,071,539097,8419.0,46053,744,"Lee County, Florida",Lee County,Florida,2005
 12,071,571344,12456.0,48553,820,"Lee County, Florida",Lee County,Florida,2006
 12,071,590564,11940.0,50699,866,"Lee County, Florida",Lee County,Florida,2007
 12,071,593136,13457.0,50747,828,"Lee County, Florida",Lee County,Florida,2008
@@ -2022,7 +2022,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,073,293582,8090.0,54929,808,"Leon County, Florida",Leon County,Florida,2019
 12,073,292817,29291.0,58118,936,"Leon County, Florida",Leon County,Florida,2021
 12,073,297369,15532.0,61297,961,"Leon County, Florida",Leon County,Florida,2022
-12,081,300828,318.0,44414,712,"Manatee County, Florida",Manatee County,Florida,2005
+12,081,300828,6652.0,44414,712,"Manatee County, Florida",Manatee County,Florida,2005
 12,081,313298,6533.0,45272,743,"Manatee County, Florida",Manatee County,Florida,2006
 12,081,315108,6995.0,48980,789,"Manatee County, Florida",Manatee County,Florida,2007
 12,081,315766,5847.0,46105,771,"Manatee County, Florida",Manatee County,Florida,2008
@@ -2073,7 +2073,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,085,161000,,70842,1043,"Martin County, Florida",Martin County,Florida,2019
 12,085,159942,,64625,1122,"Martin County, Florida",Martin County,Florida,2021
 12,085,162006,,80024,1480,"Martin County, Florida",Martin County,Florida,2022
-12,086,2329187,1912.0,37148,723,"Miami-Dade County, Florida",Miami-Dade County,Florida,2005
+12,086,2329187,25716.0,37148,723,"Miami-Dade County, Florida",Miami-Dade County,Florida,2005
 12,086,2402208,36033.0,41237,781,"Miami-Dade County, Florida",Miami-Dade County,Florida,2006
 12,086,2387170,38030.0,43650,854,"Miami-Dade County, Florida",Miami-Dade County,Florida,2007
 12,086,2398245,43934.0,44068,887,"Miami-Dade County, Florida",Miami-Dade County,Florida,2008
@@ -2140,7 +2140,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,091,210738,5032.0,64222,981,"Okaloosa County, Florida",Okaloosa County,Florida,2019
 12,091,213255,9927.0,69823,1152,"Okaloosa County, Florida",Okaloosa County,Florida,2021
 12,091,216482,9539.0,77830,1247,"Okaloosa County, Florida",Okaloosa County,Florida,2022
-12,095,1002849,796.0,44236,719,"Orange County, Florida",Orange County,Florida,2005
+12,095,1002849,15675.0,44236,719,"Orange County, Florida",Orange County,Florida,2005
 12,095,1043500,21220.0,48986,777,"Orange County, Florida",Orange County,Florida,2006
 12,095,1066113,22487.0,51101,830,"Orange County, Florida",Orange County,Florida,2007
 12,095,1072801,23260.0,50750,843,"Orange County, Florida",Orange County,Florida,2008
@@ -2174,7 +2174,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,097,375751,11719.0,51760,1176,"Osceola County, Florida",Osceola County,Florida,2019
 12,097,403282,24374.0,60585,1259,"Osceola County, Florida",Osceola County,Florida,2021
 12,097,422545,32539.0,63271,1456,"Osceola County, Florida",Osceola County,Florida,2022
-12,099,1247908,1194.0,48099,814,"Palm Beach County, Florida",Palm Beach County,Florida,2005
+12,099,1247908,24279.0,48099,814,"Palm Beach County, Florida",Palm Beach County,Florida,2005
 12,099,1274013,23549.0,51677,916,"Palm Beach County, Florida",Palm Beach County,Florida,2006
 12,099,1266451,27976.0,53453,967,"Palm Beach County, Florida",Palm Beach County,Florida,2007
 12,099,1265293,27240.0,52700,1029,"Palm Beach County, Florida",Palm Beach County,Florida,2008
@@ -2191,7 +2191,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,099,1496770,57044.0,66623,1357,"Palm Beach County, Florida",Palm Beach County,Florida,2019
 12,099,1497987,114030.0,70002,1418,"Palm Beach County, Florida",Palm Beach County,Florida,2021
 12,099,1518477,107222.0,76592,1614,"Palm Beach County, Florida",Palm Beach County,Florida,2022
-12,101,423356,755.0,39562,543,"Pasco County, Florida",Pasco County,Florida,2005
+12,101,423356,8062.0,39562,543,"Pasco County, Florida",Pasco County,Florida,2005
 12,101,450171,9128.0,41939,627,"Pasco County, Florida",Pasco County,Florida,2006
 12,101,462715,7604.0,44526,702,"Pasco County, Florida",Pasco County,Florida,2007
 12,101,471028,8635.0,42212,699,"Pasco County, Florida",Pasco County,Florida,2008
@@ -2208,7 +2208,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,101,553947,24689.0,55828,892,"Pasco County, Florida",Pasco County,Florida,2019
 12,101,584067,54195.0,59470,999,"Pasco County, Florida",Pasco County,Florida,2021
 12,101,608794,61368.0,65999,1191,"Pasco County, Florida",Pasco County,Florida,2022
-12,103,905158,1672.0,40694,636,"Pinellas County, Florida",Pinellas County,Florida,2005
+12,103,905158,18799.0,40694,636,"Pinellas County, Florida",Pinellas County,Florida,2005
 12,103,924413,20732.0,41945,687,"Pinellas County, Florida",Pinellas County,Florida,2006
 12,103,917437,18272.0,44292,706,"Pinellas County, Florida",Pinellas County,Florida,2007
 12,103,910260,21214.0,45895,779,"Pinellas County, Florida",Pinellas County,Florida,2008
@@ -2225,7 +2225,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,103,974996,38844.0,56737,1014,"Pinellas County, Florida",Pinellas County,Florida,2019
 12,103,956615,96460.0,61947,1135,"Pinellas County, Florida",Pinellas County,Florida,2021
 12,103,961739,95830.0,66472,1313,"Pinellas County, Florida",Pinellas County,Florida,2022
-12,105,530126,337.0,39124,535,"Polk County, Florida",Polk County,Florida,2005
+12,105,530126,6208.0,39124,535,"Polk County, Florida",Polk County,Florida,2005
 12,105,561606,6426.0,41150,593,"Polk County, Florida",Polk County,Florida,2006
 12,105,574746,4744.0,44348,634,"Polk County, Florida",Polk County,Florida,2007
 12,105,580594,7512.0,44360,666,"Polk County, Florida",Polk County,Florida,2008
@@ -2327,7 +2327,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 12,115,433742,14208.0,66342,1204,"Sarasota County, Florida",Sarasota County,Florida,2019
 12,115,447057,31320.0,71761,1258,"Sarasota County, Florida",Sarasota County,Florida,2021
 12,115,462286,34759.0,78341,1579,"Sarasota County, Florida",Sarasota County,Florida,2022
-12,117,398013,740.0,52299,751,"Seminole County, Florida",Seminole County,Florida,2005
+12,117,398013,11577.0,52299,751,"Seminole County, Florida",Seminole County,Florida,2005
 12,117,406875,12278.0,56757,837,"Seminole County, Florida",Seminole County,Florida,2006
 12,117,409509,13645.0,56011,862,"Seminole County, Florida",Seminole County,Florida,2007
 12,117,410854,11307.0,58104,860,"Seminole County, Florida",Seminole County,Florida,2008
@@ -2542,7 +2542,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 13,063,292256,6666.0,51093,856,"Clayton County, Georgia",Clayton County,Georgia,2019
 13,063,297100,,51233,987,"Clayton County, Georgia",Clayton County,Georgia,2021
 13,063,296564,,58325,1140,"Clayton County, Georgia",Clayton County,Georgia,2022
-13,067,653715,459.0,62423,699,"Cobb County, Georgia",Cobb County,Georgia,2005
+13,067,653715,18218.0,62423,699,"Cobb County, Georgia",Cobb County,Georgia,2005
 13,067,679325,19382.0,61682,711,"Cobb County, Georgia",Cobb County,Georgia,2006
 13,067,691905,19244.0,64817,761,"Cobb County, Georgia",Cobb County,Georgia,2007
 13,067,698158,19769.0,70472,782,"Cobb County, Georgia",Cobb County,Georgia,2008
@@ -2593,7 +2593,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 13,077,148509,,78423,961,"Coweta County, Georgia",Coweta County,Georgia,2019
 13,077,149956,,84788,1081,"Coweta County, Georgia",Coweta County,Georgia,2021
 13,077,152882,,84747,1165,"Coweta County, Georgia",Coweta County,Georgia,2022
-13,089,662973,411.0,47398,677,"DeKalb County, Georgia",DeKalb County,Georgia,2005
+13,089,662973,13716.0,47398,677,"DeKalb County, Georgia",DeKalb County,Georgia,2005
 13,089,723602,14780.0,50373,712,"DeKalb County, Georgia",DeKalb County,Georgia,2006
 13,089,737093,16058.0,51706,735,"DeKalb County, Georgia",DeKalb County,Georgia,2007
 13,089,739956,19262.0,54982,753,"DeKalb County, Georgia",DeKalb County,Georgia,2008
@@ -2697,7 +2697,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 13,117,244252,15580.0,112108,1327,"Forsyth County, Georgia",Forsyth County,Georgia,2019
 13,117,260206,,118814,1705,"Forsyth County, Georgia",Forsyth County,Georgia,2021
 13,117,267237,46216.0,129410,1689,"Forsyth County, Georgia",Forsyth County,Georgia,2022
-13,121,884079,510.0,52465,685,"Fulton County, Georgia",Fulton County,Georgia,2005
+13,121,884079,24942.0,52465,685,"Fulton County, Georgia",Fulton County,Georgia,2005
 13,121,960009,28950.0,54755,713,"Fulton County, Georgia",Fulton County,Georgia,2006
 13,121,992137,33084.0,58837,743,"Fulton County, Georgia",Fulton County,Georgia,2007
 13,121,1014932,39348.0,63819,782,"Fulton County, Georgia",Fulton County,Georgia,2008
@@ -2731,7 +2731,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 13,127,85292,,59004,635,"Glynn County, Georgia",Glynn County,Georgia,2019
 13,127,84739,,61984,829,"Glynn County, Georgia",Glynn County,Georgia,2021
 13,127,85079,,63228,874,"Glynn County, Georgia",Glynn County,Georgia,2022
-13,135,719398,314.0,61365,726,"Gwinnett County, Georgia",Gwinnett County,Georgia,2005
+13,135,719398,17690.0,61365,726,"Gwinnett County, Georgia",Gwinnett County,Georgia,2005
 13,135,757104,21965.0,63189,747,"Gwinnett County, Georgia",Gwinnett County,Georgia,2006
 13,135,776380,17780.0,63818,774,"Gwinnett County, Georgia",Gwinnett County,Georgia,2007
 13,135,789499,22068.0,66373,778,"Gwinnett County, Georgia",Gwinnett County,Georgia,2008
@@ -2977,7 +2977,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 13,313,104628,,52198,591,"Whitfield County, Georgia",Whitfield County,Georgia,2019
 13,313,102848,,55519,673,"Whitfield County, Georgia",Whitfield County,Georgia,2021
 13,313,103132,,61037,729,"Whitfield County, Georgia",Whitfield County,Georgia,2022
-15,001,164437,311.0,48524,742,"Hawaii County, Hawaii",Hawaii County,Hawaii,2005
+15,001,164437,5945.0,48524,742,"Hawaii County, Hawaii",Hawaii County,Hawaii,2005
 15,001,171191,5087.0,55390,804,"Hawaii County, Hawaii",Hawaii County,Hawaii,2006
 15,001,173057,5951.0,59111,871,"Hawaii County, Hawaii",Hawaii County,Hawaii,2007
 15,001,175784,7421.0,54044,906,"Hawaii County, Hawaii",Hawaii County,Hawaii,2008
@@ -2994,7 +2994,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 15,001,201513,6602.0,67075,1057,"Hawaii County, Hawaii",Hawaii County,Hawaii,2019
 15,001,202906,10666.0,69473,1149,"Hawaii County, Hawaii",Hawaii County,Hawaii,2021
 15,001,206315,9550.0,72568,1115,"Hawaii County, Hawaii",Hawaii County,Hawaii,2022
-15,003,873177,2204.0,60485,940,"Honolulu County, Hawaii",Honolulu County,Hawaii,2005
+15,003,873177,14837.0,60485,940,"Honolulu County, Hawaii",Honolulu County,Hawaii,2005
 15,003,909863,15542.0,63372,1045,"Honolulu County, Hawaii",Honolulu County,Hawaii,2006
 15,003,905601,14026.0,65367,1129,"Honolulu County, Hawaii",Honolulu County,Hawaii,2007
 15,003,905034,16239.0,70951,1227,"Honolulu County, Hawaii",Honolulu County,Hawaii,2008
@@ -3023,7 +3023,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 15,007,72293,,81971,1179,"Kauai County, Hawaii",Kauai County,Hawaii,2019
 15,007,73454,,80582,1478,"Kauai County, Hawaii",Kauai County,Hawaii,2021
 15,007,73810,,87730,1636,"Kauai County, Hawaii",Kauai County,Hawaii,2022
-15,009,138433,422.0,57573,912,"Maui County, Hawaii",Maui County,Hawaii,2005
+15,009,138433,4314.0,57573,912,"Maui County, Hawaii",Maui County,Hawaii,2005
 15,009,141300,4696.0,58771,1081,"Maui County, Hawaii",Maui County,Hawaii,2006
 15,009,141843,4622.0,63550,1163,"Maui County, Hawaii",Maui County,Hawaii,2007
 15,009,143641,5413.0,67619,1131,"Maui County, Hawaii",Maui County,Hawaii,2008
@@ -3040,7 +3040,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 15,009,167488,5167.0,80754,1506,"Maui County, Hawaii",Maui County,Hawaii,2019
 15,009,164268,6024.0,76273,1422,"Maui County, Hawaii",Maui County,Hawaii,2021
 15,009,164365,8870.0,94760,1464,"Maui County, Hawaii",Maui County,Hawaii,2022
-16,001,336193,760.0,51240,581,"Ada County, Idaho",Ada County,Idaho,2005
+16,001,336193,9910.0,51240,581,"Ada County, Idaho",Ada County,Idaho,2005
 16,001,359035,7174.0,53868,632,"Ada County, Idaho",Ada County,Idaho,2006
 16,001,373406,8601.0,54607,661,"Ada County, Idaho",Ada County,Idaho,2007
 16,001,380920,9293.0,57039,706,"Ada County, Idaho",Ada County,Idaho,2008
@@ -3159,7 +3159,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,019,209689,4476.0,52405,773,"Champaign County, Illinois",Champaign County,Illinois,2019
 17,019,205943,18197.0,56847,800,"Champaign County, Illinois",Champaign County,Illinois,2021
 17,019,206542,17492.0,60168,799,"Champaign County, Illinois",Champaign County,Illinois,2022
-17,031,5206357,2047.0,48950,713,"Cook County, Illinois",Cook County,Illinois,2005
+17,031,5206357,68428.0,48950,713,"Cook County, Illinois",Cook County,Illinois,2005
 17,031,5288655,79164.0,50691,727,"Cook County, Illinois",Cook County,Illinois,2006
 17,031,5285107,84874.0,52564,752,"Cook County, Illinois",Cook County,Illinois,2007
 17,031,5294664,96455.0,54582,770,"Cook County, Illinois",Cook County,Illinois,2008
@@ -3193,7 +3193,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,037,104897,,64131,810,"DeKalb County, Illinois",DeKalb County,Illinois,2019
 17,037,100414,,65615,817,"DeKalb County, Illinois",DeKalb County,Illinois,2021
 17,037,100232,,68590,803,"DeKalb County, Illinois",DeKalb County,Illinois,2022
-17,043,913781,264.0,70560,840,"DuPage County, Illinois",DuPage County,Illinois,2005
+17,043,913781,20740.0,70560,840,"DuPage County, Illinois",DuPage County,Illinois,2005
 17,043,932670,19727.0,73677,845,"DuPage County, Illinois",DuPage County,Illinois,2006
 17,043,929192,20671.0,73472,882,"DuPage County, Illinois",DuPage County,Illinois,2007
 17,043,930528,21378.0,77033,916,"DuPage County, Illinois",DuPage County,Illinois,2008
@@ -3210,7 +3210,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,043,922921,37040.0,96403,1222,"DuPage County, Illinois",DuPage County,Illinois,2019
 17,043,924885,124835.0,99577,1348,"DuPage County, Illinois",DuPage County,Illinois,2021
 17,043,920901,96802.0,102152,1392,"DuPage County, Illinois",DuPage County,Illinois,2022
-17,089,475683,143.0,63317,745,"Kane County, Illinois",Kane County,Illinois,2005
+17,089,475683,9966.0,63317,745,"Kane County, Illinois",Kane County,Illinois,2005
 17,089,493735,9416.0,63741,767,"Kane County, Illinois",Kane County,Illinois,2006
 17,089,501021,10167.0,68484,748,"Kane County, Illinois",Kane County,Illinois,2007
 17,089,507579,12195.0,66638,810,"Kane County, Illinois",Kane County,Illinois,2008
@@ -3261,7 +3261,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,093,128990,,104858,1408,"Kendall County, Illinois",Kendall County,Illinois,2019
 17,093,134867,,91560,1066,"Kendall County, Illinois",Kendall County,Illinois,2021
 17,093,137254,,101447,1297,"Kendall County, Illinois",Kendall County,Illinois,2022
-17,097,684726,133.0,68744,761,"Lake County, Illinois",Lake County,Illinois,2005
+17,097,684726,14158.0,68744,761,"Lake County, Illinois",Lake County,Illinois,2005
 17,097,713076,17242.0,75170,797,"Lake County, Illinois",Lake County,Illinois,2006
 17,097,710241,16792.0,77834,820,"Lake County, Illinois",Lake County,Illinois,2007
 17,097,712453,22419.0,78598,829,"Lake County, Illinois",Lake County,Illinois,2008
@@ -3397,7 +3397,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,161,141879,1249.0,58313,613,"Rock Island County, Illinois",Rock Island County,Illinois,2019
 17,161,142909,4606.0,57895,685,"Rock Island County, Illinois",Rock Island County,Illinois,2021
 17,161,141527,6643.0,62086,669,"Rock Island County, Illinois",Rock Island County,Illinois,2022
-17,163,255072,171.0,42722,438,"St. Clair County, Illinois",St. Clair County,Illinois,2005
+17,163,255072,3059.0,42722,438,"St. Clair County, Illinois",St. Clair County,Illinois,2005
 17,163,260919,3621.0,46643,497,"St. Clair County, Illinois",St. Clair County,Illinois,2006
 17,163,261316,3266.0,46435,496,"St. Clair County, Illinois",St. Clair County,Illinois,2007
 17,163,262291,3405.0,47885,517,"St. Clair County, Illinois",St. Clair County,Illinois,2008
@@ -3465,7 +3465,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,183,75758,,43111,508,"Vermilion County, Illinois",Vermilion County,Illinois,2019
 17,183,73095,,49091,577,"Vermilion County, Illinois",Vermilion County,Illinois,2021
 17,183,72337,,51515,547,"Vermilion County, Illinois",Vermilion County,Illinois,2022
-17,197,634183,223.0,68414,684,"Will County, Illinois",Will County,Illinois,2005
+17,197,634183,10373.0,68414,684,"Will County, Illinois",Will County,Illinois,2005
 17,197,668217,12372.0,72816,687,"Will County, Illinois",Will County,Illinois,2006
 17,197,673586,11626.0,71384,723,"Will County, Illinois",Will County,Illinois,2007
 17,197,681097,11815.0,76496,726,"Will County, Illinois",Will County,Illinois,2008
@@ -3512,7 +3512,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 17,201,282572,3990.0,59455,680,"Winnebago County, Illinois",Winnebago County,Illinois,2019
 17,201,283119,13415.0,56132,733,"Winnebago County, Illinois",Winnebago County,Illinois,2021
 17,201,282188,13120.0,62011,755,"Winnebago County, Illinois",Winnebago County,Illinois,2022
-18,003,338279,0.0,45356,475,"Allen County, Indiana",Allen County,Indiana,2005
+18,003,338279,3952.0,45356,475,"Allen County, Indiana",Allen County,Indiana,2005
 18,003,347316,4453.0,45630,473,"Allen County, Indiana",Allen County,Indiana,2006
 18,003,349488,5403.0,47729,507,"Allen County, Indiana",Allen County,Indiana,2007
 18,003,350523,5859.0,48792,495,"Allen County, Indiana",Allen County,Indiana,2008
@@ -3737,7 +3737,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 18,085,79456,,64099,536,"Kosciusko County, Indiana",Kosciusko County,Indiana,2019
 18,085,80106,,65540,759,"Kosciusko County, Indiana",Kosciusko County,Indiana,2021
 18,085,80826,,68778,811,"Kosciusko County, Indiana",Kosciusko County,Indiana,2022
-18,089,487663,104.0,42420,535,"Lake County, Indiana",Lake County,Indiana,2005
+18,089,487663,3586.0,42420,535,"Lake County, Indiana",Lake County,Indiana,2005
 18,089,494202,3976.0,46436,587,"Lake County, Indiana",Lake County,Indiana,2006
 18,089,492104,4805.0,48042,576,"Lake County, Indiana",Lake County,Indiana,2007
 18,089,493800,4727.0,50165,617,"Lake County, Indiana",Lake County,Indiana,2008
@@ -3788,7 +3788,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 18,095,129569,2607.0,55142,609,"Madison County, Indiana",Madison County,Indiana,2019
 18,095,130782,,53785,608,"Madison County, Indiana",Madison County,Indiana,2021
 18,095,131744,,58937,628,"Madison County, Indiana",Madison County,Indiana,2022
-18,097,844187,811.0,41964,540,"Marion County, Indiana",Marion County,Indiana,2005
+18,097,844187,11244.0,41964,540,"Marion County, Indiana",Marion County,Indiana,2005
 18,097,865504,13429.0,41947,546,"Marion County, Indiana",Marion County,Indiana,2006
 18,097,876804,11543.0,45071,560,"Marion County, Indiana",Marion County,Indiana,2007
 18,097,880380,12010.0,43510,575,"Marion County, Indiana",Marion County,Indiana,2008
@@ -3988,7 +3988,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 19,061,97311,,62178,673,"Dubuque County, Iowa",Dubuque County,Iowa,2019
 19,061,98718,,75590,703,"Dubuque County, Iowa",Dubuque County,Iowa,2021
 19,061,98677,,73671,754,"Dubuque County, Iowa",Dubuque County,Iowa,2022
-19,103,108919,296.0,43830,586,"Johnson County, Iowa",Johnson County,Iowa,2005
+19,103,108919,2381.0,43830,586,"Johnson County, Iowa",Johnson County,Iowa,2005
 19,103,118038,2032.0,46018,603,"Johnson County, Iowa",Johnson County,Iowa,2006
 19,103,125692,3314.0,51589,595,"Johnson County, Iowa",Johnson County,Iowa,2007
 19,103,128094,3023.0,55281,628,"Johnson County, Iowa",Johnson County,Iowa,2008
@@ -4022,7 +4022,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 19,113,226706,6293.0,63559,648,"Linn County, Iowa",Linn County,Iowa,2019
 19,113,228939,21908.0,69420,708,"Linn County, Iowa",Linn County,Iowa,2021
 19,113,229033,,72527,722,"Linn County, Iowa",Linn County,Iowa,2022
-19,153,391914,417.0,51948,583,"Polk County, Iowa",Polk County,Iowa,2005
+19,153,391914,5880.0,51948,583,"Polk County, Iowa",Polk County,Iowa,2005
 19,153,408888,7830.0,52418,586,"Polk County, Iowa",Polk County,Iowa,2006
 19,153,418339,5931.0,54167,604,"Polk County, Iowa",Polk County,Iowa,2007
 19,153,424778,7687.0,56901,612,"Polk County, Iowa",Polk County,Iowa,2008
@@ -4185,7 +4185,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 20,161,74232,,50920,740,"Riley County, Kansas",Riley County,Kansas,2019
 20,161,72208,,57335,760,"Riley County, Kansas",Riley County,Kansas,2021
 20,161,71108,4780.0,53043,815,"Riley County, Kansas",Riley County,Kansas,2022
-20,173,459902,964.0,42785,459,"Sedgwick County, Kansas",Sedgwick County,Kansas,2005
+20,173,459902,7669.0,42785,459,"Sedgwick County, Kansas",Sedgwick County,Kansas,2005
 20,173,470895,8486.0,44588,460,"Sedgwick County, Kansas",Sedgwick County,Kansas,2006
 20,173,476026,6385.0,46976,464,"Sedgwick County, Kansas",Sedgwick County,Kansas,2007
 20,173,482863,7093.0,48956,472,"Sedgwick County, Kansas",Sedgwick County,Kansas,2008
@@ -4355,7 +4355,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 21,093,110958,,57463,685,"Hardin County, Kentucky",Hardin County,Kentucky,2019
 21,093,111607,,61089,690,"Hardin County, Kentucky",Hardin County,Kentucky,2021
 21,093,111862,,60878,734,"Hardin County, Kentucky",Hardin County,Kentucky,2022
-21,111,687032,645.0,40793,500,"Jefferson County, Kentucky",Jefferson County,Kentucky,2005
+21,111,687032,6736.0,40793,500,"Jefferson County, Kentucky",Jefferson County,Kentucky,2005
 21,111,701500,8291.0,43355,513,"Jefferson County, Kentucky",Jefferson County,Kentucky,2006
 21,111,709264,8359.0,43262,531,"Jefferson County, Kentucky",Jefferson County,Kentucky,2007
 21,111,713877,8317.0,46670,536,"Jefferson County, Kentucky",Jefferson County,Kentucky,2008
@@ -4513,7 +4513,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 22,019,203436,,51246,748,"Calcasieu Parish, Louisiana",Calcasieu Parish,Louisiana,2019
 22,019,205282,,58020,826,"Calcasieu Parish, Louisiana",Calcasieu Parish,Louisiana,2021
 22,019,202418,7001.0,62197,837,"Calcasieu Parish, Louisiana",Calcasieu Parish,Louisiana,2022
-22,033,396735,58.0,39847,497,"East Baton Rouge Parish, Louisiana",East Baton Rouge Parish,Louisiana,2005
+22,033,396735,3545.0,39847,497,"East Baton Rouge Parish, Louisiana",East Baton Rouge Parish,Louisiana,2005
 22,033,429073,6166.0,44286,531,"East Baton Rouge Parish, Louisiana",East Baton Rouge Parish,Louisiana,2006
 22,033,430317,5769.0,42088,571,"East Baton Rouge Parish, Louisiana",East Baton Rouge Parish,Louisiana,2007
 22,033,428360,4450.0,46700,588,"East Baton Rouge Parish, Louisiana",East Baton Rouge Parish,Louisiana,2008
@@ -4547,7 +4547,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 22,045,69830,,50991,548,"Iberia Parish, Louisiana",Iberia Parish,Louisiana,2019
 22,045,68975,,49447,551,"Iberia Parish, Louisiana",Iberia Parish,Louisiana,2021
 22,045,68327,,43513,569,"Iberia Parish, Louisiana",Iberia Parish,Louisiana,2022
-22,051,448578,228.0,41773,546,"Jefferson Parish, Louisiana",Jefferson Parish,Louisiana,2005
+22,051,448578,3031.0,41773,546,"Jefferson Parish, Louisiana",Jefferson Parish,Louisiana,2005
 22,051,431361,4405.0,44958,630,"Jefferson Parish, Louisiana",Jefferson Parish,Louisiana,2006
 22,051,423520,7969.0,48305,699,"Jefferson Parish, Louisiana",Jefferson Parish,Louisiana,2007
 22,051,436181,5617.0,47135,728,"Jefferson Parish, Louisiana",Jefferson Parish,Louisiana,2008
@@ -4615,7 +4615,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 22,063,140789,,62187,814,"Livingston Parish, Louisiana",Livingston Parish,Louisiana,2019
 22,063,145830,,75682,922,"Livingston Parish, Louisiana",Livingston Parish,Louisiana,2021
 22,063,148425,,73126,781,"Livingston Parish, Louisiana",Livingston Parish,Louisiana,2022
-22,071,437186,0.0,30711,464,"Orleans Parish, Louisiana",Orleans Parish,Louisiana,2005
+22,071,437186,6451.0,30711,464,"Orleans Parish, Louisiana",Orleans Parish,Louisiana,2005
 22,071,223388,3291.0,35859,675,"Orleans Parish, Louisiana",Orleans Parish,Louisiana,2006
 22,071,239124,3001.0,38614,763,"Orleans Parish, Louisiana",Orleans Parish,Louisiana,2007
 22,071,311853,3960.0,37751,742,"Orleans Parish, Louisiana",Orleans Parish,Louisiana,2008
@@ -4768,7 +4768,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 23,003,67055,,38768,495,"Aroostook County, Maine",Aroostook County,Maine,2019
 23,003,66859,,52849,593,"Aroostook County, Maine",Aroostook County,Maine,2021
 23,003,67255,,51395,589,"Aroostook County, Maine",Aroostook County,Maine,2022
-23,005,264737,115.0,50057,710,"Cumberland County, Maine",Cumberland County,Maine,2005
+23,005,264737,7854.0,50057,710,"Cumberland County, Maine",Cumberland County,Maine,2005
 23,005,274598,7620.0,51520,757,"Cumberland County, Maine",Cumberland County,Maine,2006
 23,005,275374,7173.0,55278,748,"Cumberland County, Maine",Cumberland County,Maine,2007
 23,005,276047,7428.0,53875,755,"Cumberland County, Maine",Cumberland County,Maine,2008
@@ -4853,7 +4853,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,001,70416,,48867,530,"Allegany County, Maryland",Allegany County,Maryland,2019
 24,001,67729,,48888,561,"Allegany County, Maryland",Allegany County,Maryland,2021
 24,001,67267,,46913,545,"Allegany County, Maryland",Allegany County,Maryland,2022
-24,003,494676,435.0,71961,940,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2005
+24,003,494676,11086.0,71961,940,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2005
 24,003,509300,10043.0,79160,1009,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2006
 24,003,512154,9623.0,80402,1060,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2007
 24,003,512790,8265.0,83285,1150,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2008
@@ -4870,7 +4870,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,003,579234,18274.0,101147,1601,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2019
 24,003,590336,70156.0,107823,1650,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2021
 24,003,593286,60274.0,113125,1681,"Anne Arundel County, Maryland",Anne Arundel County,Maryland,2022
-24,005,767597,254.0,56295,743,"Baltimore County, Maryland",Baltimore County,Maryland,2005
+24,005,767597,13103.0,56295,743,"Baltimore County, Maryland",Baltimore County,Maryland,2005
 24,005,787384,12753.0,59995,791,"Baltimore County, Maryland",Baltimore County,Maryland,2006
 24,005,788994,12631.0,60844,809,"Baltimore County, Maryland",Baltimore County,Maryland,2007
 24,005,785618,12134.0,63128,869,"Baltimore County, Maryland",Baltimore County,Maryland,2008
@@ -4955,7 +4955,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,017,163257,3847.0,103932,1484,"Charles County, Maryland",Charles County,Maryland,2019
 24,017,168698,,105493,1609,"Charles County, Maryland",Charles County,Maryland,2021
 24,017,170102,13121.0,115880,1628,"Charles County, Maryland",Charles County,Maryland,2022
-24,021,215877,80.0,73149,829,"Frederick County, Maryland",Frederick County,Maryland,2005
+24,021,215877,4228.0,73149,829,"Frederick County, Maryland",Frederick County,Maryland,2005
 24,021,222938,4151.0,74029,909,"Frederick County, Maryland",Frederick County,Maryland,2006
 24,021,224705,5602.0,77027,951,"Frederick County, Maryland",Frederick County,Maryland,2007
 24,021,225721,6817.0,78728,995,"Frederick County, Maryland",Frederick County,Maryland,2008
@@ -4989,7 +4989,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,025,255441,6896.0,92331,1132,"Harford County, Maryland",Harford County,Maryland,2019
 24,025,262977,,96328,1237,"Harford County, Maryland",Harford County,Maryland,2021
 24,025,263867,20962.0,100915,1310,"Harford County, Maryland",Harford County,Maryland,2022
-24,027,265755,135.0,91184,1007,"Howard County, Maryland",Howard County,Maryland,2005
+24,027,265755,6530.0,91184,1007,"Howard County, Maryland",Howard County,Maryland,2005
 24,027,272452,8531.0,94260,1146,"Howard County, Maryland",Howard County,Maryland,2006
 24,027,273669,7235.0,101672,1147,"Howard County, Maryland",Howard County,Maryland,2007
 24,027,274995,7497.0,102540,1211,"Howard County, Maryland",Howard County,Maryland,2008
@@ -5006,7 +5006,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,027,325690,13668.0,121618,1599,"Howard County, Maryland",Howard County,Maryland,2019
 24,027,334529,,133267,1659,"Howard County, Maryland",Howard County,Maryland,2021
 24,027,335411,44504.0,133438,1797,"Howard County, Maryland",Howard County,Maryland,2022
-24,031,918046,631.0,82187,1111,"Montgomery County, Maryland",Montgomery County,Maryland,2005
+24,031,918046,22816.0,82187,1111,"Montgomery County, Maryland",Montgomery County,Maryland,2005
 24,031,932131,25593.0,87624,1164,"Montgomery County, Maryland",Montgomery County,Maryland,2006
 24,031,930813,23821.0,91835,1235,"Montgomery County, Maryland",Montgomery County,Maryland,2007
 24,031,950680,27586.0,94319,1263,"Montgomery County, Maryland",Montgomery County,Maryland,2008
@@ -5023,7 +5023,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,031,1050688,37156.0,110389,1679,"Montgomery County, Maryland",Montgomery County,Maryland,2019
 24,031,1054827,200334.0,112854,1723,"Montgomery County, Maryland",Montgomery County,Maryland,2021
 24,031,1052521,155134.0,118323,1744,"Montgomery County, Maryland",Montgomery County,Maryland,2022
-24,033,828834,342.0,63365,903,"Prince George's County, Maryland",Prince George's County,Maryland,2005
+24,033,828834,11194.0,63365,903,"Prince George's County, Maryland",Prince George's County,Maryland,2005
 24,033,841315,8923.0,65851,926,"Prince George's County, Maryland",Prince George's County,Maryland,2006
 24,033,828770,11452.0,68370,953,"Prince George's County, Maryland",Prince George's County,Maryland,2007
 24,033,820852,12989.0,72166,1013,"Prince George's County, Maryland",Prince George's County,Maryland,2008
@@ -5091,7 +5091,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 24,045,103609,,54402,853,"Wicomico County, Maryland",Wicomico County,Maryland,2019
 24,045,103980,,63333,908,"Wicomico County, Maryland",Wicomico County,Maryland,2021
 24,045,104664,4253.0,72198,1052,"Wicomico County, Maryland",Wicomico County,Maryland,2022
-24,510,608481,900.0,32456,538,"Baltimore city, Maryland",Baltimore city,Maryland,2005
+24,510,608481,6233.0,32456,538,"Baltimore city, Maryland",Baltimore city,Maryland,2005
 24,510,631366,5946.0,36031,595,"Baltimore city, Maryland",Baltimore city,Maryland,2006
 24,510,637455,6742.0,36949,622,"Baltimore city, Maryland",Baltimore city,Maryland,2007
 24,510,636919,7980.0,40313,651,"Baltimore city, Maryland",Baltimore city,Maryland,2008
@@ -5142,7 +5142,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,003,124944,3717.0,58895,741,"Berkshire County, Massachusetts",Berkshire County,Massachusetts,2019
 25,003,128657,,60749,794,"Berkshire County, Massachusetts",Berkshire County,Massachusetts,2021
 25,003,127859,,74176,825,"Berkshire County, Massachusetts",Berkshire County,Massachusetts,2022
-25,005,533310,71.0,51132,595,"Bristol County, Massachusetts",Bristol County,Massachusetts,2005
+25,005,533310,5485.0,51132,595,"Bristol County, Massachusetts",Bristol County,Massachusetts,2005
 25,005,545379,6389.0,51769,609,"Bristol County, Massachusetts",Bristol County,Massachusetts,2006
 25,005,543024,8402.0,54895,629,"Bristol County, Massachusetts",Bristol County,Massachusetts,2007
 25,005,545823,6641.0,56241,651,"Bristol County, Massachusetts",Bristol County,Massachusetts,2008
@@ -5159,7 +5159,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,005,565217,8753.0,70402,808,"Bristol County, Massachusetts",Bristol County,Massachusetts,2019
 25,005,580164,34666.0,73102,879,"Bristol County, Massachusetts",Bristol County,Massachusetts,2021
 25,005,580068,34115.0,81551,945,"Bristol County, Massachusetts",Bristol County,Massachusetts,2022
-25,009,721625,269.0,57164,821,"Essex County, Massachusetts",Essex County,Massachusetts,2005
+25,009,721625,12296.0,57164,821,"Essex County, Massachusetts",Essex County,Massachusetts,2005
 25,009,735958,15473.0,59575,829,"Essex County, Massachusetts",Essex County,Massachusetts,2006
 25,009,733101,15130.0,61461,832,"Essex County, Massachusetts",Essex County,Massachusetts,2007
 25,009,736457,15596.0,65562,853,"Essex County, Massachusetts",Essex County,Massachusetts,2008
@@ -5227,7 +5227,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,015,160830,4643.0,74778,974,"Hampshire County, Massachusetts",Hampshire County,Massachusetts,2019
 25,015,161572,,77495,1155,"Hampshire County, Massachusetts",Hampshire County,Massachusetts,2021
 25,015,162588,,82078,1175,"Hampshire County, Massachusetts",Hampshire County,Massachusetts,2022
-25,017,1405511,1155.0,69045,983,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2005
+25,017,1405511,25974.0,69045,983,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2005
 25,017,1467016,28509.0,70954,1027,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2006
 25,017,1473416,37330.0,74700,1026,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2007
 25,017,1482478,36873.0,78202,1069,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2008
@@ -5244,7 +5244,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,017,1611699,55322.0,107056,1629,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2019
 25,017,1614742,280160.0,112764,1754,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2021
 25,017,1617105,218253.0,118800,1835,"Middlesex County, Massachusetts",Middlesex County,Massachusetts,2022
-25,021,636632,62.0,71561,1036,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2005
+25,021,636632,11631.0,71561,1036,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2005
 25,021,654753,12003.0,73339,1057,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2006
 25,021,654909,12339.0,79206,1057,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2007
 25,021,659909,13791.0,81444,1098,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2008
@@ -5261,7 +5261,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,021,706775,23580.0,107361,1560,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2019
 25,021,724505,103896.0,115357,1712,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2021
 25,021,725531,86600.0,115969,1841,"Norfolk County, Massachusetts",Norfolk County,Massachusetts,2022
-25,023,481100,270.0,66778,823,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2005
+25,023,481100,9879.0,66778,823,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2005
 25,023,493623,7564.0,66807,849,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2006
 25,023,490258,10587.0,71113,896,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2007
 25,023,492066,8379.0,73335,917,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2008
@@ -5278,7 +5278,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,023,521202,13088.0,90880,1142,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2019
 25,023,533003,56194.0,100082,1293,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2021
 25,023,533069,45846.0,103173,1434,"Plymouth County, Massachusetts",Plymouth County,Massachusetts,2022
-25,025,620053,204.0,43180,968,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2005
+25,025,620053,7767.0,43180,968,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2005
 25,025,687610,9857.0,47694,950,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2006
 25,025,713049,8751.0,50181,968,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2007
 25,025,732684,10823.0,51208,1024,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2008
@@ -5295,7 +5295,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 25,025,803907,18081.0,77558,1616,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2019
 25,025,771245,116797.0,78155,1679,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2021
 25,025,766381,81957.0,85358,1784,"Suffolk County, Massachusetts",Suffolk County,Massachusetts,2022
-25,027,759409,538.0,55513,682,"Worcester County, Massachusetts",Worcester County,Massachusetts,2005
+25,027,759409,12095.0,55513,682,"Worcester County, Massachusetts",Worcester County,Massachusetts,2005
 25,027,784992,13330.0,58984,671,"Worcester County, Massachusetts",Worcester County,Massachusetts,2006
 25,027,781352,13909.0,61988,710,"Worcester County, Massachusetts",Worcester County,Massachusetts,2007
 25,027,783806,14870.0,66878,735,"Worcester County, Massachusetts",Worcester County,Massachusetts,2008
@@ -5501,7 +5501,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 26,077,265066,5763.0,56441,719,"Kalamazoo County, Michigan",Kalamazoo County,Michigan,2019
 26,077,261108,18417.0,62128,781,"Kalamazoo County, Michigan",Kalamazoo County,Michigan,2021
 26,077,261173,14493.0,69584,944,"Kalamazoo County, Michigan",Kalamazoo County,Michigan,2022
-26,081,584007,358.0,46456,556,"Kent County, Michigan",Kent County,Michigan,2005
+26,081,584007,8187.0,46456,556,"Kent County, Michigan",Kent County,Michigan,2005
 26,081,599524,12034.0,46826,571,"Kent County, Michigan",Kent County,Michigan,2006
 26,081,604330,12045.0,49354,581,"Kent County, Michigan",Kent County,Michigan,2007
 26,081,605213,12538.0,50530,605,"Kent County, Michigan",Kent County,Michigan,2008
@@ -5569,7 +5569,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 26,093,191995,,86512,877,"Livingston County, Michigan",Livingston County,Michigan,2019
 26,093,195014,,91344,1085,"Livingston County, Michigan",Livingston County,Michigan,2021
 26,093,196161,16475.0,100139,1057,"Livingston County, Michigan",Livingston County,Michigan,2022
-26,099,820599,128.0,53321,603,"Macomb County, Michigan",Macomb County,Michigan,2005
+26,099,820599,8775.0,53321,603,"Macomb County, Michigan",Macomb County,Michigan,2005
 26,099,832861,9282.0,53477,619,"Macomb County, Michigan",Macomb County,Michigan,2006
 26,099,831077,11483.0,55101,630,"Macomb County, Michigan",Macomb County,Michigan,2007
 26,099,830663,8510.0,55399,641,"Macomb County, Michigan",Macomb County,Michigan,2008
@@ -5654,7 +5654,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 26,121,173566,1655.0,50366,625,"Muskegon County, Michigan",Muskegon County,Michigan,2019
 26,121,176511,,55462,722,"Muskegon County, Michigan",Muskegon County,Michigan,2021
 26,121,176565,,58074,807,"Muskegon County, Michigan",Muskegon County,Michigan,2022
-26,125,1200531,352.0,64022,721,"Oakland County, Michigan",Oakland County,Michigan,2005
+26,125,1200531,20751.0,64022,721,"Oakland County, Michigan",Oakland County,Michigan,2005
 26,125,1214255,21146.0,66483,719,"Oakland County, Michigan",Oakland County,Michigan,2006
 26,125,1206089,18852.0,66483,726,"Oakland County, Michigan",Oakland County,Michigan,2007
 26,125,1202174,23960.0,67518,733,"Oakland County, Michigan",Oakland County,Michigan,2008
@@ -5773,7 +5773,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 26,161,367601,11251.0,76576,1022,"Washtenaw County, Michigan",Washtenaw County,Michigan,2019
 26,161,369390,54266.0,76918,1098,"Washtenaw County, Michigan",Washtenaw County,Michigan,2021
 26,161,366376,41166.0,79665,1185,"Washtenaw County, Michigan",Washtenaw County,Michigan,2022
-26,163,1966909,287.0,40881,548,"Wayne County, Michigan",Wayne County,Michigan,2005
+26,163,1966909,14975.0,40881,548,"Wayne County, Michigan",Wayne County,Michigan,2005
 26,163,1971853,17652.0,41784,560,"Wayne County, Michigan",Wayne County,Michigan,2006
 26,163,1985101,17978.0,42470,586,"Wayne County, Michigan",Wayne County,Michigan,2007
 26,163,1949929,20620.0,42376,598,"Wayne County, Michigan",Wayne County,Michigan,2008
@@ -5839,7 +5839,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 27,035,65055,,60534,728,"Crow Wing County, Minnesota",Crow Wing County,Minnesota,2019
 27,035,67270,,63921,738,"Crow Wing County, Minnesota",Crow Wing County,Minnesota,2021
 27,035,67948,3747.0,66568,764,"Crow Wing County, Minnesota",Crow Wing County,Minnesota,2022
-27,037,381267,124.0,66467,773,"Dakota County, Minnesota",Dakota County,Minnesota,2005
+27,037,381267,7459.0,66467,773,"Dakota County, Minnesota",Dakota County,Minnesota,2005
 27,037,388001,7650.0,70502,760,"Dakota County, Minnesota",Dakota County,Minnesota,2006
 27,037,390478,9509.0,74497,796,"Dakota County, Minnesota",Dakota County,Minnesota,2007
 27,037,392755,8802.0,71833,802,"Dakota County, Minnesota",Dakota County,Minnesota,2008
@@ -5856,7 +5856,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 27,037,429021,14194.0,88864,1134,"Dakota County, Minnesota",Dakota County,Minnesota,2019
 27,037,442038,56798.0,93786,1218,"Dakota County, Minnesota",Dakota County,Minnesota,2021
 27,037,443341,51793.0,97501,1326,"Dakota County, Minnesota",Dakota County,Minnesota,2022
-27,053,1089910,761.0,55996,708,"Hennepin County, Minnesota",Hennepin County,Minnesota,2005
+27,053,1089910,25974.0,55996,708,"Hennepin County, Minnesota",Hennepin County,Minnesota,2005
 27,053,1122093,28780.0,58272,735,"Hennepin County, Minnesota",Hennepin County,Minnesota,2006
 27,053,1136599,32780.0,60962,757,"Hennepin County, Minnesota",Hennepin County,Minnesota,2007
 27,053,1140988,30304.0,62247,779,"Hennepin County, Minnesota",Hennepin County,Minnesota,2008
@@ -5890,7 +5890,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 27,109,158293,4764.0,80096,910,"Olmsted County, Minnesota",Olmsted County,Minnesota,2019
 27,109,163436,12535.0,83070,1019,"Olmsted County, Minnesota",Olmsted County,Minnesota,2021
 27,109,164020,12078.0,86976,1085,"Olmsted County, Minnesota",Olmsted County,Minnesota,2022
-27,123,476715,339.0,49898,704,"Ramsey County, Minnesota",Ramsey County,Minnesota,2005
+27,123,476715,11162.0,49898,704,"Ramsey County, Minnesota",Ramsey County,Minnesota,2005
 27,123,493215,11235.0,50777,694,"Ramsey County, Minnesota",Ramsey County,Minnesota,2006
 27,123,499891,10226.0,51716,696,"Ramsey County, Minnesota",Ramsey County,Minnesota,2007
 27,123,501428,10942.0,52480,704,"Ramsey County, Minnesota",Ramsey County,Minnesota,2008
@@ -6326,7 +6326,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 29,071,103967,,60953,591,"Franklin County, Missouri",Franklin County,Missouri,2019
 29,071,105231,,68410,624,"Franklin County, Missouri",Franklin County,Missouri,2021
 29,071,105879,,62694,626,"Franklin County, Missouri",Franklin County,Missouri,2022
-29,077,238898,479.0,36494,464,"Greene County, Missouri",Greene County,Missouri,2005
+29,077,238898,3941.0,36494,464,"Greene County, Missouri",Greene County,Missouri,2005
 29,077,254779,5650.0,39582,459,"Greene County, Missouri",Greene County,Missouri,2006
 29,077,263980,4589.0,41162,490,"Greene County, Missouri",Greene County,Missouri,2007
 29,077,266944,5710.0,43962,505,"Greene County, Missouri",Greene County,Missouri,2008
@@ -6343,7 +6343,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 29,077,293086,3495.0,43752,619,"Greene County, Missouri",Greene County,Missouri,2019
 29,077,300865,19484.0,53127,671,"Greene County, Missouri",Greene County,Missouri,2021
 29,077,303293,18075.0,55098,752,"Greene County, Missouri",Greene County,Missouri,2022
-29,095,651181,525.0,43386,526,"Jackson County, Missouri",Jackson County,Missouri,2005
+29,095,651181,10274.0,43386,526,"Jackson County, Missouri",Jackson County,Missouri,2005
 29,095,664078,10463.0,44211,540,"Jackson County, Missouri",Jackson County,Missouri,2006
 29,095,666890,9959.0,44231,538,"Jackson County, Missouri",Jackson County,Missouri,2007
 29,095,668417,11732.0,47264,548,"Jackson County, Missouri",Jackson County,Missouri,2008
@@ -6440,7 +6440,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 29,187,67215,,42390,579,"St. Francois County, Missouri",St. Francois County,Missouri,2019
 29,187,67541,,47682,577,"St. Francois County, Missouri",St. Francois County,Missouri,2021
 29,187,66969,,46775,588,"St. Francois County, Missouri",St. Francois County,Missouri,2022
-29,189,985393,428.0,54268,592,"St. Louis County, Missouri",St. Louis County,Missouri,2005
+29,189,985393,15559.0,54268,592,"St. Louis County, Missouri",St. Louis County,Missouri,2005
 29,189,1000510,17881.0,53186,592,"St. Louis County, Missouri",St. Louis County,Missouri,2006
 29,189,995118,20516.0,56771,612,"St. Louis County, Missouri",St. Louis County,Missouri,2007
 29,189,991830,22988.0,57625,635,"St. Louis County, Missouri",St. Louis County,Missouri,2008
@@ -6568,7 +6568,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 30,111,161300,3314.0,61186,779,"Yellowstone County, Montana",Yellowstone County,Montana,2019
 30,111,167146,,69882,846,"Yellowstone County, Montana",Yellowstone County,Montana,2021
 30,111,169852,6133.0,79283,939,"Yellowstone County, Montana",Yellowstone County,Montana,2022
-31,055,474913,323.0,45794,536,"Douglas County, Nebraska",Douglas County,Nebraska,2005
+31,055,474913,7958.0,45794,536,"Douglas County, Nebraska",Douglas County,Nebraska,2005
 31,055,492003,7530.0,48898,566,"Douglas County, Nebraska",Douglas County,Nebraska,2006
 31,055,497416,11463.0,50834,582,"Douglas County, Nebraska",Douglas County,Nebraska,2007
 31,055,502032,9401.0,51989,589,"Douglas County, Nebraska",Douglas County,Nebraska,2008
@@ -6585,7 +6585,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 31,055,571327,14686.0,67133,807,"Douglas County, Nebraska",Douglas County,Nebraska,2019
 31,055,585008,57889.0,69290,864,"Douglas County, Nebraska",Douglas County,Nebraska,2021
 31,055,586327,47845.0,74250,938,"Douglas County, Nebraska",Douglas County,Nebraska,2022
-31,109,252319,242.0,47039,526,"Lancaster County, Nebraska",Lancaster County,Nebraska,2005
+31,109,252319,4021.0,47039,526,"Lancaster County, Nebraska",Lancaster County,Nebraska,2005
 31,109,267135,6898.0,48564,524,"Lancaster County, Nebraska",Lancaster County,Nebraska,2006
 31,109,275665,4790.0,49096,542,"Lancaster County, Nebraska",Lancaster County,Nebraska,2007
 31,109,278728,4844.0,52160,552,"Lancaster County, Nebraska",Lancaster County,Nebraska,2008
@@ -6619,7 +6619,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 31,153,187196,4220.0,83720,918,"Sarpy County, Nebraska",Sarpy County,Nebraska,2019
 31,153,193418,17444.0,87979,984,"Sarpy County, Nebraska",Sarpy County,Nebraska,2021
 31,153,196553,16569.0,98603,1083,"Sarpy County, Nebraska",Sarpy County,Nebraska,2022
-32,003,1691213,2742.0,49571,772,"Clark County, Nevada",Clark County,Nevada,2005
+32,003,1691213,19981.0,49571,772,"Clark County, Nevada",Clark County,Nevada,2005
 32,003,1777539,24427.0,53536,822,"Clark County, Nevada",Clark County,Nevada,2006
 32,003,1836333,23786.0,55996,874,"Clark County, Nevada",Clark County,Nevada,2007
 32,003,1865746,25477.0,56696,899,"Clark County, Nevada",Clark County,Nevada,2008
@@ -6636,7 +6636,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 32,003,2266715,50479.0,62107,1045,"Clark County, Nevada",Clark County,Nevada,2019
 32,003,2292476,134139.0,63677,1170,"Clark County, Nevada",Clark County,Nevada,2021
 32,003,2322985,142376.0,70797,1327,"Clark County, Nevada",Clark County,Nevada,2022
-32,031,384462,677.0,48865,716,"Washoe County, Nevada",Washoe County,Nevada,2005
+32,031,384462,9028.0,48865,716,"Washoe County, Nevada",Washoe County,Nevada,2005
 32,031,396428,7538.0,52297,718,"Washoe County, Nevada",Washoe County,Nevada,2006
 32,031,406079,7714.0,54343,756,"Washoe County, Nevada",Washoe County,Nevada,2007
 32,031,410443,7890.0,57392,792,"Washoe County, Nevada",Washoe County,Nevada,2008
@@ -6687,7 +6687,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 33,009,89886,,60588,920,"Grafton County, New Hampshire",Grafton County,New Hampshire,2019
 33,009,92201,,80866,1021,"Grafton County, New Hampshire",Grafton County,New Hampshire,2021
 33,009,91126,,82045,1071,"Grafton County, New Hampshire",Grafton County,New Hampshire,2022
-33,011,393207,211.0,60913,835,"Hillsborough County, New Hampshire",Hillsborough County,New Hampshire,2005
+33,011,393207,8747.0,60913,835,"Hillsborough County, New Hampshire",Hillsborough County,New Hampshire,2005
 33,011,402789,8716.0,66382,840,"Hillsborough County, New Hampshire",Hillsborough County,New Hampshire,2006
 33,011,402302,9969.0,67667,868,"Hillsborough County, New Hampshire",Hillsborough County,New Hampshire,2007
 33,011,402042,11447.0,69223,877,"Hillsborough County, New Hampshire",Hillsborough County,New Hampshire,2008
@@ -6772,7 +6772,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,001,263670,4376.0,63389,964,"Atlantic County, New Jersey",Atlantic County,New Jersey,2019
 34,001,274966,13815.0,66388,1036,"Atlantic County, New Jersey",Atlantic County,New Jersey,2021
 34,001,275638,12787.0,77248,1108,"Atlantic County, New Jersey",Atlantic County,New Jersey,2022
-34,003,891237,68.0,71394,994,"Bergen County, New Jersey",Bergen County,New Jersey,2005
+34,003,891237,16480.0,71394,994,"Bergen County, New Jersey",Bergen County,New Jersey,2005
 34,003,904037,17878.0,75851,997,"Bergen County, New Jersey",Bergen County,New Jersey,2006
 34,003,895744,17912.0,80482,1114,"Bergen County, New Jersey",Bergen County,New Jersey,2007
 34,003,894840,16027.0,82361,1119,"Bergen County, New Jersey",Bergen County,New Jersey,2008
@@ -6789,7 +6789,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,003,932202,25457.0,108827,1475,"Bergen County, New Jersey",Bergen County,New Jersey,2019
 34,003,953819,117002.0,105171,1499,"Bergen County, New Jersey",Bergen County,New Jersey,2021
 34,003,952997,91604.0,114336,1644,"Bergen County, New Jersey",Bergen County,New Jersey,2022
-34,005,436706,135.0,69042,809,"Burlington County, New Jersey",Burlington County,New Jersey,2005
+34,005,436706,8687.0,69042,809,"Burlington County, New Jersey",Burlington County,New Jersey,2005
 34,005,450627,6235.0,68090,853,"Burlington County, New Jersey",Burlington County,New Jersey,2006
 34,005,446817,8067.0,73566,870,"Burlington County, New Jersey",Burlington County,New Jersey,2007
 34,005,445475,7983.0,77470,921,"Burlington County, New Jersey",Burlington County,New Jersey,2008
@@ -6806,7 +6806,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,005,445349,11363.0,88797,1245,"Burlington County, New Jersey",Burlington County,New Jersey,2019
 34,005,464269,43508.0,94397,1312,"Burlington County, New Jersey",Burlington County,New Jersey,2021
 34,005,466103,36318.0,100478,1356,"Burlington County, New Jersey",Burlington County,New Jersey,2022
-34,007,507843,49.0,53511,661,"Camden County, New Jersey",Camden County,New Jersey,2005
+34,007,507843,6264.0,53511,661,"Camden County, New Jersey",Camden County,New Jersey,2005
 34,007,517001,7529.0,56913,699,"Camden County, New Jersey",Camden County,New Jersey,2006
 34,007,513769,6524.0,59288,719,"Camden County, New Jersey",Camden County,New Jersey,2007
 34,007,517234,6406.0,61066,755,"Camden County, New Jersey",Camden County,New Jersey,2008
@@ -6857,7 +6857,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,011,149527,,54587,926,"Cumberland County, New Jersey",Cumberland County,New Jersey,2019
 34,011,153627,,58389,926,"Cumberland County, New Jersey",Cumberland County,New Jersey,2021
 34,011,151356,,60755,930,"Cumberland County, New Jersey",Cumberland County,New Jersey,2022
-34,013,769628,147.0,49460,768,"Essex County, New Jersey",Essex County,New Jersey,2005
+34,013,769628,10467.0,49460,768,"Essex County, New Jersey",Essex County,New Jersey,2005
 34,013,786147,11423.0,51879,770,"Essex County, New Jersey",Essex County,New Jersey,2006
 34,013,776087,8558.0,53499,826,"Essex County, New Jersey",Essex County,New Jersey,2007
 34,013,770675,10496.0,55105,850,"Essex County, New Jersey",Essex County,New Jersey,2008
@@ -6891,7 +6891,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,015,291636,8203.0,89447,1094,"Gloucester County, New Jersey",Gloucester County,New Jersey,2019
 34,015,304477,26132.0,94412,1108,"Gloucester County, New Jersey",Gloucester County,New Jersey,2021
 34,015,306601,20737.0,98301,1192,"Gloucester County, New Jersey",Gloucester County,New Jersey,2022
-34,017,594071,122.0,44440,822,"Hudson County, New Jersey",Hudson County,New Jersey,2005
+34,017,594071,3950.0,44440,822,"Hudson County, New Jersey",Hudson County,New Jersey,2005
 34,017,601146,6112.0,49557,851,"Hudson County, New Jersey",Hudson County,New Jersey,2006
 34,017,598160,6862.0,51656,896,"Hudson County, New Jersey",Hudson County,New Jersey,2007
 34,017,595419,6873.0,55465,918,"Hudson County, New Jersey",Hudson County,New Jersey,2008
@@ -6925,7 +6925,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,019,124371,5420.0,116155,1326,"Hunterdon County, New Jersey",Hunterdon County,New Jersey,2019
 34,019,129924,,121982,1385,"Hunterdon County, New Jersey",Hunterdon County,New Jersey,2021
 34,019,129777,,142518,1483,"Hunterdon County, New Jersey",Hunterdon County,New Jersey,2022
-34,021,345118,85.0,64657,809,"Mercer County, New Jersey",Mercer County,New Jersey,2005
+34,021,345118,5316.0,64657,809,"Mercer County, New Jersey",Mercer County,New Jersey,2005
 34,021,367605,5910.0,65305,867,"Mercer County, New Jersey",Mercer County,New Jersey,2006
 34,021,365449,6108.0,70258,864,"Mercer County, New Jersey",Mercer County,New Jersey,2007
 34,021,364883,8205.0,73800,880,"Mercer County, New Jersey",Mercer County,New Jersey,2008
@@ -6942,7 +6942,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,021,367430,10368.0,79492,1082,"Mercer County, New Jersey",Mercer County,New Jersey,2019
 34,021,385898,49917.0,87662,1188,"Mercer County, New Jersey",Mercer County,New Jersey,2021
 34,021,380688,34925.0,95668,1282,"Mercer County, New Jersey",Mercer County,New Jersey,2022
-34,023,768696,266.0,68080,936,"Middlesex County, New Jersey",Middlesex County,New Jersey,2005
+34,023,768696,8319.0,68080,936,"Middlesex County, New Jersey",Middlesex County,New Jersey,2005
 34,023,786971,10632.0,72669,966,"Middlesex County, New Jersey",Middlesex County,New Jersey,2006
 34,023,788629,11741.0,75393,1019,"Middlesex County, New Jersey",Middlesex County,New Jersey,2007
 34,023,789102,13931.0,77179,1055,"Middlesex County, New Jersey",Middlesex County,New Jersey,2008
@@ -6959,7 +6959,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,023,825062,18386.0,93418,1401,"Middlesex County, New Jersey",Middlesex County,New Jersey,2019
 34,023,860807,98824.0,99427,1503,"Middlesex County, New Jersey",Middlesex County,New Jersey,2021
 34,023,861418,74251.0,102400,1549,"Middlesex County, New Jersey",Middlesex County,New Jersey,2022
-34,025,625874,52.0,74798,892,"Monmouth County, New Jersey",Monmouth County,New Jersey,2005
+34,025,625874,11064.0,74798,892,"Monmouth County, New Jersey",Monmouth County,New Jersey,2005
 34,025,635285,10477.0,77160,923,"Monmouth County, New Jersey",Monmouth County,New Jersey,2006
 34,025,642030,12430.0,78247,954,"Monmouth County, New Jersey",Monmouth County,New Jersey,2007
 34,025,642448,12881.0,82736,1021,"Monmouth County, New Jersey",Monmouth County,New Jersey,2008
@@ -6976,7 +6976,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,025,618795,17953.0,102870,1303,"Monmouth County, New Jersey",Monmouth County,New Jersey,2019
 34,025,645354,80015.0,108000,1501,"Monmouth County, New Jersey",Monmouth County,New Jersey,2021
 34,025,644098,66575.0,118194,1472,"Monmouth County, New Jersey",Monmouth County,New Jersey,2022
-34,027,481139,76.0,84010,1007,"Morris County, New Jersey",Morris County,New Jersey,2005
+34,027,481139,9843.0,84010,1007,"Morris County, New Jersey",Morris County,New Jersey,2005
 34,027,493160,10560.0,89587,1006,"Morris County, New Jersey",Morris County,New Jersey,2006
 34,027,488475,10977.0,94684,1045,"Morris County, New Jersey",Morris County,New Jersey,2007
 34,027,487548,10222.0,99706,1097,"Morris County, New Jersey",Morris County,New Jersey,2008
@@ -6993,7 +6993,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,027,491845,15841.0,116283,1443,"Morris County, New Jersey",Morris County,New Jersey,2019
 34,027,510981,78021.0,122962,1640,"Morris County, New Jersey",Morris County,New Jersey,2021
 34,027,511151,64125.0,131795,1623,"Morris County, New Jersey",Morris County,New Jersey,2022
-34,029,550447,262.0,52065,895,"Ocean County, New Jersey",Ocean County,New Jersey,2005
+34,029,550447,7892.0,52065,895,"Ocean County, New Jersey",Ocean County,New Jersey,2005
 34,029,562335,7998.0,54820,977,"Ocean County, New Jersey",Ocean County,New Jersey,2006
 34,029,565493,7795.0,56281,1005,"Ocean County, New Jersey",Ocean County,New Jersey,2007
 34,029,569111,8276.0,59356,1039,"Ocean County, New Jersey",Ocean County,New Jersey,2008
@@ -7010,7 +7010,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,029,607186,13506.0,76093,1264,"Ocean County, New Jersey",Ocean County,New Jersey,2019
 34,029,648998,38637.0,75719,1367,"Ocean County, New Jersey",Ocean County,New Jersey,2021
 34,029,655735,34214.0,81101,1418,"Ocean County, New Jersey",Ocean County,New Jersey,2022
-34,031,487756,276.0,51016,836,"Passaic County, New Jersey",Passaic County,New Jersey,2005
+34,031,487756,3351.0,51016,836,"Passaic County, New Jersey",Passaic County,New Jersey,2005
 34,031,497093,4859.0,49940,862,"Passaic County, New Jersey",Passaic County,New Jersey,2006
 34,031,492115,5924.0,54551,898,"Passaic County, New Jersey",Passaic County,New Jersey,2007
 34,031,490948,4876.0,56816,898,"Passaic County, New Jersey",Passaic County,New Jersey,2008
@@ -7044,7 +7044,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,033,62385,,68531,806,"Salem County, New Jersey",Salem County,New Jersey,2019
 34,033,65046,,69886,915,"Salem County, New Jersey",Salem County,New Jersey,2021
 34,033,65117,,77898,1035,"Salem County, New Jersey",Salem County,New Jersey,2022
-34,035,314960,195.0,88532,961,"Somerset County, New Jersey",Somerset County,New Jersey,2005
+34,035,314960,5842.0,88532,961,"Somerset County, New Jersey",Somerset County,New Jersey,2005
 34,035,324186,5456.0,91688,1033,"Somerset County, New Jersey",Somerset County,New Jersey,2006
 34,035,323552,6814.0,97658,1112,"Somerset County, New Jersey",Somerset County,New Jersey,2007
 34,035,324563,6954.0,100608,1204,"Somerset County, New Jersey",Somerset County,New Jersey,2008
@@ -7078,7 +7078,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,037,140488,,101130,1151,"Sussex County, New Jersey",Sussex County,New Jersey,2019
 34,037,145543,,99904,1226,"Sussex County, New Jersey",Sussex County,New Jersey,2021
 34,037,146084,,113640,1359,"Sussex County, New Jersey",Sussex County,New Jersey,2022
-34,039,523649,43.0,62591,846,"Union County, New Jersey",Union County,New Jersey,2005
+34,039,523649,5581.0,62591,846,"Union County, New Jersey",Union County,New Jersey,2005
 34,039,531088,6768.0,62260,897,"Union County, New Jersey",Union County,New Jersey,2006
 34,039,524658,6541.0,61553,899,"Union County, New Jersey",Union County,New Jersey,2007
 34,039,523249,7653.0,67540,922,"Union County, New Jersey",Union County,New Jersey,2008
@@ -7112,7 +7112,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 34,041,105267,,84479,1081,"Warren County, New Jersey",Warren County,New Jersey,2019
 34,041,110731,,81159,1073,"Warren County, New Jersey",Warren County,New Jersey,2021
 34,041,110926,,98867,1225,"Warren County, New Jersey",Warren County,New Jersey,2022
-35,001,592570,1321.0,42540,553,"Bernalillo County, New Mexico",Bernalillo County,New Mexico,2005
+35,001,592570,10408.0,42540,553,"Bernalillo County, New Mexico",Bernalillo County,New Mexico,2005
 35,001,615099,9750.0,43717,572,"Bernalillo County, New Mexico",Bernalillo County,New Mexico,2006
 35,001,629292,11342.0,44952,599,"Bernalillo County, New Mexico",Bernalillo County,New Mexico,2007
 35,001,635139,12762.0,46829,619,"Bernalillo County, New Mexico",Bernalillo County,New Mexico,2008
@@ -7219,7 +7219,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 35,045,123958,,44321,651,"San Juan County, New Mexico",San Juan County,New Mexico,2019
 35,045,120993,,47819,706,"San Juan County, New Mexico",San Juan County,New Mexico,2021
 35,045,120418,,50264,647,"San Juan County, New Mexico",San Juan County,New Mexico,2022
-35,049,137758,38.0,45304,716,"Santa Fe County, New Mexico",Santa Fe County,New Mexico,2005
+35,049,137758,4704.0,45304,716,"Santa Fe County, New Mexico",Santa Fe County,New Mexico,2005
 35,049,142407,7123.0,50437,764,"Santa Fe County, New Mexico",Santa Fe County,New Mexico,2006
 35,049,142955,7146.0,51413,771,"Santa Fe County, New Mexico",Santa Fe County,New Mexico,2007
 35,049,143937,5814.0,55461,752,"Santa Fe County, New Mexico",Santa Fe County,New Mexico,2008
@@ -7270,7 +7270,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,001,305506,7256.0,69953,929,"Albany County, New York",Albany County,New York,2019
 36,001,313743,31347.0,75232,985,"Albany County, New York",Albany County,New York,2021
 36,001,315811,23046.0,77049,1035,"Albany County, New York",Albany County,New York,2022
-36,005,1309640,409.0,29228,692,"Bronx County, New York",Bronx County,New York,2005
+36,005,1309640,14695.0,29228,692,"Bronx County, New York",Bronx County,New York,2005
 36,005,1361473,15899.0,31494,728,"Bronx County, New York",Bronx County,New York,2006
 36,005,1373659,13422.0,34156,764,"Bronx County, New York",Bronx County,New York,2007
 36,005,1391903,16122.0,35033,806,"Bronx County, New York",Bronx County,New York,2008
@@ -7389,7 +7389,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,019,80485,,60198,689,"Clinton County, New York",Clinton County,New York,2019
 36,019,79596,,60285,763,"Clinton County, New York",Clinton County,New York,2021
 36,019,78753,,66152,774,"Clinton County, New York",Clinton County,New York,2022
-36,027,276889,174.0,61889,842,"Dutchess County, New York",Dutchess County,New York,2005
+36,027,276889,5541.0,61889,842,"Dutchess County, New York",Dutchess County,New York,2005
 36,027,295146,5602.0,65965,840,"Dutchess County, New York",Dutchess County,New York,2006
 36,027,292746,6596.0,66135,888,"Dutchess County, New York",Dutchess County,New York,2007
 36,027,292878,6345.0,69617,891,"Dutchess County, New York",Dutchess County,New York,2008
@@ -7406,7 +7406,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,027,294218,11349.0,85901,1131,"Dutchess County, New York",Dutchess County,New York,2019
 36,027,297112,25563.0,88051,1207,"Dutchess County, New York",Dutchess County,New York,2021
 36,027,297545,23212.0,90889,1301,"Dutchess County, New York",Dutchess County,New York,2022
-36,029,898981,872.0,41967,468,"Erie County, New York",Erie County,New York,2005
+36,029,898981,11745.0,41967,468,"Erie County, New York",Erie County,New York,2005
 36,029,921390,10363.0,42494,481,"Erie County, New York",Erie County,New York,2006
 36,029,913338,10106.0,45076,490,"Erie County, New York",Erie County,New York,2007
 36,029,909845,13338.0,48522,507,"Erie County, New York",Erie County,New York,2008
@@ -7440,7 +7440,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,045,109834,2736.0,53917,880,"Jefferson County, New York",Jefferson County,New York,2019
 36,045,116295,,60398,889,"Jefferson County, New York",Jefferson County,New York,2021
 36,045,116637,,56423,1046,"Jefferson County, New York",Jefferson County,New York,2022
-36,047,2446016,770.0,37332,788,"Kings County, New York",Kings County,New York,2005
+36,047,2446016,32984.0,37332,788,"Kings County, New York",Kings County,New York,2005
 36,047,2508820,34513.0,40393,817,"Kings County, New York",Kings County,New York,2006
 36,047,2528050,37860.0,41406,856,"Kings County, New York",Kings County,New York,2007
 36,047,2556598,39685.0,43378,896,"Kings County, New York",Kings County,New York,2008
@@ -7474,7 +7474,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,053,70941,,62918,733,"Madison County, New York",Madison County,New York,2019
 36,053,67658,,67495,670,"Madison County, New York",Madison County,New York,2021
 36,053,67097,,69986,763,"Madison County, New York",Madison County,New York,2022
-36,055,704993,351.0,45748,594,"Monroe County, New York",Monroe County,New York,2005
+36,055,704993,7925.0,45748,594,"Monroe County, New York",Monroe County,New York,2005
 36,055,730807,9353.0,47339,602,"Monroe County, New York",Monroe County,New York,2006
 36,055,729681,10047.0,49967,620,"Monroe County, New York",Monroe County,New York,2007
 36,055,732762,11625.0,51762,635,"Monroe County, New York",Monroe County,New York,2008
@@ -7491,7 +7491,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,055,741770,16929.0,62103,818,"Monroe County, New York",Monroe County,New York,2019
 36,055,755160,60546.0,65957,888,"Monroe County, New York",Monroe County,New York,2021
 36,055,752035,56033.0,67923,951,"Monroe County, New York",Monroe County,New York,2022
-36,059,1310076,48.0,80293,1140,"Nassau County, New York",Nassau County,New York,2005
+36,059,1310076,17642.0,80293,1140,"Nassau County, New York",Nassau County,New York,2005
 36,059,1325662,19876.0,85994,1203,"Nassau County, New York",Nassau County,New York,2006
 36,059,1306533,21074.0,89782,1207,"Nassau County, New York",Nassau County,New York,2007
 36,059,1351625,24843.0,95282,1262,"Nassau County, New York",Nassau County,New York,2008
@@ -7508,7 +7508,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,059,1356924,35013.0,118453,1685,"Nassau County, New York",Nassau County,New York,2019
 36,059,1390907,136127.0,125696,1852,"Nassau County, New York",Nassau County,New York,2021
 36,059,1383726,98968.0,136984,1846,"Nassau County, New York",Nassau County,New York,2022
-36,061,1529774,1230.0,55973,949,"New York County, New York",New York County,New York,2005
+36,061,1529774,46506.0,55973,949,"New York County, New York",New York County,New York,2005
 36,061,1611581,55823.0,60017,1010,"New York County, New York",New York County,New York,2006
 36,061,1620867,56636.0,64217,1055,"New York County, New York",New York County,New York,2007
 36,061,1634795,56832.0,69017,1112,"New York County, New York",New York County,New York,2008
@@ -7559,7 +7559,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,065,228671,4665.0,57391,634,"Oneida County, New York",Oneida County,New York,2019
 36,065,230274,11735.0,60215,682,"Oneida County, New York",Oneida County,New York,2021
 36,065,228846,12205.0,64316,731,"Oneida County, New York",Oneida County,New York,2022
-36,067,444328,110.0,45239,535,"Onondaga County, New York",Onondaga County,New York,2005
+36,067,444328,5285.0,45239,535,"Onondaga County, New York",Onondaga County,New York,2005
 36,067,456777,5795.0,46060,544,"Onondaga County, New York",Onondaga County,New York,2006
 36,067,454010,7143.0,48822,568,"Onondaga County, New York",Onondaga County,New York,2007
 36,067,452633,5229.0,50640,582,"Onondaga County, New York",Onondaga County,New York,2008
@@ -7593,7 +7593,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,069,109777,,66568,766,"Ontario County, New York",Ontario County,New York,2019
 36,069,112508,7049.0,77972,894,"Ontario County, New York",Ontario County,New York,2021
 36,069,112707,,76424,838,"Ontario County, New York",Ontario County,New York,2022
-36,071,359089,0.0,62951,799,"Orange County, New York",Orange County,New York,2005
+36,071,359089,4147.0,62951,799,"Orange County, New York",Orange County,New York,2005
 36,071,376392,9017.0,64947,796,"Orange County, New York",Orange County,New York,2006
 36,071,377169,9108.0,65775,848,"Orange County, New York",Orange County,New York,2007
 36,071,379647,8414.0,71674,881,"Orange County, New York",Orange County,New York,2008
@@ -7644,7 +7644,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,079,98320,,106204,1599,"Putnam County, New York",Putnam County,New York,2019
 36,079,97936,7426.0,106871,1532,"Putnam County, New York",Putnam County,New York,2021
 36,079,98045,,111102,1681,"Putnam County, New York",Putnam County,New York,2022
-36,081,2215339,291.0,48093,942,"Queens County, New York",Queens County,New York,2005
+36,081,2215339,25459.0,48093,942,"Queens County, New York",Queens County,New York,2005
 36,081,2255175,29615.0,51190,983,"Queens County, New York",Queens County,New York,2006
 36,081,2270338,26844.0,53171,1007,"Queens County, New York",Queens County,New York,2007
 36,081,2293007,28386.0,56034,1056,"Queens County, New York",Queens County,New York,2008
@@ -7678,7 +7678,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,083,158714,3208.0,71574,894,"Rensselaer County, New York",Rensselaer County,New York,2019
 36,083,160232,,75676,881,"Rensselaer County, New York",Rensselaer County,New York,2021
 36,083,159853,11590.0,83109,938,"Rensselaer County, New York",Rensselaer County,New York,2022
-36,085,455344,49.0,63023,864,"Richmond County, New York",Richmond County,New York,2005
+36,085,455344,3995.0,63023,864,"Richmond County, New York",Richmond County,New York,2005
 36,085,477377,6496.0,68620,879,"Richmond County, New York",Richmond County,New York,2006
 36,085,481613,4128.0,66985,928,"Richmond County, New York",Richmond County,New York,2007
 36,085,487407,6190.0,73882,938,"Richmond County, New York",Richmond County,New York,2008
@@ -7695,7 +7695,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,085,476143,7668.0,89821,1170,"Richmond County, New York",Richmond County,New York,2019
 36,085,493494,35081.0,86054,1306,"Richmond County, New York",Richmond County,New York,2021
 36,085,491133,23286.0,93164,1516,"Richmond County, New York",Richmond County,New York,2022
-36,087,285088,0.0,78649,960,"Rockland County, New York",Rockland County,New York,2005
+36,087,285088,5013.0,78649,960,"Rockland County, New York",Rockland County,New York,2005
 36,087,294965,6509.0,76710,1042,"Rockland County, New York",Rockland County,New York,2006
 36,087,296483,4580.0,81809,1094,"Rockland County, New York",Rockland County,New York,2007
 36,087,298545,6242.0,85363,1142,"Rockland County, New York",Rockland County,New York,2008
@@ -7780,7 +7780,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,101,95379,2617.0,52951,589,"Steuben County, New York",Steuben County,New York,2019
 36,101,92948,,57378,673,"Steuben County, New York",Steuben County,New York,2021
 36,101,92599,3450.0,60204,710,"Steuben County, New York",Steuben County,New York,2022
-36,103,1444642,399.0,77109,1153,"Suffolk County, New York",Suffolk County,New York,2005
+36,103,1444642,22475.0,77109,1153,"Suffolk County, New York",Suffolk County,New York,2005
 36,103,1469715,22326.0,76847,1175,"Suffolk County, New York",Suffolk County,New York,2006
 36,103,1453229,24369.0,83447,1219,"Suffolk County, New York",Suffolk County,New York,2007
 36,103,1512224,27576.0,85560,1271,"Suffolk County, New York",Suffolk County,New York,2008
@@ -7831,7 +7831,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,109,102180,3755.0,58626,1159,"Tompkins County, New York",Tompkins County,New York,2019
 36,109,105162,11332.0,66441,1203,"Tompkins County, New York",Tompkins County,New York,2021
 36,109,104777,7870.0,74034,1074,"Tompkins County, New York",Tompkins County,New York,2022
-36,111,170938,58.0,50837,732,"Ulster County, New York",Ulster County,New York,2005
+36,111,170938,4525.0,50837,732,"Ulster County, New York",Ulster County,New York,2005
 36,111,182742,6289.0,52725,738,"Ulster County, New York",Ulster County,New York,2006
 36,111,181860,4781.0,57085,747,"Ulster County, New York",Ulster County,New York,2007
 36,111,181670,6073.0,54854,785,"Ulster County, New York",Ulster County,New York,2008
@@ -7882,7 +7882,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 36,117,89918,,61730,656,"Wayne County, New York",Wayne County,New York,2019
 36,117,90923,,64993,652,"Wayne County, New York",Wayne County,New York,2021
 36,117,91125,,71079,719,"Wayne County, New York",Wayne County,New York,2022
-36,119,915916,135.0,71800,970,"Westchester County, New York",Westchester County,New York,2005
+36,119,915916,24560.0,71800,970,"Westchester County, New York",Westchester County,New York,2005
 36,119,949355,21988.0,75472,1018,"Westchester County, New York",Westchester County,New York,2006
 36,119,951325,20687.0,77220,1059,"Westchester County, New York",Westchester County,New York,2007
 36,119,953943,22771.0,79448,1091,"Westchester County, New York",Westchester County,New York,2008
@@ -8164,7 +8164,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 37,071,224529,3738.0,56595,632,"Gaston County, North Carolina",Gaston County,North Carolina,2019
 37,071,230856,,54734,787,"Gaston County, North Carolina",Gaston County,North Carolina,2021
 37,071,234215,14943.0,65615,898,"Gaston County, North Carolina",Gaston County,North Carolina,2022
-37,081,429603,185.0,42320,547,"Guilford County, North Carolina",Guilford County,North Carolina,2005
+37,081,429603,7802.0,42320,547,"Guilford County, North Carolina",Guilford County,North Carolina,2005
 37,081,451905,5898.0,43892,571,"Guilford County, North Carolina",Guilford County,North Carolina,2006
 37,081,465931,8871.0,45922,574,"Guilford County, North Carolina",Guilford County,North Carolina,2007
 37,081,472216,7689.0,47553,577,"Guilford County, North Carolina",Guilford County,North Carolina,2008
@@ -8267,7 +8267,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 37,109,86111,,71514,599,"Lincoln County, North Carolina",Lincoln County,North Carolina,2019
 37,109,89670,,74201,666,"Lincoln County, North Carolina",Lincoln County,North Carolina,2021
 37,109,93095,,79003,764,"Lincoln County, North Carolina",Lincoln County,North Carolina,2022
-37,119,780618,125.0,50215,617,"Mecklenburg County, North Carolina",Mecklenburg County,North Carolina,2005
+37,119,780618,16246.0,50215,617,"Mecklenburg County, North Carolina",Mecklenburg County,North Carolina,2005
 37,119,827445,18327.0,51945,639,"Mecklenburg County, North Carolina",Mecklenburg County,North Carolina,2006
 37,119,867067,19222.0,55890,678,"Mecklenburg County, North Carolina",Mecklenburg County,North Carolina,2007
 37,119,890515,25724.0,57033,690,"Mecklenburg County, North Carolina",Mecklenburg County,North Carolina,2008
@@ -8489,7 +8489,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 37,179,239859,10071.0,85985,836,"Union County, North Carolina",Union County,North Carolina,2019
 37,179,243648,,86606,921,"Union County, North Carolina",Union County,North Carolina,2021
 37,179,249070,24395.0,94168,1317,"Union County, North Carolina",Union County,North Carolina,2022
-37,183,730138,567.0,57284,630,"Wake County, North Carolina",Wake County,North Carolina,2005
+37,183,730138,19259.0,57284,630,"Wake County, North Carolina",Wake County,North Carolina,2005
 37,183,786522,21606.0,60903,640,"Wake County, North Carolina",Wake County,North Carolina,2006
 37,183,832970,26071.0,61554,673,"Wake County, North Carolina",Wake County,North Carolina,2007
 37,183,866410,26293.0,65180,707,"Wake County, North Carolina",Wake County,North Carolina,2008
@@ -8736,7 +8736,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 39,029,101883,,53542,485,"Columbiana County, Ohio",Columbiana County,Ohio,2019
 39,029,101310,,49265,504,"Columbiana County, Ohio",Columbiana County,Ohio,2021
 39,029,100511,,53095,529,"Columbiana County, Ohio",Columbiana County,Ohio,2022
-39,035,1305166,486.0,39752,533,"Cuyahoga County, Ohio",Cuyahoga County,Ohio,2005
+39,035,1305166,14840.0,39752,533,"Cuyahoga County, Ohio",Cuyahoga County,Ohio,2005
 39,035,1314241,15629.0,41522,544,"Cuyahoga County, Ohio",Cuyahoga County,Ohio,2006
 39,035,1295958,18239.0,44358,560,"Cuyahoga County, Ohio",Cuyahoga County,Ohio,2007
 39,035,1283925,17640.0,44199,569,"Cuyahoga County, Ohio",Cuyahoga County,Ohio,2008
@@ -8804,7 +8804,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 39,045,157574,,71469,671,"Fairfield County, Ohio",Fairfield County,Ohio,2019
 39,045,161064,,81226,796,"Fairfield County, Ohio",Fairfield County,Ohio,2021
 39,045,162898,,82486,806,"Fairfield County, Ohio",Fairfield County,Ohio,2022
-39,049,1068080,605.0,45410,568,"Franklin County, Ohio",Franklin County,Ohio,2005
+39,049,1068080,16830.0,45410,568,"Franklin County, Ohio",Franklin County,Ohio,2005
 39,049,1095662,19674.0,45803,571,"Franklin County, Ohio",Franklin County,Ohio,2006
 39,049,1118107,21874.0,47900,581,"Franklin County, Ohio",Franklin County,Ohio,2007
 39,049,1129067,21688.0,51238,608,"Franklin County, Ohio",Franklin County,Ohio,2008
@@ -8855,7 +8855,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 39,057,168937,3820.0,67394,723,"Greene County, Ohio",Greene County,Ohio,2019
 39,057,168412,,79271,793,"Greene County, Ohio",Greene County,Ohio,2021
 39,057,168456,,82602,866,"Greene County, Ohio",Greene County,Ohio,2022
-39,061,786982,224.0,43933,503,"Hamilton County, Ohio",Hamilton County,Ohio,2005
+39,061,786982,14596.0,43933,503,"Hamilton County, Ohio",Hamilton County,Ohio,2005
 39,061,822596,11341.0,44652,497,"Hamilton County, Ohio",Hamilton County,Ohio,2006
 39,061,842369,13818.0,48416,515,"Hamilton County, Ohio",Hamilton County,Ohio,2007
 39,061,851494,13808.0,50301,532,"Hamilton County, Ohio",Hamilton County,Ohio,2008
@@ -8940,7 +8940,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 39,093,309833,5118.0,58686,602,"Lorain County, Ohio",Lorain County,Ohio,2019
 39,093,315595,17842.0,62448,706,"Lorain County, Ohio",Lorain County,Ohio,2021
 39,093,316268,20103.0,66330,698,"Lorain County, Ohio",Lorain County,Ohio,2022
-39,095,437901,111.0,40348,459,"Lucas County, Ohio",Lucas County,Ohio,2005
+39,095,437901,4297.0,40348,459,"Lucas County, Ohio",Lucas County,Ohio,2005
 39,095,445281,5161.0,42296,473,"Lucas County, Ohio",Lucas County,Ohio,2006
 39,095,441910,4698.0,44704,477,"Lucas County, Ohio",Lucas County,Ohio,2007
 39,095,440456,4797.0,40990,490,"Lucas County, Ohio",Lucas County,Ohio,2008
@@ -9025,7 +9025,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 39,109,106987,,62451,620,"Miami County, Ohio",Miami County,Ohio,2019
 39,109,109264,,64345,621,"Miami County, Ohio",Miami County,Ohio,2021
 39,109,110247,,71457,735,"Miami County, Ohio",Miami County,Ohio,2022
-39,113,531864,212.0,41004,496,"Montgomery County, Ohio",Montgomery County,Ohio,2005
+39,113,531864,3891.0,41004,496,"Montgomery County, Ohio",Montgomery County,Ohio,2005
 39,113,542237,6358.0,41161,513,"Montgomery County, Ohio",Montgomery County,Ohio,2006
 39,113,538104,6487.0,43939,499,"Montgomery County, Ohio",Montgomery County,Ohio,2007
 39,113,534626,7232.0,45047,519,"Montgomery County, Ohio",Montgomery County,Ohio,2008
@@ -9332,7 +9332,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 40,101,67997,,42450,539,"Muskogee County, Oklahoma",Muskogee County,Oklahoma,2019
 40,101,66146,,43437,531,"Muskogee County, Oklahoma",Muskogee County,Oklahoma,2021
 40,101,66354,,54070,622,"Muskogee County, Oklahoma",Muskogee County,Oklahoma,2022
-40,109,666904,764.0,37270,457,"Oklahoma County, Oklahoma",Oklahoma County,Oklahoma,2005
+40,109,666904,9064.0,37270,457,"Oklahoma County, Oklahoma",Oklahoma County,Oklahoma,2005
 40,109,691266,11901.0,38977,475,"Oklahoma County, Oklahoma",Oklahoma County,Oklahoma,2006
 40,109,701807,12354.0,41444,490,"Oklahoma County, Oklahoma",Oklahoma County,Oklahoma,2007
 40,109,706617,8869.0,43864,509,"Oklahoma County, Oklahoma",Oklahoma County,Oklahoma,2008
@@ -9400,7 +9400,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 40,131,92459,,66132,702,"Rogers County, Oklahoma",Rogers County,Oklahoma,2019
 40,131,96695,4381.0,68777,692,"Rogers County, Oklahoma",Rogers County,Oklahoma,2021
 40,131,98836,,71817,741,"Rogers County, Oklahoma",Rogers County,Oklahoma,2022
-40,143,560431,1047.0,40863,505,"Tulsa County, Oklahoma",Tulsa County,Oklahoma,2005
+40,143,560431,7972.0,40863,505,"Tulsa County, Oklahoma",Tulsa County,Oklahoma,2005
 40,143,577795,11270.0,41548,500,"Tulsa County, Oklahoma",Tulsa County,Oklahoma,2006
 40,143,585068,9978.0,45003,510,"Tulsa County, Oklahoma",Tulsa County,Oklahoma,2007
 40,143,591982,10520.0,46484,528,"Tulsa County, Oklahoma",Tulsa County,Oklahoma,2008
@@ -9552,7 +9552,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 41,035,68238,,56348,693,"Klamath County, Oregon",Klamath County,Oregon,2019
 41,035,70164,,46721,768,"Klamath County, Oregon",Klamath County,Oregon,2021
 41,035,70212,,53923,718,"Klamath County, Oregon",Klamath County,Oregon,2022
-41,039,327762,384.0,37290,595,"Lane County, Oregon",Lane County,Oregon,2005
+41,039,327762,7056.0,37290,595,"Lane County, Oregon",Lane County,Oregon,2005
 41,039,337870,7015.0,42127,614,"Lane County, Oregon",Lane County,Oregon,2006
 41,039,343591,9235.0,43111,613,"Lane County, Oregon",Lane County,Oregon,2007
 41,039,346560,7588.0,43343,667,"Lane County, Oregon",Lane County,Oregon,2008
@@ -9586,7 +9586,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 41,043,129749,,61488,886,"Linn County, Oregon",Linn County,Oregon,2019
 41,043,129839,,65196,969,"Linn County, Oregon",Linn County,Oregon,2021
 41,043,130467,6876.0,67009,1003,"Linn County, Oregon",Linn County,Oregon,2022
-41,047,292984,783.0,43137,545,"Marion County, Oregon",Marion County,Oregon,2005
+41,047,292984,5275.0,43137,545,"Marion County, Oregon",Marion County,Oregon,2005
 41,047,311304,6752.0,45270,564,"Marion County, Oregon",Marion County,Oregon,2006
 41,047,311449,6093.0,42910,574,"Marion County, Oregon",Marion County,Oregon,2007
 41,047,314606,6595.0,47204,595,"Marion County, Oregon",Marion County,Oregon,2008
@@ -9603,7 +9603,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 41,047,347818,10320.0,64306,925,"Marion County, Oregon",Marion County,Oregon,2019
 41,047,347119,24507.0,64406,1003,"Marion County, Oregon",Marion County,Oregon,2021
 41,047,346703,20518.0,71022,1127,"Marion County, Oregon",Marion County,Oregon,2022
-41,051,656146,1038.0,42773,626,"Multnomah County, Oregon",Multnomah County,Oregon,2005
+41,051,656146,16440.0,42773,626,"Multnomah County, Oregon",Multnomah County,Oregon,2005
 41,051,681454,19879.0,45507,645,"Multnomah County, Oregon",Multnomah County,Oregon,2006
 41,051,701986,19593.0,48883,685,"Multnomah County, Oregon",Multnomah County,Oregon,2007
 41,051,714567,22591.0,51393,693,"Multnomah County, Oregon",Multnomah County,Oregon,2008
@@ -9654,7 +9654,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 41,059,77950,,60425,720,"Umatilla County, Oregon",Umatilla County,Oregon,2019
 41,059,79988,,58329,699,"Umatilla County, Oregon",Umatilla County,Oregon,2021
 41,059,80215,,77006,791,"Umatilla County, Oregon",Umatilla County,Oregon,2022
-41,067,495597,640.0,53431,671,"Washington County, Oregon",Washington County,Oregon,2005
+41,067,495597,12156.0,53431,671,"Washington County, Oregon",Washington County,Oregon,2005
 41,067,514269,15999.0,59481,693,"Washington County, Oregon",Washington County,Oregon,2006
 41,067,522514,12898.0,61628,734,"Washington County, Oregon",Washington County,Oregon,2007
 41,067,529216,13578.0,65625,797,"Washington County, Oregon",Washington County,Oregon,2008
@@ -9705,7 +9705,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,001,103009,2345.0,67715,741,"Adams County, Pennsylvania",Adams County,Pennsylvania,2019
 42,001,104127,,72985,752,"Adams County, Pennsylvania",Adams County,Pennsylvania,2021
 42,001,106027,,76727,824,"Adams County, Pennsylvania",Adams County,Pennsylvania,2022
-42,003,1195503,857.0,41562,510,"Allegheny County, Pennsylvania",Allegheny County,Pennsylvania,2005
+42,003,1195503,16041.0,41562,510,"Allegheny County, Pennsylvania",Allegheny County,Pennsylvania,2005
 42,003,1223411,16820.0,43691,513,"Allegheny County, Pennsylvania",Allegheny County,Pennsylvania,2006
 42,003,1219210,18236.0,46401,533,"Allegheny County, Pennsylvania",Allegheny County,Pennsylvania,2007
 42,003,1215103,20796.0,48798,546,"Allegheny County, Pennsylvania",Allegheny County,Pennsylvania,2008
@@ -9756,7 +9756,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,007,163929,3409.0,60672,560,"Beaver County, Pennsylvania",Beaver County,Pennsylvania,2019
 42,007,166624,13241.0,65003,594,"Beaver County, Pennsylvania",Beaver County,Pennsylvania,2021
 42,007,165677,10321.0,67350,646,"Beaver County, Pennsylvania",Beaver County,Pennsylvania,2022
-42,011,382917,204.0,50871,531,"Berks County, Pennsylvania",Berks County,Pennsylvania,2005
+42,011,382917,5122.0,50871,531,"Berks County, Pennsylvania",Berks County,Pennsylvania,2005
 42,011,401149,6489.0,50039,575,"Berks County, Pennsylvania",Berks County,Pennsylvania,2006
 42,011,401955,8375.0,52787,579,"Berks County, Pennsylvania",Berks County,Pennsylvania,2007
 42,011,403595,7416.0,54616,587,"Berks County, Pennsylvania",Berks County,Pennsylvania,2008
@@ -9790,7 +9790,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,013,121829,,51004,586,"Blair County, Pennsylvania",Blair County,Pennsylvania,2019
 42,013,121767,4145.0,57361,576,"Blair County, Pennsylvania",Blair County,Pennsylvania,2021
 42,013,121032,,58022,651,"Blair County, Pennsylvania",Blair County,Pennsylvania,2022
-42,017,612210,213.0,64346,793,"Bucks County, Pennsylvania",Bucks County,Pennsylvania,2005
+42,017,612210,10395.0,64346,793,"Bucks County, Pennsylvania",Bucks County,Pennsylvania,2005
 42,017,623205,10959.0,70406,841,"Bucks County, Pennsylvania",Bucks County,Pennsylvania,2006
 42,017,621144,12318.0,70655,854,"Bucks County, Pennsylvania",Bucks County,Pennsylvania,2007
 42,017,621643,15587.0,75958,911,"Bucks County, Pennsylvania",Bucks County,Pennsylvania,2008
@@ -9870,7 +9870,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,027,162385,5308.0,60706,934,"Centre County, Pennsylvania",Centre County,Pennsylvania,2019
 42,027,157527,14244.0,66789,906,"Centre County, Pennsylvania",Centre County,Pennsylvania,2021
 42,027,158425,10628.0,66602,1041,"Centre County, Pennsylvania",Centre County,Pennsylvania,2022
-42,029,458141,228.0,72690,834,"Chester County, Pennsylvania",Chester County,Pennsylvania,2005
+42,029,458141,10950.0,72690,834,"Chester County, Pennsylvania",Chester County,Pennsylvania,2005
 42,029,482112,12561.0,77570,819,"Chester County, Pennsylvania",Chester County,Pennsylvania,2006
 42,029,486345,13664.0,83146,891,"Chester County, Pennsylvania",Chester County,Pennsylvania,2007
 42,029,491489,12683.0,85731,924,"Chester County, Pennsylvania",Chester County,Pennsylvania,2008
@@ -9955,7 +9955,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,043,278299,7741.0,60733,816,"Dauphin County, Pennsylvania",Dauphin County,Pennsylvania,2019
 42,043,287400,26627.0,66454,898,"Dauphin County, Pennsylvania",Dauphin County,Pennsylvania,2021
 42,043,288800,24181.0,67424,911,"Dauphin County, Pennsylvania",Dauphin County,Pennsylvania,2022
-42,045,531609,378.0,55630,681,"Delaware County, Pennsylvania",Delaware County,Pennsylvania,2005
+42,045,531609,8010.0,55630,681,"Delaware County, Pennsylvania",Delaware County,Pennsylvania,2005
 42,045,555996,7171.0,55005,688,"Delaware County, Pennsylvania",Delaware County,Pennsylvania,2006
 42,045,554399,9403.0,60232,734,"Delaware County, Pennsylvania",Delaware County,Pennsylvania,2007
 42,045,553619,7880.0,65025,777,"Delaware County, Pennsylvania",Delaware County,Pennsylvania,2008
@@ -10040,7 +10040,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,063,84073,1172.0,51914,525,"Indiana County, Pennsylvania",Indiana County,Pennsylvania,2019
 42,063,82886,,52023,575,"Indiana County, Pennsylvania",Indiana County,Pennsylvania,2021
 42,063,82957,,52361,599,"Indiana County, Pennsylvania",Indiana County,Pennsylvania,2022
-42,069,201201,19.0,37153,446,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2005
+42,069,201201,2666.0,37153,446,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2005
 42,069,209728,2419.0,38915,440,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2006
 42,069,209330,2148.0,41598,475,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2007
 42,069,209408,2828.0,41849,488,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2008
@@ -10057,7 +10057,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,069,209674,7196.0,53826,650,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2019
 42,069,215663,11675.0,62136,685,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2021
 42,069,215615,10221.0,61372,742,"Lackawanna County, Pennsylvania",Lackawanna County,Pennsylvania,2022
-42,071,476155,150.0,49282,595,"Lancaster County, Pennsylvania",Lancaster County,Pennsylvania,2005
+42,071,476155,10800.0,49282,595,"Lancaster County, Pennsylvania",Lancaster County,Pennsylvania,2005
 42,071,494486,12106.0,52064,587,"Lancaster County, Pennsylvania",Lancaster County,Pennsylvania,2006
 42,071,498465,13503.0,52764,605,"Lancaster County, Pennsylvania",Lancaster County,Pennsylvania,2007
 42,071,502370,11908.0,55850,650,"Lancaster County, Pennsylvania",Lancaster County,Pennsylvania,2008
@@ -10125,7 +10125,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,077,369318,7315.0,65667,955,"Lehigh County, Pennsylvania",Lehigh County,Pennsylvania,2019
 42,077,375539,31941.0,68738,1024,"Lehigh County, Pennsylvania",Lehigh County,Pennsylvania,2021
 42,077,376317,23170.0,72530,1071,"Lehigh County, Pennsylvania",Lehigh County,Pennsylvania,2022
-42,079,299279,27.0,37240,415,"Luzerne County, Pennsylvania",Luzerne County,Pennsylvania,2005
+42,079,299279,3321.0,37240,415,"Luzerne County, Pennsylvania",Luzerne County,Pennsylvania,2005
 42,079,313020,2769.0,39687,421,"Luzerne County, Pennsylvania",Luzerne County,Pennsylvania,2006
 42,079,312265,3394.0,41804,449,"Luzerne County, Pennsylvania",Luzerne County,Pennsylvania,2007
 42,079,311983,2945.0,41820,442,"Luzerne County, Pennsylvania",Luzerne County,Pennsylvania,2008
@@ -10193,7 +10193,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,089,170271,,62413,956,"Monroe County, Pennsylvania",Monroe County,Pennsylvania,2019
 42,089,169273,,78575,963,"Monroe County, Pennsylvania",Monroe County,Pennsylvania,2021
 42,089,167198,,81580,999,"Monroe County, Pennsylvania",Monroe County,Pennsylvania,2022
-42,091,753046,574.0,68210,796,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2005
+42,091,753046,13395.0,68210,796,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2005
 42,091,775688,14726.0,71180,843,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2006
 42,091,776172,15633.0,74000,837,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2007
 42,091,778048,15294.0,78092,865,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2008
@@ -10210,7 +10210,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,091,830915,35022.0,92302,1194,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2019
 42,091,860578,127204.0,102896,1295,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2021
 42,091,864683,105903.0,106811,1394,"Montgomery County, Pennsylvania",Montgomery County,Pennsylvania,2022
-42,095,276878,63.0,53696,591,"Northampton County, Pennsylvania",Northampton County,Pennsylvania,2005
+42,095,276878,4632.0,53696,591,"Northampton County, Pennsylvania",Northampton County,Pennsylvania,2005
 42,095,291306,4596.0,53431,629,"Northampton County, Pennsylvania",Northampton County,Pennsylvania,2006
 42,095,293522,5346.0,58383,674,"Northampton County, Pennsylvania",Northampton County,Pennsylvania,2007
 42,095,294787,5732.0,60171,685,"Northampton County, Pennsylvania",Northampton County,Pennsylvania,2008
@@ -10244,7 +10244,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,097,90843,,47349,531,"Northumberland County, Pennsylvania",Northumberland County,Pennsylvania,2019
 42,097,91266,,50751,517,"Northumberland County, Pennsylvania",Northumberland County,Pennsylvania,2021
 42,097,90133,,58987,573,"Northumberland County, Pennsylvania",Northumberland County,Pennsylvania,2022
-42,101,1406415,256.0,32573,580,"Philadelphia County, Pennsylvania",Philadelphia County,Pennsylvania,2005
+42,101,1406415,14159.0,32573,580,"Philadelphia County, Pennsylvania",Philadelphia County,Pennsylvania,2005
 42,101,1448394,12995.0,33229,608,"Philadelphia County, Pennsylvania",Philadelphia County,Pennsylvania,2006
 42,101,1449634,16110.0,35365,621,"Philadelphia County, Pennsylvania",Philadelphia County,Pennsylvania,2007
 42,101,1447395,14102.0,36976,639,"Philadelphia County, Pennsylvania",Philadelphia County,Pennsylvania,2008
@@ -10329,7 +10329,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 42,129,348899,9128.0,59073,585,"Westmoreland County, Pennsylvania",Westmoreland County,Pennsylvania,2019
 42,129,353057,24274.0,63064,608,"Westmoreland County, Pennsylvania",Westmoreland County,Pennsylvania,2021
 42,129,352057,23427.0,71363,662,"Westmoreland County, Pennsylvania",Westmoreland County,Pennsylvania,2022
-42,133,400670,620.0,48911,514,"York County, Pennsylvania",York County,Pennsylvania,2005
+42,133,400670,4370.0,48911,514,"York County, Pennsylvania",York County,Pennsylvania,2005
 42,133,416322,6814.0,52428,542,"York County, Pennsylvania",York County,Pennsylvania,2006
 42,133,421049,8073.0,55120,578,"York County, Pennsylvania",York County,Pennsylvania,2007
 42,133,424583,5050.0,56910,586,"York County, Pennsylvania",York County,Pennsylvania,2008
@@ -10380,7 +10380,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 44,005,82082,,81652,1339,"Newport County, Rhode Island",Newport County,Rhode Island,2019
 44,005,85264,,88090,1330,"Newport County, Rhode Island",Newport County,Rhode Island,2021
 44,005,84481,,93334,1351,"Newport County, Rhode Island",Newport County,Rhode Island,2022
-44,007,610539,106.0,45006,653,"Providence County, Rhode Island",Providence County,Rhode Island,2005
+44,007,610539,7620.0,45006,653,"Providence County, Rhode Island",Providence County,Rhode Island,2005
 44,007,635596,7187.0,46098,700,"Providence County, Rhode Island",Providence County,Rhode Island,2006
 44,007,629435,7989.0,47700,689,"Providence County, Rhode Island",Providence County,Rhode Island,2007
 44,007,626150,9090.0,47327,701,"Providence County, Rhode Island",Providence County,Rhode Island,2008
@@ -10533,7 +10533,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 45,041,138293,,50082,588,"Florence County, South Carolina",Florence County,South Carolina,2019
 45,041,136504,,51860,679,"Florence County, South Carolina",Florence County,South Carolina,2021
 45,041,136721,,49527,603,"Florence County, South Carolina",Florence County,South Carolina,2022
-45,045,396399,96.0,42449,493,"Greenville County, South Carolina",Greenville County,South Carolina,2005
+45,045,396399,4794.0,42449,493,"Greenville County, South Carolina",Greenville County,South Carolina,2005
 45,045,417166,4732.0,41850,508,"Greenville County, South Carolina",Greenville County,South Carolina,2006
 45,045,428243,8292.0,47768,529,"Greenville County, South Carolina",Greenville County,South Carolina,2007
 45,045,438119,6699.0,47848,528,"Greenville County, South Carolina",Greenville County,South Carolina,2008
@@ -10844,7 +10844,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 47,011,108110,,52468,601,"Bradley County, Tennessee",Bradley County,Tennessee,2019
 47,011,110162,,56139,648,"Bradley County, Tennessee",Bradley County,Tennessee,2021
 47,011,110616,,63659,734,"Bradley County, Tennessee",Bradley County,Tennessee,2022
-47,037,549850,227.0,40652,568,"Davidson County, Tennessee",Davidson County,Tennessee,2005
+47,037,549850,9207.0,40652,568,"Davidson County, Tennessee",Davidson County,Tennessee,2005
 47,037,578698,9713.0,41994,600,"Davidson County, Tennessee",Davidson County,Tennessee,2006
 47,037,619626,14990.0,46359,605,"Davidson County, Tennessee",Davidson County,Tennessee,2007
 47,037,626144,14591.0,46153,635,"Davidson County, Tennessee",Davidson County,Tennessee,2008
@@ -11028,7 +11028,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 47,155,98250,,57741,708,"Sevier County, Tennessee",Sevier County,Tennessee,2019
 47,155,99517,,50239,694,"Sevier County, Tennessee",Sevier County,Tennessee,2021
 47,155,98789,,59315,859,"Sevier County, Tennessee",Sevier County,Tennessee,2022
-47,157,889955,436.0,40839,539,"Shelby County, Tennessee",Shelby County,Tennessee,2005
+47,157,889955,8109.0,40839,539,"Shelby County, Tennessee",Shelby County,Tennessee,2005
 47,157,911438,9184.0,41175,530,"Shelby County, Tennessee",Shelby County,Tennessee,2006
 47,157,910100,8459.0,44282,574,"Shelby County, Tennessee",Shelby County,Tennessee,2007
 47,157,906825,11349.0,45714,599,"Shelby County, Tennessee",Shelby County,Tennessee,2008
@@ -11181,7 +11181,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,027,362924,7265.0,54560,754,"Bell County, Texas",Bell County,Texas,2019
 48,027,379617,16018.0,58542,835,"Bell County, Texas",Bell County,Texas,2021
 48,027,388386,19886.0,62137,894,"Bell County, Texas",Bell County,Texas,2022
-48,029,1482598,1069.0,42113,548,"Bexar County, Texas",Bexar County,Texas,2005
+48,029,1482598,20494.0,42113,548,"Bexar County, Texas",Bexar County,Texas,2005
 48,029,1555592,20734.0,42860,571,"Bexar County, Texas",Bexar County,Texas,2006
 48,029,1594493,20053.0,44578,598,"Bexar County, Texas",Bexar County,Texas,2007
 48,029,1622899,23066.0,45775,617,"Bexar County, Texas",Bexar County,Texas,2008
@@ -11266,7 +11266,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,061,423163,9465.0,41123,617,"Cameron County, Texas",Cameron County,Texas,2019
 48,061,423029,13009.0,48115,651,"Cameron County, Texas",Cameron County,Texas,2021
 48,061,425208,14579.0,50649,713,"Cameron County, Texas",Cameron County,Texas,2022
-48,085,655994,666.0,70784,703,"Collin County, Texas",Collin County,Texas,2005
+48,085,655994,19918.0,70784,703,"Collin County, Texas",Collin County,Texas,2005
 48,085,698851,21891.0,74051,733,"Collin County, Texas",Collin County,Texas,2006
 48,085,730690,22939.0,79657,743,"Collin County, Texas",Collin County,Texas,2007
 48,085,762010,27294.0,81395,799,"Collin County, Texas",Collin County,Texas,2008
@@ -11317,7 +11317,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,099,75951,,53504,662,"Coryell County, Texas",Coryell County,Texas,2019
 48,099,84232,,62737,851,"Coryell County, Texas",Coryell County,Texas,2021
 48,099,85057,,65846,862,"Coryell County, Texas",Coryell County,Texas,2022
-48,113,2267080,1231.0,42598,618,"Dallas County, Texas",Dallas County,Texas,2005
+48,113,2267080,37050.0,42598,618,"Dallas County, Texas",Dallas County,Texas,2005
 48,113,2345815,35317.0,44815,623,"Dallas County, Texas",Dallas County,Texas,2006
 48,113,2366511,36479.0,46372,643,"Dallas County, Texas",Dallas County,Texas,2007
 48,113,2412827,38507.0,47085,664,"Dallas County, Texas",Dallas County,Texas,2008
@@ -11334,7 +11334,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,113,2635516,69006.0,61796,1027,"Dallas County, Texas",Dallas County,Texas,2019
 48,113,2586050,227647.0,63494,1125,"Dallas County, Texas",Dallas County,Texas,2021
 48,113,2600840,206904.0,70852,1265,"Dallas County, Texas",Dallas County,Texas,2022
-48,121,544511,1207.0,61520,641,"Denton County, Texas",Denton County,Texas,2005
+48,121,544511,13525.0,61520,641,"Denton County, Texas",Denton County,Texas,2005
 48,121,584238,14522.0,66792,669,"Denton County, Texas",Denton County,Texas,2006
 48,121,612357,17042.0,71109,709,"Denton County, Texas",Denton County,Texas,2007
 48,121,636557,16458.0,73544,704,"Denton County, Texas",Denton County,Texas,2008
@@ -11385,7 +11385,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,139,184826,,78797,981,"Ellis County, Texas",Ellis County,Texas,2019
 48,139,202678,,89799,994,"Ellis County, Texas",Ellis County,Texas,2021
 48,139,212182,,89856,1203,"Ellis County, Texas",Ellis County,Texas,2022
-48,141,708319,683.0,30968,435,"El Paso County, Texas",El Paso County,Texas,2005
+48,141,708319,5924.0,30968,435,"El Paso County, Texas",El Paso County,Texas,2005
 48,141,736310,8987.0,32111,456,"El Paso County, Texas",El Paso County,Texas,2006
 48,141,734669,7498.0,34980,472,"El Paso County, Texas",El Paso County,Texas,2007
 48,141,742062,9029.0,36485,510,"El Paso County, Texas",El Paso County,Texas,2008
@@ -11402,7 +11402,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,141,839238,10432.0,48903,720,"El Paso County, Texas",El Paso County,Texas,2019
 48,141,867947,37538.0,51044,774,"El Paso County, Texas",El Paso County,Texas,2021
 48,141,868763,33615.0,53424,830,"El Paso County, Texas",El Paso County,Texas,2022
-48,157,457225,95.0,70229,706,"Fort Bend County, Texas",Fort Bend County,Texas,2005
+48,157,457225,8802.0,70229,706,"Fort Bend County, Texas",Fort Bend County,Texas,2005
 48,157,493187,6593.0,75202,770,"Fort Bend County, Texas",Fort Bend County,Texas,2006
 48,157,509822,9345.0,77082,783,"Fort Bend County, Texas",Fort Bend County,Texas,2007
 48,157,532141,9806.0,84782,856,"Fort Bend County, Texas",Fort Bend County,Texas,2008
@@ -11419,7 +11419,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,157,811688,28393.0,101293,1357,"Fort Bend County, Texas",Fort Bend County,Texas,2019
 48,157,858527,81322.0,96468,1343,"Fort Bend County, Texas",Fort Bend County,Texas,2021
 48,157,889146,69492.0,105205,1479,"Fort Bend County, Texas",Fort Bend County,Texas,2022
-48,167,273162,127.0,44729,589,"Galveston County, Texas",Galveston County,Texas,2005
+48,167,273162,2463.0,44729,589,"Galveston County, Texas",Galveston County,Texas,2005
 48,167,283551,3536.0,52993,588,"Galveston County, Texas",Galveston County,Texas,2006
 48,167,283987,2254.0,52277,610,"Galveston County, Texas",Galveston County,Texas,2007
 48,167,288239,3077.0,59230,646,"Galveston County, Texas",Galveston County,Texas,2008
@@ -11487,7 +11487,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,187,166847,,79768,986,"Guadalupe County, Texas",Guadalupe County,Texas,2019
 48,187,177036,,80464,1018,"Guadalupe County, Texas",Guadalupe County,Texas,2021
 48,187,182760,,87030,1447,"Guadalupe County, Texas",Guadalupe County,Texas,2022
-48,201,3647656,2796.0,44002,581,"Harris County, Texas",Harris County,Texas,2005
+48,201,3647656,45593.0,44002,581,"Harris County, Texas",Harris County,Texas,2005
 48,201,3886207,55081.0,47129,603,"Harris County, Texas",Harris County,Texas,2006
 48,201,3935855,57269.0,49936,620,"Harris County, Texas",Harris County,Texas,2007
 48,201,3984349,66170.0,52377,641,"Harris County, Texas",Harris County,Texas,2008
@@ -11704,7 +11704,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,329,176832,,82558,1222,"Midland County, Texas",Midland County,Texas,2019
 48,329,167969,,82248,904,"Midland County, Texas",Midland County,Texas,2021
 48,329,171999,,76332,1128,"Midland County, Texas",Midland County,Texas,2022
-48,339,376051,244.0,59623,651,"Montgomery County, Texas",Montgomery County,Texas,2005
+48,339,376051,7593.0,59623,651,"Montgomery County, Texas",Montgomery County,Texas,2005
 48,339,398290,9109.0,60224,632,"Montgomery County, Texas",Montgomery County,Texas,2006
 48,339,412638,8770.0,63380,696,"Montgomery County, Texas",Montgomery County,Texas,2007
 48,339,429953,11190.0,65696,753,"Montgomery County, Texas",Montgomery County,Texas,2008
@@ -11721,7 +11721,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,339,607391,22000.0,88695,1073,"Montgomery County, Texas",Montgomery County,Texas,2019
 48,339,648886,51438.0,86903,1132,"Montgomery County, Texas",Montgomery County,Texas,2021
 48,339,678490,57015.0,94972,1217,"Montgomery County, Texas",Montgomery County,Texas,2022
-48,355,313465,252.0,38990,534,"Nueces County, Texas",Nueces County,Texas,2005
+48,355,313465,3543.0,38990,534,"Nueces County, Texas",Nueces County,Texas,2005
 48,355,321457,3570.0,36773,530,"Nueces County, Texas",Nueces County,Texas,2006
 48,355,321135,2971.0,40901,579,"Nueces County, Texas",Nueces County,Texas,2007
 48,355,322077,4684.0,45646,613,"Nueces County, Texas",Nueces County,Texas,2008
@@ -11858,7 +11858,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,423,241922,,68192,926,"Smith County, Texas",Smith County,Texas,2022
 48,427,66049,,33367,464,"Starr County, Texas",Starr County,Texas,2021
 48,427,65728,,33871,516,"Starr County, Texas",Starr County,Texas,2022
-48,439,1595715,1704.0,49104,580,"Tarrant County, Texas",Tarrant County,Texas,2005
+48,439,1595715,23639.0,49104,580,"Tarrant County, Texas",Tarrant County,Texas,2005
 48,439,1671295,29641.0,51813,599,"Tarrant County, Texas",Tarrant County,Texas,2006
 48,439,1717435,34260.0,53459,622,"Tarrant County, Texas",Tarrant County,Texas,2007
 48,439,1750091,33229.0,56251,639,"Tarrant County, Texas",Tarrant County,Texas,2008
@@ -11909,7 +11909,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 48,451,119200,,55988,801,"Tom Green County, Texas",Tom Green County,Texas,2019
 48,451,119411,,61649,795,"Tom Green County, Texas",Tom Green County,Texas,2021
 48,451,118892,4523.0,59853,926,"Tom Green County, Texas",Tom Green County,Texas,2022
-48,453,866349,1698.0,48026,634,"Travis County, Texas",Travis County,Texas,2005
+48,453,866349,23835.0,48026,634,"Travis County, Texas",Travis County,Texas,2005
 48,453,921006,26132.0,50777,677,"Travis County, Texas",Travis County,Texas,2006
 48,453,974365,27056.0,52937,697,"Travis County, Texas",Travis County,Texas,2007
 48,453,998543,34918.0,55467,744,"Travis County, Texas",Travis County,Texas,2008
@@ -12045,7 +12045,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 49,011,355481,12691.0,87427,1097,"Davis County, Utah",Davis County,Utah,2019
 49,011,367285,34011.0,93182,1129,"Davis County, Utah",Davis County,Utah,2021
 49,011,369948,38762.0,103563,1423,"Davis County, Utah",Davis County,Utah,2022
-49,035,933416,788.0,48068,607,"Salt Lake County, Utah",Salt Lake County,Utah,2005
+49,035,933416,19630.0,48068,607,"Salt Lake County, Utah",Salt Lake County,Utah,2005
 49,035,978701,20037.0,52879,638,"Salt Lake County, Utah",Salt Lake County,Utah,2006
 49,035,1009518,22596.0,56350,675,"Salt Lake County, Utah",Salt Lake County,Utah,2007
 49,035,1022651,23049.0,59250,725,"Salt Lake County, Utah",Salt Lake County,Utah,2008
@@ -12067,7 +12067,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 49,045,72259,,80973,797,"Tooele County, Utah",Tooele County,Utah,2019
 49,045,76640,,93908,931,"Tooele County, Utah",Tooele County,Utah,2021
 49,045,79934,,91386,1006,"Tooele County, Utah",Tooele County,Utah,2022
-49,049,434677,980.0,47428,594,"Utah County, Utah",Utah County,Utah,2005
+49,049,434677,11595.0,47428,594,"Utah County, Utah",Utah County,Utah,2005
 49,049,464760,11887.0,50544,589,"Utah County, Utah",Utah County,Utah,2006
 49,049,483702,14123.0,57408,625,"Utah County, Utah",Utah County,Utah,2007
 49,049,530837,12950.0,59886,681,"Utah County, Utah",Utah County,Utah,2008
@@ -12101,7 +12101,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 49,053,177556,,63595,879,"Washington County, Utah",Washington County,Utah,2019
 49,053,191226,,61186,1094,"Washington County, Utah",Washington County,Utah,2021
 49,053,197680,13575.0,74543,1390,"Washington County, Utah",Washington County,Utah,2022
-49,057,207711,477.0,49107,593,"Weber County, Utah",Weber County,Utah,2005
+49,057,207711,4286.0,49107,593,"Weber County, Utah",Weber County,Utah,2005
 49,057,213247,2907.0,49342,555,"Weber County, Utah",Weber County,Utah,2006
 49,057,221846,4370.0,52155,550,"Weber County, Utah",Weber County,Utah,2007
 49,057,227487,3509.0,51064,583,"Weber County, Utah",Weber County,Utah,2008
@@ -12152,7 +12152,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 51,003,109330,,86399,1173,"Albemarle County, Virginia",Albemarle County,Virginia,2019
 51,003,113535,,92568,1341,"Albemarle County, Virginia",Albemarle County,Virginia,2021
 51,003,114534,,93691,1380,"Albemarle County, Virginia",Albemarle County,Virginia,2022
-51,013,191852,324.0,80433,1199,"Arlington County, Virginia",Arlington County,Virginia,2005
+51,013,191852,6693.0,80433,1199,"Arlington County, Virginia",Arlington County,Virginia,2005
 51,013,199776,6387.0,87350,1224,"Arlington County, Virginia",Arlington County,Virginia,2006
 51,013,204568,5677.0,94876,1396,"Arlington County, Virginia",Arlington County,Virginia,2007
 51,013,209969,6558.0,101171,1413,"Arlington County, Virginia",Arlington County,Virginia,2008
@@ -12220,7 +12220,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 51,041,352802,11377.0,81297,1100,"Chesterfield County, Virginia",Chesterfield County,Virginia,2019
 51,041,370688,40029.0,85796,1141,"Chesterfield County, Virginia",Chesterfield County,Virginia,2021
 51,041,378408,35927.0,100702,1334,"Chesterfield County, Virginia",Chesterfield County,Virginia,2022
-51,059,998690,915.0,94610,1164,"Fairfax County, Virginia",Fairfax County,Virginia,2005
+51,059,998690,22810.0,94610,1164,"Fairfax County, Virginia",Fairfax County,Virginia,2005
 51,059,1010443,24752.0,100318,1248,"Fairfax County, Virginia",Fairfax County,Virginia,2006
 51,059,1010241,25752.0,105241,1331,"Fairfax County, Virginia",Fairfax County,Virginia,2007
 51,059,1015302,29569.0,107448,1399,"Fairfax County, Virginia",Fairfax County,Virginia,2008
@@ -12316,7 +12316,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 51,095,76523,,91674,1132,"James City County, Virginia",James City County,Virginia,2019
 51,095,79882,,88604,1244,"James City County, Virginia",James City County,Virginia,2021
 51,095,81199,,99432,1422,"James City County, Virginia",James City County,Virginia,2022
-51,107,254612,518.0,98483,1097,"Loudoun County, Virginia",Loudoun County,Virginia,2005
+51,107,254612,6895.0,98483,1097,"Loudoun County, Virginia",Loudoun County,Virginia,2005
 51,107,268817,7700.0,99371,1244,"Loudoun County, Virginia",Loudoun County,Virginia,2006
 51,107,278797,9812.0,107207,1306,"Loudoun County, Virginia",Loudoun County,Virginia,2007
 51,107,289995,9180.0,111925,1369,"Loudoun County, Virginia",Loudoun County,Virginia,2008
@@ -12350,7 +12350,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 51,121,98535,,60045,845,"Montgomery County, Virginia",Montgomery County,Virginia,2019
 51,121,98473,,55210,929,"Montgomery County, Virginia",Montgomery County,Virginia,2021
 51,121,98915,,71290,1008,"Montgomery County, Virginia",Montgomery County,Virginia,2022
-51,153,346790,283.0,81904,996,"Prince William County, Virginia",Prince William County,Virginia,2005
+51,153,346790,7876.0,81904,996,"Prince William County, Virginia",Prince William County,Virginia,2005
 51,153,357503,6629.0,80783,1086,"Prince William County, Virginia",Prince William County,Virginia,2006
 51,153,360411,8690.0,87243,1142,"Prince William County, Virginia",Prince William County,Virginia,2007
 51,153,364734,7292.0,88724,1157,"Prince William County, Virginia",Prince William County,Virginia,2008
@@ -12617,7 +12617,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 51,800,92108,,80481,1027,"Suffolk city, Virginia",Suffolk city,Virginia,2019
 51,800,96194,,79556,1044,"Suffolk city, Virginia",Suffolk city,Virginia,2021
 51,800,98537,,83144,1209,"Suffolk city, Virginia",Suffolk city,Virginia,2022
-51,810,430856,533.0,58545,838,"Virginia Beach city, Virginia",Virginia Beach city,Virginia,2005
+51,810,430856,6472.0,58545,838,"Virginia Beach city, Virginia",Virginia Beach city,Virginia,2005
 51,810,435619,8603.0,61333,875,"Virginia Beach city, Virginia",Virginia Beach city,Virginia,2006
 51,810,434743,12122.0,61462,920,"Virginia Beach city, Virginia",Virginia Beach city,Virginia,2007
 51,810,433746,9543.0,65776,987,"Virginia Beach city, Virginia",Virginia Beach city,Virginia,2008
@@ -12685,7 +12685,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,009,77331,,57126,807,"Clallam County, Washington",Clallam County,Washington,2019
 53,009,78209,,62695,807,"Clallam County, Washington",Clallam County,Washington,2021
 53,009,77805,,66139,963,"Clallam County, Washington",Clallam County,Washington,2022
-53,011,400722,463.0,50836,659,"Clark County, Washington",Clark County,Washington,2005
+53,011,400722,9112.0,50836,659,"Clark County, Washington",Clark County,Washington,2005
 53,011,412938,10477.0,55405,685,"Clark County, Washington",Clark County,Washington,2006
 53,011,418070,11328.0,58116,707,"Clark County, Washington",Clark County,Washington,2007
 53,011,424733,12198.0,58917,730,"Clark County, Washington",Clark County,Washington,2008
@@ -12786,7 +12786,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,029,85141,4101.0,72066,1312,"Island County, Washington",Island County,Washington,2019
 53,029,87432,,76505,1298,"Island County, Washington",Island County,Washington,2021
 53,029,86625,,81783,1465,"Island County, Washington",Island County,Washington,2022
-53,033,1755818,2502.0,58370,762,"King County, Washington",King County,Washington,2005
+53,033,1755818,46380.0,58370,762,"King County, Washington",King County,Washington,2005
 53,033,1826732,55605.0,63489,789,"King County, Washington",King County,Washington,2006
 53,033,1859284,48044.0,67010,842,"King County, Washington",King County,Washington,2007
 53,033,1875519,55058.0,70193,902,"King County, Washington",King County,Washington,2008
@@ -12803,7 +12803,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,033,2252782,89215.0,102594,1622,"King County, Washington",King County,Washington,2019
 53,033,2252305,452212.0,110586,1691,"King County, Washington",King County,Washington,2021
 53,033,2266789,377557.0,116255,1788,"King County, Washington",King County,Washington,2022
-53,035,231902,506.0,52981,691,"Kitsap County, Washington",Kitsap County,Washington,2005
+53,035,231902,3453.0,52981,691,"Kitsap County, Washington",Kitsap County,Washington,2005
 53,035,240604,7425.0,55257,727,"Kitsap County, Washington",Kitsap County,Washington,2006
 53,035,236732,6393.0,57474,743,"Kitsap County, Washington",Kitsap County,Washington,2007
 53,035,239769,6721.0,59333,780,"Kitsap County, Washington",Kitsap County,Washington,2008
@@ -12841,7 +12841,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,045,66768,,63983,771,"Mason County, Washington",Mason County,Washington,2019
 53,045,67615,,77070,847,"Mason County, Washington",Mason County,Washington,2021
 53,045,68166,,80139,1001,"Mason County, Washington",Mason County,Washington,2022
-53,053,731598,981.0,49584,675,"Pierce County, Washington",Pierce County,Washington,2005
+53,053,731598,10630.0,49584,675,"Pierce County, Washington",Pierce County,Washington,2005
 53,053,766878,16238.0,53923,694,"Pierce County, Washington",Pierce County,Washington,2006
 53,053,773165,16126.0,55725,728,"Pierce County, Washington",Pierce County,Washington,2007
 53,053,785639,15879.0,58217,784,"Pierce County, Washington",Pierce County,Washington,2008
@@ -12875,7 +12875,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,057,129205,2879.0,67175,957,"Skagit County, Washington",Skagit County,Washington,2019
 53,057,130696,,72648,1066,"Skagit County, Washington",Skagit County,Washington,2021
 53,057,131179,,79001,1274,"Skagit County, Washington",Skagit County,Washington,2022
-53,061,646299,1849.0,54173,719,"Snohomish County, Washington",Snohomish County,Washington,2005
+53,061,646299,12564.0,54173,719,"Snohomish County, Washington",Snohomish County,Washington,2005
 53,061,669887,15386.0,60002,749,"Snohomish County, Washington",Snohomish County,Washington,2006
 53,061,676898,16009.0,65448,827,"Snohomish County, Washington",Snohomish County,Washington,2007
 53,061,683655,17112.0,66701,891,"Snohomish County, Washington",Snohomish County,Washington,2008
@@ -12892,7 +12892,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,061,822083,25162.0,89260,1379,"Snohomish County, Washington",Snohomish County,Washington,2019
 53,061,833540,101036.0,100042,1547,"Snohomish County, Washington",Snohomish County,Washington,2021
 53,061,840079,93045.0,101532,1713,"Snohomish County, Washington",Snohomish County,Washington,2022
-53,063,425684,332.0,41667,517,"Spokane County, Washington",Spokane County,Washington,2005
+53,063,425684,10429.0,41667,517,"Spokane County, Washington",Spokane County,Washington,2005
 53,063,446706,8934.0,42408,545,"Spokane County, Washington",Spokane County,Washington,2006
 53,063,456175,9397.0,46382,569,"Spokane County, Washington",Spokane County,Washington,2007
 53,063,462677,12168.0,48395,594,"Spokane County, Washington",Spokane County,Washington,2008
@@ -12909,7 +12909,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,063,522798,17314.0,59974,831,"Spokane County, Washington",Spokane County,Washington,2019
 53,063,546040,42226.0,65722,940,"Spokane County, Washington",Spokane County,Washington,2021
 53,063,549690,41476.0,69070,1055,"Spokane County, Washington",Spokane County,Washington,2022
-53,067,225469,140.0,48080,678,"Thurston County, Washington",Thurston County,Washington,2005
+53,067,225469,3959.0,48080,678,"Thurston County, Washington",Thurston County,Washington,2005
 53,067,234670,3689.0,52935,699,"Thurston County, Washington",Thurston County,Washington,2006
 53,067,238555,6114.0,57773,749,"Thurston County, Washington",Thurston County,Washington,2007
 53,067,245181,5241.0,62506,833,"Thurston County, Washington",Thurston County,Washington,2008
@@ -12926,7 +12926,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 53,067,290536,8824.0,78512,1146,"Thurston County, Washington",Thurston County,Washington,2019
 53,067,297977,31528.0,81659,1334,"Thurston County, Washington",Thurston County,Washington,2021
 53,067,298758,28942.0,88853,1437,"Thurston County, Washington",Thurston County,Washington,2022
-53,073,178425,595.0,44248,645,"Whatcom County, Washington",Whatcom County,Washington,2005
+53,073,178425,4544.0,44248,645,"Whatcom County, Washington",Whatcom County,Washington,2005
 53,073,185953,5773.0,43798,681,"Whatcom County, Washington",Whatcom County,Washington,2006
 53,073,192999,5865.0,46506,659,"Whatcom County, Washington",Whatcom County,Washington,2007
 53,073,196529,5150.0,47127,693,"Whatcom County, Washington",Whatcom County,Washington,2008
@@ -13098,7 +13098,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 55,009,270036,16471.0,71127,771,"Brown County, Wisconsin",Brown County,Wisconsin,2022
 55,017,66865,,60533,641,"Chippewa County, Wisconsin",Chippewa County,Wisconsin,2021
 55,017,66807,,75128,691,"Chippewa County, Wisconsin",Chippewa County,Wisconsin,2022
-55,025,442336,962.0,53537,683,"Dane County, Wisconsin",Dane County,Wisconsin,2005
+55,025,442336,9516.0,53537,683,"Dane County, Wisconsin",Dane County,Wisconsin,2005
 55,025,463826,9442.0,57693,692,"Dane County, Wisconsin",Dane County,Wisconsin,2006
 55,025,476785,10831.0,60791,723,"Dane County, Wisconsin",Dane County,Wisconsin,2007
 55,025,482705,9316.0,61441,726,"Dane County, Wisconsin",Dane County,Wisconsin,2008
@@ -13251,7 +13251,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 55,073,135692,4017.0,65851,648,"Marathon County, Wisconsin",Marathon County,Wisconsin,2019
 55,073,137648,10500.0,74494,685,"Marathon County, Wisconsin",Marathon County,Wisconsin,2021
 55,073,137958,7355.0,69740,775,"Marathon County, Wisconsin",Marathon County,Wisconsin,2022
-55,079,897972,976.0,37808,566,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2005
+55,079,897972,10874.0,37808,566,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2005
 55,079,915097,10919.0,41308,576,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2006
 55,079,951252,12017.0,42790,599,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2007
 55,079,953328,10587.0,45909,620,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2008
@@ -13268,7 +13268,7 @@ STATE,COUNTY,B01001_001E,B08006_017E,B19013_001E,B25058_001E,NAME,COUNTY_NAME,ST
 55,079,945726,17810.0,53418,769,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2019
 55,079,928059,75233.0,56347,821,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2021
 55,079,918661,63401.0,58214,858,"Milwaukee County, Wisconsin",Milwaukee County,Wisconsin,2022
-55,087,167679,370.0,53885,532,"Outagamie County, Wisconsin",Outagamie County,Wisconsin,2005
+55,087,167679,2830.0,53885,532,"Outagamie County, Wisconsin",Outagamie County,Wisconsin,2005
 55,087,172734,3383.0,50265,520,"Outagamie County, Wisconsin",Outagamie County,Wisconsin,2006
 55,087,173703,3228.0,56895,545,"Outagamie County, Wisconsin",Outagamie County,Wisconsin,2007
 55,087,174993,2621.0,53534,544,"Outagamie County, Wisconsin",Outagamie County,Wisconsin,2008

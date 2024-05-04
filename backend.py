@@ -15,12 +15,9 @@ def get_county_names(state_name):
         .unique()
     )
 
-def get_census_data(state_name, county_name, var_label):
-    var_table = census_vars[var_label]
-
+def get_census_data(state_name, county_name, var):
     return (
         df
         .loc[(df['STATE_NAME'] == state_name) & (df['COUNTY_NAME'] == county_name)]
-        [['STATE_NAME', 'COUNTY_NAME', 'YEAR', var_table]]
-        .rename(columns={var_table: var_label})
+        [['STATE_NAME', 'COUNTY_NAME', 'YEAR', var]]
     )

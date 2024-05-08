@@ -1,4 +1,4 @@
-This app attempts to help people understand how their communities changed as a result of Covid-19. The thesis is that using selected variables from the US Census Bureau's [American Community Survey](https://en.wikipedia.org/wiki/American_Community_Survey) 1-year estimates, at the county level, can help with that. 
+This [app](https://census-explorer.streamlit.app/) attempts to help people understand how their communities changed as a result of Covid-19. The thesis is that using selected variables from the US Census Bureau's [American Community Survey](https://en.wikipedia.org/wiki/American_Community_Survey) 1-year estimates, at the county level, can help with that. 
 
 I have written several blog posts that go into more detail about this project. The most recent, [Visualizing the Impact of Covid-19 on US Counties](https://arilamstein.com/blog/2024/05/04/visualizing-the-impact-of-covid-19-on-us-counties/), goes into more detail about the current version of the app.
 

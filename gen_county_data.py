@@ -25,9 +25,14 @@ print("Generating data. Please wait.")
 start_time = time.time()
 df_county_data = None
 
-# Skip 2020 because it was not published due to covid.
+# We want all years the ACS1 was published. Note that it was not published in 2020 due to covid.
 # See https://www.census.gov/programs-surveys/acs/data/experimental-data.html
-years =[2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022]
+ACS1_START_YEAR = 2005
+ACS1_END_YEAR   = 2022
+ACS1_SKIP_YEARS = [2020]
+years = [year 
+         for year in range(ACS1_START_YEAR, ACS1_END_YEAR + 1) 
+         if year not in ACS1_SKIP_YEARS]
 
 # Get all the variables we want to view in the app, plus the name of the county
 vars = list(census_vars.values())

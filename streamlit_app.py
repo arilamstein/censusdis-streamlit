@@ -28,4 +28,7 @@ with col2:
     df['Percent Change'] = df[var].pct_change() * 100
     st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
+st.write("Here's how all the counties ranked")
+st.dataframe(be.get_ranking_df(var))
+
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

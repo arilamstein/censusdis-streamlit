@@ -4,20 +4,6 @@ import pandas as pd
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 
-def get_variables_used(df):
-    non_variable_columns = ['NAME', 'COUNTY_NAME', 'STATE_NAME', 'YEAR']
-    return [one_column 
-            for one_column in df.columns 
-            if one_column not in non_variable_columns]
-
-def get_years_variable_used(df, variable):
-    return (
-        df
-        [df[variable].notna()]
-        ['YEAR']
-        .unique()
-    )
-
 def get_unique_labels_for_variable(acs, variable, years):
     """ 
     Return all labels the ACS has used for a given variable.
@@ -33,7 +19,6 @@ def get_unique_labels_for_variable(acs, variable, years):
     - acs: The ACS to use. Ex. censusdis.datasets.ACS1)
     - variable: The variable in question. Ex. 'B01001_001E'
     - years: An iterable of years to use. Ex. [2005, 2006, 2007]
-        and years (ex. ), return a dictionary where each key is a that
           
     Returns:
     - A dict where each key is a label, and each value is a list of years that key has been used.
@@ -47,6 +32,20 @@ def get_unique_labels_for_variable(acs, variable, years):
         labels[label].append(year)
 
     return labels
+
+def get_variables_used(df):
+    non_variable_columns = ['NAME', 'COUNTY_NAME', 'STATE_NAME', 'YEAR']
+    return [one_column 
+            for one_column in df.columns 
+            if one_column not in non_variable_columns]
+
+def get_years_variable_used(df, variable):
+    return (
+        df
+        [df[variable].notna()]
+        ['YEAR']
+        .unique()
+    )
 
 def print_labels_for_variables_over_time(df):
     variables_used = get_variables_used(df)

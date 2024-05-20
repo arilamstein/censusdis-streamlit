@@ -132,4 +132,4 @@ df_merge = (
     .drop(columns=['STATE', 'COUNTY'])
 )
 
-df_merge.to_csv('county_data.csv')
+df_merge.to_csv('county_data.csv', index=False)

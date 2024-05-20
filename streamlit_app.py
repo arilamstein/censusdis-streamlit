@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 st.header('Census Covid Explorer')
-st.write('This goal of this app is to shine a light on how US Demographics changed as a result of Covid-19. The app is still under development. Data comes from the American Community Survey 1-year estimates.')
+st.write('This goal of this app is to shine a light on how US Demographics changed during Covid-19. The app is still under development. Data comes from the American Community Survey 1-year estimates.')
 
 # Set up nice defaults for the various UI elements
 state_name = st.selectbox("Select a State:", be.get_state_names(), index=4) # 4 = California
@@ -15,7 +15,7 @@ elif state_name == "New York":
 county_name = st.selectbox("Select a County:", be.get_county_names(state_name), index=county_name_index)
 
 # Something like "Total Population"
-var = st.selectbox("Select a demographic", be.census_vars.keys())
+var = st.selectbox("Select a demographic", be.get_unique_census_labels())
 
 # Get and chart data
 df = be.get_census_data(state_name, county_name, var)

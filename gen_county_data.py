@@ -124,4 +124,12 @@ column_order = ['STATE_NAME', 'COUNTY_NAME', 'YEAR']
 column_order.extend(set(all_census_vars.values())) # Remove duplicate 'Worked from Home'
 df_merge = df_merge[column_order]
 
+# Remove the index and drop those columns. The app uses the counties' common
+# names, not their FIPS codes.
+df_merge = (
+    df_merge
+    .reset_index()
+    .drop(columns=['STATE', 'COUNTY'])
+)
+
 df_merge.to_csv('county_data.csv')

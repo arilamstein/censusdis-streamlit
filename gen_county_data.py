@@ -1,8 +1,8 @@
 # This script generates the dataset which is used by the app. The final 
-# structure looks similar to:
+# structure looks like:
 # (STATE_NAME, COUNTY_NAME, YEAR, 'Total Population', 'Worked From Home', ...)
 #
-# The Census API only lets you get data one year at a time. So the core of 
+# The Census API only lets you get data from one year at a time. So the core of 
 # this script is a for loop like:
 #
 # df = None
@@ -31,7 +31,8 @@
 # period that we're interested in
 import pandas as pd
 import time
-from census_vars import all_census_vars, get_census_vars_for_year
+from census_vars import census_vars, get_census_vars_for_year
+from backend import get_unique_census_labels
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
@@ -117,11 +118,11 @@ del df_merge['B08006_021E']
 del df_merge['B08006_017E']
 
 # Rename the columns from names (B01001) to labels ("Total Population")
-df_merge = df_merge.rename(columns = all_census_vars)
+df_merge = df_merge.rename(columns = census_vars)
 
 # Reorder columns
 column_order = ['STATE_NAME', 'COUNTY_NAME', 'YEAR']
-column_order.extend(set(all_census_vars.values())) # Remove duplicate 'Worked from Home'
+column_order.extend(get_unique_census_labels()) # Columns appear in same order as UI dropdown
 df_merge = df_merge[column_order]
 
 # Remove the index and drop those columns. The app uses the counties' common

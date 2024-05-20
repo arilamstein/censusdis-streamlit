@@ -1,24 +1,41 @@
-# Generating the dataset which the app uses is somewhat complicated.
+# This script generates the dataset which is used by the app. The final 
+# structure looks similar to:
+# (STATE_NAME, COUNTY_NAME, YEAR, 'Total Population', 'Worked From Home', ...)
 #
-# Fundamentally, we want to generate time series data on each county over the totality of the ACS 1-Year Survey (2005-2022).
-# However, counties change: Some counties which existed in the past do not exist today. The app runs smoother 
-# if the dataset it uses only has data on counties which exist today. So we:
+# The Census API only lets you get data one year at a time. So the core of 
+# this script is a for loop like:
 #
-#     1. Generate all data on all counties for each year the survey was published
-#     2. Generate all counties which exist today
-#     3. Remove counties from (1) that do not exist in (2)
-#     4. Write the resulting dataset to disk
+# df = None
+# for year in years:
+#   Get data for this year
+#   Append it to df
 #
-# See "Substantial Changes to Counties and County Equivalent Entities: 1970-Present" for more information:
+# But there are issues with the raw data that we want to address:
+# 
+# 1. Some counties existed in the past but do not exist today. We "prune" df so
+# it only includes counties which are present in the last year of the dataset.
+# See "Substantial Changes to Counties and County Equivalent Entities: 
+# 1970-Present" for more information:
 # https://www.census.gov/programs-surveys/geography/technical-documentation/county-changes.html
+#
+# 2. One variable which we are interested in ('Worked from Home') changed name 
+# during the time period (it started as B08006_021E and moved to B08006_017E). 
+# This script combines those two datasets into a single column.
+#
+# 3. Variable changes like the above are important but can be hard to detect. 
+# As a safety measure, the script prints out all unique labels that each 
+# variable has had, so you can visually inspect whether a similar problem 
+# exists in the dataset.
 
-# Step 1: Generate all data for all states and all counties over the time period that we're interested in
+# Step 1: Generate all data for all states and all counties over the time 
+# period that we're interested in
 import pandas as pd
 import time
-from census_vars import census_vars, get_census_vars_for_year
+from census_vars import all_census_vars, get_census_vars_for_year
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
+from validate_variable_labels import print_labels_for_variables_over_time
 
 print("Generating data. Please wait.")
 
@@ -34,16 +51,12 @@ years = [year
          for year in range(ACS1_START_YEAR, ACS1_END_YEAR + 1) 
          if year not in ACS1_SKIP_YEARS]
 
-# Get all the variables we want to view in the app, plus the name of the county
-vars = list(census_vars.values())
-vars.append('NAME')
-
 for one_year in years: 
     # Provide some feedback on progress to the user
     print('.', end='', flush=True) 
 
-    # Something like 'B01001'
-    vars = list(get_census_vars_for_year(one_year).values())
+    # Get all the variables we want to view in the app, plus the name of the county
+    vars = list(get_census_vars_for_year(one_year).keys())
     vars.append('NAME')
 
     df_new = ced.download(
@@ -53,10 +66,6 @@ for one_year in years:
         state = ALL_STATES_AND_DC,
         county = '*')
     
-    # Convert the columns from something like 'B01001' to 'Total Population'
-    new_col_names = {v: k for k, v in get_census_vars_for_year(one_year).items()}
-    df_new = df_new.rename(columns = new_col_names)
-
     # Add in some new columns to make working with the data a bit easier
     df_new['COUNTY_NAME'] = df_new['NAME'].apply(lambda name: name.split(', ')[0])
     df_new['STATE_NAME']  = df_new['NAME'].apply(lambda name: name.split(', ')[1])
@@ -75,7 +84,7 @@ print(f"The resulting dataframe has {len(df_county_data.index)} rows with {len(d
 # Step 2: Get a list of all counties which exist today
 df_current_counties = ced.download(
     dataset=ACS1,
-    vintage=2022,
+    vintage=ACS1_END_YEAR,
     download_variables='NAME',
     state=ALL_STATES_AND_DC,
     county='*'
@@ -92,5 +101,27 @@ print(f"After filtering df_county_data to only current counties, the resulting d
 
 # The data appears to already be sorted this way, but I want to ensure that.
 df_merge = df_merge.sort_values(['STATE', 'COUNTY', 'YEAR'])
+
+print("\nPrinting the unique labels used for each variable in the dataframe.")
+print("Check to make sure no single varible is not used for completely different things over the years!")
+print_labels_for_variables_over_time(df_merge)
+
+# Merge the two columns that have work from home data.
+# But ensure that, for each row, at most one of them has data
+# (For small regions, both values will be na)
+for i in range(len(df_merge.index)):
+    assert pd.isna(df_merge.iloc[i]['B08006_021E']) or pd.isna(df_merge.iloc[i]['B08006_017E']) 
+
+df_merge['Worked from Home'] = df_merge['B08006_021E'].fillna(0) + df_merge['B08006_017E'].fillna(0)
+del df_merge['B08006_021E']
+del df_merge['B08006_017E']
+
+# Rename the columns from names (B01001) to labels ("Total Population")
+df_merge = df_merge.rename(columns = all_census_vars)
+
+# Reorder columns
+column_order = ['STATE_NAME', 'COUNTY_NAME', 'YEAR']
+column_order.extend(set(all_census_vars.values())) # Remove duplicate 'Worked from Home'
+df_merge = df_merge[column_order]
 
 df_merge.to_csv('county_data.csv')

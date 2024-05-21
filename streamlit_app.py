@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 st.header('Census Covid Explorer')
-st.write('This goal of this app is to shine a light on how US Demographics changed during Covid-19. The app is still under development. Data comes from the American Community Survey 1-year estimates.')
+st.write('This goal of this app is to shine a light on how US Demographics changed during Covid-19. The app is still under development. Data comes from the American Community Survey (ACS) 1-year estimates.')
 
 # Set up nice defaults for the various UI elements
 state_name = st.selectbox("Select a State:", be.get_state_names(), index=4) # 4 = California
@@ -17,18 +17,24 @@ county_name = st.selectbox("Select a County:", be.get_county_names(state_name), 
 # Something like "Total Population"
 var = st.selectbox("Select a demographic", be.get_unique_census_labels())
 
-# Get and chart data
-df = be.get_census_data(state_name, county_name, var)
-col1, col2 = st.columns(2)
-with col1:
-    # Line graph of raw data
-    st.pyplot(df.plot(x='YEAR', y=var).figure)
-with col2:
-    # Bar plot showing % change
-    df['Percent Change'] = df[var].pct_change() * 100
-    st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
+tab1, tab2 = st.tabs(["📈 County Details", "🥇 National Rankings"])
 
-st.write("Here's how all the counties ranked")
-st.dataframe(be.get_ranking_df(var))
+with tab1:
+    st.write(f"All data for {state_name}, {county_name} for {var}. Note that data was not provided for 2020.")
+
+    # Get and chart data
+    df = be.get_census_data(state_name, county_name, var)
+    col1, col2 = st.columns(2)
+    with col1:
+        # Line graph of raw data
+        st.pyplot(df.plot(x='YEAR', y=var).figure)
+    with col2:
+        # Bar plot showing % change
+        df['Percent Change'] = df[var].pct_change() * 100
+        st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
+
+with tab2:
+    st.write("Here's how all the counties ranked")
+    st.dataframe(be.get_ranking_df(var))
 
 st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")

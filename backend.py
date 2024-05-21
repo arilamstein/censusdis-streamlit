@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from census_vars import census_vars
 
 df = pd.read_csv('county_data.csv')
@@ -46,7 +47,8 @@ def get_ranking_df(column):
     df2 = (
         df2
         .loc[df['YEAR'] == 2021]
-        [['STATE_NAME', 'COUNTY_NAME', 'YEAR', column, 'Percent Change']]
+        [['STATE_NAME', 'COUNTY_NAME', column, 'Percent Change']]
+        .replace([np.inf, -np.inf], np.nan) # Happens when we divide by 0 
         .dropna()
         .sort_values('Percent Change', ascending=False)
     )

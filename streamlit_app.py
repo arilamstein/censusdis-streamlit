@@ -30,7 +30,7 @@ with tab1:
     col1, col2 = st.columns(2)
     with col1:
         # Line graph of raw data
-        st.pyplot(df.plot(x='YEAR', y=var).figure)
+        st.pyplot(df.plot(x='YEAR', y=var, style='-o').figure)
     with col2:
         # Bar plot showing % change
         df['Percent Change'] = df[var].pct_change() * 100

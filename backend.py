@@ -36,24 +36,24 @@ def get_unique_census_labels():
 def get_ranking_df(column):
     df2 = df.copy() # We don't want to modify the global variable
 
-    df2['Percent Change'] = (
-        df2
-        .groupby(['STATE_NAME', 'COUNTY_NAME'])
-        [column]
-        .pct_change() * 100
-    )
+    # Select just the rows and columns we need
+    df2 = df2.loc[(df2['YEAR'] == 2019) | (df2['YEAR'] == 2021)]
+    df2 = df2[['STATE_NAME', 'COUNTY_NAME', 'YEAR', column]]
 
-    # Limit to 2021 and just the columns we want
-    df2 = (
-        df2
-        .loc[df['YEAR'] == 2021]
-        [['STATE_NAME', 'COUNTY_NAME', column, 'Percent Change']]
-        .dropna()
-        .sort_values('Percent Change', ascending=False)
-    )
+    # Combine state and county into a single column
+    df2 = df2.assign(County=lambda x: x.COUNTY_NAME + ', ' + x.STATE_NAME)
+    df2 = df2.drop(columns=['STATE_NAME', 'COUNTY_NAME'])
 
-    # Create an index called "Rank"
+    # Pivot for structure we need, calculate change and percent change, sort
+    df2 = df2.pivot_table(index='County', columns='YEAR', values=column)
+    df2['Change'] = df2[2021] - df2[2019]
+    df2['Percent Change'] = (df2[2021] - df2[2019]) / df2[2019] * 100
+    df2['Percent Change'] = df2['Percent Change'].round(1)
+    df2 = df2.sort_values('Percent Change', ascending=False)
+
+    # Create an index called "Rank" and drop columns with NA
     df2['Rank'] = list(range(1, len(df2.index) + 1))
-    df2 = df2.set_index('Rank')
-    
+    df2 = df2.reset_index().set_index('Rank')
+    df2 = df2.dropna()
+
     return df2

@@ -23,7 +23,7 @@ var = st.selectbox("Demographic:", be.get_unique_census_labels())
 tab1, tab2, tab3 = st.tabs(["📈 County Details", "🥇 National Rankings", "ℹ️ About"])
 
 with tab1:
-    st.write(f"All data for `{county_name}, {state_name}` for `{var}`.")
+    st.write(f"All data for **{county_name}, {state_name}** for **{var}**.")
 
     # Get and chart data
     df = be.get_census_data(state_name, county_name, var)
@@ -37,7 +37,7 @@ with tab1:
         st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
 with tab2:
-    st.write(f"Here's how the counties ranked in terms of percent change of `{var}` between 2019-2021.")
+    st.write(f"Here's how the counties ranked in terms of percent change of **{var}** between 2019-2021.")
     st.dataframe(be.get_ranking_df(var))
 
 with tab3:

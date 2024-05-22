@@ -48,7 +48,6 @@ def get_ranking_df(column):
         df2
         .loc[df['YEAR'] == 2021]
         [['STATE_NAME', 'COUNTY_NAME', column, 'Percent Change']]
-        .replace([np.inf, -np.inf], np.nan) # Happens when we divide by 0 
         .dropna()
         .sort_values('Percent Change', ascending=False)
     )

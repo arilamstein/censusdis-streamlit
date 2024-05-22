@@ -108,12 +108,18 @@ print("Check to make sure no single varible is not used for completely different
 print_labels_for_variables_over_time(df_merge)
 
 # Merge the two columns that have work from home data.
-# But ensure that, for each row, at most one of them has data
-# (For small regions, both values will be na)
-for i in range(len(df_merge.index)):
-    assert pd.isna(df_merge.iloc[i]['B08006_021E']) or pd.isna(df_merge.iloc[i]['B08006_017E']) 
+def splice_wfh_columns(row):
+    # Error check: ensure that, for each row, at *most* one of them has data
+    # (For small regions, both values will be NA)
+    assert pd.isna(row['B08006_021E']) or pd.isna(row['B08006_017E']) 
 
-df_merge['Worked from Home'] = df_merge['B08006_021E'].fillna(0) + df_merge['B08006_017E'].fillna(0)
+    # If the first is not NA, then return it
+    if not pd.isna(row['B08006_021E']):
+        return row['B08006_021E']
+    else:
+        return row['B08006_017E']
+
+df_merge['Worked from Home'] = df_merge.apply(splice_wfh_columns, axis=1)
 del df_merge['B08006_021E']
 del df_merge['B08006_017E']
 

@@ -3,8 +3,9 @@
 # Note that the Label 'Worked from Home' has had different 'Names' over the years.
 census_vars = {
     'B01001_001E' : 'Total Population',
-    'B08006_021E' : 'Worked from Home', # 2005 only
-    'B08006_017E' : 'Worked from Home', # 2006 onwards
+    'B08006_021E' : 'Total Worked from Home', # 2005 only
+    'B08006_017E' : 'Total Worked from Home', # 2006 onwards
+    'B19057_002E' : 'Total With Public Assistance',
     'B19013_001E' : 'Median Household Income',
     'B25058_001E' : 'Median Rent'
 }

@@ -119,7 +119,7 @@ def splice_wfh_columns(row):
     else:
         return row['B08006_017E']
 
-df_merge['Worked from Home'] = df_merge.apply(splice_wfh_columns, axis=1)
+df_merge['Total Worked from Home'] = df_merge.apply(splice_wfh_columns, axis=1)
 del df_merge['B08006_021E']
 del df_merge['B08006_017E']
 

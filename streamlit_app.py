@@ -1,6 +1,7 @@
 import backend as be
 import streamlit as st
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.header('How did your County Change During Covid?')
 
@@ -20,7 +21,7 @@ with county_col:
 # Something like "Total Population"
 var = st.selectbox("Demographic:", be.get_unique_census_labels())
 
-tab1, tab2, tab3 = st.tabs(["📈 County Details", "🥇 National Rankings", "ℹ️ About"])
+tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map", "ℹ️ About"])
 
 with tab1:
     st.write(f"All data for **{county_name}, {state_name}** for **{var}**.")
@@ -41,6 +42,17 @@ with tab2:
     st.dataframe(be.get_ranking_df(var))
 
 with tab3:
+    st.write("Data is provided only for counties with a population of at least 65,000. See the **About** section to learn more.")
+    fig = px.choropleth(be.get_mapping_df(var), geojson=be.county_map, locations='FIPS', color='Percent Change',
+                        color_continuous_scale="Viridis",
+                        scope="usa",
+                        hover_name='County',
+                        hover_data={'FIPS': False}, #, 'Percent Change': ':.1%'},
+                        labels={'Percent Change':'Percent Change', 'FIPS': 'NAME'})
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    st.plotly_chart(fig)
+
+with tab4:
     text = open('about.md').read()
     st.write(text)
 

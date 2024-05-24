@@ -1,8 +1,11 @@
 import pandas as pd
 import numpy as np
 from census_vars import census_vars
+import json
 
-df = pd.read_csv('county_data.csv')
+df = pd.read_csv('county_data.csv', dtype={'FIPS': str})
+with open("county_map.json", "r") as read_file:
+    county_map = json.load(read_file)
 
 def get_state_names():
     return df['STATE_NAME'].unique()
@@ -55,5 +58,31 @@ def get_ranking_df(column):
     df2['Rank'] = list(range(1, len(df2.index) + 1))
     df2 = df2.reset_index().set_index('Rank')
     df2 = df2.dropna()
+
+    return df2
+
+def get_mapping_df(column):
+    df2 = df.copy() # We don't want to modify the global variable
+
+    # Select just the rows and columns we need
+    df2 = df2.loc[(df2['YEAR'] == 2019) | (df2['YEAR'] == 2021)]
+    df2 = df2[['FIPS', 'STATE_NAME', 'COUNTY_NAME', 'YEAR', column]]
+
+    # Combine state and county into a single column
+    df2 = df2.assign(County=lambda x: x.COUNTY_NAME + ', ' + x.STATE_NAME)
+    df2 = df2.drop(columns=['STATE_NAME', 'COUNTY_NAME'])
+
+    # Pivot for structure we need, calculate change and percent change, sort
+    df2 = df2.pivot_table(index=['FIPS', 'County'], columns='YEAR', values=column)
+    df2['Change'] = df2[2021] - df2[2019]
+    df2['Percent Change'] = (df2[2021] - df2[2019]) / df2[2019] * 100
+    df2['Percent Change'] = df2['Percent Change'].round(1)
+    df2 = df2.sort_values('Percent Change', ascending=False)
+
+    df2 = (
+        df2
+        .dropna()
+        .reset_index()
+    )
 
     return df2

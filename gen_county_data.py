@@ -131,11 +131,12 @@ column_order = ['STATE_NAME', 'COUNTY_NAME', 'YEAR']
 column_order.extend(get_unique_census_labels()) # Columns appear in same order as UI dropdown
 df_merge = df_merge[column_order]
 
-# Remove the index and drop those columns. The app uses the counties' common
-# names, not their FIPS codes.
+# Remove the index and drop those columns. 
+# Retain FIPS code as a single column for mapping.
 df_merge = (
     df_merge
     .reset_index()
+    .assign(FIPS = lambda x: x.STATE + x.COUNTY)
     .drop(columns=['STATE', 'COUNTY'])
 )
 

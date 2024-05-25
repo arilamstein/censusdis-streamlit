@@ -38,8 +38,9 @@ with tab1:
         st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
 with tab2:
-    st.write(f"Here's how the counties ranked in terms of percent change of **{var}** between 2019-2021.")
-    st.dataframe(be.get_ranking_df(var))
+    ranking_df = be.get_ranking_df(var)
+    st.write(be.get_ranking_text(state_name, county_name, var, ranking_df))
+    st.dataframe(ranking_df)
 
 with tab3:
     st.write("Data is provided only for counties with a population of at least 65,000. See the **About** section to learn more.")

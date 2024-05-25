@@ -61,6 +61,19 @@ def get_ranking_df(column):
 
     return df2
 
+def get_ranking_text(state, county, var, ranking_df):
+    full_name = ', '.join([county, state])
+    rank = (
+        ranking_df
+        [ranking_df['County'] == full_name]
+        .index
+        .tolist()[0]
+    )
+
+    num_counties = len(ranking_df.index)
+
+    return f"{full_name} ranks **{rank}** of {num_counties}."
+
 def get_mapping_df(column):
     df2 = df.copy() # We don't want to modify the global variable
 

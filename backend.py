@@ -92,15 +92,16 @@ def get_mapping_df(column):
     df2['Percent Change'] = df2['Percent Change'].round(1)
     df2 = df2.sort_values('Percent Change', ascending=False)
 
+    df2 = (
+        df2
+        .replace([np.inf, -np.inf], np.nan)
+        .dropna()
+        .reset_index()
+    )
+
     # Color the map with 4 quartiles. This allows the user to quickly see high-level geographic
     # patterns in the data. The default (continuous) scale highlights outliers, which we already
     # show in the "Rankings" tab.
     df2['Quartile'] = pd.qcut(df2['Percent Change'], q=4)
-
-    df2 = (
-        df2
-        .dropna()
-        .reset_index()
-    )
 
     return df2

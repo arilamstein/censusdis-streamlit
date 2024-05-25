@@ -43,14 +43,13 @@ with tab2:
     st.dataframe(ranking_df)
 
 with tab3:
-    st.write("Data is provided only for counties with a population of at least 65,000. See the **About** section to learn more.")
-    fig = px.choropleth(be.get_mapping_df(var), geojson=be.county_map, locations='FIPS', color='Percent Change',
-                        color_continuous_scale="Viridis",
+    st.write("Data is provided only for counties with a population of at least 65,000.")          
+    fig = px.choropleth(be.get_mapping_df(var), geojson=be.county_map, locations='FIPS', color='Quartile',
+                        color_discrete_sequence = ['#ffffcc','#a1dab4','#41b6c4','#225ea8'],
                         scope="usa",
                         hover_name='County',
-                        hover_data={'FIPS': False}, #, 'Percent Change': ':.1%'},
-                        labels={'Percent Change':'Percent Change', 'FIPS': 'NAME'})
-    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+                        hover_data={'FIPS': False, 'Percent Change': True},
+                        labels={'Quartile':'Percent Change', 'FIPS': 'NAME'})
     st.plotly_chart(fig)
 
 with tab4:

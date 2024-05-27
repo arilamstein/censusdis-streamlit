@@ -51,7 +51,7 @@ def print_labels_for_variables_over_time(df):
     variables_used = get_variables_used(df)
 
     for variable in variables_used:
-        years_variable_used = get_years_variable_used(df, variable)
+        years_variable_used = sorted(get_years_variable_used(df, variable))
         unique_labels_for_variable = get_unique_labels_for_variable(ACS1, variable, years_variable_used)
 
         if len(unique_labels_for_variable) == 1:

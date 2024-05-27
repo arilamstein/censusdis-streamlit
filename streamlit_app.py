@@ -11,7 +11,7 @@ with state_col:
     state_name = st.selectbox("State:", be.get_state_names(), index=4) # 4 = California
     county_name_index = 0
     if state_name == "California":
-        county_name_index = 25 # San Francisco
+        county_name_index = 24 # San Francisco
     elif state_name == "New York":
         county_name_index = 15 # New York (Manhattan)
 

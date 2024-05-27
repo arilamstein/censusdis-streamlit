@@ -13,7 +13,8 @@
 # But there are issues with the raw data that we want to address:
 # 
 # 1. Some counties existed in the past but do not exist today. We "prune" df so
-# it only includes counties which are present in the last year of the dataset.
+# it only includes counties which were present in both 2019 and 2021 (the years
+# we are most interested in. 
 # See "Substantial Changes to Counties and County Equivalent Entities: 
 # 1970-Present" for more information:
 # https://www.census.gov/programs-surveys/geography/technical-documentation/county-changes.html
@@ -82,30 +83,39 @@ for one_year in years:
 print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds")
 print(f"The resulting dataframe has {len(df_county_data.index)} rows with {len(df_county_data.index.unique())} unique counties")
 
-# Step 2: Get a list of all counties which exist today
-df_current_counties = ced.download(
+# Step 2: Get a list of all counties that appear in both 2019 and 2021
+df_counties_2019 = ced.download(
     dataset=ACS1,
-    vintage=ACS1_END_YEAR,
+    vintage=2019,
     download_variables='NAME',
     state=ALL_STATES_AND_DC,
     county='*'
 )
 
-df_current_counties = df_current_counties.set_index(['STATE', 'COUNTY'])
-print(f"The dataframe of current counties is {len(df_current_counties.index)} rows")
+df_counties_2021 = ced.download(
+    dataset=ACS1,
+    vintage=2021,
+    download_variables='NAME',
+    state=ALL_STATES_AND_DC,
+    county='*'
+)
+
+names_of_counties_2019 = set(df_counties_2019['NAME'])
+names_of_counties_2021 = set(df_counties_2021['NAME'])
+names_of_counties_in_both = names_of_counties_2019.intersection(names_of_counties_2021)
+print(f"{len(names_of_counties_in_both)} appear in both 2019 and 2021")
 
 # Step 3: drop all rows in df_county_data that don't have an entry in df_current_counties
-df_current_counties = df_current_counties.drop(columns='NAME')
-df_merge = df_current_counties.join(df_county_data, how='left')
+df_county_data = df_county_data[df_county_data['NAME'].isin(names_of_counties_in_both)]
 
-print(f"After filtering df_county_data to only current counties, the resulting dataframe has {len(df_merge.index)} rows with {len(df_merge.index.unique())} unique counties")
+print(f"After filtering df_county_data to only current counties, the resulting dataframe has {len(df_county_data.index)} rows with {len(df_county_data.index.unique())} unique counties")
 
 # The data appears to already be sorted this way, but I want to ensure that.
-df_merge = df_merge.sort_values(['STATE', 'COUNTY', 'YEAR'])
+df_county_data = df_county_data.sort_values(['STATE', 'COUNTY', 'YEAR'])
 
 print("\nPrinting the unique labels used for each variable in the dataframe.")
 print("Check to make sure no single varible is not used for completely different things over the years!")
-print_labels_for_variables_over_time(df_merge)
+print_labels_for_variables_over_time(df_county_data)
 
 # Merge the two columns that have work from home data.
 def splice_wfh_columns(row):
@@ -119,25 +129,25 @@ def splice_wfh_columns(row):
     else:
         return row['B08006_017E']
 
-df_merge['Total Worked from Home'] = df_merge.apply(splice_wfh_columns, axis=1)
-del df_merge['B08006_021E']
-del df_merge['B08006_017E']
+df_county_data['Total Worked from Home'] = df_county_data.apply(splice_wfh_columns, axis=1)
+del df_county_data['B08006_021E']
+del df_county_data['B08006_017E']
 
 # Rename the columns from names (B01001) to labels ("Total Population")
-df_merge = df_merge.rename(columns = census_vars)
+df_county_data = df_county_data.rename(columns = census_vars)
 
 # Reorder columns
 column_order = ['STATE_NAME', 'COUNTY_NAME', 'YEAR']
 column_order.extend(get_unique_census_labels()) # Columns appear in same order as UI dropdown
-df_merge = df_merge[column_order]
+df_county_data = df_county_data[column_order]
 
 # Remove the index and drop those columns. 
 # Retain FIPS code as a single column for mapping.
-df_merge = (
-    df_merge
+df_county_data = (
+    df_county_data
     .reset_index()
     .assign(FIPS = lambda x: x.STATE + x.COUNTY)
     .drop(columns=['STATE', 'COUNTY'])
 )
 
-df_merge.to_csv('county_data.csv', index=False)
+df_county_data.to_csv('county_data.csv', index=False)

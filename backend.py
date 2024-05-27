@@ -64,7 +64,7 @@ def get_ranking_df(column):
 def get_ranking_text(state, county, var, ranking_df):
     full_name = ', '.join([county, state])
 
-    if not full_name in ranking_df['County']:
+    if full_name not in list(ranking_df['County']):
         return f"**{full_name}** does not have a ranking for **{var}**."
     
     rank = (

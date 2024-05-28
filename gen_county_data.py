@@ -80,8 +80,8 @@ for one_year in years:
     else:
         df_county_data = pd.concat([df_county_data, df_new])
 
-print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds")
-print(f"The resulting dataframe has {len(df_county_data.index)} rows with {len(df_county_data.index.unique())} unique counties")
+print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds.")
+print(f"The resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties.")
 
 # Step 2: Get a list of all counties that appear in both 2019 and 2021
 df_counties_2019 = ced.download(
@@ -103,12 +103,12 @@ df_counties_2021 = ced.download(
 names_of_counties_2019 = set(df_counties_2019['NAME'])
 names_of_counties_2021 = set(df_counties_2021['NAME'])
 names_of_counties_in_both = names_of_counties_2019.intersection(names_of_counties_2021)
-print(f"{len(names_of_counties_in_both)} appear in both 2019 and 2021")
+print(f"{len(names_of_counties_in_both):,} counties appear in both 2019 and 2021.")
 
 # Step 3: drop all rows in df_county_data that don't have an entry in df_current_counties
 df_county_data = df_county_data[df_county_data['NAME'].isin(names_of_counties_in_both)]
 
-print(f"After filtering df_county_data to only current counties, the resulting dataframe has {len(df_county_data.index)} rows with {len(df_county_data.index.unique())} unique counties")
+print(f"After filtering df_county_data to only those counties, the resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties.")
 
 # The data appears to already be sorted this way, but I want to ensure that.
 df_county_data = df_county_data.sort_values(['STATE', 'COUNTY', 'YEAR'])

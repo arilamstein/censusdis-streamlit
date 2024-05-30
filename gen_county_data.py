@@ -14,7 +14,7 @@
 # 
 # 1. Some counties existed in the past but do not exist today. We "prune" df so
 # it only includes counties which were present in both 2019 and 2021 (the years
-# we are most interested in. 
+# we are most interested in). 
 # See "Substantial Changes to Counties and County Equivalent Entities: 
 # 1970-Present" for more information:
 # https://www.census.gov/programs-surveys/geography/technical-documentation/county-changes.html

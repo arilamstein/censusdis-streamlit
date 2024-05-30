@@ -53,7 +53,7 @@ def apply_styles(styler):
 
     # 2. Highlighting the row corresponding to the selected county
     def highlight_row(row):
-        full_name = ', '.join([county_name, state_name])  # Assuming county_name and state_name are defined
+        full_name = ', '.join([county_name, state_name])  
         condition = row['County'] == full_name
         style = ['background-color: yellow' if condition else '' for _ in row.index]
         return style

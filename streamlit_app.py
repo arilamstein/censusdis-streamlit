@@ -37,9 +37,34 @@ with tab1:
         df['Percent Change'] = df[var].pct_change() * 100
         st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
+# The "County Ranking" table benefits from some styling ...
+def apply_styles(styler):
+    # 1. A background gradient to the "Percent Change" column
+    styler.background_gradient(axis=0, cmap="YlGnBu", subset='Percent Change')
+
+    # The above change seems to cause the app to write too many significant changes. So re-apply that 
+    # style, and also add in a % to the "percent change" column
+    styler.format({
+        '2019': '{:,.0f}', # Comma for thousands separator, and no significant digits
+        '2021': '{:,.0f}',
+        'Change': '{:,.0f}',
+        'Percent Change': '{:,.1f}%' # Ditto but end with a % sign
+        })
+
+    # 2. Highlighting the row corresponding to the selected county
+    def highlight_row(row):
+        full_name = ', '.join([county_name, state_name])  # Assuming county_name and state_name are defined
+        condition = row['County'] == full_name
+        style = ['background-color: yellow' if condition else '' for _ in row.index]
+        return style
+    
+    return styler.apply(lambda _: highlight_row(_), axis=1)
+
 with tab2:
     ranking_df = be.get_ranking_df(var)
     st.write(be.get_ranking_text(state_name, county_name, var, ranking_df))
+
+    ranking_df = ranking_df.style.pipe(apply_styles)
     st.dataframe(ranking_df)
 
 with tab3:

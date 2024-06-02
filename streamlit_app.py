@@ -1,6 +1,6 @@
 import backend as be
 import streamlit as st
-import matplotlib.pyplot as plt
+import matplotlib
 import plotly.express as px
 
 st.header('How did your County Change During Covid?')
@@ -30,8 +30,13 @@ with tab1:
     df = be.get_census_data(state_name, county_name, var)
     col1, col2 = st.columns(2)
     with col1:
-        # Line graph of raw data
-        st.pyplot(df.plot(x='YEAR', y=var, style='-o').figure)
+        # Line graph of raw data. Set y-axis formatter to use commas
+        fig = df.plot(x='YEAR', y=var, style='-o').figure
+        fig.gca().get_yaxis().set_major_formatter(
+            matplotlib.ticker.StrMethodFormatter('{x:,.0f}')
+        )
+        st.pyplot(fig)
+
     with col2:
         # Bar plot showing % change
         df['Percent Change'] = df[var].pct_change() * 100

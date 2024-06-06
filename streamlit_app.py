@@ -1,33 +1,31 @@
 import backend as be
+import ui_helpers as uih
 import streamlit as st
 import matplotlib
 import plotly.express as px
 
 st.header('How did your County Change During Covid?')
 
-# Set up nice defaults for the various UI elements
+# Let the user select a (state, county, demographic) combination to get data on
+# State and County dropdowns appear side by side
 state_col, county_col = st.columns(2)
 with state_col:
     state_name = st.selectbox("State:", be.get_state_names(), index=4) # 4 = California
-    county_name_index = 0
-    if state_name == "California":
-        county_name_index = 24 # San Francisco
-    elif state_name == "New York":
-        county_name_index = 15 # New York (Manhattan)
-
+    county_name_index = uih.get_county_name_index(state_name)
 with county_col:
     county_name = st.selectbox("County:", be.get_county_names(state_name), index=county_name_index)
 
-# Something like "Total Population"
-var = st.selectbox("Demographic:", be.get_unique_census_labels())
+# Demographic statistic dropdown appears below
+var = st.selectbox("Demographic:", be.get_unique_census_labels()) # Something like "Total Population"
 
+# Now display the data the user requested 
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map", "ℹ️ About"])
 
+# Tab 1: Time series data on selected county / demographic combination
 with tab1:
     st.write(f"All data for **{county_name}, {state_name}** for **{var}**.")
-
-    # Get and chart data
     df = be.get_census_data(state_name, county_name, var)
+
     col1, col2 = st.columns(2)
     with col1:
         # Line graph of raw data. Set y-axis formatter to use commas
@@ -36,42 +34,22 @@ with tab1:
             matplotlib.ticker.StrMethodFormatter('{x:,.0f}')
         )
         st.pyplot(fig)
-
     with col2:
         # Bar plot showing % change
         df['Percent Change'] = df[var].pct_change() * 100
         st.pyplot(df.plot(kind='bar', x='YEAR', y='Percent Change').figure)
 
-# The "County Ranking" table benefits from some styling ...
-def apply_styles(styler):
-    # 1. A background gradient to the "Percent Change" column
-    styler.background_gradient(axis=0, cmap="YlGnBu", subset='Percent Change')
-
-    # The above change seems to cause the app to write too many significant changes. So re-apply that 
-    # style, and also add in a % to the "percent change" column
-    styler.format({
-        '2019': '{:,.0f}', # Comma for thousands separator, and no significant digits
-        '2021': '{:,.0f}',
-        'Change': '{:,.0f}',
-        'Percent Change': '{:,.1f}%' # Ditto but end with a % sign
-        })
-
-    # 2. Highlighting the row corresponding to the selected county
-    def highlight_row(row):
-        full_name = ', '.join([county_name, state_name])  
-        condition = row['County'] == full_name
-        style = ['background-color: yellow' if condition else '' for _ in row.index]
-        return style
-    
-    return styler.apply(lambda _: highlight_row(_), axis=1)
-
+# Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:
     ranking_df = be.get_ranking_df(var)
-    st.write(be.get_ranking_text(state_name, county_name, var, ranking_df))
+    ranking_text = be.get_ranking_text(state_name, county_name, var, ranking_df)
 
-    ranking_df = ranking_df.style.pipe(apply_styles)
+    st.write(ranking_text)
+    # The styling here are things like the gradient on the "Percent Change" column
+    ranking_df = ranking_df.style.pipe(uih.apply_styles, state_name, county_name)
     st.dataframe(ranking_df)
 
+# Tab 3: Choropleth map
 with tab3:
     st.write("Data is provided only for counties with a population of at least 65,000.")          
     fig = px.choropleth(be.get_mapping_df(var), geojson=be.county_map, locations='FIPS', color='Quartile',
@@ -82,6 +60,7 @@ with tab3:
                         labels={'Quartile':'Percent Change', 'FIPS': 'NAME'})
     st.plotly_chart(fig)
 
+# Tab 4: Info about the data / app
 with tab4:
     text = open('about.md').read()
     st.write(text)

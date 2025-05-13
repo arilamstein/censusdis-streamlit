@@ -1,5 +1,4 @@
 from collections import defaultdict
-import pandas as pd
 
 import censusdis.data as ced
 from censusdis.datasets import ACS1

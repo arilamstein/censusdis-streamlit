@@ -85,7 +85,8 @@ for one_year in years:
 
 print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds.")
 print(
-    f"The resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties."
+    f"The resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} " +
+    "unique counties."
 )
 
 # Step 2: Get a list of all counties that appear in both 2019 and 2021
@@ -114,7 +115,8 @@ print(f"{len(names_of_counties_in_both):,} counties appear in both 2019 and 2021
 df_county_data = df_county_data[df_county_data["NAME"].isin(names_of_counties_in_both)]
 
 print(
-    f"After filtering df_county_data to only those counties, the resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties."
+    f"After filtering df_county_data to only those counties, the resulting dataframe has {len(df_county_data.index):,} rows " +
+    f"with {len(df_county_data.index.unique()):,} unique counties."
 )
 
 # The data appears to already be sorted this way, but I want to ensure that.

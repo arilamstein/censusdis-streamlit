@@ -75,5 +75,6 @@ with tab4:
     st.write(text)
 
 st.write(
-    "Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit)."
+    "Created by [Ari Lamstein](https://www.arilamstein.com). View the code " +
+    "[here](https://github.com/arilamstein/censusdis-streamlit)."
 )

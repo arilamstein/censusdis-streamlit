@@ -115,8 +115,8 @@ print(f"{len(names_of_counties_in_both):,} counties appear in both 2019 and 2021
 df_county_data = df_county_data[df_county_data["NAME"].isin(names_of_counties_in_both)]
 
 print(
-    f"After filtering df_county_data to only those counties, the resulting dataframe has {len(df_county_data.index):,} rows "
-    + f"with {len(df_county_data.index.unique()):,} unique counties."
+    "After filtering df_county_data to only those counties, the resulting dataframe has "
+    + f"{len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties."
 )
 
 # The data appears to already be sorted this way, but I want to ensure that.

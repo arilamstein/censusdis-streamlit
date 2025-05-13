@@ -47,7 +47,7 @@ df_county_data = None
 # We want all years the ACS1 was published. Note that it was not published in 2020 due to covid.
 # See https://www.census.gov/programs-surveys/acs/data/experimental-data.html
 ACS1_START_YEAR = 2005
-ACS1_END_YEAR = 2022
+ACS1_END_YEAR = 2023
 ACS1_SKIP_YEARS = [2020]
 years = [
     year

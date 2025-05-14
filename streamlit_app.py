@@ -2,6 +2,7 @@ import backend as be
 import ui_helpers as uih
 import streamlit as st
 import matplotlib
+import matplotlib.pyplot as plt
 import plotly.express as px
 
 st.header("How did your County Change During Covid?")
@@ -27,21 +28,29 @@ tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map"
 
 # Tab 1: Time series data on selected county / demographic combination
 with tab1:
-    st.write(f"All data for **{county_name}, {state_name}** for **{var}**.")
     df = be.get_census_data(state_name, county_name, var)
 
     col1, col2 = st.columns(2)
     with col1:
         # Line graph of raw data. Set y-axis formatter to use commas
-        fig = df.plot(x="YEAR", y=var, style="-o").figure
-        fig.gca().get_yaxis().set_major_formatter(
+        fig, ax = plt.subplots()
+        df.plot(x="YEAR", y=var, style="-o", ax=ax)
+        ax.set_title(f"{var}\n{county_name}, {state_name}")
+        ax.get_yaxis().set_major_formatter(
             matplotlib.ticker.StrMethodFormatter("{x:,.0f}")
         )
+        ax.legend().remove()
         st.pyplot(fig)
     with col2:
         # Bar plot showing % change
         df["Percent Change"] = df[var].pct_change() * 100
-        st.pyplot(df.plot(kind="bar", x="YEAR", y="Percent Change").figure)
+
+        fig, ax = plt.subplots()
+        df.plot(kind="bar", x="YEAR", y="Percent Change", ax=ax)
+        ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
+        ax.set_xticklabels(df["YEAR"], rotation=-45)
+        ax.legend().remove()
+        st.pyplot(fig)
 
 # Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:

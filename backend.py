@@ -4,6 +4,7 @@ from census_vars import census_vars
 import json
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import matplotlib.patches as mpatches
 
 df = pd.read_csv("county_data.csv", dtype={"FIPS": str, "YEAR": str})
 with open("county_map.json", "r") as read_file:
@@ -131,5 +132,36 @@ def get_line_graph(df, var, state_name, county_name):
     ax.set_title(f"{var}\n{county_name}, {state_name}")
     ax.get_yaxis().set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
     ax.legend()
+
+    return fig
+
+
+def get_bar_graph(df, var, state_name, county_name):
+    fig, ax = plt.subplots()
+
+    df["YEAR"] = df["YEAR"].astype(int)
+
+    df.plot(kind="bar", x="YEAR", y="Percent Change", ax=ax)
+
+    # Modify bar colors based on YEAR values
+    for bar, year in zip(ax.patches, df["YEAR"]):
+        if year <= 2019:
+            bar.set_facecolor("blue")
+        elif year == 2020:
+            bar.set_facecolor("gray")
+        elif year >= 2021:
+            bar.set_facecolor("red")
+
+    # Formatting
+    ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
+    selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display
+    ax.set_xticklabels(
+        [str(year) if year in selected_years else "" for year in df["YEAR"]], rotation=0
+    )
+
+    # Manually create custom legend
+    pre_covid_patch = mpatches.Patch(color="blue", label="Pre-Covid")
+    post_covid_patch = mpatches.Patch(color="red", label="Post-Covid")
+    ax.legend(handles=[pre_covid_patch, post_covid_patch])
 
     return fig

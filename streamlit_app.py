@@ -1,7 +1,6 @@
 import backend as be
 import ui_helpers as uih
 import streamlit as st
-import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
 
@@ -28,8 +27,6 @@ tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map"
 
 # Tab 1: Time series data on selected county / demographic combination
 with tab1:
-    st.write("Note that data was not reported in 2020 due to Covid-19.")
-
     df = be.get_census_data(state_name, county_name, var)
 
     # Add in NA data for 2020 because having the time series jump from 2019 to 2021
@@ -54,13 +51,10 @@ with tab1:
     with col2:
         # Bar plot showing % change
         df["Percent Change"] = df[var].pct_change() * 100
-
-        fig, ax = plt.subplots()
-        df.plot(kind="bar", x="YEAR", y="Percent Change", ax=ax)
-        ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
-        ax.set_xticklabels(df["YEAR"], rotation=-45)
-        ax.legend().remove()
+        fig = be.get_bar_graph(df, var, state_name, county_name)
         st.pyplot(fig)
+
+    st.write("Data is not available for 2020 due to Covid-19.")
 
 # Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:

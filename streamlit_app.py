@@ -54,7 +54,7 @@ with tab1:
         fig = be.get_bar_graph(df, var, state_name, county_name)
         st.pyplot(fig)
 
-    st.write("Data is not available for 2020 due to Covid-19.")
+    st.write("Data not available for 2020 due to Covid-19.")
 
 # Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:

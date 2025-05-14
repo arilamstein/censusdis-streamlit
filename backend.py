@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 from census_vars import census_vars
 import json
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import matplotlib.patches as mpatches
 
 df = pd.read_csv("county_data.csv", dtype={"FIPS": str, "YEAR": str})
 with open("county_map.json", "r") as read_file:
@@ -98,3 +101,67 @@ def get_mapping_df(column):
     df2["Quartile"] = pd.qcut(df2["Percent Change"], q=4)
 
     return df2
+
+
+def get_line_graph(df, var, state_name, county_name):
+    fig, ax = plt.subplots()
+
+    df["YEAR"] = df["YEAR"].astype(int)
+
+    # Plot pre-Covid data (before 2020) in blue
+    df_pre = df[df["YEAR"] <= 2019]
+    ax.plot(df_pre["YEAR"], df_pre[var], "-o", color="blue", label="Pre-Covid")
+
+    # Plot post-COVID data (2021 onwards) in red
+    df_post = df[df["YEAR"] >= 2021]
+    ax.plot(df_post["YEAR"], df_post[var], "-o", color="red", label="Post-Covid")
+
+    # Connect 2019 to 2021 with a dashed line
+    value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
+    value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
+    ax.plot(
+        [2019, 2021], [value_2019, value_2021], "--", color="gray", label="Covid Gap"
+    )
+
+    # Set custom x-axis labels
+    selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display
+    ax.set_xticks(selected_years)  # Set ticks at these positions
+    ax.set_xticklabels(selected_years)  # Ensure labels match the chosen ticks
+
+    # Formatting
+    ax.set_title(f"{var}\n{county_name}, {state_name}")
+    ax.get_yaxis().set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
+    ax.legend()
+
+    return fig
+
+
+def get_bar_graph(df, var, state_name, county_name):
+    fig, ax = plt.subplots()
+
+    df["YEAR"] = df["YEAR"].astype(int)
+
+    df.plot(kind="bar", x="YEAR", y="Percent Change", ax=ax)
+
+    # Modify bar colors based on YEAR values
+    for bar, year in zip(ax.patches, df["YEAR"]):
+        if year <= 2019:
+            bar.set_facecolor("blue")
+        elif year == 2020:
+            bar.set_facecolor("gray")
+        elif year >= 2021:
+            bar.set_facecolor("red")
+
+    # Formatting
+    ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
+    selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display
+    ax.set_xticklabels(
+        [str(year) if year in selected_years else "" for year in df["YEAR"]], rotation=0
+    )
+
+    # Manually create custom legend
+    pre_covid_patch = mpatches.Patch(color="blue", label="Pre-Covid")
+    post_covid_patch = mpatches.Patch(color="red", label="Post-Covid")
+    ax.legend(handles=[pre_covid_patch, post_covid_patch])
+
+    return fig

@@ -1,8 +1,8 @@
 import backend as be
 import ui_helpers as uih
 import streamlit as st
-import matplotlib
 import plotly.express as px
+import pandas as pd
 
 st.header("How did your County Change During Covid?")
 
@@ -27,21 +27,34 @@ tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map"
 
 # Tab 1: Time series data on selected county / demographic combination
 with tab1:
-    st.write(f"All data for **{county_name}, {state_name}** for **{var}**.")
     df = be.get_census_data(state_name, county_name, var)
+
+    # Add in NA data for 2020 because having the time series jump from 2019 to 2021
+    # with no space in between looks odd.
+    row_for_2020 = pd.DataFrame(
+        [
+            {
+                "STATE_NAME": df.iloc[0]["STATE_NAME"],
+                "COUNTY_NAME": df.iloc[0]["COUNTY_NAME"],
+                "YEAR": "2020",
+            }
+        ]
+    )
+    df = pd.concat([df, row_for_2020])
+    df = df.sort_values(["STATE_NAME", "COUNTY_NAME", "YEAR"])
 
     col1, col2 = st.columns(2)
     with col1:
-        # Line graph of raw data. Set y-axis formatter to use commas
-        fig = df.plot(x="YEAR", y=var, style="-o").figure
-        fig.gca().get_yaxis().set_major_formatter(
-            matplotlib.ticker.StrMethodFormatter("{x:,.0f}")
-        )
+        fig = be.get_line_graph(df, var, state_name, county_name)
         st.pyplot(fig)
+
     with col2:
         # Bar plot showing % change
         df["Percent Change"] = df[var].pct_change() * 100
-        st.pyplot(df.plot(kind="bar", x="YEAR", y="Percent Change").figure)
+        fig = be.get_bar_graph(df, var, state_name, county_name)
+        st.pyplot(fig)
+
+    st.write("Data is not available for 2020 due to Covid-19.")
 
 # Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:

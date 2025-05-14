@@ -5,6 +5,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+# import pandas as pd
+
 st.header("How did your County Change During Covid?")
 
 # Let the user select a (state, county, demographic) combination to get data on
@@ -29,6 +31,21 @@ tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map"
 # Tab 1: Time series data on selected county / demographic combination
 with tab1:
     df = be.get_census_data(state_name, county_name, var)
+
+    # Add in NA data for 2020 because having the time series jump from 2019 to 2021
+    # with no space in between looks odd.
+    # This adds a discontinuity in the line graph, so comment out for now.
+    # row_for_2020 = pd.DataFrame(
+    #     [
+    #         {
+    #             "STATE_NAME": df.iloc[0]["STATE_NAME"],
+    #             "COUNTY_NAME": df.iloc[0]["COUNTY_NAME"],
+    #             "YEAR": "2020",
+    #         }
+    #     ]
+    # )
+    # df = pd.concat([df, row_for_2020])
+    # df = df.sort_values(["STATE_NAME", "COUNTY_NAME", "YEAR"])
 
     col1, col2 = st.columns(2)
     with col1:

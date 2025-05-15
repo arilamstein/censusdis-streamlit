@@ -14,8 +14,7 @@ YEAR2 = "2023"
 st.header("How has your County Changed Since Covid?")
 
 # Let the user select a (state, county, demographic) combination to get data on
-# State and County dropdowns appear side by side
-state_col, county_col = st.columns(2)
+state_col, county_col, demographic_col = st.columns(3)
 with state_col:
     state_name = st.selectbox("State:", be.get_state_names(), index=4)  # 4 = California
     county_name_index = uih.get_county_name_index(state_name)
@@ -23,11 +22,8 @@ with county_col:
     county_name = st.selectbox(
         "County:", be.get_county_names(state_name), index=county_name_index
     )
-
-# Demographic statistic dropdown appears below
-var = st.selectbox(
-    "Demographic:", be.get_unique_census_labels()
-)  # Something like "Total Population"
+with demographic_col:
+    var = st.selectbox("Demographic:", be.get_unique_census_labels())
 
 # Now display the data the user requested
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map", "ℹ️ About"])

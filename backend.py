@@ -114,13 +114,13 @@ def get_line_graph(df, var, state_name, county_name):
 
     df["YEAR"] = df["YEAR"].astype(int)
 
-    # Plot pre-Covid data (before 2020) in blue
+    # Plot pre-Covid data (before 2020) in black
     df_pre = df[df["YEAR"] <= 2019]
-    ax.plot(df_pre["YEAR"], df_pre[var], "-o", color="blue", label="Pre-Covid")
+    ax.plot(df_pre["YEAR"], df_pre[var], "-o", color="black", label="Pre-Covid")
 
-    # Plot post-COVID data (2021 onwards) in red
+    # Plot post-COVID data (2021 onwards) in blue
     df_post = df[df["YEAR"] >= 2021]
-    ax.plot(df_post["YEAR"], df_post[var], "-o", color="red", label="Post-Covid")
+    ax.plot(df_post["YEAR"], df_post[var], "-o", color="blue", label="Post-Covid")
 
     # If 2019 and 2021 are present, connect them with a dashed line to highlight that 2020 is always missing.
     # Any year can be missing because counties with a population < 65k are are dropped from the ACS 1-year estimates.
@@ -155,11 +155,11 @@ def get_bar_graph(df, var, state_name, county_name):
     # Modify bar colors based on YEAR values
     for bar, year in zip(ax.patches, df["YEAR"]):
         if year <= 2019:
-            bar.set_facecolor("blue")
+            bar.set_facecolor("black")
         elif year == 2020:
             bar.set_facecolor("gray")
         elif year >= 2021:
-            bar.set_facecolor("red")
+            bar.set_facecolor("blue")
 
     # Formatting
     ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
@@ -169,8 +169,8 @@ def get_bar_graph(df, var, state_name, county_name):
     )
 
     # Manually create custom legend
-    pre_covid_patch = mpatches.Patch(color="blue", label="Pre-Covid")
-    post_covid_patch = mpatches.Patch(color="red", label="Post-Covid")
+    pre_covid_patch = mpatches.Patch(color="black", label="Pre-Covid")
+    post_covid_patch = mpatches.Patch(color="blue", label="Post-Covid")
     ax.legend(handles=[pre_covid_patch, post_covid_patch])
 
     return fig

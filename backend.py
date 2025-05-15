@@ -179,10 +179,16 @@ def get_bar_graph(df, var, state_name, county_name):
     return fig
 
 
-def get_percent_change_histogram(df, var, year1, year2):
+def get_percent_change_histogram(df, var, year1, year2, state_name, county_name):
     fig, ax = plt.subplots()
 
     df.hist(column="Percent Change", ax=ax)
+
+    # Add a vertical line to highlight the selected county
+    full_name = ", ".join([county_name, state_name])
+    highlight_value = df.loc[df["County"] == full_name, "Percent Change"].values[0]
+    ax.axvline(highlight_value, color="yellow", linestyle="--", linewidth=2, label=f"{county_name}")
+    ax.legend()
 
     ax.set_title(f"Percent Change of {var}\nBetween {year1} and {year2}")
     ax.set_xlabel("Percent Change")

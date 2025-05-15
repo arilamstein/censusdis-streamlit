@@ -11,7 +11,7 @@ def get_county_name_index(state_name):
 
 
 # The "County Ranking" table benefits from some styling ...
-def apply_styles(styler, state_name, county_name):
+def apply_styles(styler, state_name, county_name, year1, year2):
     # 1. A background gradient to the "Percent Change" column
     styler.background_gradient(axis=0, cmap="YlGnBu", subset="Percent Change")
 
@@ -19,8 +19,8 @@ def apply_styles(styler, state_name, county_name):
     # style, and also add in a % to the "percent change" column
     styler.format(
         {
-            "2019": "{:,.0f}",  # Comma for thousands separator, and no significant digits
-            "2021": "{:,.0f}",
+            year1: "{:,.0f}",  # Comma for thousands separator, and no significant digits
+            year2: "{:,.0f}",
             "Change": "{:,.0f}",
             "Percent Change": "{:,.1f}%",  # Ditto but end with a % sign
         }

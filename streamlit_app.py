@@ -4,7 +4,14 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
-st.header("How did your County Change During Covid?")
+# When computing rankings we need to compare two years.
+# The first year will probably always be 2019 - the year prior to Covid.
+# The second year was originally 2022, but I increased it when new data came out.
+# I made these variables to avoid copy/paste errors in the future.
+YEAR1 = "2019"
+YEAR2 = "2023"
+
+st.header("How has your County Changed Since Covid?")
 
 # Let the user select a (state, county, demographic) combination to get data on
 # State and County dropdowns appear side by side
@@ -54,23 +61,25 @@ with tab1:
         fig = be.get_bar_graph(df, var, state_name, county_name)
         st.pyplot(fig)
 
-    st.write("Data not available for 2020 due to Covid-19.")
+    st.write("*Data not available for 2020 due to Covid-19.*")
 
 # Tab 2: Ranking of all counties for that demographic (2019-2021)
 with tab2:
-    ranking_df = be.get_ranking_df(var)
+    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2)
     ranking_text = be.get_ranking_text(state_name, county_name, var, ranking_df)
 
     st.write(ranking_text)
     # The styling here are things like the gradient on the "Percent Change" column
-    ranking_df = ranking_df.style.pipe(uih.apply_styles, state_name, county_name)
+    ranking_df = ranking_df.style.pipe(
+        uih.apply_styles, state_name, county_name, YEAR1, YEAR2
+    )
     st.dataframe(ranking_df)
 
 # Tab 3: Choropleth map
 with tab3:
     st.write("Data is provided only for counties with a population of at least 65,000.")
     fig = px.choropleth(
-        be.get_mapping_df(var),
+        be.get_mapping_df(var, YEAR1, YEAR2),
         geojson=be.county_map,
         locations="FIPS",
         color="Quartile",
@@ -87,7 +96,8 @@ with tab4:
     text = open("about.md").read()
     st.write(text)
 
-st.write(
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown(
     "Created by [Ari Lamstein](https://www.arilamstein.com). View the code "
     + "[here](https://github.com/arilamstein/censusdis-streamlit)."
 )

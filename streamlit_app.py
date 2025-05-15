@@ -70,7 +70,11 @@ with tab2:
 
     subtab = st.radio("Choose a visualization:", ["Histogram", "Table", "Map"])
     if subtab == "Histogram":
-        st.pyplot(be.get_percent_change_histogram(ranking_df, var, year1, year2, state_name, county_name))
+        st.pyplot(
+            be.get_percent_change_histogram(
+                ranking_df, var, year1, year2, state_name, county_name
+            )
+        )
     elif subtab == "Table":
         # The styling here are things like the gradient on the "Percent Change" column
         ranking_df = ranking_df.style.pipe(

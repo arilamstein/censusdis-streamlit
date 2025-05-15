@@ -122,10 +122,15 @@ def get_line_graph(df, var, state_name, county_name):
     df_post = df[df["YEAR"] >= 2021]
     ax.plot(df_post["YEAR"], df_post[var], "-o", color="red", label="Post-Covid")
 
-    # Connect 2019 to 2021 with a dashed line
-    value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
-    value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
-    ax.plot([2019, 2021], [value_2019, value_2021], "--", color="gray")
+    # If 2019 and 2021 are present, connect them with a dashed line to highlight that 2020 is always missing.
+    # Any year can be missing because counties with a population < 65k are are dropped from the ACS 1-year estimates.
+    if (
+        not df.loc[df["YEAR"] == 2019, var].empty
+        and not df.loc[df["YEAR"] == 2021, var].empty
+    ):
+        value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
+        value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
+        ax.plot([2019, 2021], [value_2019, value_2021], "--", color="gray")
 
     # Set custom x-axis labels
     selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display

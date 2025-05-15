@@ -12,24 +12,15 @@
 #
 # But there are issues with the raw data that we want to address:
 #
-# 1. Some counties existed in the past but do not exist today. We "prune" df so
-# it only includes counties which were present in both 2019 and 2021 (the years
-# we are most interested in).
-# See "Substantial Changes to Counties and County Equivalent Entities:
-# 1970-Present" for more information:
-# https://www.census.gov/programs-surveys/geography/technical-documentation/county-changes.html
-#
-# 2. One variable which we are interested in ('Worked from Home') changed name
+# 1. One variable which we are interested in ('Worked from Home') changed name
 # during the time period (it started as B08006_021E and moved to B08006_017E).
 # This script combines those two datasets into a single column.
 #
-# 3. Variable changes like the above are important but can be hard to detect.
+# 2. Variable changes like the above are important but can be hard to detect.
 # As a safety measure, the script prints out all unique labels that each
 # variable has had, so you can visually inspect whether a similar problem
 # exists in the dataset.
 
-# Step 1: Generate all data for all states and all counties over the time
-# period that we're interested in
 import pandas as pd
 import time
 from census_vars import census_vars, get_census_vars_for_year
@@ -87,36 +78,6 @@ print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} sec
 print(
     f"The resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} "
     + "unique counties."
-)
-
-# Step 2: Get a list of all counties that appear in both 2019 and 2021
-df_counties_2019 = ced.download(
-    dataset=ACS1,
-    vintage=2019,
-    download_variables="NAME",
-    state=ALL_STATES_AND_DC,
-    county="*",
-)
-
-df_counties_2021 = ced.download(
-    dataset=ACS1,
-    vintage=2021,
-    download_variables="NAME",
-    state=ALL_STATES_AND_DC,
-    county="*",
-)
-
-names_of_counties_2019 = set(df_counties_2019["NAME"])
-names_of_counties_2021 = set(df_counties_2021["NAME"])
-names_of_counties_in_both = names_of_counties_2019.intersection(names_of_counties_2021)
-print(f"{len(names_of_counties_in_both):,} counties appear in both 2019 and 2021.")
-
-# Step 3: drop all rows in df_county_data that don't have an entry in df_current_counties
-df_county_data = df_county_data[df_county_data["NAME"].isin(names_of_counties_in_both)]
-
-print(
-    "After filtering df_county_data to only those counties, the resulting dataframe has "
-    + f"{len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} unique counties."
 )
 
 # The data appears to already be sorted this way, but I want to ensure that.

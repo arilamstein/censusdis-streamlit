@@ -3,9 +3,9 @@
 # Otherwise have it default to the first county using alphabetical order.
 def get_county_name_index(state_name):
     if state_name == "California":
-        return 24  # San Francisco
+        return 25  # San Francisco
     elif state_name == "New York":
-        return 15  # New York (Manhattan)
+        return 16  # New York (Manhattan)
 
     return 0
 

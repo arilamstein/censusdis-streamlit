@@ -359,6 +359,21 @@ Alabama,Tuscaloosa County,2019,209355,,3756,52243,691,01125
 Alabama,Tuscaloosa County,2021,227007,,2710,56559,728,01125
 Alabama,Tuscaloosa County,2022,236780,,3493,61097,772,01125
 Alabama,Tuscaloosa County,2023,237373,8767.0,1375,60926,789,01125
+Alabama,Walker County,2005,69096,,279,34698,322,01127
+Alabama,Walker County,2006,70034,,68,37176,312,01127
+Alabama,Walker County,2007,68816,,278,34478,369,01127
+Alabama,Walker County,2008,68970,,234,37138,336,01127
+Alabama,Walker County,2009,68742,,312,36892,389,01127
+Alabama,Walker County,2010,66947,,340,35150,380,01127
+Alabama,Walker County,2011,66661,,304,34343,374,01127
+Alabama,Walker County,2012,66221,,608,35330,391,01127
+Alabama,Walker County,2013,65998,,309,34810,436,01127
+Alabama,Walker County,2014,65471,,582,35495,380,01127
+Alabama,Walker County,2015,65294,,300,35056,404,01127
+Alabama,Walker County,2016,64967,,441,39068,480,01127
+Alabama,Walker County,2017,64058,,152,41973,409,01127
+Alabama,Walker County,2018,63711,,397,47602,386,01127
+Alabama,Walker County,2019,63521,,535,46283,498,01127
 Alaska,Anchorage Municipality,2005,266281,5638.0,7600,61217,810,02020
 Alaska,Anchorage Municipality,2006,278700,5599.0,4719,63656,864,02020
 Alaska,Anchorage Municipality,2007,279671,6152.0,5763,68726,910,02020
@@ -1184,6 +1199,9 @@ California,Sacramento County,2019,1552058,52374.0,22938,72017,1224,06067
 California,Sacramento County,2021,1588921,162644.0,34162,80063,1355,06067
 California,Sacramento County,2022,1584169,144719.0,22820,84211,1485,06067
 California,Sacramento County,2023,1584288,132848.0,24436,90252,1591,06067
+California,San Benito County,2021,66677,,723,101923,1488,06069
+California,San Benito County,2022,67579,,724,111544,1448,06069
+California,San Benito County,2023,68175,,318,107324,1872,06069
 California,San Bernardino County,2005,1916665,26612.0,27583,49026,817,06071
 California,San Bernardino County,2006,1999332,31800.0,26372,52941,855,06071
 California,San Bernardino County,2007,2007800,34340.0,20754,56428,919,06071
@@ -1846,6 +1864,24 @@ Connecticut,Windham County,2017,116359,,4079,63573,688,09015
 Connecticut,Windham County,2018,117027,2854.0,2976,65765,813,09015
 Connecticut,Windham County,2019,116782,,3586,62106,833,09015
 Connecticut,Windham County,2021,116418,,1271,72068,807,09015
+Connecticut,Capitol Planning Region,2022,981447,82906.0,14001,84504,1094,09110
+Connecticut,Capitol Planning Region,2023,975328,73925.0,11601,91005,1178,09110
+Connecticut,Greater Bridgeport Planning Region,2022,327286,24825.0,2175,81143,1238,09120
+Connecticut,Greater Bridgeport Planning Region,2023,327651,21722.0,3681,95085,1271,09120
+Connecticut,Lower Connecticut River Valley Planning Region,2022,176622,17087.0,1082,99438,1192,09130
+Connecticut,Lower Connecticut River Valley Planning Region,2023,176215,,796,99275,1207,09130
+Connecticut,Naugatuck Valley Planning Region,2022,454083,28017.0,6345,81925,962,09140
+Connecticut,Naugatuck Valley Planning Region,2023,456128,26230.0,5795,81326,1042,09140
+Connecticut,Northeastern Connecticut Planning Region,2022,96196,,885,80701,813,09150
+Connecticut,Northeastern Connecticut Planning Region,2023,96692,,593,88806,984,09150
+Connecticut,Northwest Hills Planning Region,2022,113234,8644.0,871,86555,892,09160
+Connecticut,Northwest Hills Planning Region,2023,113463,,1119,91020,928,09160
+Connecticut,South Central Connecticut Planning Region,2022,573244,39394.0,5986,85026,1201,09170
+Connecticut,South Central Connecticut Planning Region,2023,568158,38684.0,6180,80733,1283,09170
+Connecticut,Southeastern Connecticut Planning Region,2022,280403,15649.0,3496,80113,1040,09180
+Connecticut,Southeastern Connecticut Planning Region,2023,279634,15610.0,3196,82652,1116,09180
+Connecticut,Western Connecticut Planning Region,2022,623690,68154.0,2878,122234,1770,09190
+Connecticut,Western Connecticut Planning Region,2023,623907,58031.0,6216,121429,1846,09190
 Delaware,Kent County,2005,140205,,1278,48282,557,10001
 Delaware,Kent County,2006,147601,,1850,47722,640,10001
 Delaware,Kent County,2007,152255,1219.0,1423,46788,743,10001
@@ -2919,6 +2955,9 @@ Georgia,Douglas County,2019,146343,,1814,62669,933,13097
 Georgia,Douglas County,2021,145814,,1619,65046,1108,13097
 Georgia,Douglas County,2022,147316,,872,80933,1293,13097
 Georgia,Douglas County,2023,149160,,1074,81339,1349,13097
+Georgia,Effingham County,2021,66741,,514,74460,817,13103
+Georgia,Effingham County,2022,69041,,82,89885,799,13103
+Georgia,Effingham County,2023,71541,,344,81733,974,13103
 Georgia,Fayette County,2005,103643,,426,76421,740,13113
 Georgia,Fayette County,2006,106671,,322,79969,786,13113
 Georgia,Fayette County,2007,106144,,419,76789,816,13113
@@ -3087,6 +3126,15 @@ Georgia,Jackson County,2019,72977,,438,65063,599,13157
 Georgia,Jackson County,2021,80286,,550,72116,731,13157
 Georgia,Jackson County,2022,83936,,418,83843,821,13157
 Georgia,Jackson County,2023,88615,,712,84749,896,13157
+Georgia,Liberty County,2011,65451,,17,45485,728,13179
+Georgia,Liberty County,2012,65471,,762,42990,785,13179
+Georgia,Liberty County,2013,64135,,605,39140,789,13179
+Georgia,Liberty County,2014,65198,,135,41812,826,13179
+Georgia,Liberty County,2015,62467,,445,36573,782,13179
+Georgia,Liberty County,2016,62570,,258,45138,858,13179
+Georgia,Liberty County,2021,65711,,620,48624,938,13179
+Georgia,Liberty County,2022,68030,,453,61546,1078,13179
+Georgia,Liberty County,2023,69210,,490,58308,1171,13179
 Georgia,Lowndes County,2005,89724,,632,38532,456,13185
 Georgia,Lowndes County,2006,97844,,214,36282,465,13185
 Georgia,Lowndes County,2007,101790,,282,40084,532,13185
@@ -3438,6 +3486,21 @@ Idaho,Twin Falls County,2019,86878,,857,56276,669,16083
 Idaho,Twin Falls County,2021,92243,,718,52880,687,16083
 Idaho,Twin Falls County,2022,93696,,1000,63560,881,16083
 Idaho,Twin Falls County,2023,95156,,1157,66643,986,16083
+Illinois,Adams County,2005,64273,,547,40763,349,17001
+Illinois,Adams County,2006,67221,,525,39227,368,17001
+Illinois,Adams County,2007,67046,,199,44048,364,17001
+Illinois,Adams County,2008,66897,,313,44853,402,17001
+Illinois,Adams County,2009,67054,,436,40699,434,17001
+Illinois,Adams County,2010,67120,,598,40626,407,17001
+Illinois,Adams County,2011,67159,,535,42635,400,17001
+Illinois,Adams County,2012,67197,,432,46378,471,17001
+Illinois,Adams County,2013,67130,,889,41327,423,17001
+Illinois,Adams County,2014,66988,,497,45606,497,17001
+Illinois,Adams County,2015,67013,,841,46528,442,17001
+Illinois,Adams County,2016,66578,,349,51624,518,17001
+Illinois,Adams County,2017,66234,,758,48679,520,17001
+Illinois,Adams County,2018,65691,,736,56699,626,17001
+Illinois,Adams County,2019,65435,,509,55727,643,17001
 Illinois,Champaign County,2005,168902,,928,39129,562,17019
 Illinois,Champaign County,2006,185682,4547.0,912,43290,539,17019
 Illinois,Champaign County,2007,190260,2584.0,1046,43407,556,17019
@@ -4267,6 +4330,8 @@ Indiana,Vigo County,2019,107038,1449.0,468,48013,549,18167
 Indiana,Vigo County,2021,105994,,1080,46802,628,18167
 Indiana,Vigo County,2022,106006,,953,51125,657,18167
 Indiana,Vigo County,2023,106153,,1327,47659,743,18167
+Indiana,Warrick County,2022,65185,,561,79901,750,18173
+Indiana,Warrick County,2023,65867,,77,85260,832,18173
 Indiana,Wayne County,2005,66972,,885,34384,423,18177
 Indiana,Wayne County,2006,68846,,824,40183,430,18177
 Indiana,Wayne County,2007,68260,,1096,39082,408,18177
@@ -4799,6 +4864,20 @@ Kentucky,Oldham County,2019,66799,,28,97968,781,21185
 Kentucky,Oldham County,2021,68685,,476,110041,696,21185
 Kentucky,Oldham County,2022,69431,,279,115187,758,21185
 Kentucky,Oldham County,2023,70183,,362,119553,906,21185
+Kentucky,Pike County,2005,65976,,888,28048,322,21195
+Kentucky,Pike County,2006,66860,,965,32600,325,21195
+Kentucky,Pike County,2007,65544,,1287,32256,357,21195
+Kentucky,Pike County,2008,65331,,1344,32648,383,21195
+Kentucky,Pike County,2009,65446,,806,31628,385,21195
+Kentucky,Pike County,2010,64952,,1289,26927,390,21195
+Kentucky,Pike County,2011,64904,,1410,33307,407,21195
+Kentucky,Pike County,2012,64178,,934,32014,407,21195
+Kentucky,Pike County,2013,63380,,878,34373,447,21195
+Kentucky,Pike County,2014,63034,,795,31426,433,21195
+Kentucky,Pike County,2015,61792,,424,33321,432,21195
+Kentucky,Pulaski County,2021,65423,,533,44561,506,21199
+Kentucky,Pulaski County,2022,65795,,1117,44649,566,21199
+Kentucky,Pulaski County,2023,66191,,572,55667,607,21199
 Kentucky,Warren County,2005,93401,,373,41046,440,21227
 Kentucky,Warren County,2006,101266,,776,43507,477,21227
 Kentucky,Warren County,2007,104023,922.0,792,41327,458,21227
@@ -5051,6 +5130,7 @@ Louisiana,Rapides Parish,2019,129648,,582,50490,661,22079
 Louisiana,Rapides Parish,2021,128654,,535,45183,626,22079
 Louisiana,Rapides Parish,2022,127189,,544,58161,637,22079
 Louisiana,Rapides Parish,2023,126260,,491,51301,670,22079
+Louisiana,St. Bernard Parish,2005,64576,,311,34858,468,22087
 Louisiana,St. Landry Parish,2005,88409,,785,22460,237,22097
 Louisiana,St. Landry Parish,2006,91528,,378,23119,271,22097
 Louisiana,St. Landry Parish,2007,91362,,381,26275,246,22097
@@ -5897,6 +5977,24 @@ Michigan,Ingham County,2019,292406,6050.0,5117,54395,749,26065
 Michigan,Ingham County,2021,284034,31222.0,6332,57226,787,26065
 Michigan,Ingham County,2022,284108,22864.0,4140,59823,812,26065
 Michigan,Ingham County,2023,284637,19128.0,3575,62998,888,26065
+Michigan,Ionia County,2021,67197,,396,65729,657,26067
+Michigan,Ionia County,2022,66809,,569,75865,738,26067
+Michigan,Ionia County,2023,66262,,520,69951,651,26067
+Michigan,Isabella County,2005,58848,,938,35949,508,26073
+Michigan,Isabella County,2006,65818,1364.0,552,40126,546,26073
+Michigan,Isabella County,2007,66693,1389.0,605,38104,536,26073
+Michigan,Isabella County,2008,66778,1127.0,368,34946,590,26073
+Michigan,Isabella County,2009,67176,,950,33787,563,26073
+Michigan,Isabella County,2010,70334,,653,31014,516,26073
+Michigan,Isabella County,2011,70622,891.0,758,37319,621,26073
+Michigan,Isabella County,2012,70617,1023.0,1118,35593,559,26073
+Michigan,Isabella County,2013,70436,2050.0,681,37488,637,26073
+Michigan,Isabella County,2014,70616,,444,41931,608,26073
+Michigan,Isabella County,2015,70698,,495,40838,622,26073
+Michigan,Isabella County,2016,71282,,465,41868,557,26073
+Michigan,Isabella County,2017,71063,1742.0,741,44100,616,26073
+Michigan,Isabella County,2018,70562,,344,46198,644,26073
+Michigan,Isabella County,2019,69872,,588,45201,590,26073
 Michigan,Jackson County,2005,152954,,1713,47053,546,26075
 Michigan,Jackson County,2006,163851,,1541,42912,572,26075
 Michigan,Jackson County,2007,163006,2252.0,2108,43328,552,26075
@@ -6075,6 +6173,9 @@ Michigan,Monroe County,2019,150500,,1746,62839,686,26115
 Michigan,Monroe County,2021,155274,,1858,65512,769,26115
 Michigan,Monroe County,2022,155609,,1558,69563,872,26115
 Michigan,Monroe County,2023,155045,,862,71506,825,26115
+Michigan,Montcalm County,2021,67220,,849,55832,547,26117
+Michigan,Montcalm County,2022,67433,,684,61967,599,26117
+Michigan,Montcalm County,2023,68154,,607,65331,639,26117
 Michigan,Muskegon County,2005,169500,,2701,41911,430,26121
 Michigan,Muskegon County,2006,175231,,3338,40883,466,26121
 Michigan,Muskegon County,2007,174386,2357.0,2977,39099,485,26121
@@ -6284,6 +6385,9 @@ Minnesota,Carver County,2019,105089,,348,101434,1125,27019
 Minnesota,Carver County,2021,108626,,1150,102694,1210,27019
 Minnesota,Carver County,2022,110034,,370,116158,1222,27019
 Minnesota,Carver County,2023,111057,15302.0,510,129581,1391,27019
+Minnesota,Clay County,2021,65574,,1338,67539,752,27027
+Minnesota,Clay County,2022,65929,,1041,81386,824,27027
+Minnesota,Clay County,2023,66258,,921,70942,933,27027
 Minnesota,Crow Wing County,2019,65055,,904,60534,728,27035
 Minnesota,Crow Wing County,2021,67270,,1170,63921,738,27035
 Minnesota,Crow Wing County,2022,67948,3747.0,1080,66568,764,27035
@@ -6586,6 +6690,9 @@ Mississippi,Jones County,2019,68098,,643,37594,501,28067
 Mississippi,Jones County,2021,66744,,512,40116,503,28067
 Mississippi,Jones County,2022,66569,,129,59815,536,28067
 Mississippi,Jones County,2023,66250,,348,48503,512,28067
+Mississippi,Lamar County,2021,65353,,532,65334,823,28073
+Mississippi,Lamar County,2022,65783,,374,59560,784,28073
+Mississippi,Lamar County,2023,66217,,430,59716,875,28073
 Mississippi,Lauderdale County,2005,73647,,649,31177,372,28075
 Mississippi,Lauderdale County,2006,76724,,243,30401,396,28075
 Mississippi,Lauderdale County,2007,77100,,476,31054,402,28075
@@ -7149,6 +7256,7 @@ Nevada,Washoe County,2019,471519,12934.0,4821,71881,1095,32031
 Nevada,Washoe County,2021,493392,34984.0,6368,76220,1233,32031
 Nevada,Washoe County,2022,496745,27063.0,4516,80125,1361,32031
 Nevada,Washoe County,2023,498022,30237.0,3900,84183,1463,32031
+New Hampshire,Belknap County,2023,65027,,438,97692,937,33001
 New Hampshire,Cheshire County,2005,73019,,604,53868,701,33005
 New Hampshire,Cheshire County,2006,77393,,905,48692,727,33005
 New Hampshire,Cheshire County,2007,77725,,910,54838,747,33005
@@ -7653,6 +7761,23 @@ New Mexico,Bernalillo County,2019,679121,13605.0,9709,56115,812,35001
 New Mexico,Bernalillo County,2021,674393,59915.0,14869,59640,836,35001
 New Mexico,Bernalillo County,2022,672508,48381.0,10756,65075,914,35001
 New Mexico,Bernalillo County,2023,671586,41070.0,10646,68372,1051,35001
+New Mexico,Chaves County,2010,65779,,1106,34325,431,35005
+New Mexico,Chaves County,2011,65890,,351,36282,464,35005
+New Mexico,Chaves County,2012,65784,,1040,42382,531,35005
+New Mexico,Chaves County,2013,65823,,1062,45753,610,35005
+New Mexico,Chaves County,2014,65878,,1225,39696,522,35005
+New Mexico,Chaves County,2015,65764,,457,38044,575,35005
+New Mexico,Chaves County,2016,65282,,573,40960,559,35005
+New Mexico,Chaves County,2017,64866,,623,44899,645,35005
+New Mexico,Chaves County,2018,64689,,756,43941,586,35005
+New Mexico,Chaves County,2019,64615,,509,42003,604,35005
+New Mexico,Dona Ana County,2005,184089,,2340,29630,439,35013
+New Mexico,Dona Ana County,2006,193888,2811.0,1129,33952,476,35013
+New Mexico,Dona Ana County,2007,198791,4360.0,1480,35334,484,35013
+New Mexico,Dona Ana County,2008,201603,3085.0,1070,36035,553,35013
+New Mexico,Do?a Ana County,2009,206419,3522.0,1332,35717,495,35013
+New Mexico,Do?a Ana County,2010,210538,3739.0,1673,35230,553,35013
+New Mexico,Do?a Ana County,2011,213598,2483.0,2222,36101,540,35013
 New Mexico,Doña Ana County,2012,214445,4736.0,1530,37566,585,35013
 New Mexico,Doña Ana County,2013,213460,2582.0,2126,36343,562,35013
 New Mexico,Doña Ana County,2014,213676,,1474,39502,613,35013
@@ -7994,6 +8119,16 @@ New York,Kings County,2019,2559903,58837.0,51210,66937,1389,36047
 New York,Kings County,2021,2641052,325362.0,68899,67567,1525,36047
 New York,Kings County,2022,2590516,229179.0,59425,73951,1578,36047
 New York,Kings County,2023,2561225,192625.0,50325,76912,1647,36047
+New York,Livingston County,2010,65333,,603,50640,541,36051
+New York,Livingston County,2011,65070,,930,50513,591,36051
+New York,Livingston County,2012,64810,,581,53123,552,36051
+New York,Livingston County,2013,64705,,714,52061,527,36051
+New York,Livingston County,2014,64586,,726,48456,583,36051
+New York,Livingston County,2015,64717,,1345,53441,599,36051
+New York,Livingston County,2016,64257,,999,53121,571,36051
+New York,Livingston County,2017,63799,,709,55931,621,36051
+New York,Livingston County,2018,63227,,457,61609,647,36051
+New York,Livingston County,2019,62914,,768,59173,634,36051
 New York,Madison County,2005,65407,,201,45298,470,36053
 New York,Madison County,2006,70197,,165,47841,491,36053
 New York,Madison County,2007,69829,,224,53601,512,36053
@@ -8834,6 +8969,8 @@ North Carolina,Johnston County,2019,209339,,552,60951,575,37101
 North Carolina,Johnston County,2021,226504,,515,69394,680,37101
 North Carolina,Johnston County,2022,234778,,997,81725,832,37101
 North Carolina,Johnston County,2023,241955,16820.0,1029,79592,985,37101
+North Carolina,Lee County,2022,65476,,320,56540,745,37105
+North Carolina,Lee County,2023,67059,,701,60140,686,37105
 North Carolina,Lincoln County,2005,68947,,413,45001,420,37109
 North Carolina,Lincoln County,2006,71894,,347,38433,471,37109
 North Carolina,Lincoln County,2007,73106,,717,49092,464,37109
@@ -8960,6 +9097,8 @@ North Carolina,Orange County,2019,148476,8009.0,715,74299,913,37135
 North Carolina,Orange County,2021,148884,,1228,80294,1103,37135
 North Carolina,Orange County,2022,150477,19798.0,660,89291,1277,37135
 North Carolina,Orange County,2023,150626,17073.0,353,86381,1300,37135
+North Carolina,Pender County,2022,65737,,237,76922,900,37141
+North Carolina,Pender County,2023,68521,,534,71487,867,37141
 North Carolina,Pitt County,2005,136271,,696,31979,412,37147
 North Carolina,Pitt County,2006,145619,,649,36782,470,37147
 North Carolina,Pitt County,2007,152068,,409,37210,488,37147
@@ -9050,6 +9189,18 @@ North Carolina,Rowan County,2019,142088,,1421,51927,656,37159
 North Carolina,Rowan County,2021,148150,,749,56408,696,37159
 North Carolina,Rowan County,2022,149645,,500,61311,780,37159
 North Carolina,Rowan County,2023,151661,,440,65904,749,37159
+North Carolina,Rutherford County,2010,67772,,471,35442,400,37161
+North Carolina,Rutherford County,2011,67538,,671,35786,395,37161
+North Carolina,Rutherford County,2012,67323,,714,32836,382,37161
+North Carolina,Rutherford County,2013,66956,,707,34993,411,37161
+North Carolina,Rutherford County,2014,66600,,653,34347,444,37161
+North Carolina,Rutherford County,2015,66390,,371,35594,428,37161
+North Carolina,Rutherford County,2016,66421,,997,36121,425,37161
+North Carolina,Rutherford County,2017,66551,,471,40570,412,37161
+North Carolina,Rutherford County,2018,66826,,655,43111,529,37161
+North Carolina,Rutherford County,2019,67029,,446,44361,481,37161
+North Carolina,Rutherford County,2023,65507,,79,47557,627,37161
+North Carolina,Stanly County,2023,65699,,401,65456,624,37167
 North Carolina,Surry County,2005,71330,,463,33954,334,37171
 North Carolina,Surry County,2006,72687,,357,35215,341,37171
 North Carolina,Surry County,2007,72380,,446,35628,397,37171
@@ -9258,6 +9409,11 @@ Ohio,Ashtabula County,2019,97241,,1177,44580,533,39007
 Ohio,Ashtabula County,2021,97337,,808,46771,605,39007
 Ohio,Ashtabula County,2022,97014,1820.0,1020,51737,630,39007
 Ohio,Ashtabula County,2023,96845,,991,57577,563,39007
+Ohio,Athens County,2015,65886,,1021,36511,596,39009
+Ohio,Athens County,2016,66186,,788,36193,581,39009
+Ohio,Athens County,2017,66597,,470,44247,618,39009
+Ohio,Athens County,2018,65818,,762,36944,595,39009
+Ohio,Athens County,2019,65327,,333,41851,724,39009
 Ohio,Belmont County,2005,65833,,1200,34628,342,39013
 Ohio,Belmont County,2006,68771,,625,37760,320,39013
 Ohio,Belmont County,2007,67908,,586,35732,350,39013
@@ -9510,6 +9666,21 @@ Ohio,Hancock County,2019,75783,,630,60944,601,39063
 Ohio,Hancock County,2021,74656,,391,64024,642,39063
 Ohio,Hancock County,2022,74861,,420,71377,739,39063
 Ohio,Hancock County,2023,74704,,99,70736,766,39063
+Ohio,Jefferson County,2005,68436,,890,34442,336,39081
+Ohio,Jefferson County,2006,70125,,1489,31741,357,39081
+Ohio,Jefferson County,2007,68730,,1025,38499,346,39081
+Ohio,Jefferson County,2008,68526,,918,36492,367,39081
+Ohio,Jefferson County,2009,67691,,808,36978,358,39081
+Ohio,Jefferson County,2010,69614,,1362,36008,418,39081
+Ohio,Jefferson County,2011,68828,,1039,42075,383,39081
+Ohio,Jefferson County,2012,68389,,994,40566,448,39081
+Ohio,Jefferson County,2013,67964,,796,37012,390,39081
+Ohio,Jefferson County,2014,67694,,787,40293,399,39081
+Ohio,Jefferson County,2015,67347,,514,44194,435,39081
+Ohio,Jefferson County,2016,66704,,1010,44257,456,39081
+Ohio,Jefferson County,2017,66359,,822,43675,442,39081
+Ohio,Jefferson County,2018,65767,,500,40308,458,39081
+Ohio,Jefferson County,2019,65325,,339,47445,489,39081
 Ohio,Lake County,2005,229566,,1310,48885,631,39085
 Ohio,Lake County,2006,232892,2732.0,1940,51322,613,39085
 Ohio,Lake County,2007,233392,4599.0,1552,55607,646,39085
@@ -9834,6 +10005,8 @@ Ohio,Tuscarawas County,2019,91987,,511,53616,567,39157
 Ohio,Tuscarawas County,2021,92500,,711,58060,599,39157
 Ohio,Tuscarawas County,2022,91937,,596,58588,611,39157
 Ohio,Tuscarawas County,2023,91874,,751,60604,662,39157
+Ohio,Union County,2022,66898,,332,104195,875,39159
+Ohio,Union County,2023,69637,,630,101968,966,39159
 Ohio,Warren County,2005,190403,,1325,63580,616,39165
 Ohio,Warren County,2006,201871,,1193,66834,637,39165
 Ohio,Warren County,2007,204390,3214.0,1092,71088,647,39165
@@ -10584,6 +10757,21 @@ Pennsylvania,Clearfield County,2019,79255,,1548,45643,574,42033
 Pennsylvania,Clearfield County,2021,80082,,1432,55193,504,42033
 Pennsylvania,Clearfield County,2022,77904,,1215,60228,524,42033
 Pennsylvania,Clearfield County,2023,77090,,1617,60711,652,42033
+Pennsylvania,Columbia County,2006,65014,,278,39135,439,42037
+Pennsylvania,Columbia County,2007,64726,,479,42685,428,42037
+Pennsylvania,Columbia County,2008,65004,,442,43521,481,42037
+Pennsylvania,Columbia County,2009,65111,,361,42575,485,42037
+Pennsylvania,Columbia County,2010,67268,,556,42086,544,42037
+Pennsylvania,Columbia County,2011,67476,,661,39730,509,42037
+Pennsylvania,Columbia County,2012,66887,,450,46545,490,42037
+Pennsylvania,Columbia County,2013,66797,,828,46530,601,42037
+Pennsylvania,Columbia County,2014,67122,,889,48540,565,42037
+Pennsylvania,Columbia County,2015,66672,,416,42599,580,42037
+Pennsylvania,Columbia County,2016,66420,,665,49186,590,42037
+Pennsylvania,Columbia County,2017,65932,,321,51726,627,42037
+Pennsylvania,Columbia County,2018,65456,,718,50601,604,42037
+Pennsylvania,Columbia County,2019,64964,,410,54570,608,42037
+Pennsylvania,Columbia County,2023,65439,,349,63683,726,42037
 Pennsylvania,Crawford County,2005,85445,,1789,35842,380,42039
 Pennsylvania,Crawford County,2006,89389,1290.0,1247,35659,377,42039
 Pennsylvania,Crawford County,2007,88663,1915.0,1691,36217,361,42039
@@ -11214,6 +11402,21 @@ South Carolina,Charleston County,2019,411406,15540.0,1138,71531,1083,45019
 South Carolina,Charleston County,2021,413024,35652.0,3691,72147,1158,45019
 South Carolina,Charleston County,2022,419279,38612.0,1832,80401,1300,45019
 South Carolina,Charleston County,2023,424367,42915.0,1068,89083,1532,45019
+South Carolina,Darlington County,2005,66072,,754,34253,371,45031
+South Carolina,Darlington County,2006,67551,,643,37503,337,45031
+South Carolina,Darlington County,2007,66833,,895,41397,356,45031
+South Carolina,Darlington County,2008,67031,,638,38703,382,45031
+South Carolina,Darlington County,2009,66445,,1118,34529,379,45031
+South Carolina,Darlington County,2010,68617,,388,32385,379,45031
+South Carolina,Darlington County,2011,68299,,303,39125,461,45031
+South Carolina,Darlington County,2012,68139,,349,32922,369,45031
+South Carolina,Darlington County,2013,67935,,343,31674,410,45031
+South Carolina,Darlington County,2014,67799,,159,34651,394,45031
+South Carolina,Darlington County,2015,67548,,191,33922,428,45031
+South Carolina,Darlington County,2016,67234,,377,36841,438,45031
+South Carolina,Darlington County,2017,67265,,462,37465,509,45031
+South Carolina,Darlington County,2018,66802,,349,33521,476,45031
+South Carolina,Darlington County,2019,66618,,272,44606,511,45031
 South Carolina,Dorchester County,2005,110552,,631,50128,658,45035
 South Carolina,Dorchester County,2006,118979,,611,50332,592,45035
 South Carolina,Dorchester County,2007,123505,,1017,53915,682,45035
@@ -11250,6 +11453,7 @@ South Carolina,Florence County,2019,138293,,562,50082,588,45041
 South Carolina,Florence County,2021,136504,,1293,51860,679,45041
 South Carolina,Florence County,2022,136721,,1385,49527,603,45041
 South Carolina,Florence County,2023,137214,,643,54014,801,45041
+South Carolina,Georgetown County,2023,65731,,0,71313,1251,45043
 South Carolina,Greenville County,2005,396399,4794.0,1758,42449,493,45045
 South Carolina,Greenville County,2006,417166,4732.0,3164,41850,508,45045
 South Carolina,Greenville County,2007,428243,8292.0,1849,47768,529,45045
@@ -11488,6 +11692,9 @@ South Carolina,York County,2019,280979,9544.0,986,66949,861,45091
 South Carolina,York County,2021,288595,,1703,72772,1004,45091
 South Carolina,York County,2022,294248,26359.0,1463,83613,1142,45091
 South Carolina,York County,2023,298320,,1454,81356,1193,45091
+South Dakota,Lincoln County,2021,67870,,155,82898,949,46083
+South Dakota,Lincoln County,2022,70987,,207,90600,966,46083
+South Dakota,Lincoln County,2023,73238,,306,98015,1113,46083
 South Dakota,Minnehaha County,2005,154396,,1247,45196,520,46099
 South Dakota,Minnehaha County,2006,163281,2841.0,1288,49810,555,46099
 South Dakota,Minnehaha County,2007,175272,3348.0,1429,48859,554,46099
@@ -11614,6 +11821,8 @@ Tennessee,Greene County,2019,69069,,846,44722,513,47059
 Tennessee,Greene County,2021,70621,,1409,56488,516,47059
 Tennessee,Greene County,2022,71405,,227,48918,483,47059
 Tennessee,Greene County,2023,72577,,670,54261,598,47059
+Tennessee,Hamblen County,2022,65168,,1052,59418,569,47063
+Tennessee,Hamblen County,2023,66216,,596,53210,672,47063
 Tennessee,Hamilton County,2005,302475,,3395,40593,479,47065
 Tennessee,Hamilton County,2006,312905,3319.0,3847,41855,500,47065
 Tennessee,Hamilton County,2007,330168,4251.0,5622,45491,490,47065
@@ -12343,6 +12552,8 @@ Texas,Hidalgo County,2019,868707,20730.0,3913,41800,604,48215
 Texas,Hidalgo County,2021,880356,32049.0,6161,44818,672,48215
 Texas,Hidalgo County,2022,888367,31963.0,4748,49142,705,48215
 Texas,Hidalgo County,2023,898471,34060.0,5367,53661,765,48215
+Texas,Hood County,2022,66373,,478,69462,1221,48221
+Texas,Hood County,2023,67774,,53,80682,1262,48221
 Texas,Hunt County,2005,80052,,512,42129,482,48231
 Texas,Hunt County,2006,83338,,364,36461,478,48231
 Texas,Hunt County,2007,82945,,205,43163,501,48231
@@ -12505,6 +12716,16 @@ Texas,Montgomery County,2019,607391,22000.0,1350,88695,1073,48339
 Texas,Montgomery County,2021,648886,51438.0,6447,86903,1132,48339
 Texas,Montgomery County,2022,678490,57015.0,2105,94972,1217,48339
 Texas,Montgomery County,2023,711354,54195.0,2971,91841,1345,48339
+Texas,Nacogdoches County,2011,65466,,134,39110,525,48347
+Texas,Nacogdoches County,2012,66034,,1017,32555,539,48347
+Texas,Nacogdoches County,2013,65330,,242,35587,564,48347
+Texas,Nacogdoches County,2014,65301,,467,39326,598,48347
+Texas,Nacogdoches County,2015,65664,,309,39865,591,48347
+Texas,Nacogdoches County,2016,65806,,407,35562,597,48347
+Texas,Nacogdoches County,2017,65580,,489,47589,607,48347
+Texas,Nacogdoches County,2018,65711,,220,46459,600,48347
+Texas,Nacogdoches County,2019,65204,,454,47572,521,48347
+Texas,Nacogdoches County,2023,65375,,382,51718,721,48347
 Texas,Nueces County,2005,313465,3543.0,2287,38990,534,48355
 Texas,Nueces County,2006,321457,3570.0,1553,36773,530,48355
 Texas,Nueces County,2007,321135,2971.0,1780,40901,579,48355
@@ -12648,6 +12869,9 @@ Texas,Smith County,2019,232751,7208.0,1106,59584,823,48423
 Texas,Smith County,2021,237186,,2575,63115,839,48423
 Texas,Smith County,2022,241922,,1723,68192,926,48423
 Texas,Smith County,2023,245209,15370.0,1453,72313,1093,48423
+Texas,Starr County,2021,66049,,103,33367,464,48427
+Texas,Starr County,2022,65728,,318,33871,516,48427
+Texas,Starr County,2023,65934,,394,41566,515,48427
 Texas,Tarrant County,2005,1595715,23639.0,10312,49104,580,48439
 Texas,Tarrant County,2006,1671295,29641.0,8718,51813,599,48439
 Texas,Tarrant County,2007,1717435,34260.0,6894,53459,622,48439
@@ -13962,6 +14186,9 @@ Wisconsin,Brown County,2019,264542,6693.0,2348,64458,697,55009
 Wisconsin,Brown County,2021,269591,20148.0,2188,66191,744,55009
 Wisconsin,Brown County,2022,270036,16471.0,4825,71127,771,55009
 Wisconsin,Brown County,2023,271417,17222.0,1742,77146,876,55009
+Wisconsin,Chippewa County,2021,66865,,444,60533,641,55017
+Wisconsin,Chippewa County,2022,66807,,500,75128,691,55017
+Wisconsin,Chippewa County,2023,66970,,277,77617,672,55017
 Wisconsin,Dane County,2005,442336,9516.0,2154,53537,683,55025
 Wisconsin,Dane County,2006,463826,9442.0,1226,57693,692,55025
 Wisconsin,Dane County,2007,476785,10831.0,1658,60791,723,55025
@@ -14250,6 +14477,9 @@ Wisconsin,St. Croix County,2019,90687,,186,85594,851,55109
 Wisconsin,St. Croix County,2021,95044,,610,93547,1022,55109
 Wisconsin,St. Croix County,2022,96017,,366,96130,857,55109
 Wisconsin,St. Croix County,2023,96763,,968,102475,1260,55109
+Wisconsin,Sauk County,2021,65697,,622,70914,732,55111
+Wisconsin,Sauk County,2022,65777,3614.0,573,69475,815,55111
+Wisconsin,Sauk County,2023,65920,2924.0,384,80070,907,55111
 Wisconsin,Sheboygan County,2005,111100,,580,51034,481,55117
 Wisconsin,Sheboygan County,2006,114756,2082.0,331,46375,479,55117
 Wisconsin,Sheboygan County,2007,114504,1775.0,1076,52082,484,55117

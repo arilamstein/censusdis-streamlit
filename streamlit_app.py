@@ -20,8 +20,8 @@ with demographic_col:
 
 # Let the user selecting years to compare when ranking how counties changed
 st.write("When ranking how counties changed, compare these years:")
-# The ACS 1-year estimates are available for each year since 2005 with the exception of 2020 
-years = [str(year) for year in range(2005, 2023+1) if year != 2020]
+# The ACS 1-year estimates are available for each year since 2005 with the exception of 2020
+years = [str(year) for year in range(2005, 2023 + 1) if year != 2020]
 col1, col2 = st.columns(2)
 with col1:
     year1 = st.selectbox("Starting Year:", years, index=14)
@@ -74,7 +74,9 @@ with tab2:
         uih.apply_styles, state_name, county_name, year1, year2
     )
     st.dataframe(ranking_df)
-    st.markdown("*Data is provided only for counties with a population of at least 65,000.*")
+    st.markdown(
+        "*Data is provided only for counties with a population of at least 65,000.*"
+    )
 
 # Tab 3: Choropleth map
 with tab3:
@@ -90,7 +92,9 @@ with tab3:
         labels={"Quartile": "Percent Change", "FIPS": "NAME"},
     )
     st.plotly_chart(fig)
-    st.markdown("*Data is provided only for counties with a population of at least 65,000.*")
+    st.markdown(
+        "*Data is provided only for counties with a population of at least 65,000.*"
+    )
 
 # Tab 4: Info about the data / app
 with tab4:

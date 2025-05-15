@@ -63,7 +63,7 @@ def get_ranking_df(column, year1, year2):
     return df2
 
 
-def get_ranking_text(state, county, var, ranking_df):
+def get_ranking_text(state, county, var, ranking_df, year1, year2):
     full_name = ", ".join([county, state])
 
     if full_name not in list(ranking_df["County"]):
@@ -73,7 +73,10 @@ def get_ranking_text(state, county, var, ranking_df):
 
     num_counties = len(ranking_df.index)
 
-    return f"{full_name} ranks **{rank}** of {num_counties} for its percent change in **{var}**."
+    return (
+        f"**{full_name}** ranks **{rank}** of {num_counties} for its percent change in **{var}** "
+        f"between **{year1}** and **{year2}**."
+    )
 
 
 def get_mapping_df(column, year1, year2):
@@ -172,5 +175,17 @@ def get_bar_graph(df, var, state_name, county_name):
     pre_covid_patch = mpatches.Patch(color="black", label="Pre-Covid")
     post_covid_patch = mpatches.Patch(color="blue", label="Post-Covid")
     ax.legend(handles=[pre_covid_patch, post_covid_patch])
+
+    return fig
+
+
+def get_percent_change_histogram(df, var, year1, year2):
+    fig, ax = plt.subplots()
+
+    df.hist(column="Percent Change", ax=ax)
+
+    ax.set_title(f"Percent Change of {var}\nBetween {year1} and {year2}")
+    ax.set_xlabel("Percent Change")
+    ax.set_ylabel("Number of Counties")
 
     return fig

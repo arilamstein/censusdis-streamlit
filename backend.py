@@ -73,7 +73,7 @@ def get_ranking_text(state, county, var, ranking_df):
 
     num_counties = len(ranking_df.index)
 
-    return f"{full_name} ranks **{rank}** of {num_counties}."
+    return f"{full_name} ranks **{rank}** of {num_counties} for its percent change in **{var}**."
 
 
 def get_mapping_df(column, year1, year2):

@@ -4,13 +4,6 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
-# When computing rankings we need to compare two years.
-# The first year will probably always be 2019 - the year prior to Covid.
-# The second year was originally 2022, but I increased it when new data came out.
-# I made these variables to avoid copy/paste errors in the future.
-YEAR1 = "2019"
-YEAR2 = "2023"
-
 st.header("How has your County Changed Since Covid?")
 
 # Let the user select a (state, county, demographic) combination to get data on
@@ -24,6 +17,17 @@ with county_col:
     )
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
+
+# Let the user selecting years to compare when ranking how counties changed
+st.write("When ranking how counties changed, compare these years:")
+# The ACS 1-year estimates are available for each year since 2005 with the exception of 2020 
+years = [str(year) for year in range(2005, 2023+1) if year != 2020]
+col1, col2 = st.columns(2)
+with col1:
+    year1 = st.selectbox("Starting Year:", years, index=14)
+with col2:
+    year2 = st.selectbox("Ending Year:", years, index=17)
+
 
 # Now display the data the user requested
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Details", "🥇 Rankings", "🗺️ Map", "ℹ️ About"])
@@ -59,23 +63,23 @@ with tab1:
 
     st.write("*Data not available for 2020 due to Covid-19.*")
 
-# Tab 2: Ranking of all counties for that demographic (2019-2021)
+# Tab 2: Ranking of all counties for that demographic
 with tab2:
-    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2)
+    ranking_df = be.get_ranking_df(var, year1, year2)
     ranking_text = be.get_ranking_text(state_name, county_name, var, ranking_df)
 
     st.write(ranking_text)
     # The styling here are things like the gradient on the "Percent Change" column
     ranking_df = ranking_df.style.pipe(
-        uih.apply_styles, state_name, county_name, YEAR1, YEAR2
+        uih.apply_styles, state_name, county_name, year1, year2
     )
     st.dataframe(ranking_df)
+    st.markdown("*Data is provided only for counties with a population of at least 65,000.*")
 
 # Tab 3: Choropleth map
 with tab3:
-    st.write("Data is provided only for counties with a population of at least 65,000.")
     fig = px.choropleth(
-        be.get_mapping_df(var, YEAR1, YEAR2),
+        be.get_mapping_df(var, year1, year2),
         geojson=be.county_map,
         locations="FIPS",
         color="Quartile",
@@ -86,6 +90,7 @@ with tab3:
         labels={"Quartile": "Percent Change", "FIPS": "NAME"},
     )
     st.plotly_chart(fig)
+    st.markdown("*Data is provided only for counties with a population of at least 65,000.*")
 
 # Tab 4: Info about the data / app
 with tab4:

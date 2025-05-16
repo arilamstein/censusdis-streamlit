@@ -25,7 +25,7 @@ graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal
 
 # Now display the data the user requested
 county_tab, map_tab, table_tab, about_tab = st.tabs(
-    ["📈 Single County", "🗺️ Map ", "📋 Table", "ℹ️ About"]
+    ["📈 Graphs", "🗺️ Map ", "📋 Table", "ℹ️ About"]
 )
 
 with county_tab:

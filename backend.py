@@ -74,8 +74,8 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2):
     num_counties = len(ranking_df.index)
 
     return (
-        f"**{full_name}** ranks **{rank}** of {num_counties} for its percent change in **{var}** "
-        f"between **{year1}** and **{year2}**."
+        f"{full_name} ranks **{rank} of {num_counties}** for its percent change in {var} "
+        f"between {year1} and {year2}."
     )
 
 
@@ -182,14 +182,14 @@ def get_bar_graph(df, var, state_name, county_name):
 def get_percent_change_histogram(df, var, year1, year2, state_name, county_name):
     fig, ax = plt.subplots()
 
-    df.hist(column="Percent Change", ax=ax)
+    df.hist(column="Percent Change", ax=ax, color="black", edgecolor="white")
 
     # Add a vertical line to highlight the selected county
     full_name = ", ".join([county_name, state_name])
     highlight_value = df.loc[df["County"] == full_name, "Percent Change"].values[0]
     ax.axvline(
         highlight_value,
-        color="yellow",
+        color="blue",
         linestyle="--",
         linewidth=2,
         label=f"{county_name}",
@@ -198,6 +198,30 @@ def get_percent_change_histogram(df, var, year1, year2, state_name, county_name)
 
     ax.set_title(f"Percent Change of {var}\nBetween {year1} and {year2}")
     ax.set_xlabel("Percent Change")
+    ax.set_ylabel("Number of Counties")
+
+    return fig
+
+
+def get_change_histogram(df, var, year1, year2, state_name, county_name):
+    fig, ax = plt.subplots()
+
+    df.hist(column="Change", ax=ax, color="black", edgecolor="white")
+
+    # Add a vertical line to highlight the selected county
+    full_name = ", ".join([county_name, state_name])
+    highlight_value = df.loc[df["County"] == full_name, "Change"].values[0]
+    ax.axvline(
+        highlight_value,
+        color="blue",
+        linestyle="--",
+        linewidth=2,
+        label=f"{county_name}",
+    )
+    ax.legend()
+
+    ax.set_title(f"Change of {var}\nBetween {year1} and {year2}")
+    ax.set_xlabel("Change")
     ax.set_ylabel("Number of Counties")
 
     return fig

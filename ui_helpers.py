@@ -11,9 +11,9 @@ def get_county_name_index(state_name):
 
 
 # The "County Ranking" table benefits from some styling ...
-def apply_styles(styler, state_name, county_name, year1, year2):
+def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
     # 1. A background gradient to the "Percent Change" column
-    styler.background_gradient(axis=0, cmap="YlGnBu", subset="Percent Change")
+    styler.background_gradient(axis=0, cmap="YlGnBu", subset=sorting_col)
 
     # The above change seems to cause the app to write too many significant changes. So re-apply that
     # style, and also add in a % to the "percent change" column

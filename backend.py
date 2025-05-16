@@ -36,7 +36,7 @@ def get_unique_census_labels():
     return list(dict.fromkeys(census_vars.values()))
 
 
-def get_ranking_df(column, year1, year2):
+def get_ranking_df(column, year1, year2, sorting_col):
     df2 = df.copy()  # We don't want to modify the global variable
 
     # Select just the rows and columns we need
@@ -52,7 +52,7 @@ def get_ranking_df(column, year1, year2):
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
-    df2 = df2.sort_values("Percent Change", ascending=False)
+    df2 = df2.sort_values(sorting_col, ascending=False)
 
     # Drop Columns with Infinite percent change (first or last year has 0)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna()
@@ -63,7 +63,7 @@ def get_ranking_df(column, year1, year2):
     return df2
 
 
-def get_ranking_text(state, county, var, ranking_df, year1, year2):
+def get_ranking_text(state, county, var, ranking_df, year1, year2, sorting_col):
     full_name = ", ".join([county, state])
 
     if full_name not in list(ranking_df["County"]):
@@ -74,7 +74,7 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2):
     num_counties = len(ranking_df.index)
 
     return (
-        f"{full_name} ranks **{rank} of {num_counties}** for its percent change in {var} "
+        f"{full_name} ranks **{rank} of {num_counties}** for {sorting_col} in {var} "
         f"between {year1} and {year2}."
     )
 
@@ -134,7 +134,7 @@ def get_line_graph(df, var, state_name, county_name):
 
     # Plot post-COVID data (2021 onwards) in blue
     df_post = df[df["YEAR"] >= 2021]
-    ax.plot(df_post["YEAR"], df_post[var], "-o", color="blue", label="Post-Covid")
+    ax.plot(df_post["YEAR"], df_post[var], "-o", color="orange", label="Post-Covid")
 
     # If 2019 and 2021 are present, connect them with a dashed line to highlight that 2020 is always missing.
     # Any year can be missing because counties with a population < 65k are are dropped from the ACS 1-year estimates.
@@ -173,7 +173,7 @@ def get_bar_graph(df, var, state_name, county_name):
         elif year == 2020:
             bar.set_facecolor("gray")
         elif year >= 2021:
-            bar.set_facecolor("blue")
+            bar.set_facecolor("orange")
 
     # Formatting
     ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
@@ -184,7 +184,7 @@ def get_bar_graph(df, var, state_name, county_name):
 
     # Manually create custom legend
     pre_covid_patch = mpatches.Patch(color="black", label="Pre-Covid")
-    post_covid_patch = mpatches.Patch(color="blue", label="Post-Covid")
+    post_covid_patch = mpatches.Patch(color="orange", label="Post-Covid")
     ax.legend(handles=[pre_covid_patch, post_covid_patch])
 
     return fig
@@ -200,9 +200,9 @@ def get_percent_change_histogram(df, var, year1, year2, state_name, county_name)
     highlight_value = df.loc[df["County"] == full_name, "Percent Change"].values[0]
     ax.axvline(
         highlight_value,
-        color="blue",
+        color="orange",
         linestyle="--",
-        linewidth=2,
+        linewidth=3,
         label=f"{county_name}",
     )
     ax.legend()
@@ -224,9 +224,9 @@ def get_change_histogram(df, var, year1, year2, state_name, county_name):
     highlight_value = df.loc[df["County"] == full_name, "Change"].values[0]
     ax.axvline(
         highlight_value,
-        color="blue",
+        color="orange",
         linestyle="--",
-        linewidth=2,
+        linewidth=3,
         label=f"{county_name}",
     )
     ax.legend()

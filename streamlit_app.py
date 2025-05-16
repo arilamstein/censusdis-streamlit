@@ -23,6 +23,7 @@ with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
 graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
 percent_change = graph_type == "Percent Change"
+sorting_col = "Percent Change" if percent_change else "Change"
 
 # Now display the data the user requested
 county_tab, map_tab, table_tab, about_tab = st.tabs(
@@ -59,7 +60,7 @@ with county_tab:
 
     with col2:
         # How does this county compare to all other counties?
-        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2)
+        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, sorting_col)
         if graph_type == "Counts":
             fig = be.get_change_histogram(
                 ranking_df, var, YEAR1, YEAR2, state_name, county_name
@@ -72,7 +73,6 @@ with county_tab:
         st.pyplot(fig)
 
 with map_tab:
-    col = "Percent Change" if percent_change else "Change"
     fig = px.choropleth(
         be.get_mapping_df(var, YEAR1, YEAR2, percent_change),
         geojson=be.county_map,
@@ -81,23 +81,23 @@ with map_tab:
         color_discrete_sequence=["#ffffcc", "#a1dab4", "#41b6c4", "#225ea8"],
         scope="usa",
         hover_name="County",
-        hover_data={"FIPS": False, col: True},
-        labels={"Quartile": col, "FIPS": "NAME"},
+        hover_data={"FIPS": False, sorting_col: True},
+        labels={"Quartile": sorting_col, "FIPS": "NAME"},
     )
-    fig.update_layout(title_text=f"{col} of {var} between {YEAR1} and {YEAR2}")
+    fig.update_layout(title_text=f"{sorting_col} of {var} between {YEAR1} and {YEAR2}")
     st.plotly_chart(fig)
 
 with table_tab:
-    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2)
+    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, sorting_col)
     ranking_text = be.get_ranking_text(
-        state_name, county_name, var, ranking_df, YEAR1, YEAR2
+        state_name, county_name, var, ranking_df, YEAR1, YEAR2, sorting_col
     )
 
     st.write(ranking_text)
 
-    # The styling here are things like the gradient on the "Percent Change" column
+    # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(
-        uih.apply_styles, state_name, county_name, YEAR1, YEAR2
+        uih.apply_styles, state_name, county_name, YEAR1, YEAR2, sorting_col
     )
     st.dataframe(ranking_df)
 

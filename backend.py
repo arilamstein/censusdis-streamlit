@@ -79,7 +79,7 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2, sorting_col):
     )
 
 
-def get_mapping_df(column, year1, year2, percent_change):
+def get_mapping_df(column, year1, year2, sorting_col):
     df2 = df.copy()  # We don't want to modify the global variable
 
     # Select just the rows and columns we need
@@ -96,18 +96,16 @@ def get_mapping_df(column, year1, year2, percent_change):
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
 
-    col = "Percent Change" if percent_change else "Change"
-
-    df2 = df2.sort_values(col, ascending=False)
+    df2 = df2.sort_values(sorting_col, ascending=False)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna().reset_index()
 
     # Color the map with 4 quartiles. This allows the user to quickly see high-level geographic
     # patterns in the data. The default (continuous) scale highlights outliers, which we already
     # show in the "Rankings" tab.
-    df2["Quartile"] = pd.qcut(df2[col], q=4, precision=1)
+    df2["Quartile"] = pd.qcut(df2[sorting_col], q=4, precision=1)
     # When the legend represents percent change (a) add a % to each number and
     # (b) Fix an issue where an interval was appearing as (-10.299999999999999, 0.1] despite setting the precision to 1
-    if col == "Percent Change":
+    if sorting_col == "Percent Change":
         df2["Quartile"] = df2["Quartile"].apply(
             lambda x: (
                 f"({round(x.left, 1)}% - {round(x.right, 1)}%]"  # Decimal format for small values
@@ -202,7 +200,7 @@ def get_percent_change_histogram(df, var, year1, year2, state_name, county_name)
         highlight_value,
         color="orange",
         linestyle="--",
-        linewidth=3,
+        linewidth=4,
         label=f"{county_name}",
     )
     ax.legend()
@@ -226,7 +224,7 @@ def get_change_histogram(df, var, year1, year2, state_name, county_name):
         highlight_value,
         color="orange",
         linestyle="--",
-        linewidth=3,
+        linewidth=4,
         label=f"{county_name}",
     )
     ax.legend()

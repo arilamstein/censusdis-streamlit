@@ -6,7 +6,7 @@ import pandas as pd
 
 st.header("How has your County Changed Since Covid?")
 
-# Comparisons "since Covid" are hard-coded to the last year before Covid (2019) and the last year of data
+# Comparisons "since Covid" are hard-coded to the year right before Covid (2019) and the last year of data
 YEAR1 = "2019"
 YEAR2 = "2023"
 
@@ -74,7 +74,7 @@ with county_tab:
 
 with map_tab:
     fig = px.choropleth(
-        be.get_mapping_df(var, YEAR1, YEAR2, percent_change),
+        be.get_mapping_df(var, YEAR1, YEAR2, sorting_col),
         geojson=be.county_map,
         locations="FIPS",
         color="Quartile",

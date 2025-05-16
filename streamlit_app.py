@@ -21,7 +21,7 @@ with county_col:
     )
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
-st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
+graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
 
 # Now display the data the user requested
 county_tab, map_tab, table_tab, about_tab = st.tabs(
@@ -48,7 +48,12 @@ with county_tab:
     col1, col2 = st.columns(2)
     with col1:
         # All data for this county
-        fig = be.get_line_graph(df, var, state_name, county_name)
+        if graph_type == "Counts":
+            fig = be.get_line_graph(df, var, state_name, county_name)
+        elif graph_type == "Percent Change":
+            df["Percent Change"] = df[var].pct_change() * 100
+            fig = be.get_bar_graph(df, var, state_name, county_name)
+
         st.pyplot(fig)
 
     with col2:
@@ -59,11 +64,6 @@ with county_tab:
                 ranking_df, var, YEAR1, YEAR2, state_name, county_name
             )
         )
-
-        # Bar plot showing % change
-        # df["Percent Change"] = df[var].pct_change() * 100
-        # fig = be.get_bar_graph(df, var, state_name, county_name)
-        # st.pyplot(fig)
 
 with map_tab:
     fig = px.choropleth(

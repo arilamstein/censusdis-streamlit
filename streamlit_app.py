@@ -59,11 +59,16 @@ with county_tab:
     with col2:
         # How does this county compare to all other counties?
         ranking_df = be.get_ranking_df(var, YEAR1, YEAR2)
-        st.pyplot(
-            be.get_percent_change_histogram(
+        if graph_type == "Counts":
+            fig = be.get_change_histogram(
                 ranking_df, var, YEAR1, YEAR2, state_name, county_name
             )
-        )
+        elif graph_type == "Percent Change":
+            fig = be.get_percent_change_histogram(
+                ranking_df, var, YEAR1, YEAR2, state_name, county_name
+            )
+
+        st.pyplot(fig)
 
 with map_tab:
     fig = px.choropleth(

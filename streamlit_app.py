@@ -22,6 +22,7 @@ with county_col:
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
 graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
+percent_change = graph_type == "Percent Change"
 
 # Now display the data the user requested
 county_tab, map_tab, table_tab, about_tab = st.tabs(
@@ -71,18 +72,19 @@ with county_tab:
         st.pyplot(fig)
 
 with map_tab:
+    col = "Percent Change" if percent_change else "Change"
     fig = px.choropleth(
-        be.get_mapping_df(var, YEAR1, YEAR2),
+        be.get_mapping_df(var, YEAR1, YEAR2, percent_change),
         geojson=be.county_map,
         locations="FIPS",
         color="Quartile",
         color_discrete_sequence=["#ffffcc", "#a1dab4", "#41b6c4", "#225ea8"],
         scope="usa",
         hover_name="County",
-        hover_data={"FIPS": False, "Percent Change": True},
-        labels={"Quartile": "Percent Change", "FIPS": "NAME"},
+        hover_data={"FIPS": False, col: True},
+        labels={"Quartile": col, "FIPS": "NAME"},
     )
-    fig.update_layout(title_text=f"Percent Change of {var} between {YEAR1} and {YEAR2}")
+    fig.update_layout(title_text=f"{col} of {var} between {YEAR1} and {YEAR2}")
     st.plotly_chart(fig)
 
 with table_tab:

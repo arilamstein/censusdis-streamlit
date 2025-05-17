@@ -22,8 +22,7 @@ with county_col:
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
 graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
-percent_change = graph_type == "Percent Change"
-display_col = "Percent Change" if percent_change else "Change"
+display_col = "Percent Change" if graph_type == "Percent Change" else "Change"
 
 # Now display the data the user requested
 county_tab, map_tab, table_tab, about_tab = st.tabs(

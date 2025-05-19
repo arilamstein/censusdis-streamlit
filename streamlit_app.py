@@ -57,7 +57,7 @@ with county_tab:
     with col2:
         # How does this county compare to all other counties?
         ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, display_col)
-        fig = be.get_histogram(
+        fig = be.get_boxplot(
             ranking_df, var, YEAR1, YEAR2, state_name, county_name, display_col
         )
         st.pyplot(fig)

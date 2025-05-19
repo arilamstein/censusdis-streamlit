@@ -2,9 +2,7 @@ import pandas as pd
 import numpy as np
 from census_vars import census_vars
 import json
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-import matplotlib.patches as mpatches
+
 
 df = pd.read_csv("county_data.csv", dtype={"FIPS": str, "YEAR": str})
 with open("county_map.json", "r") as read_file:
@@ -19,10 +17,26 @@ def get_county_names(state_name):
     return df.loc[df["STATE_NAME"] == state_name]["COUNTY_NAME"].sort_values().unique()
 
 
-def get_census_data(state_name, county_name, var):
-    return df.loc[
-        (df["STATE_NAME"] == state_name) & (df["COUNTY_NAME"] == county_name)
-    ][["STATE_NAME", "COUNTY_NAME", "YEAR", var]]
+def get_census_data(state_name, county_name, var, add_2020):
+    ret = df.loc[(df["STATE_NAME"] == state_name) & (df["COUNTY_NAME"] == county_name)][
+        ["STATE_NAME", "COUNTY_NAME", "YEAR", var]
+    ]
+
+    # There is no data for 2020. But adding in an NA row helps the graphs look better.
+    if add_2020:
+        row_for_2020 = pd.DataFrame(
+            [
+                {
+                    "STATE_NAME": ret.iloc[0]["STATE_NAME"],
+                    "COUNTY_NAME": ret.iloc[0]["COUNTY_NAME"],
+                    "YEAR": "2020",
+                }
+            ]
+        )
+        ret = pd.concat([ret, row_for_2020])
+        ret = ret.sort_values(["STATE_NAME", "COUNTY_NAME", "YEAR"])
+
+    return ret
 
 
 # This code is hard to read but it serves a purpose.
@@ -119,119 +133,3 @@ def get_mapping_df(column, year1, year2, display_col):
         )
 
     return df2
-
-
-def get_line_graph(df, var, state_name, county_name):
-    fig, ax = plt.subplots()
-
-    df["YEAR"] = df["YEAR"].astype(int)
-
-    # Plot pre-Covid data (before 2020) in black
-    df_pre = df[df["YEAR"] <= 2019]
-    ax.plot(df_pre["YEAR"], df_pre[var], "-o", color="black", label="Pre-Covid")
-
-    # Plot post-COVID data (2021 onwards) in blue
-    df_post = df[df["YEAR"] >= 2021]
-    ax.plot(df_post["YEAR"], df_post[var], "-o", color="orange", label="Post-Covid")
-
-    # If 2019 and 2021 are present, connect them with a dashed line to highlight that 2020 is always missing.
-    # Any year can be missing because counties with a population < 65k are are dropped from the ACS 1-year estimates.
-    if (
-        not df.loc[df["YEAR"] == 2019, var].empty
-        and not df.loc[df["YEAR"] == 2021, var].empty
-    ):
-        value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
-        value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
-        ax.plot([2019, 2021], [value_2019, value_2021], "--", color="gray")
-
-    # Set custom x-axis labels
-    selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display
-    ax.set_xticks(selected_years)  # Set ticks at these positions
-    ax.set_xticklabels(selected_years)  # Ensure labels match the chosen ticks
-
-    # Formatting
-    ax.set_title(f"{var}\n{county_name}, {state_name}")
-    ax.get_yaxis().set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
-    ax.legend()
-
-    return fig
-
-
-def get_bar_graph(df, var, state_name, county_name):
-    fig, ax = plt.subplots()
-
-    df["YEAR"] = df["YEAR"].astype(int)
-
-    df.plot(kind="bar", x="YEAR", y="Percent Change", ax=ax)
-
-    # Modify bar colors based on YEAR values
-    for bar, year in zip(ax.patches, df["YEAR"]):
-        if year <= 2019:
-            bar.set_facecolor("black")
-        elif year == 2020:
-            bar.set_facecolor("gray")
-        elif year >= 2021:
-            bar.set_facecolor("orange")
-
-    # Formatting
-    ax.set_title(f"Percent Change of {var}\n{county_name}, {state_name}")
-    selected_years = [2005, 2010, 2015, 2020]  # Define the specific years to display
-    ax.set_xticklabels(
-        [str(year) if year in selected_years else "" for year in df["YEAR"]], rotation=0
-    )
-
-    # Manually create custom legend
-    pre_covid_patch = mpatches.Patch(color="black", label="Pre-Covid")
-    post_covid_patch = mpatches.Patch(color="orange", label="Post-Covid")
-    ax.legend(handles=[pre_covid_patch, post_covid_patch])
-
-    return fig
-
-
-def get_histogram(df, var, year1, year2, state_name, county_name, display_col):
-    fig, ax = plt.subplots()
-
-    df.hist(column=display_col, ax=ax, color="black", edgecolor="white")
-
-    # Add a vertical line to highlight the selected county
-    full_name = ", ".join([county_name, state_name])
-    highlight_value = df.loc[df["County"] == full_name, display_col].values[0]
-    ax.axvline(
-        highlight_value,
-        color="orange",
-        linestyle="--",
-        linewidth=4,
-        label=f"{county_name}",
-    )
-    ax.legend()
-
-    ax.set_title(f"{display_col} of {var}\nAll Counties, {year1} to {year2}")
-    ax.set_xlabel(display_col)
-    ax.set_ylabel("Number of Counties")
-
-    return fig
-
-
-def get_boxplot(df, var, year1, year2, state_name, county_name, display_col):
-    fig, ax = plt.subplots()
-
-    df.boxplot(column=display_col, ax=ax)
-
-    # If the highlighted county is present in both years, add a vertical line to highlight its value
-    full_name = ", ".join([county_name, state_name])
-    if not df.loc[df["County"] == full_name, display_col].empty:
-        highlight_value = df.loc[df["County"] == full_name, display_col].values[0]
-        ax.axhline(
-            highlight_value,
-            color="orange",
-            linestyle="--",
-            linewidth=2,
-            label=f"{county_name}",
-        )
-        ax.legend()
-
-    ax.set_title(f"{display_col} of {var}\nAll Counties, {year1} to {year2}")
-    ax.set_ylabel(display_col)
-    ax.xaxis.set_visible(False)
-
-    return fig

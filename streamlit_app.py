@@ -25,8 +25,8 @@ graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal
 display_col = "Percent Change" if graph_type == "Percent Change" else "Change"
 
 # Now display the data the user requested
-county_tab, map_tab, table_tab, about_tab = st.tabs(
-    ["📈 Graphs", "🗺️ Map ", "📋 Table", "ℹ️ About"]
+county_tab, table_tab, map_tab, about_tab = st.tabs(
+    ["📈 Graphs", "📋 Table", "🗺️ Map ", "ℹ️ About"]
 )
 
 with county_tab:
@@ -65,6 +65,20 @@ with county_tab:
         )
         st.pyplot(fig)
 
+with table_tab:
+    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, display_col)
+    ranking_text = be.get_ranking_text(
+        state_name, county_name, var, ranking_df, YEAR1, YEAR2, display_col
+    )
+
+    st.write(ranking_text)
+
+    # The styling here are things like the gradient on the column the user selected
+    ranking_df = ranking_df.style.pipe(
+        uih.apply_styles, state_name, county_name, YEAR1, YEAR2, display_col
+    )
+    st.dataframe(ranking_df)
+
 with map_tab:
     fig = px.choropleth(
         be.get_mapping_df(var, YEAR1, YEAR2, display_col),
@@ -79,20 +93,6 @@ with map_tab:
     )
     fig.update_layout(title_text=f"{display_col} of {var} between {YEAR1} and {YEAR2}")
     st.plotly_chart(fig)
-
-with table_tab:
-    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, display_col)
-    ranking_text = be.get_ranking_text(
-        state_name, county_name, var, ranking_df, YEAR1, YEAR2, display_col
-    )
-
-    st.write(ranking_text)
-
-    # The styling here are things like the gradient on the column the user selected
-    ranking_df = ranking_df.style.pipe(
-        uih.apply_styles, state_name, county_name, YEAR1, YEAR2, display_col
-    )
-    st.dataframe(ranking_df)
 
 with about_tab:
     text = open("about.md").read()

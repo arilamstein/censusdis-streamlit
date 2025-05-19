@@ -114,10 +114,10 @@ def get_histogram(df, var, year1, year2, state_name, county_name, display_col):
     return fig
 
 
-def get_boxplot(df, var, year1, year2, state_name, county_name, display_col):
+def get_violinplot(df, var, year1, year2, state_name, county_name, display_col):
     fig, ax = plt.subplots()
 
-    df.boxplot(column=display_col, ax=ax)
+    ax.violinplot(df[display_col])
 
     # If the highlighted county is present in both years, add a vertical line to highlight its value
     full_name = ", ".join([county_name, state_name])

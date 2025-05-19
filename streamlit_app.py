@@ -18,7 +18,7 @@ with county_col:
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
 
-# At one point the app was designed to let people toggle between viewing Count data vs. Percent Change data, and 
+# At one point the app was designed to let people toggle between viewing Count data vs. Percent Change data, and
 # also change which years they used to compare when looking at percent change calculations.
 # All the graphing functions still maintain that flexibility. But I'm now experimenting with hard-coding both
 # of these variables

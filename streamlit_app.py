@@ -6,10 +6,6 @@ import pandas as pd
 
 st.header("How has your County Changed Since Covid?")
 
-# Comparisons "since Covid" are hard-coded to the year right before Covid (2019) and the last year of data
-YEAR1 = "2019"
-YEAR2 = "2023"
-
 # Let the user select data to view and how to view it
 state_col, county_col, demographic_col = st.columns(3)
 with state_col:
@@ -21,8 +17,14 @@ with county_col:
     )
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
-graph_type = st.radio("View data as: ", ["Counts", "Percent Change"], horizontal=True)
-display_col = "Percent Change" if graph_type == "Percent Change" else "Change"
+
+# At one point the app was designed to let people toggle between viewing Count data vs. Percent Change data, and 
+# also change which years they used to compare when looking at percent change calculations.
+# All the graphing functions still maintain that flexibility. But I'm now experimenting with hard-coding both
+# of these variables
+display_col = "Percent Change"
+YEAR1 = "2019"
+YEAR2 = "2023"
 
 # Now display the data the user requested
 county_tab, table_tab, map_tab, about_tab = st.tabs(
@@ -48,13 +50,8 @@ with county_tab:
 
     col1, col2 = st.columns(2)
     with col1:
-        # All data for this county
-        if graph_type == "Counts":
-            fig = be.get_line_graph(df, var, state_name, county_name)
-        elif graph_type == "Percent Change":
-            df["Percent Change"] = df[var].pct_change() * 100
-            fig = be.get_bar_graph(df, var, state_name, county_name)
-
+        # Time Series graph data for this county, for the given variable
+        fig = be.get_line_graph(df, var, state_name, county_name)
         st.pyplot(fig)
 
     with col2:
@@ -71,7 +68,7 @@ with table_tab:
         state_name, county_name, var, ranking_df, YEAR1, YEAR2, display_col
     )
 
-    st.write(ranking_text)
+    st.markdown(ranking_text, unsafe_allow_html=True)
 
     # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(

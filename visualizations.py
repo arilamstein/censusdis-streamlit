@@ -123,11 +123,12 @@ def get_boxplot(df, var, year1, year2, state_name, county_name, display_col):
     full_name = ", ".join([county_name, state_name])
     if not df.loc[df["County"] == full_name, display_col].empty:
         highlight_value = df.loc[df["County"] == full_name, display_col].values[0]
-        ax.axhline(
+        ax.scatter(
+            1,
             highlight_value,
             color="orange",
-            linestyle="--",
-            linewidth=2,
+            marker="o",
+            s=100,
             label=f"{county_name}",
         )
         ax.legend()

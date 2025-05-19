@@ -52,7 +52,7 @@ def get_ranking_df(column, year1, year2, display_col):
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
-    df2 = df2.sort_values(display_col, ascending=False)
+    df2 = df2.sort_values(display_col)
 
     # Drop Columns with Infinite percent change (first or last year has 0)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna()
@@ -74,8 +74,8 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2, display_col):
     num_counties = len(ranking_df.index)
 
     return (
-        f"{full_name} ranks **{rank} of {num_counties}** for {display_col} in {var} "
-        f"between {year1} and {year2}."
+        f"{display_col} of {var} between {year1} and {year2}.<br>"
+        f"{full_name} ranks **{rank}** of {num_counties} counties."
     )
 
 
@@ -205,8 +205,33 @@ def get_histogram(df, var, year1, year2, state_name, county_name, display_col):
     )
     ax.legend()
 
-    ax.set_title(f"{display_col} of {var}\nBetween {year1} and {year2}")
+    ax.set_title(f"{display_col} of {var}\nAll Counties, {year1} to {year2}")
     ax.set_xlabel(display_col)
     ax.set_ylabel("Number of Counties")
+
+    return fig
+
+
+def get_boxplot(df, var, year1, year2, state_name, county_name, display_col):
+    fig, ax = plt.subplots()
+
+    df.boxplot(column=display_col, ax=ax)
+
+    # If the highlighted county is present in both years, add a vertical line to highlight its value
+    full_name = ", ".join([county_name, state_name])
+    if not df.loc[df["County"] == full_name, display_col].empty:
+        highlight_value = df.loc[df["County"] == full_name, display_col].values[0]
+        ax.axhline(
+            highlight_value,
+            color="orange",
+            linestyle="--",
+            linewidth=2,
+            label=f"{county_name}",
+        )
+        ax.legend()
+
+    ax.set_title(f"{display_col} of {var}\nAll Counties, {year1} to {year2}")
+    ax.set_ylabel(display_col)
+    ax.xaxis.set_visible(False)
 
     return fig

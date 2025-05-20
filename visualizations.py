@@ -74,7 +74,6 @@ def get_line_graph(df, var, state_name, county_name):
 
     return fig
 
-
 def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     fig, ax = plt.subplots()
 
@@ -94,9 +93,13 @@ def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
         size=4,
     )
 
-    # Remove the default hue-based legend
+    # Remove the default hue-based legend.
+    # And if the selected county is not in the dataset, remove mention of it from the legend
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend([handles[1]], [full_name])  # Keep only the highlighted county
+    if len(handles) > 1:
+        ax.legend([handles[1]], [full_name])  # Keep only the highlighted county
+    else:
+        ax.legend_.remove() # Selected county not in dataset - remove entire legend
 
     ax.set_title(f"{unit_col} of {var}\nAll Counties, {year1} to {year2}")
     ax.set_xlabel(unit_col)

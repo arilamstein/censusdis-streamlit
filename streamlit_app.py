@@ -3,6 +3,7 @@ import visualizations as viz
 import ui_helpers as uih
 import streamlit as st
 
+st.set_page_config(layout="wide")
 st.header("How has your County Changed Since Covid?")
 
 # Let the user select data to view and how to view it
@@ -17,11 +18,10 @@ with county_col:
 with demographic_col:
     var = st.selectbox("Demographic:", be.get_unique_census_labels())
 
-# At one point the app was designed to let people toggle between viewing Count data vs. Percent Change data, and
-# also change which years they used to compare when looking at percent change calculations.
-# All the graphing functions still maintain that flexibility. But I'm now experimenting with hard-coding both
-# of these variables
-display_col = "Percent Change"
+# At one point the app let people toggle between viewing Count data vs. Percent Change data. It also let users
+# change which years they used to compare when looking at percent change calculations.
+# The graphing functions still maintain that flexibility. But I now hard-code these variables.
+unit_col = "Percent Change"
 YEAR1 = "2019"
 YEAR2 = "2023"
 
@@ -40,28 +40,28 @@ with county_tab:
         st.pyplot(fig)
 
     with col2:
-        # How does this county compare to all other counties?
-        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, display_col)
-        fig = viz.get_violinplot(
-            ranking_df, var, YEAR1, YEAR2, state_name, county_name, display_col
+        # How does the change this county experienced compare to the change in all other counties?
+        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
+        fig = viz.get_swarmplot(
+            ranking_df, var, YEAR1, YEAR2, state_name, county_name, unit_col
         )
         st.pyplot(fig)
 
 with table_tab:
-    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, display_col)
+    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
     ranking_text = be.get_ranking_text(
-        state_name, county_name, var, ranking_df, YEAR1, YEAR2, display_col
+        state_name, county_name, var, ranking_df, YEAR1, YEAR2, unit_col
     )
     st.markdown(ranking_text, unsafe_allow_html=True)
 
     # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(
-        uih.apply_styles, state_name, county_name, YEAR1, YEAR2, display_col
+        uih.apply_styles, state_name, county_name, YEAR1, YEAR2, unit_col
     )
     st.dataframe(ranking_df)
 
 with map_tab:
-    fig = viz.get_map(var, YEAR1, YEAR2, display_col)
+    fig = viz.get_map(var, YEAR1, YEAR2, unit_col)
     st.plotly_chart(fig)
 
 with about_tab:

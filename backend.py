@@ -50,7 +50,7 @@ def get_unique_census_labels():
     return list(dict.fromkeys(census_vars.values()))
 
 
-def get_ranking_df(column, year1, year2, display_col):
+def get_ranking_df(column, year1, year2, unit_col):
     df2 = df.copy()  # We don't want to modify the global variable
 
     # Select just the rows and columns we need
@@ -66,7 +66,7 @@ def get_ranking_df(column, year1, year2, display_col):
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
-    df2 = df2.sort_values(display_col)
+    df2 = df2.sort_values(unit_col)
 
     # Drop Columns with Infinite percent change (first or last year has 0)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna()
@@ -77,7 +77,7 @@ def get_ranking_df(column, year1, year2, display_col):
     return df2
 
 
-def get_ranking_text(state, county, var, ranking_df, year1, year2, display_col):
+def get_ranking_text(state, county, var, ranking_df, year1, year2, unit_col):
     full_name = ", ".join([county, state])
 
     if full_name not in list(ranking_df["County"]):
@@ -88,12 +88,12 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2, display_col):
     num_counties = len(ranking_df.index)
 
     return (
-        f"{display_col} of {var} between {year1} and {year2}.<br>"
+        f"{unit_col} of {var} between {year1} and {year2}.<br>"
         f"{full_name} ranks **{rank}** of {num_counties} counties."
     )
 
 
-def get_mapping_df(column, year1, year2, display_col):
+def get_mapping_df(column, year1, year2, unit_col):
     df2 = df.copy()  # We don't want to modify the global variable
 
     # Select just the rows and columns we need
@@ -110,16 +110,16 @@ def get_mapping_df(column, year1, year2, display_col):
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
 
-    df2 = df2.sort_values(display_col, ascending=False)
+    df2 = df2.sort_values(unit_col, ascending=False)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna().reset_index()
 
     # Color the map with 4 quartiles. This allows the user to quickly see high-level geographic
     # patterns in the data. The default (continuous) scale highlights outliers, which we already
     # show in the "Rankings" tab.
-    df2["Quartile"] = pd.qcut(df2[display_col], q=4, precision=1)
+    df2["Quartile"] = pd.qcut(df2[unit_col], q=4, precision=1)
     # When the legend represents percent change (a) add a % to each number and
     # (b) Fix an issue where an interval was appearing as (-10.299999999999999, 0.1] despite setting the precision to 1
-    if display_col == "Percent Change":
+    if unit_col == "Percent Change":
         df2["Quartile"] = df2["Quartile"].apply(
             lambda x: (
                 f"({round(x.left, 1)}% - {round(x.right, 1)}%]"  # Decimal format for small values

@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
 import seaborn as sns
+import streamlit as st
 
-
+@st.cache_resource
 def get_map(var, year1, year2, unit_col):
     fig = px.choropleth(
         be.get_mapping_df(var, year1, year2, unit_col),
@@ -23,6 +24,7 @@ def get_map(var, year1, year2, unit_col):
     return fig
 
 
+@st.cache_resource
 def get_line_graph(df, var, state_name, county_name):
     df["YEAR"] = df["YEAR"].astype(int)
 
@@ -75,6 +77,7 @@ def get_line_graph(df, var, state_name, county_name):
     return fig
 
 
+@st.cache_resource
 def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     fig, ax = plt.subplots()
 

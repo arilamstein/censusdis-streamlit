@@ -94,7 +94,11 @@ def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     df_highlight = df[df["County"] == full_name]
 
     # Plot swarm plot with only black points (excluding the highlighted county)
-    sns.swarmplot(x=df_black[unit_col], color="black", size=4, ax=ax)
+    # The values for "Total With Public Assistance" cluster around low values, so with size=4 we get the warning:
+    # "41.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot."
+    # This conditional resizing makes that warning go away.
+    size = 2 if var == "Total With Public Assistance" else 4
+    sns.swarmplot(x=df_black[unit_col], color="black", size=size, ax=ax)
 
     # If the highlighted county exists, plot it separately in orange
     if not df_highlight.empty:

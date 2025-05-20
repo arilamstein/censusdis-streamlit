@@ -78,23 +78,29 @@ def get_line_graph(df, var, state_name, county_name):
 def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     fig, ax = plt.subplots()
 
-    ax = sns.swarmplot(
-        x=df[unit_col], color="black", alpha=0.5, size=4
-    )  # Main swarm plot
+    # Define the full county name
+    full_name = f"{county_name}, {state_name}"
 
-    # If the highlighted county is present in both years, add a circle to highlight it
-    full_name = ", ".join([county_name, state_name])
-    if not df.loc[df["County"] == full_name, unit_col].empty:
-        highlight_value = df.loc[df["County"] == full_name, unit_col].values[0]
-        ax.scatter(
-            highlight_value,
-            0,
-            s=100,
-            color="orange",
-            edgecolor="black",
-            label="San Francisco County, California",
-        )
-        ax.legend()
+    # Create a new column to control coloring
+    df["Highlight"] = [
+        "orange" if county == full_name else "black" for county in df["County"]
+    ]
+
+    # Create swarm plot, using hue to differentiate colors
+    ax = sns.swarmplot(
+        x=df[unit_col],
+        hue=df["Highlight"],
+        palette={"black": "black", "orange": "orange"},
+        size=4,
+    )
+
+    # Remove the default hue-based legend.
+    # And if the selected county is not in the dataset, remove mention of it from the legend
+    handles, labels = ax.get_legend_handles_labels()
+    if len(handles) > 1:
+        ax.legend([handles[1]], [full_name])  # Keep only the highlighted county
+    else:
+        ax.legend_.remove()  # Selected county not in dataset - remove entire legend
 
     ax.set_title(f"{unit_col} of {var}\nAll Counties, {year1} to {year2}")
     ax.set_xlabel(unit_col)

@@ -6,6 +6,7 @@ import plotly.express as px
 import seaborn as sns
 import streamlit as st
 
+
 @st.cache_resource
 def get_map(var, year1, year2, unit_col):
     fig = px.choropleth(

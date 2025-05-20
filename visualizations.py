@@ -78,29 +78,32 @@ def get_line_graph(df, var, state_name, county_name):
 def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     fig, ax = plt.subplots()
 
-    # Define the full county name
+    # If the selected county is in the dataset, we want to render it separately.
+    # That allows us to make it 2x larger and a different color
     full_name = f"{county_name}, {state_name}"
+    df_black = df[df["County"] != full_name]
+    df_highlight = df[df["County"] == full_name]
 
-    # Create a new column to control coloring
-    df["Highlight"] = [
-        "orange" if county == full_name else "black" for county in df["County"]
-    ]
+    # Plot swarm plot with only black points (excluding the highlighted county)
+    sns.swarmplot(x=df_black[unit_col], color="black", size=4, ax=ax)
 
-    # Create swarm plot, using hue to differentiate colors
-    ax = sns.swarmplot(
-        x=df[unit_col],
-        hue=df["Highlight"],
-        palette={"black": "black", "orange": "orange"},
-        size=4,
-    )
+    # If the highlighted county exists, plot it separately in orange
+    if not df_highlight.empty:
+        sns.swarmplot(
+            x=df_highlight[unit_col], color="orange", size=8, ax=ax
+        )  # Larger size for visibility
 
-    # Remove the default hue-based legend.
-    # And if the selected county is not in the dataset, remove mention of it from the legend
-    handles, labels = ax.get_legend_handles_labels()
-    if len(handles) > 1:
-        ax.legend([handles[1]], [full_name])  # Keep only the highlighted county
-    else:
-        ax.legend_.remove()  # Selected county not in dataset - remove entire legend
+        # Manually set the legend with the correct color
+        legend_patch = plt.Line2D(
+            [0],
+            [0],
+            marker="o",
+            color="orange",
+            markersize=8,
+            label=full_name,
+            linestyle="None",
+        )
+        ax.legend(handles=[legend_patch])  # Only add legend if the county exists
 
     ax.set_title(f"{unit_col} of {var}\nAll Counties, {year1} to {year2}")
     ax.set_xlabel(unit_col)

@@ -13,7 +13,7 @@ def get_county_name_index(state_name):
 # The "County Ranking" table benefits from some styling ...
 def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
     # 1. A background gradient to the "Percent Change" column
-    styler.background_gradient(axis=0, cmap="YlGnBu", subset=sorting_col)
+    styler.background_gradient(axis=0, cmap="Blues_r", subset=sorting_col)
 
     # The above change seems to cause the app to write too many significant changes. So re-apply that
     # style, and also add in a % to the "percent change" column
@@ -30,7 +30,16 @@ def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
     def highlight_row(row):
         full_name = ", ".join([county_name, state_name])
         condition = row["County"] == full_name
-        style = ["background-color: yellow" if condition else "" for _ in row.index]
+
+        style = [
+            (
+                "background-color: #FFFACD; font-weight: bold"
+                if condition and col != "Percent Change"
+                else ""
+            )
+            for col in row.index
+        ]
+
         return style
 
     return styler.apply(lambda _: highlight_row(_), axis=1)

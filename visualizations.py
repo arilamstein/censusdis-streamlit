@@ -14,7 +14,12 @@ def get_map(var, year1, year2, unit_col):
         geojson=be.county_map,
         locations="FIPS",
         color="Quartile",
-        color_discrete_sequence=["#ffffcc", "#a1dab4", "#41b6c4", "#225ea8"],
+        color_discrete_sequence=[
+            "#a1dab4",
+            "#41b6c4",
+            "#225ea8",
+            "#081d58",
+        ],  # Light for low, dark for high
         scope="usa",
         hover_name="County",
         hover_data={"FIPS": False, unit_col: True},

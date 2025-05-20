@@ -27,7 +27,7 @@ def get_line_graph(df, var, state_name, county_name):
     df["YEAR"] = df["YEAR"].astype(int)
 
     # Create the figure and axis
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots()
 
     # Assign dataset categories
     df["Period"] = df["YEAR"].apply(

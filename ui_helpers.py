@@ -33,7 +33,7 @@ def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
 
         style = [
             (
-                "background-color: #FFFACD; font-weight: bold"
+                "background-color: #FFFACD; font-weight: bold; color: black"
                 if condition and col != "Percent Change"
                 else ""
             )

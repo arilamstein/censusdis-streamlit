@@ -56,15 +56,20 @@ with table_tab:
     ranking_text = be.get_ranking_text(
         state_name, county_name, var, ranking_df, YEAR1, YEAR2, unit_col
     )
-    st.markdown(ranking_text, unsafe_allow_html=True)
 
     # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(
         uih.apply_styles, state_name, county_name, YEAR1, YEAR2, unit_col
     )
+
+    text = open("table.md").read().format(var=var, year1=YEAR1, year2=YEAR2, ranking_text=ranking_text)
+    st.markdown(text)
+
     st.dataframe(ranking_df)
 
 with map_tab:
+    text = open("map.md").read().format(var=var)
+    st.write(text)
     fig = viz.get_map(var, YEAR1, YEAR2, unit_col)
     st.plotly_chart(fig)
 

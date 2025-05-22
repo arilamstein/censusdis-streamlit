@@ -4,7 +4,8 @@ import ui_helpers as uih
 import streamlit as st
 
 st.set_page_config(layout="wide")
-st.header("How has your County Changed Since Covid?")
+st.header("How has America Changed Since Covid?")
+st.write(open("intro.md").read())
 
 # Let the user select data to view and how to view it
 state_col, county_col, demographic_col = st.columns(3)
@@ -33,19 +34,22 @@ county_tab, table_tab, map_tab, about_tab = st.tabs(
 with county_tab:
     df = be.get_census_data(state_name, county_name, var, True)
 
-    col1, col2 = st.columns(2)
-    with col1:
+    line_graph, swarm_plot = st.columns(2)
+
+    with line_graph:
         # Time Series graph data for this county, for the given variable
         fig = viz.get_line_graph(df, var, state_name, county_name)
         st.pyplot(fig)
 
-    with col2:
+    with swarm_plot:
         # How does the change this county experienced compare to the change in all other counties?
         ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
         fig = viz.get_swarmplot(
             ranking_df, var, YEAR1, YEAR2, state_name, county_name, unit_col
         )
         st.pyplot(fig)
+        text = open("swarmplot.md").read().format(var=var)
+        st.write(f"{text}")
 
 with table_tab:
     ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
@@ -65,8 +69,7 @@ with map_tab:
     st.plotly_chart(fig)
 
 with about_tab:
-    text = open("about.md").read()
-    st.write(text)
+    st.write(open("about.md").read())
 
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown(

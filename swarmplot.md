@@ -1,0 +1,1 @@
+*Each dot is a county. Counties to the left had a decrease or small increase in {var}. Counties to the right saw an increase.*

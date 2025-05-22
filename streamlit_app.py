@@ -5,7 +5,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 st.header("How has America Changed Since Covid?")
-st.write(open("intro.md").read())
+st.write(open("text/intro.md").read())
 
 # Let the user select data to view and how to view it
 state_col, county_col, demographic_col = st.columns(3)
@@ -48,7 +48,7 @@ with county_tab:
             ranking_df, var, YEAR1, YEAR2, state_name, county_name, unit_col
         )
         st.pyplot(fig)
-        text = open("swarmplot.md").read().format(var=var)
+        text = open("text/swarmplot.md").read().format(var=var)
         st.write(f"{text}")
 
 with table_tab:
@@ -62,19 +62,23 @@ with table_tab:
         uih.apply_styles, state_name, county_name, YEAR1, YEAR2, unit_col
     )
 
-    text = open("table.md").read().format(var=var, year1=YEAR1, year2=YEAR2, ranking_text=ranking_text)
+    text = (
+        open("text/table.md")
+        .read()
+        .format(var=var, year1=YEAR1, year2=YEAR2, ranking_text=ranking_text)
+    )
     st.markdown(text)
 
     st.dataframe(ranking_df)
 
 with map_tab:
-    text = open("map.md").read().format(var=var)
+    text = open("text/map.md").read().format(var=var)
     st.write(text)
     fig = viz.get_map(var, YEAR1, YEAR2, unit_col)
     st.plotly_chart(fig)
 
 with about_tab:
-    st.write(open("about.md").read())
+    st.write(open("text/about.md").read())
 
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown(

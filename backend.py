@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-from census_vars import census_vars
+from data.census_vars import census_vars
 import json
 
 
-df = pd.read_csv("county_data.csv", dtype={"FIPS": str, "YEAR": str})
-with open("county_map.json", "r") as read_file:
+df = pd.read_csv("data/county_data.csv", dtype={"FIPS": str, "YEAR": str})
+with open("data/county_map.json", "r") as read_file:
     county_map = json.load(read_file)
 
 

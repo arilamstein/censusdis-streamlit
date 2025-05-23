@@ -41,6 +41,7 @@ with county_tab:
         # Time Series graph data for this county, for the given variable
         fig = viz.get_line_graph(df, var, state_name, county_name)
         st.pyplot(fig)
+        st.write("*Dashed line indicates that data is missing for 2020.*")
 
     with swarm_plot:
         # How does the change this county experienced compare to the change in all other counties?
@@ -80,9 +81,3 @@ with map_tab:
 
 with about_tab:
     st.write(open("text/about.md").read())
-
-st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown(
-    "Created by [Ari Lamstein](https://www.arilamstein.com). View the code "
-    + "[here](https://github.com/arilamstein/censusdis-streamlit)."
-)

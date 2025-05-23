@@ -20,14 +20,12 @@
 # As a safety measure, the script prints out all unique labels that each
 # variable has had, so you can visually inspect whether a similar problem
 # exists in the dataset.
-
 import pandas as pd
 import time
-from census_vars import census_vars, get_census_vars_for_year
-from backend import get_unique_census_labels
 import censusdis.data as ced
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
+from census_vars import census_vars, get_census_vars_for_year, get_unique_census_labels
 from validate_variable_labels import print_labels_for_variables_over_time
 
 print("Generating data. Please wait.")

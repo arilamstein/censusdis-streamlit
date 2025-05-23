@@ -20,6 +20,7 @@
 # As a safety measure, the script prints out all unique labels that each
 # variable has had, so you can visually inspect whether a similar problem
 # exists in the dataset.
+
 import pandas as pd
 import time
 import censusdis.data as ced

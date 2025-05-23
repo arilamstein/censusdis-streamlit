@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
-from census_vars import census_vars
 import json
 
 
-df = pd.read_csv("county_data.csv", dtype={"FIPS": str, "YEAR": str})
-with open("county_map.json", "r") as read_file:
+df = pd.read_csv("data/county_data.csv", dtype={"FIPS": str, "YEAR": str})
+with open("data/county_map.json", "r") as read_file:
     county_map = json.load(read_file)
 
 
@@ -37,17 +36,6 @@ def get_census_data(state_name, county_name, var, add_2020):
         ret = ret.sort_values(["STATE_NAME", "COUNTY_NAME", "YEAR"])
 
     return ret
-
-
-# This code is hard to read but it serves a purpose.
-# In short: the order in which census_vars lists the variables is the order
-# in which I want them to appear in the dropdown. The issue is that they contain
-# duplicates due to the variable for "Work From Home" changing name throughtout
-# the years. This code removes the duplicates while retaining the initial ordering,
-# and prevents me from needing to duplicate data here.
-# See: https://stackoverflow.com/a/17016257/2518602
-def get_unique_census_labels():
-    return list(dict.fromkeys(census_vars.values()))
 
 
 def get_ranking_df(column, year1, year2, unit_col):

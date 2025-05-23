@@ -1,6 +1,7 @@
 import backend as be
 import visualizations as viz
 import ui_helpers as uih
+import data.census_vars as cv
 import streamlit as st
 
 st.set_page_config(layout="wide")
@@ -17,7 +18,7 @@ with county_col:
         "County:", be.get_county_names(state_name), index=county_name_index
     )
 with demographic_col:
-    var = st.selectbox("Demographic:", be.get_unique_census_labels())
+    var = st.selectbox("Demographic:", cv.get_unique_census_labels())
 
 # At one point the app let people toggle between viewing Count data vs. Percent Change data. It also let users
 # change which years they used to compare when looking at percent change calculations.

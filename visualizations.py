@@ -37,19 +37,24 @@ def get_line_graph(df, var, state_name, county_name):
     # Create the figure and axis
     fig, ax = plt.subplots()
 
+    # Define colors for consistency
+    pre_covid_color = "black"
+    post_covid_color = "#FF4500"  # Same saturated orange-red as in the swarm plot
+    missing_color = "gray"
+
     # Assign dataset categories
     df["Period"] = df["YEAR"].apply(
         lambda x: "Pre-Covid" if x <= 2019 else "Post-Covid" if x >= 2021 else "Missing"
     )
 
-    # Plot the data using seaborn
+    # Plot the data using seaborn with the updated colors
     sns.lineplot(
         data=df[df["YEAR"] <= 2019],
         x="YEAR",
         y=var,
         ax=ax,
         marker="o",
-        color="black",
+        color=pre_covid_color,
         label="Pre-Covid",
     )
     sns.lineplot(
@@ -58,7 +63,7 @@ def get_line_graph(df, var, state_name, county_name):
         y=var,
         ax=ax,
         marker="o",
-        color="orange",
+        color=post_covid_color,
         label="Post-Covid",
     )
 
@@ -66,7 +71,7 @@ def get_line_graph(df, var, state_name, county_name):
     if 2019 in df["YEAR"].values and 2021 in df["YEAR"].values:
         value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
         value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
-        ax.plot([2019, 2021], [value_2019, value_2021], "--", color="gray")
+        ax.plot([2019, 2021], [value_2019, value_2021], "--", color=missing_color)
 
     # Set custom x-axis labels
     selected_years = [2005, 2010, 2015, 2020]
@@ -83,35 +88,51 @@ def get_line_graph(df, var, state_name, county_name):
     return fig
 
 
+def get_swarm_dot_size(var):
+    """Due to the size of the dataset, the swarm plots sometimes have points that cannot be placed.
+    The solution is to reduce the size of the points, which we do here. The default size is 4.
+    """
+    if var == "Total With Public Assistance":
+        return 2
+    elif var == "Total Population":
+        return 3
+    return 4
+
+
 @st.cache_resource
 def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     fig, ax = plt.subplots()
 
-    # If the selected county is in the dataset, we want to render it separately.
-    # That allows us to make it 2x larger and a different color
+    # Define colors for better contrast
+    normal_color = "black"
+    normal_alpha = 0.3  # Lower alpha for background points
+    highlight_color = "#FF4500"  # More saturated orange-red for emphasis
+
+    # Identify the selected county
     full_name = f"{county_name}, {state_name}"
     df_black = df[df["County"] != full_name]
     df_highlight = df[df["County"] == full_name]
 
-    # Plot swarm plot with only black points (excluding the highlighted county)
-    # The values for "Total With Public Assistance" cluster around low values, so with size=4 we get the warning:
-    # "41.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot."
-    # This conditional resizing makes that warning go away.
-    size = 2 if var == "Total With Public Assistance" else 4
-    sns.swarmplot(x=df_black[unit_col], color="black", size=size, ax=ax)
+    # Adjust marker size to reduce placement issues
+    size = get_swarm_dot_size(var)
 
-    # If the highlighted county exists, plot it separately in orange
+    # Plot swarm plot with adjusted alpha for non-highlighted counties
+    sns.swarmplot(
+        x=df_black[unit_col], color=normal_color, size=size, alpha=normal_alpha, ax=ax
+    )
+
+    # If the highlighted county exists, plot it separately with enhanced visibility
     if not df_highlight.empty:
         sns.swarmplot(
-            x=df_highlight[unit_col], color="orange", size=8, ax=ax
-        )  # Larger size for visibility
+            x=df_highlight[unit_col], color=highlight_color, size=8, ax=ax
+        )  # Larger size and vivid color
 
         # Manually set the legend with the correct color
         legend_patch = plt.Line2D(
             [0],
             [0],
             marker="o",
-            color="orange",
+            color=highlight_color,
             markersize=8,
             label=full_name,
             linestyle="None",

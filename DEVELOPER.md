@@ -3,7 +3,7 @@ All code in this repo is released under the MIT License. This means that you are
 ## Installation
 I used `uv` to manage my virtual environment while developing this project. To recreate my environment:
 1. Clone this repository.
-2. Install uv ([link](https://docs.astral.sh/uv/#installation){:target="_blank"}).
+2. Install uv ([link](https://docs.astral.sh/uv/#installation)).
 3. In the project directory type `uv sync`. This will create a virtual environment with the project's dependencies in `.venv`. 
 4. Type `source .venv/bin/activate` to activate the virtual environment.
 

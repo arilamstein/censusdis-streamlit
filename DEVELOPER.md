@@ -9,7 +9,7 @@ I used `uv` to manage my virtual environment while developing this project. To r
 
 To run the app locally, type `streamlit run streamlit_app.py`.
 
-To modify the data which the app uses, see `gen_county_data.py`.
+To modify the data which the app uses, see `data/gen_county_data.py`.
 
 ## Linting
 

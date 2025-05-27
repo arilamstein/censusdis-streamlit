@@ -6,14 +6,19 @@ I used `uv` to manage my virtual environment while developing this project. To r
 2. Install uv ([link](https://docs.astral.sh/uv/#installation)).
 3. In the project directory type `uv sync`. This will create a virtual environment with the project's dependencies in `.venv`. 
 4. Type `source .venv/bin/activate` to activate the virtual environment.
+5. Type `streamlit run streamlit_app.py` to run the app locally.
 
-To run the app locally, type `streamlit run streamlit_app.py`.
+## Modifying the App
 
-To modify the data which the app uses, see `data/gen_county_data.py`.
+The front end code is in `streamlit_app.py`.
+
+The data which powers the app is in `data/county_data.csv`.
+
+To modify the data which the app uses, see `gen_county_data.py`.
 
 ## Linting
 
-Continuous Integration (CI) for this repo runs `black`, `flake8` and `ruff` on each PR. Please run the following commands, and fix any errors they report, before making a PR:
+This repo has a workflow enabled that runs `black`, `flake8` and `ruff` on each PR. If you are making a PR to this repo, please run the following commands prior to making a PR:
 
 ```
 uv run black .

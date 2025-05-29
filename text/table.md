@@ -1,4 +1,4 @@
-This table shows which counties had the biggest increase and decrease in {var} between {year1} and {year2}.
+This table shows the percent change in {var} for all counties between {year1} and {year2}.
 
 {ranking_text}
 

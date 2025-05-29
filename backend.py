@@ -66,17 +66,25 @@ def get_ranking_df(column, year1, year2, unit_col):
 
 
 def get_ranking_text(state, county, var, ranking_df):
+    # Thank you copilot
+    def ordinal_suffix(n):
+        if 11 <= n <= 13:
+            return "th"
+        return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+
     full_name = ", ".join([county, state])
 
     if full_name not in list(ranking_df["County"]):
         return f"**{full_name}** does not have a ranking for **{var}**."
 
     rank = ranking_df[ranking_df["County"] == full_name].index.tolist()[0]
-
     num_counties = len(ranking_df.index)
+    percentile = round((rank - 1) / (num_counties - 1) * 100)
 
-    return f"{full_name} ranks **{rank}** of {num_counties} counties."
-
+    return (
+        f"{full_name} ranks **{rank}** of {num_counties} counties "
+        f"(the {percentile}{ordinal_suffix(percentile)} percentile)."
+    )
 
 def get_mapping_df(column, year1, year2, unit_col):
     df2 = df.copy()  # We don't want to modify the global variable

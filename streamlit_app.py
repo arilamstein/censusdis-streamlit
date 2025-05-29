@@ -29,7 +29,7 @@ YEAR2 = "2023"
 
 # Now display the data the user requested
 graph_tab, table_tab, map_tab, about_tab = st.tabs(
-    ["📈 Graphs", "📋 Table", "🗺️ Map ", "ℹ️ About"]
+    ["📈 Graphs", "🔍 Table", "🗺️ Map ", "ℹ️ About"]
 )
 
 with graph_tab:

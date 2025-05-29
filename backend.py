@@ -86,6 +86,7 @@ def get_ranking_text(state, county, var, ranking_df):
         f"(the {percentile}{ordinal_suffix(percentile)} percentile)."
     )
 
+
 def get_mapping_df(column, year1, year2, unit_col):
     df2 = df.copy()  # We don't want to modify the global variable
 

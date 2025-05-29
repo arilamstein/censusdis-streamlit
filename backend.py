@@ -65,7 +65,7 @@ def get_ranking_df(column, year1, year2, unit_col):
     return df2
 
 
-def get_ranking_text(state, county, var, ranking_df, year1, year2, unit_col):
+def get_ranking_text(state, county, var, ranking_df):
     full_name = ", ".join([county, state])
 
     if full_name not in list(ranking_df["County"]):
@@ -75,10 +75,7 @@ def get_ranking_text(state, county, var, ranking_df, year1, year2, unit_col):
 
     num_counties = len(ranking_df.index)
 
-    return (
-        f"{unit_col} of {var} between {year1} and {year2}.<br>"
-        f"{full_name} ranks **{rank}** of {num_counties} counties."
-    )
+    return f"{full_name} ranks **{rank}** of {num_counties} counties."
 
 
 def get_mapping_df(column, year1, year2, unit_col):

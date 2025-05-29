@@ -28,11 +28,11 @@ YEAR1 = "2019"
 YEAR2 = "2023"
 
 # Now display the data the user requested
-county_tab, table_tab, map_tab, about_tab = st.tabs(
+graph_tab, table_tab, map_tab, about_tab = st.tabs(
     ["📈 Graphs", "📋 Table", "🗺️ Map ", "ℹ️ About"]
 )
 
-with county_tab:
+with graph_tab:
     df = be.get_census_data(state_name, county_name, var, True)
 
     line_graph, swarm_plot = st.columns(2)
@@ -55,9 +55,7 @@ with county_tab:
 
 with table_tab:
     ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
-    ranking_text = be.get_ranking_text(
-        state_name, county_name, var, ranking_df, YEAR1, YEAR2, unit_col
-    )
+    ranking_text = be.get_ranking_text(state_name, county_name, var, ranking_df)
 
     # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(

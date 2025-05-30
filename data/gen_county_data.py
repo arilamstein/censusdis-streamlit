@@ -12,7 +12,7 @@ import pandas as pd
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
 from censusdis.multiyear import download_multiyear
-from census_vars import census_vars_2005, census_vars_post_2005
+from census_vars import census_vars_2005, census_vars_post_2005, census_dropdown_values
 
 print("Generating data. Please wait.")
 start_time = time.time()
@@ -45,33 +45,27 @@ df_post_2005 = download_multiyear(
 )
 df_post_2005 = df_post_2005.rename(columns=census_vars_post_2005)
 
+# Combine the dataframes, and modify the result so that it's easier to work with
 df_all = pd.concat([df_2005, df_post_2005])
-
-# Add in some new columns to make working with the data a bit easier
 df_all["COUNTY_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
 df_all["STATE_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
-df_all = df_all.set_index(["STATE", "COUNTY"])
-
-print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds.")
-print(
-    f"The resulting dataframe has {len(df_all.index):,} rows with {len(df_all.index.unique()):,} "
-    + "unique counties."
-)
 
 df_all = df_all.rename(columns={"Year": "YEAR"})  # Match how v1 of this script named it
 df_all = df_all.sort_values(["STATE", "COUNTY", "YEAR"])
 
-# Reorder columns so that they appear in the same order as the UI dropdown
-column_order = ["STATE_NAME", "COUNTY_NAME", "YEAR"]
-column_order.extend(census_vars_post_2005.values())
-df_all = df_all[column_order]
-
-# Remove the index and drop columns the app doesn't use
-# Retain FIPS code as a single column for mapping.
-df_county_data = (
-    df_all.reset_index()
-    .assign(FIPS=lambda x: x.STATE + x.COUNTY)
-    .drop(columns=["STATE", "COUNTY", "NAME"])
+# Drop columns the app doesn't use, but retain FIPS code as a single column for mapping.
+df_all = df_all.assign(FIPS=lambda x: x.STATE + x.COUNTY).drop(
+    columns=["STATE", "COUNTY", "NAME"]
 )
 
-df_county_data.to_csv("county_data.csv", index=False)
+# Reorder columns and drop "NAME" column
+column_order = ["STATE_NAME", "COUNTY_NAME", "YEAR", *census_dropdown_values, "FIPS"]
+df_all = df_all[column_order]
+
+df_all.to_csv("county_data.csv", index=False)
+
+unique_counties = df_all[["STATE_NAME", "COUNTY_NAME"]].drop_duplicates().shape[0]
+print(
+    f"\nGenerating the dataset took {(time.time() - start_time):.1f} seconds. "
+    f"The resulting dataframe has {len(df_all.index):,} rows with {unique_counties:,} unique counties."
+)

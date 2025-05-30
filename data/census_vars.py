@@ -21,4 +21,3 @@ census_vars_post_2005 = {
 }
 
 census_dropdown_values = [v for v in census_vars_post_2005.values() if v != "NAME"]
-

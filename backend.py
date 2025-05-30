@@ -9,16 +9,16 @@ with open("data/county_map.json", "r") as read_file:
 
 
 def get_state_names():
-    return df["STATE_NAME"].unique()
+    return df["State"].unique()
 
 
 def get_county_names(state_name):
-    return df.loc[df["STATE_NAME"] == state_name]["COUNTY_NAME"].sort_values().unique()
+    return df.loc[df["State"] == state_name]["County"].sort_values().unique()
 
 
 def get_census_data(state_name, county_name, var, add_2020):
-    ret = df.loc[(df["STATE_NAME"] == state_name) & (df["COUNTY_NAME"] == county_name)][
-        ["STATE_NAME", "COUNTY_NAME", "Year", var]
+    ret = df.loc[(df["State"] == state_name) & (df["County"] == county_name)][
+        ["State", "County", "Year", var]
     ]
 
     # There is no data for 2020. But adding in an NA row helps the graphs look better.
@@ -26,14 +26,14 @@ def get_census_data(state_name, county_name, var, add_2020):
         row_for_2020 = pd.DataFrame(
             [
                 {
-                    "STATE_NAME": ret.iloc[0]["STATE_NAME"],
-                    "COUNTY_NAME": ret.iloc[0]["COUNTY_NAME"],
+                    "State": ret.iloc[0]["State"],
+                    "County": ret.iloc[0]["County"],
                     "Year": "2020",
                 }
             ]
         )
         ret = pd.concat([ret, row_for_2020])
-        ret = ret.sort_values(["STATE_NAME", "COUNTY_NAME", "Year"])
+        ret = ret.sort_values(["State", "County", "Year"])
 
     return ret
 
@@ -43,11 +43,10 @@ def get_ranking_df(column, year1, year2, unit_col):
 
     # Select just the rows and columns we need
     df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["STATE_NAME", "COUNTY_NAME", "Year", column]]
+    df2 = df2[["State", "County", "Year", column]]
 
     # Combine state and county into a single column
-    df2 = df2.assign(County=lambda x: x.COUNTY_NAME + ", " + x.STATE_NAME)
-    df2 = df2.drop(columns=["STATE_NAME", "COUNTY_NAME"])
+    df2 = df2.assign(County=lambda x: x.County + ", " + x.State)
 
     # Pivot for structure we need, calculate change and percent change, sort
     df2 = df2.pivot_table(index="County", columns="Year", values=column)
@@ -92,12 +91,11 @@ def get_mapping_df(column, year1, year2, unit_col):
 
     # Select just the rows and columns we need
     df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["FIPS", "STATE_NAME", "COUNTY_NAME", "Year", column]]
+    df2 = df2[["FIPS", "State", "County", "Year", column]]
 
     # Combine state and county into a single column
-    df2 = df2.assign(County=lambda x: x.COUNTY_NAME + ", " + x.STATE_NAME)
-    df2 = df2.drop(columns=["STATE_NAME", "COUNTY_NAME"])
-
+    df2 = df2.assign(County=lambda x: x.County + ", " + x.State)
+    
     # Pivot for structure we need, calculate change and percent change, sort
     df2 = df2.pivot_table(index=["FIPS", "County"], columns="Year", values=column)
     df2["Change"] = df2[year2] - df2[year1]

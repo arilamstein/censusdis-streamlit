@@ -46,22 +46,23 @@ df_post_2005 = download_multiyear(
 df_post_2005 = df_post_2005.rename(columns=census_vars_post_2005)
 
 # Merge and sort the two dataframes
+# Note that here STATE and COUNTY are FIPS codes (i.e. numeric)
 df_all = pd.concat([df_2005, df_post_2005]).sort_values(["STATE", "COUNTY", "Year"])
 
-# Create a column for the FIPS code - necessary for the map
+# Create a column for the combined FIPS code - necessary for the map
 df_all = df_all.assign(FIPS=lambda x: x.STATE + x.COUNTY)
 
 # Split "San Francisco County, California" into separate columns for state and county
-df_all["COUNTY_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
-df_all["STATE_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
+df_all["State"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
+df_all["County"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
 
-# Reorder columns and drop unnecessary columns
-column_order = ["STATE_NAME", "COUNTY_NAME", "Year", *census_dropdown_values, "FIPS"]
+# Reorder columns (and implicitly drop unnecessary columns)
+column_order = ["State", "County", "Year", *census_dropdown_values, "FIPS"]
 df_all = df_all[column_order]
 
 df_all.to_csv("county_data.csv", index=False)
 
-unique_counties = df_all[["STATE_NAME", "COUNTY_NAME"]].drop_duplicates().shape[0]
+unique_counties = df_all[["State", "County"]].drop_duplicates().shape[0]
 print(
     f"\nGenerating the dataset took {(time.time() - start_time):.1f} seconds. "
     f"The resulting dataframe has {len(df_all.index):,} rows with {unique_counties:,} unique counties."

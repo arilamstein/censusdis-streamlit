@@ -14,7 +14,7 @@ The front end code is in `streamlit_app.py`.
 
 The data which powers the app is in `data/county_data.csv`.
 
-To modify the data which the app uses, see `gen_county_data.py`.
+To modify the data which the app uses, see `data/gen_county_data.py`.
 
 ## Linting
 

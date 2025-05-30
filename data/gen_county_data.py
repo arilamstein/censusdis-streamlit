@@ -1,5 +1,5 @@
 # This script generates the dataset which is used by the app. The final structure looks like:
-# (STATE_NAME, COUNTY_NAME, YEAR, 'Total Population', 'Worked from Home', ...)
+# (State, County, Year, Total Population, Worked from Home, ...)
 #
 # A complication is that one variable which we are interested in ('Worked from Home')
 # changed name over time. In 2005 it was B08006_021E and then was B08006_017E

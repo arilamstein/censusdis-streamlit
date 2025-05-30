@@ -45,20 +45,19 @@ df_post_2005 = download_multiyear(
 )
 df_post_2005 = df_post_2005.rename(columns=census_vars_post_2005)
 
-# Combine the dataframes, and modify the result so that it's easier to work with
-df_all = pd.concat([df_2005, df_post_2005])
+# Merge and sort the two dataframes
+df_all = pd.concat([df_2005, df_post_2005]).sort_values(["STATE", "COUNTY", "Year"])
+
+# Create a column for the FIPS code - necessary for the map
+df_all = df_all.assign(FIPS=lambda x: x.STATE + x.COUNTY)
+
+# Split "San Francisco County, California" into separate columns for state and county
 df_all["COUNTY_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
 df_all["STATE_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
 
 df_all = df_all.rename(columns={"Year": "YEAR"})  # Match how v1 of this script named it
-df_all = df_all.sort_values(["STATE", "COUNTY", "YEAR"])
 
-# Drop columns the app doesn't use, but retain FIPS code as a single column for mapping.
-df_all = df_all.assign(FIPS=lambda x: x.STATE + x.COUNTY).drop(
-    columns=["STATE", "COUNTY", "NAME"]
-)
-
-# Reorder columns and drop "NAME" column
+# Reorder columns and drop unnecessary columns
 column_order = ["STATE_NAME", "COUNTY_NAME", "YEAR", *census_dropdown_values, "FIPS"]
 df_all = df_all[column_order]
 

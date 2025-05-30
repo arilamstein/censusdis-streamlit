@@ -55,10 +55,8 @@ df_all = df_all.assign(FIPS=lambda x: x.STATE + x.COUNTY)
 df_all["COUNTY_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
 df_all["STATE_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
 
-df_all = df_all.rename(columns={"Year": "YEAR"})  # Match how v1 of this script named it
-
 # Reorder columns and drop unnecessary columns
-column_order = ["STATE_NAME", "COUNTY_NAME", "YEAR", *census_dropdown_values, "FIPS"]
+column_order = ["STATE_NAME", "COUNTY_NAME", "Year", *census_dropdown_values, "FIPS"]
 df_all = df_all[column_order]
 
 df_all.to_csv("county_data.csv", index=False)

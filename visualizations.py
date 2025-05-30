@@ -32,7 +32,7 @@ def get_map(var, year1, year2, unit_col):
 
 @st.cache_resource
 def get_line_graph(df, var, state_name, county_name):
-    df["YEAR"] = df["YEAR"].astype(int)
+    df["Year"] = df["Year"].astype(int)
 
     # Create the figure and axis
     fig, ax = plt.subplots()
@@ -43,14 +43,14 @@ def get_line_graph(df, var, state_name, county_name):
     missing_color = "gray"
 
     # Assign dataset categories
-    df["Period"] = df["YEAR"].apply(
+    df["Period"] = df["Year"].apply(
         lambda x: "Pre-Covid" if x <= 2019 else "Post-Covid" if x >= 2021 else "Missing"
     )
 
     # Plot the data using seaborn with the updated colors
     sns.lineplot(
-        data=df[df["YEAR"] <= 2019],
-        x="YEAR",
+        data=df[df["Year"] <= 2019],
+        x="Year",
         y=var,
         ax=ax,
         marker="o",
@@ -58,8 +58,8 @@ def get_line_graph(df, var, state_name, county_name):
         label="Pre-Covid",
     )
     sns.lineplot(
-        data=df[df["YEAR"] >= 2021],
-        x="YEAR",
+        data=df[df["Year"] >= 2021],
+        x="Year",
         y=var,
         ax=ax,
         marker="o",
@@ -68,9 +68,9 @@ def get_line_graph(df, var, state_name, county_name):
     )
 
     # Handle missing 2020 connection (gray dashed line)
-    if 2019 in df["YEAR"].values and 2021 in df["YEAR"].values:
-        value_2019 = df.loc[df["YEAR"] == 2019, var].values[0]
-        value_2021 = df.loc[df["YEAR"] == 2021, var].values[0]
+    if 2019 in df["Year"].values and 2021 in df["Year"].values:
+        value_2019 = df.loc[df["Year"] == 2019, var].values[0]
+        value_2021 = df.loc[df["Year"] == 2021, var].values[0]
         ax.plot([2019, 2021], [value_2019, value_2021], "--", color=missing_color)
 
     # Set custom x-axis labels

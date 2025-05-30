@@ -1,4 +1,4 @@
-STATE_NAME,COUNTY_NAME,YEAR,Total Population,Total Worked from Home,Total With Public Assistance,Median Household Income,Median Rent,FIPS
+STATE_NAME,COUNTY_NAME,Year,Total Population,Total Worked from Home,Total With Public Assistance,Median Household Income,Median Rent,FIPS
 Alabama,Baldwin County,2005,160354,,748,42119,555,01003
 Alabama,Baldwin County,2006,169162,,300,44878,641,01003
 Alabama,Baldwin County,2007,171769,,613,49119,653,01003

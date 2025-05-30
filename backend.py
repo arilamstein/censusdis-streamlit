@@ -95,7 +95,7 @@ def get_mapping_df(column, year1, year2, unit_col):
 
     # Combine state and county into a single column
     df2 = df2.assign(County=lambda x: x.County + ", " + x.State)
-    
+
     # Pivot for structure we need, calculate change and percent change, sort
     df2 = df2.pivot_table(index=["FIPS", "County"], columns="Year", values=column)
     df2["Change"] = df2[year2] - df2[year1]

@@ -18,7 +18,7 @@ with county_col:
         "County:", be.get_county_names(state_name), index=county_name_index
     )
 with demographic_col:
-    var = st.selectbox("Demographic:", cv.get_unique_census_labels())
+    var = st.selectbox("Demographic:", cv.census_dropdown_values)
 
 # At one point the app let people toggle between viewing Count data vs. Percent Change data. It also let users
 # change which years they used to compare when looking at percent change calculations.

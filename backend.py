@@ -8,16 +8,16 @@ with open("data/county_map.json", "r") as read_file:
     county_map = json.load(read_file)
 
 
-def get_state_names():
+def get_states():
     return df["State"].unique()
 
 
-def get_county_names(state_name):
-    return df.loc[df["State"] == state_name]["County"].sort_values().unique()
+def get_counties(state):
+    return df.loc[df["State"] == state]["County"].sort_values().unique()
 
 
-def get_census_data(state_name, county_name, var, add_2020):
-    ret = df.loc[(df["State"] == state_name) & (df["County"] == county_name)][
+def get_census_data(state, county, var, add_2020):
+    ret = df.loc[(df["State"] == state) & (df["County"] == county)][
         ["State", "County", "Year", var]
     ]
 

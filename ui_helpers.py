@@ -1,17 +1,17 @@
 # If the user selects California then have the County dropdown default to San Francisco County.
 # If the user selects New York then have it default to New York County (i.e. Manhattan).
 # Otherwise have it default to the first county using alphabetical order.
-def get_county_name_index(state_name):
-    if state_name == "California":
+def get_county_index(state):
+    if state == "California":
         return 25  # San Francisco
-    elif state_name == "New York":
+    elif state == "New York":
         return 16  # New York (Manhattan)
 
     return 0
 
 
 # The "County Ranking" table benefits from some styling ...
-def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
+def apply_styles(styler, state, county, year1, year2, sorting_col):
     # 1. A background gradient to the "Percent Change" column
     styler.background_gradient(axis=0, cmap="Blues_r", subset=sorting_col)
 
@@ -28,7 +28,7 @@ def apply_styles(styler, state_name, county_name, year1, year2, sorting_col):
 
     # 2. Highlighting the row corresponding to the selected county
     def highlight_row(row):
-        full_name = ", ".join([county_name, state_name])
+        full_name = ", ".join([county, state])
         condition = row["County"] == full_name
 
         style = [

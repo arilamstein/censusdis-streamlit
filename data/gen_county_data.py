@@ -1,129 +1,77 @@
-# This script generates the dataset which is used by the app. The final
-# structure looks like:
-# (STATE_NAME, COUNTY_NAME, YEAR, 'Total Population', 'Worked From Home', ...)
+# This script generates the dataset which is used by the app. The final structure looks like:
+# (STATE_NAME, COUNTY_NAME, YEAR, 'Total Population', 'Worked from Home', ...)
 #
-# The Census API only lets you get data from one year at a time. So the core of
-# this script is a for loop like:
+# A complication is that one variable which we are interested in ('Worked from Home')
+# changed name over time. In 2005 it was B08006_021E and then was B08006_017E
+# in all other years).
 #
-# df = None
-# for year in years:
-#   Get data for this year
-#   Append it to df
-#
-# But there are issues with the raw data that we want to address:
-#
-# 1. One variable which we are interested in ('Worked from Home') changed name
-# during the time period (it started as B08006_021E and moved to B08006_017E).
-# This script combines those two datasets into a single column.
-#
-# 2. Variable changes like the above are important but can be hard to detect.
-# As a safety measure, the script prints out all unique labels that each
-# variable has had, so you can visually inspect whether a similar problem
-# exists in the dataset.
+# This script gets the 2005 data separate from the 2006+ data, and then combines them.
 
-import pandas as pd
 import time
-import censusdis.data as ced
+import pandas as pd
 from censusdis.datasets import ACS1
 from censusdis.states import ALL_STATES_AND_DC
-from census_vars import census_vars, get_census_vars_for_year, get_unique_census_labels
-from validate_variable_labels import print_labels_for_variables_over_time
+from censusdis.multiyear import download_multiyear
+from census_vars import census_vars_2005, census_vars_post_2005
 
 print("Generating data. Please wait.")
-
 start_time = time.time()
-df_county_data = None
 
-# We want all years the ACS1 was published. Note that it was not published in 2020 due to covid.
-# See https://www.census.gov/programs-surveys/acs/data/experimental-data.html
-ACS1_START_YEAR = 2005
-ACS1_END_YEAR = 2023
-ACS1_SKIP_YEARS = [2020]
-years = [
-    year
-    for year in range(ACS1_START_YEAR, ACS1_END_YEAR + 1)
-    if year not in ACS1_SKIP_YEARS
-]
+df_2005 = download_multiyear(
+    dataset=ACS1,
+    vintages=[2005],
+    download_variables=census_vars_2005.keys(),
+    state=ALL_STATES_AND_DC,
+    county="*",
+    rename_vars=False,
+    drop_cols=False,
+    prompt=False,
+)
+df_2005 = df_2005.rename(columns=census_vars_2005)
 
-for one_year in years:
-    # Provide some feedback on progress to the user
-    print(".", end="", flush=True)
+# When updating data in the future, increment the value of LAST_YEAR. Note that data was not published in
+# 2020 due to Covid-19. See https://www.census.gov/programs-surveys/acs/data/experimental-data.html
+LAST_YEAR = 2023
+years_post_2005 = [year for year in range(2006, LAST_YEAR + 1) if year != 2020]
+df_post_2005 = download_multiyear(
+    dataset=ACS1,
+    vintages=years_post_2005,
+    download_variables=census_vars_post_2005.keys(),
+    state=ALL_STATES_AND_DC,
+    county="*",
+    rename_vars=False,
+    drop_cols=False,
+    prompt=False,
+)
+df_post_2005 = df_post_2005.rename(columns=census_vars_post_2005)
 
-    # Get all the variables we want to view in the app, plus the name of the county
-    vars = list(get_census_vars_for_year(one_year).keys())
-    vars.append("NAME")
+df_all = pd.concat([df_2005, df_post_2005])
 
-    df_new = ced.download(
-        dataset=ACS1,
-        vintage=one_year,
-        download_variables=vars,
-        state=ALL_STATES_AND_DC,
-        county="*",
-    )
-
-    # Add in some new columns to make working with the data a bit easier
-    df_new["COUNTY_NAME"] = df_new["NAME"].apply(lambda name: name.split(", ")[0])
-    df_new["STATE_NAME"] = df_new["NAME"].apply(lambda name: name.split(", ")[1])
-
-    df_new = df_new.set_index(["STATE", "COUNTY"])
-    df_new["YEAR"] = one_year
-
-    if df_county_data is None:
-        df_county_data = df_new
-    else:
-        df_county_data = pd.concat([df_county_data, df_new])
+# Add in some new columns to make working with the data a bit easier
+df_all["COUNTY_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[0])
+df_all["STATE_NAME"] = df_all["NAME"].apply(lambda name: name.split(", ")[1])
+df_all = df_all.set_index(["STATE", "COUNTY"])
 
 print(f"\nGenerating all historic data took {(time.time() - start_time):.1f} seconds.")
 print(
-    f"The resulting dataframe has {len(df_county_data.index):,} rows with {len(df_county_data.index.unique()):,} "
+    f"The resulting dataframe has {len(df_all.index):,} rows with {len(df_all.index.unique()):,} "
     + "unique counties."
 )
 
-# The data appears to already be sorted this way, but I want to ensure that.
-df_county_data = df_county_data.sort_values(["STATE", "COUNTY", "YEAR"])
+df_all = df_all.rename(columns={"Year": "YEAR"})  # Match how v1 of this script named it
+df_all = df_all.sort_values(["STATE", "COUNTY", "YEAR"])
 
-print("\nPrinting the unique labels used for each variable in the dataframe.")
-print(
-    "Check to make sure no single varible is not used for completely different things over the years!"
-)
-print_labels_for_variables_over_time(df_county_data)
-
-
-# Merge the two columns that have work from home data.
-def splice_wfh_columns(row):
-    # Error check: ensure that, for each row, at *most* one of them has data
-    # (For small regions, both values will be NA)
-    assert pd.isna(row["B08006_021E"]) or pd.isna(row["B08006_017E"])
-
-    # If the first is not NA, then return it
-    if not pd.isna(row["B08006_021E"]):
-        return row["B08006_021E"]
-    else:
-        return row["B08006_017E"]
-
-
-df_county_data["Total Worked from Home"] = df_county_data.apply(
-    splice_wfh_columns, axis=1
-)
-del df_county_data["B08006_021E"]
-del df_county_data["B08006_017E"]
-
-# Rename the columns from names (B01001) to labels ("Total Population")
-df_county_data = df_county_data.rename(columns=census_vars)
-
-# Reorder columns
+# Reorder columns so that they appear in the same order as the UI dropdown
 column_order = ["STATE_NAME", "COUNTY_NAME", "YEAR"]
-column_order.extend(
-    get_unique_census_labels()
-)  # Columns appear in same order as UI dropdown
-df_county_data = df_county_data[column_order]
+column_order.extend(census_vars_post_2005.values())
+df_all = df_all[column_order]
 
-# Remove the index and drop those columns.
+# Remove the index and drop columns the app doesn't use
 # Retain FIPS code as a single column for mapping.
 df_county_data = (
-    df_county_data.reset_index()
+    df_all.reset_index()
     .assign(FIPS=lambda x: x.STATE + x.COUNTY)
-    .drop(columns=["STATE", "COUNTY"])
+    .drop(columns=["STATE", "COUNTY", "NAME"])
 )
 
 df_county_data.to_csv("county_data.csv", index=False)

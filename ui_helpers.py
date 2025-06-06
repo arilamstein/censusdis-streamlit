@@ -11,7 +11,7 @@ def get_county_index(state):
 
 
 # The "County Ranking" table benefits from some styling ...
-def apply_styles(styler, state, county, year1, year2, sorting_col):
+def apply_styles(styler, full_name, year1, year2, sorting_col):
     # 1. A background gradient to the "Percent Change" column
     styler.background_gradient(axis=0, cmap="Blues_r", subset=sorting_col)
 
@@ -28,8 +28,7 @@ def apply_styles(styler, state, county, year1, year2, sorting_col):
 
     # 2. Highlighting the row corresponding to the selected county
     def highlight_row(row):
-        full_name = ", ".join([county, state])
-        condition = row["County"] == full_name
+        condition = row["Full Name"] == full_name
 
         style = [
             (

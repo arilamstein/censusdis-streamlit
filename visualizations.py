@@ -21,7 +21,7 @@ def get_map(var, year1, year2, unit_col):
             "#081d58",
         ],  # Light for low, dark for high
         scope="usa",
-        hover_name="County",
+        hover_name="Full Name",
         hover_data={"FIPS": False, unit_col: True},
         labels={"Quartile": unit_col, "FIPS": "NAME"},
     )
@@ -31,7 +31,7 @@ def get_map(var, year1, year2, unit_col):
 
 
 @st.cache_resource
-def get_line_graph(df, var, state_name, county_name):
+def get_line_graph(df, var, full_name):
     df["Year"] = df["Year"].astype(int)
 
     # Create the figure and axis
@@ -79,7 +79,7 @@ def get_line_graph(df, var, state_name, county_name):
     ax.set_xticklabels(selected_years)
 
     # Formatting
-    ax.set_title(f"{var}\n{county_name}, {state_name}")
+    ax.set_title(f"{var}\n{full_name}")
     ax.legend()
 
     # Apply comma formatting to y-axis
@@ -100,7 +100,7 @@ def get_swarm_dot_size(var):
 
 
 @st.cache_resource
-def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
+def get_swarmplot(df, var, year1, year2, full_name, unit_col):
     fig, ax = plt.subplots()
 
     # Define colors for better contrast
@@ -109,9 +109,8 @@ def get_swarmplot(df, var, year1, year2, state_name, county_name, unit_col):
     highlight_color = "#FF4500"  # More saturated orange-red for emphasis
 
     # Identify the selected county
-    full_name = f"{county_name}, {state_name}"
-    df_black = df[df["County"] != full_name]
-    df_highlight = df[df["County"] == full_name]
+    df_black = df[df["Full Name"] != full_name]
+    df_highlight = df[df["Full Name"] == full_name]
 
     # Adjust marker size to reduce placement issues
     size = get_swarm_dot_size(var)

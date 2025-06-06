@@ -16,9 +16,9 @@ def get_counties(state):
     return df.loc[df["State"] == state]["County"].sort_values().unique()
 
 
-def get_census_data(state, county, var, add_2020):
-    ret = df.loc[(df["State"] == state) & (df["County"] == county)][
-        ["State", "County", "Year", var]
+def get_census_data(full_name, var, add_2020):
+    ret = df.loc[df["Full Name"] == full_name][
+        ["Full Name", "Year", var]
     ]
 
     # There is no data for 2020. But adding in an NA row helps the graphs look better.
@@ -26,14 +26,13 @@ def get_census_data(state, county, var, add_2020):
         row_for_2020 = pd.DataFrame(
             [
                 {
-                    "State": ret.iloc[0]["State"],
-                    "County": ret.iloc[0]["County"],
+                    "Full Name": ret.iloc[0]["Full Name"],
                     "Year": "2020",
                 }
             ]
         )
         ret = pd.concat([ret, row_for_2020])
-        ret = ret.sort_values(["State", "County", "Year"])
+        ret = ret.sort_values(["Full Name", "Year"])
 
     return ret
 
@@ -43,13 +42,10 @@ def get_ranking_df(column, year1, year2, unit_col):
 
     # Select just the rows and columns we need
     df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["State", "County", "Year", column]]
-
-    # Combine state and county into a single column
-    df2 = df2.assign(County=lambda x: x.County + ", " + x.State)
+    df2 = df2[["Full Name", "Year", column]]
 
     # Pivot for structure we need, calculate change and percent change, sort
-    df2 = df2.pivot_table(index="County", columns="Year", values=column)
+    df2 = df2.pivot_table(index="Full Name", columns="Year", values=column)
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
@@ -64,19 +60,17 @@ def get_ranking_df(column, year1, year2, unit_col):
     return df2
 
 
-def get_ranking_text(state, county, var, ranking_df):
+def get_ranking_text(full_name, var, ranking_df):
     # Thank you copilot
     def ordinal_suffix(n):
         if 11 <= n <= 13:
             return "th"
         return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
 
-    full_name = ", ".join([county, state])
-
-    if full_name not in list(ranking_df["County"]):
+    if full_name not in list(ranking_df["Full Name"]):
         return f"**{full_name}** does not have a ranking for **{var}**."
 
-    rank = ranking_df[ranking_df["County"] == full_name].index.tolist()[0]
+    rank = ranking_df[ranking_df["Full Name"] == full_name].index.tolist()[0]
     num_counties = len(ranking_df.index)
     percentile = round((rank - 1) / (num_counties - 1) * 100)
 
@@ -91,13 +85,10 @@ def get_mapping_df(column, year1, year2, unit_col):
 
     # Select just the rows and columns we need
     df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["FIPS", "State", "County", "Year", column]]
-
-    # Combine state and county into a single column
-    df2 = df2.assign(County=lambda x: x.County + ", " + x.State)
+    df2 = df2[["FIPS", "Full Name", "Year", column]]
 
     # Pivot for structure we need, calculate change and percent change, sort
-    df2 = df2.pivot_table(index=["FIPS", "County"], columns="Year", values=column)
+    df2 = df2.pivot_table(index=["FIPS", "Full Name"], columns="Year", values=column)
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)

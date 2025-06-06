@@ -15,6 +15,7 @@ with state_col:
     county_index = uih.get_county_index(state)
 with county_col:
     county = st.selectbox("County:", be.get_counties(state), index=county_index)
+    full_name = ", ".join([county, state])
 with demographic_col:
     var = st.selectbox("Demographic:", cv.census_dropdown_values)
 
@@ -31,31 +32,31 @@ graph_tab, table_tab, map_tab, about_tab = st.tabs(
 )
 
 with graph_tab:
-    df = be.get_census_data(state, county, var, True)
+    df = be.get_census_data(full_name, var, True)
 
     line_graph, swarm_plot = st.columns(2)
 
     with line_graph:
         # Time Series graph data for this county, for the given variable
-        fig = viz.get_line_graph(df, var, state, county)
+        fig = viz.get_line_graph(df, var, full_name)
         st.pyplot(fig)
         st.write("*Dashed line indicates that data is missing for 2020.*")
 
     with swarm_plot:
         # How does the change this county experienced compare to the change in all other counties?
         ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
-        fig = viz.get_swarmplot(ranking_df, var, YEAR1, YEAR2, state, county, unit_col)
+        fig = viz.get_swarmplot(ranking_df, var, YEAR1, YEAR2, full_name, unit_col)
         st.pyplot(fig)
         text = open("text/swarmplot.md").read().format(var=var)
         st.write(f"{text}")
 
 with table_tab:
     ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
-    ranking_text = be.get_ranking_text(state, county, var, ranking_df)
+    ranking_text = be.get_ranking_text(full_name, var, ranking_df)
 
     # The styling here are things like the gradient on the column the user selected
     ranking_df = ranking_df.style.pipe(
-        uih.apply_styles, state, county, YEAR1, YEAR2, unit_col
+        uih.apply_styles, full_name, YEAR1, YEAR2, unit_col
     )
 
     text = (

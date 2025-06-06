@@ -17,9 +17,7 @@ def get_counties(state):
 
 
 def get_census_data(full_name, var, add_2020):
-    ret = df.loc[df["Full Name"] == full_name][
-        ["Full Name", "Year", var]
-    ]
+    ret = df.loc[df["Full Name"] == full_name][["Full Name", "Year", var]]
 
     # There is no data for 2020. But adding in an NA row helps the graphs look better.
     if add_2020:

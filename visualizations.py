@@ -9,23 +9,51 @@ import streamlit as st
 
 @st.cache_resource
 def get_map(var, year1, year2, unit_col):
+    df = be.get_mapping_df(var, year1, year2, unit_col)
+
+    # Because we are showing percent change, it helps to use a divergent scale
+    # and fix the middle color at 0. Plotly can do this for us, but by default
+    # it does so in a way that forces an equal number of values on each side of
+    # 0. This is a problem because our distributions are rarely symmetric around
+    # 0. For example, when doing population percent change the min is -10.2 and
+    # the max is 36.4. This means that using the defaults with plotly there will
+    # be a lot of "red" on the legend that simply never appears on the map. This
+    # will confuse people. This code uses a divergent scale (blue is positive,
+    # yellow is 0, red is negative) and always pins yellow at 0. Actually using
+    # the app myself, I find this to make the map feature most useful: it
+    # highlights outliers and values around 0.
+    cmin = df[unit_col].min()  # -10.2
+    cmax = df[unit_col].max()  # 36.4
+    zero_norm = abs(cmin) / (cmax - cmin)  # Determine normalized position for 0
+    colorscale = [
+        [0.0, "#d95f02"],  # Orange at the minimum (-10.2)
+        [zero_norm, "#ffffbf"],  # Yellow exactly at 0
+        [1.0, "#1b5eab"],  # Blue at the maximum (36.4)
+    ]
+
     fig = px.choropleth(
-        be.get_mapping_df(var, year1, year2, unit_col),
+        df,
         geojson=be.county_map,
         locations="FIPS",
-        color="Quartile",
-        color_discrete_sequence=[
-            "#a1dab4",
-            "#41b6c4",
-            "#225ea8",
-            "#081d58",
-        ],  # Light for low, dark for high
+        color="Percent Change",
+        color_continuous_scale=colorscale,
+        range_color=(cmin, cmax),
         scope="usa",
         hover_name="Full Name",
         hover_data={"FIPS": False, unit_col: True},
-        labels={"Quartile": unit_col, "FIPS": "NAME"},
+        labels={"Percent Change": unit_col, "FIPS": "NAME"},
     )
-    fig.update_layout(title_text=f"{unit_col} of {var} between {year1} and {year2}")
+
+    # Force ticks to show min, 0 and max as labels.
+    fig.update_layout(
+        title_text=f"{unit_col} of {var} between {year1} and {year2}",
+        coloraxis_colorbar=dict(
+            title="Percent Change",
+            tickmode="array",
+            tickvals=[cmin, 0, cmax],
+            ticktext=[f"{cmin:.1f}", "0", f"{cmax:.1f}"],
+        ),
+    )
 
     return fig
 

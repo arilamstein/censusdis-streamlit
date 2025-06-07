@@ -94,23 +94,4 @@ def get_mapping_df(column, year1, year2, unit_col):
     df2 = df2.sort_values(unit_col, ascending=False)
     df2 = df2.replace([np.inf, -np.inf], np.nan).dropna().reset_index()
 
-    # Color the map with 4 quartiles. This allows the user to quickly see high-level geographic
-    # patterns in the data. The default (continuous) scale highlights outliers, which we already
-    # show in the "Rankings" tab.
-    df2["Quartile"] = pd.qcut(df2[unit_col], q=4, precision=1)
-    # When the legend represents percent change (a) add a % to each number and
-    # (b) Fix an issue where an interval was appearing as (-10.299999999999999, 0.1] despite setting the precision to 1
-    if unit_col == "Percent Change":
-        df2["Quartile"] = df2["Quartile"].apply(
-            lambda x: (
-                f"({round(x.left, 1)}% - {round(x.right, 1)}%]"  # Decimal format for small values
-            )
-        )
-    else:
-        df2["Quartile"] = df2["Quartile"].apply(
-            lambda x: (
-                f"({int(x.left):,} - {int(x.right):,}]"  # Comma format for large values
-            )
-        )
-
     return df2

@@ -35,15 +35,15 @@ def get_census_data(full_name, var, add_2020):
     return ret
 
 
-def get_ranking_df(column, year1, year2, unit_col):
+def get_ranking_df(column, year1, year2, unit_col, include_fips):
     df2 = df.copy()  # We don't want to modify the global variable
 
     # Select just the rows and columns we need
     df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["Full Name", "Year", column]]
+    df2 = df2[["FIPS", "Full Name", "Year", column]]
 
     # Pivot for structure we need, calculate change and percent change, sort
-    df2 = df2.pivot_table(index="Full Name", columns="Year", values=column)
+    df2 = df2.pivot_table(index=["FIPS", "Full Name"], columns="Year", values=column)
     df2["Change"] = df2[year2] - df2[year1]
     df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
     df2["Percent Change"] = df2["Percent Change"].round(1)
@@ -54,6 +54,11 @@ def get_ranking_df(column, year1, year2, unit_col):
     # Create an index called "Rank"
     df2["Rank"] = list(range(1, len(df2.index) + 1))
     df2 = df2.reset_index().set_index("Rank")
+
+    # The FIPS code column is only needed for the map. And we don't want to show
+    # it to the user in the table.
+    if not include_fips:
+        df2 = df2.drop(columns="FIPS")
 
     return df2
 
@@ -76,22 +81,3 @@ def get_ranking_text(full_name, var, ranking_df):
         f"{full_name} ranks **{rank}** of {num_counties} counties "
         f"(the {percentile}{ordinal_suffix(percentile)} percentile)."
     )
-
-
-def get_mapping_df(column, year1, year2, unit_col):
-    df2 = df.copy()  # We don't want to modify the global variable
-
-    # Select just the rows and columns we need
-    df2 = df2.loc[(df2["Year"] == year1) | (df2["Year"] == year2)]
-    df2 = df2[["FIPS", "Full Name", "Year", column]]
-
-    # Pivot for structure we need, calculate change and percent change, sort
-    df2 = df2.pivot_table(index=["FIPS", "Full Name"], columns="Year", values=column)
-    df2["Change"] = df2[year2] - df2[year1]
-    df2["Percent Change"] = (df2[year2] - df2[year1]) / df2[year1] * 100
-    df2["Percent Change"] = df2["Percent Change"].round(1)
-
-    df2 = df2.sort_values(unit_col, ascending=False)
-    df2 = df2.replace([np.inf, -np.inf], np.nan).dropna().reset_index()
-
-    return df2

@@ -44,14 +44,14 @@ with graph_tab:
 
     with swarm_plot:
         # How does the change this county experienced compare to the change in all other counties?
-        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
+        ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col, False)
         fig = viz.get_swarmplot(ranking_df, var, YEAR1, YEAR2, full_name, unit_col)
         st.pyplot(fig)
         text = open("text/swarmplot.md").read().format(var=var)
         st.write(f"{text}")
 
 with table_tab:
-    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col)
+    ranking_df = be.get_ranking_df(var, YEAR1, YEAR2, unit_col, False)
     ranking_text = be.get_ranking_text(full_name, var, ranking_df)
 
     # The styling here are things like the gradient on the column the user selected

@@ -9,7 +9,7 @@ import streamlit as st
 
 @st.cache_resource
 def get_map(var, year1, year2, unit_col):
-    df = be.get_mapping_df(var, year1, year2, unit_col)
+    df = be.get_ranking_df(var, year1, year2, unit_col, True)
 
     # Because we are showing percent change, it helps to use a divergent scale
     # and fix the middle color at 0. Plotly can do this for us, but by default

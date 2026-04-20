@@ -31,7 +31,7 @@ df_2005 = df_2005.rename(columns=census_vars_2005)
 
 # When updating data in the future, increment the value of LAST_YEAR. Note that data was not published in
 # 2020 due to Covid-19. See https://www.census.gov/programs-surveys/acs/data/experimental-data.html
-LAST_YEAR = 2023
+LAST_YEAR = 2024
 years_post_2005 = [year for year in range(2006, LAST_YEAR + 1) if year != 2020]
 df_post_2005 = download_multiyear(
     dataset=ACS1,

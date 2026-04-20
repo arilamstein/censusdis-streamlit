@@ -24,7 +24,7 @@ with demographic_col:
 # want to add that functionality back in at some point, right now each graph
 # hard-codes what we compare, and I also hard-code the years we compare.
 YEAR1 = "2019"
-YEAR2 = "2023"
+YEAR2 = "2024"
 
 # Now display the data the user requested
 graph_tab, table_tab, map_tab, about_tab = st.tabs(

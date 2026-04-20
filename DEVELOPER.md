@@ -18,10 +18,9 @@ To modify the data which the app uses, see `data/gen_county_data.py`.
 
 ## Linting
 
-This repo has a workflow enabled that runs `black`, `flake8` and `ruff` on each PR. If you are making a PR to this repo, please run the following commands prior to making a PR:
+This repo has a workflow enabled that runs `ruff` on each PR. If you are making a PR to this repo, please run the following commands prior to making a PR:
 
 ```
-uv run black .
-uv run flake8 ./*.py
+uv run ruff format .
 uv run ruff check .
 ```

@@ -13,7 +13,11 @@ def _normalize_columns(df):
     missing = set(cols) - set(df.columns)
     if missing:
         raise KeyError(f"Missing expected columns: {missing}")
-    return df[cols]
+
+    # Put Name and Year first, preverse order of the rest
+    front = ["Name", "Year"]
+    rest = [c for c in cols if c not in front]
+    return df[front + rest]
 
 
 def get_timeseries_for_geo(*, end_year=2024, **kwargs):
@@ -44,10 +48,6 @@ def get_timeseries_for_geo(*, end_year=2024, **kwargs):
     df_post_2005 = _normalize_columns(df_post_2005)
 
     df_all = pd.concat([df_2005, df_post_2005]).sort_values(["Year"])
-
-    metadata_cols = ["Name", "Year"]
-    data_cols = [c for c in df_all.columns if c not in metadata_cols]
-    df_all = df_all[metadata_cols + data_cols]
 
     return df_all
 
@@ -108,10 +108,10 @@ def get_county_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
     df_county["County"] = df_county["County"].str.strip()
     df_county["State"] = df_county["State"].str.strip()
 
-# geo_cols = ["State", "County", "Name", "Year"]
-# other_cols = [c for c in df_county.columns if c not in geo_cols]
+    # geo_cols = ["State", "County", "Name", "Year"]
+    # other_cols = [c for c in df_county.columns if c not in geo_cols]
 
-# df_county = df_county[geo_cols + other_cols]
+    # df_county = df_county[geo_cols + other_cols]
 
     # Reorder so state and county appear on the left
     df_county = df_county[

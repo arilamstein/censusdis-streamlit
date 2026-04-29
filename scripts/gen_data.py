@@ -16,10 +16,10 @@ start = time.time()
 
 END_YEAR = 2024
 DATA_DIR = Path("data")
-get_us_data(end_year=END_YEAR, verbose=True).to_csv(DATA_DIR / "us.csv", index=False)
-# get_state_data(end_year=END_YEAR, verbose=True).to_csv(
-#     DATA_DIR / "state.csv", index=False
-# )
+#get_us_data(end_year=END_YEAR, verbose=True).to_csv(DATA_DIR / "us.csv", index=False)
+get_state_data(end_year=END_YEAR, verbose=True).to_csv(
+    DATA_DIR / "state.csv", index=False
+)
 # get_county_data(end_year=END_YEAR, verbose=True).to_csv(
 #     DATA_DIR / "county.csv", index=False
 # )

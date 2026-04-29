@@ -108,24 +108,11 @@ def get_county_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
     df_county["County"] = df_county["County"].str.strip()
     df_county["State"] = df_county["State"].str.strip()
 
-    # geo_cols = ["State", "County", "Name", "Year"]
-    # other_cols = [c for c in df_county.columns if c not in geo_cols]
-
-    # df_county = df_county[geo_cols + other_cols]
-
-    # Reorder so state and county appear on the left
-    df_county = df_county[
-        [
-            "State",
-            "County",
-            "Name",
-            "Year",
-            "Total",
-            "Native",
-            "Foreign-born",
-            "Percent Foreign-born",
-        ]
-    ]
+    # For similarity with how it's handled in acs-nativity-streamlit, put
+    # State and County columns first
+    front_cols = ["State", "County", "Name", "Year"]
+    other_cols = [c for c in df_county.columns if c not in front_cols]
+    df_county = df_county[front_cols + other_cols]
 
     # Sort by year so new data will always appear at the end,
     # which makes diffs easy to read. Sorting by state and county just makes it deterministic.

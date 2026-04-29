@@ -1,5 +1,3 @@
-# from acs_nativity import get_nativity_timeseries
-from censusdis.states import ALL_STATES_AND_DC
 from censusdis.datasets import ACS1
 from censusdis.multiyear import download_multiyear
 from censusdis import states
@@ -73,7 +71,6 @@ def get_state_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
         print("Generating state data")
 
     df_state = get_timeseries_for_geo(end_year=end_year, state="*")
-    #    df_state = df_state[df_state["Name"] != "Puerto Rico"]
 
     # Sort by year so new data will always appear at the end,
     # which makes diffs easy to read. Sorting by name just makes it deterministic.

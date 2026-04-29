@@ -20,12 +20,12 @@ get_us_data(end_year=END_YEAR, verbose=True).to_csv(DATA_DIR / "us.csv", index=F
 get_state_data(end_year=END_YEAR, verbose=True).to_csv(
     DATA_DIR / "state.csv", index=False
 )
-# get_county_data(end_year=END_YEAR, verbose=True).to_csv(
-#     DATA_DIR / "county.csv", index=False
-# )
-# get_place_data(end_year=END_YEAR, verbose=True).to_csv(
-#     DATA_DIR / "place.csv", index=False
-# )
+get_county_data(end_year=END_YEAR, verbose=True).to_csv(
+    DATA_DIR / "county.csv", index=False
+)
+get_place_data(end_year=END_YEAR, verbose=True).to_csv(
+    DATA_DIR / "place.csv", index=False
+)
 
 end = time.time()
 duration = end - start

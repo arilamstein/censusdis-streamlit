@@ -3,20 +3,20 @@ Generate US, state, county, and place data for all variables and write them to C
 """
 
 from pathlib import Path
-from gen_data_helpers import (
+from .gen_data_helpers import (
     get_us_data,
     get_state_data,
     get_county_data,
     get_place_data,
 )
-from utils import format_duration
+from .utils import format_duration
 import time
 
 start = time.time()
 
 END_YEAR = 2024
 DATA_DIR = Path("data")
-#get_us_data(end_year=END_YEAR, verbose=True).to_csv(DATA_DIR / "us.csv", index=False)
+get_us_data(end_year=END_YEAR, verbose=True).to_csv(DATA_DIR / "us.csv", index=False)
 get_state_data(end_year=END_YEAR, verbose=True).to_csv(
     DATA_DIR / "state.csv", index=False
 )

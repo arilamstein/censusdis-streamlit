@@ -2,7 +2,7 @@
 
 # Generate all CSVs into the data/ directory
 data:
-	uv run python scripts/gen_data.py
+	uv run python -m scripts.gen_data
 
 # Run formatting, linting, type checking, and tests
 check:

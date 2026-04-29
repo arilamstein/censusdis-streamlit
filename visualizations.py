@@ -59,8 +59,8 @@ def get_map(var, year1, year2):
 
 
 @st.cache_resource
-def get_line_graph(full_name, var):
-    df = be.get_census_data(full_name, var, True)
+def get_line_graph(name, col):
+    df = be.get_census_data(name, col, True)
     df["Year"] = df["Year"].astype(int)
 
     # Create the figure and axis
@@ -80,7 +80,7 @@ def get_line_graph(full_name, var):
     sns.lineplot(
         data=df[df["Year"] <= 2019],
         x="Year",
-        y=var,
+        y=col,
         ax=ax,
         marker="o",
         color=pre_covid_color,
@@ -89,7 +89,7 @@ def get_line_graph(full_name, var):
     sns.lineplot(
         data=df[df["Year"] >= 2021],
         x="Year",
-        y=var,
+        y=col,
         ax=ax,
         marker="o",
         color=post_covid_color,
@@ -98,8 +98,8 @@ def get_line_graph(full_name, var):
 
     # Handle missing 2020 connection (gray dashed line)
     if 2019 in df["Year"].values and 2021 in df["Year"].values:
-        value_2019 = df.loc[df["Year"] == 2019, var].values[0]
-        value_2021 = df.loc[df["Year"] == 2021, var].values[0]
+        value_2019 = df.loc[df["Year"] == 2019, col].values[0]
+        value_2021 = df.loc[df["Year"] == 2021, col].values[0]
         ax.plot([2019, 2021], [value_2019, value_2021], "--", color=missing_color)
 
     # Set custom x-axis labels
@@ -108,7 +108,7 @@ def get_line_graph(full_name, var):
     ax.set_xticklabels(selected_years)
 
     # Formatting
-    ax.set_title(f"{var}\n{full_name}")
+    ax.set_title(f"{col}\n{name}")
     ax.legend()
 
     # Apply comma formatting to y-axis

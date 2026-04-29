@@ -110,7 +110,7 @@ def get_county_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
 
     # For similarity with how it's handled in acs-nativity-streamlit, put
     # State and County columns first
-    front_cols = ["State", "County", "Name", "Year"]
+    front_cols = ["State", "County"]
     other_cols = [c for c in df_county.columns if c not in front_cols]
     df_county = df_county[front_cols + other_cols]
 
@@ -144,7 +144,7 @@ def get_place_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
             continue
         if verbose:
             print(f"Getting data for {states.NAMES_FROM_IDS[state]}")
-        df_new = get_nativity_timeseries(state=state, place="*")
+        df_new = get_timeseries_for_geo(end_year=end_year, state=state, place="*")
         dfs_place.append(df_new)
 
     df_place = pd.concat(dfs_place)
@@ -158,18 +158,12 @@ def get_place_data(end_year: int = 2024, verbose: bool = True) -> pd.DataFrame:
     df_place[["Place", "State"]] = df_place["Name"].str.split(",", expand=True)
     df_place["Place"] = df_place["Place"].str.strip()
     df_place["State"] = df_place["State"].str.strip()
-    df_place = df_place[
-        [
-            "State",
-            "Place",
-            "Name",
-            "Year",
-            "Total",
-            "Native",
-            "Foreign-born",
-            "Percent Foreign-born",
-        ]
-    ]
+
+    # For similarity with how it's handled in acs-nativity-streamlit, put
+    # State and Place columns first
+    front_cols = ["State", "Place"]
+    other_cols = [c for c in df_place.columns if c not in front_cols]
+    df_place = df_place[front_cols + other_cols]
 
     # Sort by year so new data goes at the end.
     # Sorting by state and place makes it deterministic.

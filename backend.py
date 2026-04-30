@@ -45,3 +45,39 @@ def get_census_data(name, col, add_2020):
         ret = ret.sort_values(["Name", "Year"])
 
     return ret
+
+
+def get_table_df():
+    return df_all.drop(columns=["State", "County", "Place"])
+
+
+def get_years():
+    return list(df_all["Year"].unique())
+
+
+def get_compare_df(year1, year2, column):
+    """
+    Return a wide DataFrame with Name, year1, year2, and change columns
+    for the given location and column.
+    """
+    # Pivot so we can easily compare years
+    df = get_table_df()
+    df_wide = df.pivot(index="Name", columns="Year", values=column).reset_index()
+    df_wide.columns.name = None
+
+    # Years are ints, and "mixed type" columns generates a warning,
+    # so convert all columns to string.
+    # Also convert the incoming year variables to strings for consistency
+    df_wide.columns = df_wide.columns.map(str)
+    y1 = str(year1)
+    y2 = str(year2)
+
+    # Compute change
+    df_wide = df_wide[["Name", y1, y2]].dropna()
+    df_wide["Change"] = df_wide[y2] - df_wide[y1]
+
+    # Add a "Percent Change" column and sort on it
+    df_wide["Percent Change"] = df_wide["Change"] / df_wide[y1] * 100
+    df_wide = df_wide.sort_values("Percent Change", ascending=False)
+
+    return df_wide

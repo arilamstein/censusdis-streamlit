@@ -30,6 +30,28 @@ with col2:  # Demographic
         options=options,
     )
 
-fig = viz.get_line_graph(location, column)
-st.pyplot(fig)
-st.write("*Dashed line indicates that data is missing for 2020.*")
+line_tab, compare_tab, table_tab, about_tab = st.tabs(
+    ["📈 Graph", "🔍 Compare Years", "📋 All Data", "ℹ️ About"]
+)
+with line_tab:
+    fig = viz.get_line_graph(location, column)
+    st.pyplot(fig)
+    st.write("*Dashed line indicates that data is missing for 2020.*")
+
+with compare_tab:
+    years = be.get_years()
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        year1 = st.selectbox("First Year:", years, years.index(2019))
+    with col2:
+        year2 = st.selectbox("Second Year:", years, years.index(2021))
+
+    df = be.get_compare_df(year1, year2, column)
+    st.dataframe(df, hide_index=True)
+
+with table_tab:
+    df = be.get_table_df()
+    st.dataframe(df, hide_index=True)
+
+with about_tab:
+    st.write(open("text/about.md").read())

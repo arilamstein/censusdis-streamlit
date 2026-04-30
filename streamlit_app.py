@@ -50,7 +50,7 @@ with compare_tab:
     st.dataframe(df, hide_index=True)
 
 with table_tab:
-    df = be.get_table_df()
+    df = be.get_table_df_styled()
     st.dataframe(df, hide_index=True)
 
 with about_tab:

@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-
+from scripts.census_vars import census_vars_post_2005
 
 DATA_DIR = Path("data")
 df_all = pd.concat(
@@ -49,6 +49,18 @@ def get_census_data(name, col, add_2020):
 
 def get_table_df():
     return df_all.drop(columns=["State", "County", "Place"])
+
+
+def style_table_df(df):
+    fmt = {
+        v: lambda x: f"{x:,.0f}" for v in census_vars_post_2005.values() if v != "Name"
+    }
+    return df.style.format(fmt)
+
+
+def get_table_df_styled():
+    df = get_table_df()
+    return style_table_df(df)
 
 
 def get_years():

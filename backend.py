@@ -93,3 +93,15 @@ def get_compare_df(year1, year2, column):
     df_wide = df_wide.sort_values("Percent Change", ascending=False)
 
     return df_wide
+
+
+def style_compare_df(df):
+    int_cols = [str(year) for year in get_years()] + ["Change"]
+    fmt = {col: lambda x: f"{x:,.0f}" for col in int_cols}
+    fmt["Percent Change"] = lambda x: f"{x:,.1f}%"
+    return df.style.format(fmt)
+
+
+def get_compare_df_styled(year1, year2, column):
+    df = get_compare_df(year1, year2, column)
+    return style_compare_df(df)

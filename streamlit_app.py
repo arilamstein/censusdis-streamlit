@@ -46,7 +46,7 @@ with compare_tab:
     with col2:
         year2 = st.selectbox("Second Year:", years, years.index(2021))
 
-    df = be.get_compare_df(year1, year2, column)
+    df = be.get_compare_df_styled(year1, year2, column)
     st.dataframe(df, hide_index=True)
 
 with table_tab:

@@ -40,7 +40,7 @@ with line_tab:
 
 with compare_tab:
     years = be.get_years()
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     with col1:
         year1 = st.selectbox("First Year:", years, years.index(2019))
     with col2:

@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+from pandas.io.formats.style import Styler
 from scripts.census_vars import census_vars_post_2005
 
 DATA_DIR = Path("data")
@@ -28,7 +29,7 @@ def get_data_for_name(name: str) -> pd.DataFrame:
     return df_all[df_all["Name"] == name].copy().sort_values("Year")
 
 
-def get_census_data(name, col, add_2020):
+def get_census_data(name: str, col: str, add_2020: bool) -> pd.DataFrame:
     ret = df_all.loc[df_all["Name"] == name][["Name", "Year", col]]
 
     # There is no data for 2020. But adding in an NA row helps the graphs look better.
@@ -47,27 +48,27 @@ def get_census_data(name, col, add_2020):
     return ret
 
 
-def get_table_df():
+def get_table_df() -> pd.DataFrame:
     return df_all.drop(columns=["State", "County", "Place"])
 
 
-def style_table_df(df):
+def style_table_df(df: pd.DataFrame) -> Styler:
     fmt = {
         v: lambda x: f"{x:,.0f}" for v in census_vars_post_2005.values() if v != "Name"
     }
-    return df.style.format(fmt)
+    return df.style.format(fmt)  # type: ignore[arg-type]
 
 
-def get_table_df_styled():
+def get_table_df_styled() -> Styler:
     df = get_table_df()
     return style_table_df(df)
 
 
-def get_years():
+def get_years() -> list[int]:
     return list(df_all["Year"].unique())
 
 
-def get_compare_df(year1, year2, column):
+def get_compare_df(year1: int, year2: int, column: str) -> pd.DataFrame:
     """
     Return a wide DataFrame with Name, year1, year2, and change columns
     for the given location and column.
@@ -95,13 +96,13 @@ def get_compare_df(year1, year2, column):
     return df_wide
 
 
-def style_compare_df(df):
+def style_compare_df(df: pd.DataFrame) -> Styler:
     int_cols = [str(year) for year in get_years()] + ["Change"]
     fmt = {col: lambda x: f"{x:,.0f}" for col in int_cols}
     fmt["Percent Change"] = lambda x: f"{x:,.1f}%"
-    return df.style.format(fmt)
+    return df.style.format(fmt)  # type: ignore[arg-type]
 
 
-def get_compare_df_styled(year1, year2, column):
+def get_compare_df_styled(year1: int, year2: int, column: str) -> Styler:
     df = get_compare_df(year1, year2, column)
     return style_compare_df(df)

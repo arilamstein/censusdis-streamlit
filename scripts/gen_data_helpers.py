@@ -1,3 +1,4 @@
+from typing import Any
 from censusdis.datasets import ACS1
 from censusdis.multiyear import download_multiyear
 from censusdis import states
@@ -6,7 +7,7 @@ from .census_vars import census_vars_2005, census_vars_post_2005
 import pandas as pd
 
 
-def _normalize_columns(df):
+def _normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     cols = [*census_vars_post_2005.values(), "Year"]
     missing = set(cols) - set(df.columns)
     if missing:
@@ -18,7 +19,7 @@ def _normalize_columns(df):
     return df[front + rest]
 
 
-def get_timeseries_for_geo(*, end_year=2024, **kwargs):
+def get_timeseries_for_geo(*, end_year: int = 2024, **kwargs: Any) -> pd.DataFrame:
 
     df_2005 = download_multiyear(
         dataset=ACS1,

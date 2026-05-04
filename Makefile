@@ -8,6 +8,7 @@ data:
 check:
 	uv run ruff format .
 	uv run ruff check .
+	mypy .
 
 # Show available commands
 help:

@@ -3,19 +3,32 @@ name = "streamlit-census"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     "censusdis>=1.4.0",
     "ipykernel>=6.29.5",
     "matplotlib>=3.10.3",
     "numpy>=2.2.6",
     "pandas>=2.2.3",
-    "plotly>=6.1.2",
     "seaborn>=0.13.2",
     "streamlit>=1.45.1",
 ]
 
 [dependency-groups]
 dev = [
+    "mypy>=1.20.2",
+    "pandas-stubs>=3.0.0.260204",
     "ruff>=0.15.11",
+    "types-seaborn>=0.13.2.20260408",
 ]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["censusdis", "censusdis.*"]
+follow_untyped_imports = true

@@ -17,16 +17,8 @@ df_all = pd.concat(
 df_all = df_all.drop_duplicates(subset=["Name", "Year"]).reset_index(drop=True)
 
 
-def get_all_states() -> list[str]:
-    return sorted(df_all["State"].dropna().unique().tolist())
-
-
 def get_all_names() -> list[str]:
     return sorted(df_all["Name"].unique().tolist())
-
-
-def get_data_for_name(name: str) -> pd.DataFrame:
-    return df_all[df_all["Name"] == name].copy().sort_values("Year")
 
 
 def get_census_data(name: str, col: str, add_2020: bool) -> pd.DataFrame:

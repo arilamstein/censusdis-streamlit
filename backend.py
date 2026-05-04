@@ -44,6 +44,13 @@ def get_table_df() -> pd.DataFrame:
     return df_all.drop(columns=["State", "County", "Place"])
 
 
+def get_demographic_statistics() -> list[str]:
+    demographics = [v for v in census_vars_post_2005.values() if v != "Name"]
+    special = "Total Worked from Home"
+    demographics.remove(special)
+    return [special] + demographics
+
+
 def style_table_df(df: pd.DataFrame) -> Styler:
     fmt = {
         v: lambda x: f"{x:,.0f}" for v in census_vars_post_2005.values() if v != "Name"

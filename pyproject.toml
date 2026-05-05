@@ -7,10 +7,8 @@ requires-python = ">=3.13"
 dependencies = [
     "censusdis>=1.4.0",
     "ipykernel>=6.29.5",
-    "matplotlib>=3.10.3",
     "pandas>=2.2.3",
     "plotly>=6.7.0",
-    "seaborn>=0.13.2",
     "streamlit>=1.45.1",
 ]
 
@@ -19,7 +17,6 @@ dev = [
     "mypy>=1.20.2",
     "pandas-stubs>=3.0.0.260204",
     "ruff>=0.15.11",
-    "types-seaborn>=0.13.2.20260408",
     "vulture>=2.16",
 ]
 

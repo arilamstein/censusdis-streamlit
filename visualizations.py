@@ -1,11 +1,27 @@
 import backend as be
 
-import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
 
-@st.cache_resource
+def _add_source_footer(
+    fig: go.Figure,
+    source_text: str = "Source: American Community Survey 1-Year Estimates",
+) -> None:
+    fig.add_annotation(
+        text=source_text,
+        x=0,
+        y=-0.15,
+        xref="paper",
+        yref="paper",
+        showarrow=False,
+        xanchor="left",
+        yanchor="top",
+        align="left",
+        font=dict(size=12, color="gray"),
+    )
+
+
 def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
     df = be.get_compare_df(year1, year2, column)
 
@@ -29,6 +45,8 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
         },
         dragmode=False,
     )
+
+    _add_source_footer(fig)
 
     return fig
 
@@ -108,8 +126,13 @@ def get_line_graph(name: str, col: str) -> go.Figure:
             xanchor="right",
             x=1,
         ),
-        margin=dict(l=40, r=40, t=80, b=40),
+        margin=dict(l=40, r=40, t=80, b=80),
         dragmode=False,
+    )
+
+    _add_source_footer(
+        fig,
+        "Source: American Community Survey 1-Year Estimates<br>Dashed line indicates data missing for 2020.",
     )
 
     return fig

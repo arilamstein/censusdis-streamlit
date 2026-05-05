@@ -15,7 +15,6 @@ with line_tab:
 
     fig = viz.get_line_graph(location, column)
     st.plotly_chart(fig)
-    st.write("*Dashed line indicates that data is missing for 2020.*")
 
 with compare_tab:
     years = be.get_years()

@@ -52,7 +52,7 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
 
 
 def get_line_graph(name: str, col: str) -> go.Figure:
-    df = be.get_census_data(name, col, True)
+    df = be.get_data_for_name(name)
     df["Year"] = df["Year"].astype(int)
 
     pre_covid_color = "black"

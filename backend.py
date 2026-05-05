@@ -23,23 +23,8 @@ def get_all_names() -> list[str]:
     return sorted(df_all["Name"].unique().tolist())
 
 
-def get_census_data(name: str, col: str, add_2020: bool) -> pd.DataFrame:
-    ret = df_all.loc[df_all["Name"] == name][["Name", "Year", col]]
-
-    # There is no data for 2020. But adding in an NA row helps the graphs look better.
-    if add_2020:
-        row_for_2020 = pd.DataFrame(
-            [
-                {
-                    "Name": ret.iloc[0]["Name"],
-                    "Year": "2020",
-                }
-            ]
-        )
-        ret = pd.concat([ret, row_for_2020])
-        ret = ret.sort_values(["Name", "Year"])
-
-    return ret
+def get_data_for_name(name: str) -> pd.DataFrame:
+    return df_all.loc[df_all["Name"] == name].copy()
 
 
 def get_table_df() -> pd.DataFrame:

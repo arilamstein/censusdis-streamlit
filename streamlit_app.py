@@ -4,13 +4,12 @@ import backend as be
 import ui
 import visualizations as viz
 
-# st.set_page_config(layout="wide")
 st.title("How has America Changed Since Covid?")
 with open("text/intro.md") as intro_file:
     st.write(intro_file.read())
 
 line_tab, compare_tab, table_tab, about_tab = st.tabs(
-    ["📈 Graph", "🔍 Compare Years", "📋 All Data", "ℹ️ About"]
+    ["📈 Trends", "🔍 Compare Years", "📋 All Data", "ℹ️ About"]
 )
 with line_tab:
     location, column = ui.location_and_demographic_block("line")

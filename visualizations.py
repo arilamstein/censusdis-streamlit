@@ -5,6 +5,8 @@ import matplotlib.ticker as ticker
 from matplotlib.figure import Figure
 import seaborn as sns
 import streamlit as st
+import plotly.express as px
+import plotly.graph_objects as go
 
 
 @st.cache_resource
@@ -62,5 +64,25 @@ def get_line_graph(name: str, col: str) -> Figure:
 
     # Apply comma formatting to y-axis
     ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
+
+    return fig
+
+
+@st.cache_resource
+def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
+    df = be.get_compare_df(year1, year2, column)
+
+    fig = px.box(
+        df,
+        y="Percent Change",
+        custom_data=["Name", "Percent Change"],
+        title=f"Percent Change in {column}, {year1}-{year2}",
+        points="all",
+    )
+    fig.update_traces(
+        hovertemplate=(
+            "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
+        )
+    )
 
     return fig

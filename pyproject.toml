@@ -9,6 +9,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     "matplotlib>=3.10.3",
     "pandas>=2.2.3",
+    "plotly>=6.7.0",
     "seaborn>=0.13.2",
     "streamlit>=1.45.1",
 ]
@@ -32,3 +33,10 @@ check_untyped_defs = true
 [[tool.mypy.overrides]]
 module = ["censusdis", "censusdis.*"]
 follow_untyped_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "plotly",
+    "plotly.*",
+]
+ignore_missing_imports = true

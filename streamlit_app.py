@@ -27,8 +27,12 @@ with compare_tab:
     with col3:
         year2 = st.selectbox("Second Year:", years, years.index(2021))
 
+    fig = viz.get_compare_boxplot(year1, year2, column)
+    st.plotly_chart(fig)
+
     df = be.get_compare_df_styled(year1, year2, column)
     st.dataframe(df, hide_index=True)
+
 
 with table_tab:
     df = be.get_table_df_styled()

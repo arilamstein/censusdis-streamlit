@@ -1,10 +1,11 @@
 from typing import Any
-from censusdis.datasets import ACS1
-from censusdis.multiyear import download_multiyear
-from censusdis import states
-from .census_vars import census_vars_2005, census_vars_post_2005
 
 import pandas as pd
+from censusdis import states
+from censusdis.datasets import ACS1
+from censusdis.multiyear import download_multiyear
+
+from .census_vars import census_vars_2005, census_vars_post_2005
 
 
 def _normalize_columns(df: pd.DataFrame) -> pd.DataFrame:

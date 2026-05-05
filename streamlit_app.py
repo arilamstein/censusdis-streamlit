@@ -1,7 +1,8 @@
-import backend as be
-import visualizations as viz
 import streamlit as st
+
+import backend as be
 import ui
+import visualizations as viz
 
 # st.set_page_config(layout="wide")
 st.title("How has America Changed Since Covid?")

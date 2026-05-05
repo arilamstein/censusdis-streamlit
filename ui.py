@@ -12,8 +12,8 @@ the synchronization logic is handled centrally.
 """
 
 import streamlit as st
-import backend as be
 
+import backend as be
 
 VALID_TABS = ["line", "compare"]
 

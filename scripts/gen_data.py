@@ -2,15 +2,16 @@
 Generate US, state, county, and place data for all variables and write them to CSV files.
 """
 
+import time
 from pathlib import Path
+
 from .gen_data_helpers import (
-    get_us_data,
-    get_state_data,
     get_county_data,
     get_place_data,
+    get_state_data,
+    get_us_data,
 )
 from .utils import format_duration
-import time
 
 start = time.time()
 

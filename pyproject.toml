@@ -37,3 +37,7 @@ module = [
     "plotly.*",
 ]
 ignore_missing_imports = true
+
+[tool.ruff.lint]
+select = ["I"]
+

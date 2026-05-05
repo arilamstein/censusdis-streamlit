@@ -1,6 +1,8 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 from pandas.io.formats.style import Styler
+
 from scripts.census_vars import census_vars_post_2005
 
 DATA_DIR = Path("data")

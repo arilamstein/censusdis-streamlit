@@ -1,7 +1,7 @@
-import backend as be
-
 import plotly.express as px
 import plotly.graph_objects as go
+
+import backend as be
 
 
 def _add_source_footer(

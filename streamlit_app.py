@@ -33,7 +33,6 @@ with compare_tab:
     df = be.get_compare_df_styled(year1, year2, column)
     st.dataframe(df, hide_index=True)
 
-
 with table_tab:
     df = be.get_table_df_styled()
     st.dataframe(df, hide_index=True)

@@ -88,7 +88,7 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
         title={
             "text": f"Percent Change in {column}, {year1}-{year2}",
             "x": 0.5,
-            "xanchor": "center"
+            "xanchor": "center",
         }
     )
 

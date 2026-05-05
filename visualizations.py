@@ -26,7 +26,8 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
             "text": f"Percent Change in {column}, {year1}-{year2}",
             "x": 0.5,
             "xanchor": "center",
-        }
+        },
+        dragmode=False,
     )
 
     return fig
@@ -108,6 +109,7 @@ def get_line_graph(name: str, col: str) -> go.Figure:
             x=1,
         ),
         margin=dict(l=40, r=40, t=80, b=40),
+        dragmode=False,
     )
 
     return fig

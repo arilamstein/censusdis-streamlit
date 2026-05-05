@@ -6,7 +6,8 @@ import visualizations as viz
 
 # st.set_page_config(layout="wide")
 st.title("How has America Changed Since Covid?")
-st.write(open("text/intro.md").read())
+with open("text/intro.md") as intro_file:
+    st.write(intro_file.read())
 
 line_tab, compare_tab, table_tab, about_tab = st.tabs(
     ["📈 Graph", "🔍 Compare Years", "📋 All Data", "ℹ️ About"]
@@ -37,5 +38,5 @@ with table_tab:
     df = be.get_table_df_styled()
     st.dataframe(df, hide_index=True)
 
-with about_tab:
-    st.write(open("text/about.md").read())
+with about_tab, open("text/about.md") as about_file:
+    st.write(about_file.read())

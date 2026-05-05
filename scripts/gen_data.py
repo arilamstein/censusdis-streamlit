@@ -1,5 +1,6 @@
 """
-Generate US, state, county, and place data for all variables and write them to CSV files.
+Generate US, state, county, and place data for all variables
+and write them to CSV files.
 """
 
 import time

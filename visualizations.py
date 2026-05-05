@@ -132,7 +132,10 @@ def get_line_graph(name: str, col: str) -> go.Figure:
 
     _add_source_footer(
         fig,
-        "Source: American Community Survey 1-Year Estimates<br>Dashed line indicates data missing for 2020.",
+        (
+            "Dashed line indicates data missing for 2020.<br>"
+            "Source: American Community Survey 1-Year Estimates."
+        ),
     )
 
     return fig

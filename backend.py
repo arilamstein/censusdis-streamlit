@@ -51,7 +51,16 @@ def get_data_by_geo(
     return pd.concat(frames)
 
 
-def get_table_df(year: int | None) -> pd.DataFrame:
+def get_table_df(
+    year: int | None,
+    include_nation: bool = True,
+    include_states: bool = True,
+    include_counties: bool = True,
+    include_places: bool = True,
+) -> pd.DataFrame:
+    df = get_data_by_geo(
+        include_nation, include_states, include_counties, include_places
+    )
     df = df_all.drop(columns=["State", "County", "Place"])
     if year:
         df = df[df["Year"] == year]
@@ -72,9 +81,18 @@ def style_table_df(df: pd.DataFrame) -> Styler:
     return df.style.format(fmt)  # type: ignore[arg-type]
 
 
-def get_table_df_styled(year: int, column: str) -> Styler:
-    df = get_table_df(year).sort_values(column, ascending=False)
-    return style_table_df(df)
+def get_table_df_styled(
+    year: int,
+    column: str,
+    include_nation: bool,
+    include_states: bool,
+    include_counties: bool,
+    include_places: bool,
+) -> Styler:
+    df = get_table_df(
+        year, include_nation, include_states, include_counties, include_places
+    ).sort_values(column, ascending=False)
+    return style_table_df(df[["Name", "Year", column]])
 
 
 def get_years() -> list[int]:

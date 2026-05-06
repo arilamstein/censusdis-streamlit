@@ -61,7 +61,9 @@ with table_tab:
     )
     st.plotly_chart(fig)
 
-    df = be.get_table_df_styled(year, column)
+    df = be.get_table_df_styled(
+        year, column, include_nation, include_states, include_counties, include_places
+    )
     st.dataframe(df, hide_index=True)
 
 with about_tab, open("text/about.md") as about_file:

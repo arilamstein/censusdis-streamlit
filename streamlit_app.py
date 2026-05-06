@@ -19,15 +19,17 @@ with line_tab:
 
 with compare_tab:
     years = be.get_years()
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
-        column = ui.demographic_selector("compare")
+        location = ui.location_selector("compare")
     with col2:
-        year1 = st.selectbox("First Year:", years, years.index(2019))
+        column = ui.demographic_selector("compare")
     with col3:
+        year1 = st.selectbox("First Year:", years, years.index(2019))
+    with col4:
         year2 = st.selectbox("Second Year:", years, years.index(2021))
 
-    fig = viz.get_compare_violinplot(year1, year2, column)
+    fig = viz.get_compare_violinplot(year1, year2, column, location)
     st.plotly_chart(fig)
 
     df = be.get_compare_df_styled(year1, year2, column)

@@ -52,9 +52,20 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
 
 
 def get_single_year_violinplot(
-    year: int, column: str, name_to_highlight: str | None = None
+    year: int,
+    column: str,
+    name_to_highlight: str | None = None,
+    include_nation: bool = True,
+    include_states: bool = True,
+    include_counties: bool = True,
+    include_places: bool = True,
 ) -> go.Figure:
     df = be.get_data_for_year(year)
+
+    df = be.get_data_by_geo(
+        include_nation, include_states, include_counties, include_places
+    )
+    df = df[df["Year"] == year]
 
     fig = go.Figure()
 

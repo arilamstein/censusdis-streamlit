@@ -6,14 +6,12 @@ from pandas.io.formats.style import Styler
 from scripts.census_vars import census_vars_post_2005
 
 DATA_DIR = Path("data")
-df_all = pd.concat(
-    [
-        pd.read_csv(DATA_DIR / "us.csv"),
-        pd.read_csv(DATA_DIR / "state.csv"),
-        pd.read_csv(DATA_DIR / "county.csv"),
-        pd.read_csv(DATA_DIR / "place.csv"),
-    ]
-)
+df_us = pd.read_csv(DATA_DIR / "us.csv")
+df_state = pd.read_csv(DATA_DIR / "state.csv")
+df_county = pd.read_csv(DATA_DIR / "county.csv")
+df_place = pd.read_csv(DATA_DIR / "place.csv")
+df_all = pd.concat([df_us, df_state, df_county, df_place])
+
 # Certain cities (especially "unincoporated cities" in Virginia) appear twice in the
 # underlying data - once in the county file and once in the place data.
 df_all = df_all.drop_duplicates(subset=["Name", "Year"]).reset_index(drop=True)
@@ -29,6 +27,28 @@ def get_data_for_name(name: str) -> pd.DataFrame:
 
 def get_data_for_year(year: int) -> pd.DataFrame:
     return df_all.loc[df_all["Year"] == year].copy()
+
+
+def get_data_by_geo(
+    include_nation: bool,
+    include_states: bool,
+    include_counties: bool,
+    include_places: bool,
+) -> pd.DataFrame:
+    frames = []
+    if include_nation:
+        frames.append(df_us)
+    if include_states:
+        frames.append(df_state)
+    if include_counties:
+        frames.append(df_county)
+    if include_places:
+        frames.append(df_place)
+
+    if not frames:
+        return pd.DataFrame()
+
+    return pd.concat(frames)
 
 
 def get_table_df(year: int | None) -> pd.DataFrame:

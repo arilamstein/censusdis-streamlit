@@ -45,7 +45,20 @@ with table_tab:
     with col3:
         year = st.selectbox("Year:", years, years.index(2019))
 
-    fig = viz.get_single_year_violinplot(year, column, location)
+    include_nation = st.checkbox("Nation", True)
+    include_states = st.checkbox("States", True)
+    include_counties = st.checkbox("Counties", True)
+    include_places = st.checkbox("Cities", True)
+
+    fig = viz.get_single_year_violinplot(
+        year,
+        column,
+        location,
+        include_nation,
+        include_states,
+        include_counties,
+        include_places,
+    )
     st.plotly_chart(fig)
 
     df = be.get_table_df_styled(year, column)

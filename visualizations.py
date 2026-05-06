@@ -51,6 +51,61 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
     return fig
 
 
+def get_compare_violinplot(
+    year1: int, year2: int, column: str, name_to_highlight: str | None = None
+) -> go.Figure:
+    df = be.get_compare_df(year1, year2, column)
+
+    fig = go.Figure()
+
+    violin_hover = (
+        "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
+    )
+    fig.add_trace(
+        go.Violin(
+            y=df["Percent Change"],
+            x=["Percent Change"] * len(df),
+            box_visible=True,
+            meanline_visible=False,
+            points="all",
+            hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
+            customdata=df[["Name", "Percent Change"]].values,
+            hovertemplate=violin_hover,
+            name="Percent Change",
+            showlegend=False,
+        )
+    )
+
+    # Optionally highlight a point
+    if name_to_highlight:
+        hdf = df[df["Name"] == name_to_highlight]
+
+        scatter_hover = (
+            "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
+        )
+        fig.add_trace(
+            go.Scatter(
+                x=["Percent Change"],
+                y=hdf["Percent Change"],
+                mode="markers",
+                marker=dict(color="red", size=12, symbol="star"),
+                name=name_to_highlight,
+                customdata=hdf[["Name", "Percent Change"]].values,
+                hovertemplate=scatter_hover,
+            )
+        )
+
+    fig.update_layout(
+        title=f"Percent Change in {column}<br><sup>{year1}–{year2}</sup>",
+        xaxis=dict(visible=False),
+        yaxis=dict(title="Percent Change", tickformat=","),
+    )
+
+    _add_source_footer(fig)
+
+    return fig
+
+
 def get_line_graph(name: str, col: str) -> go.Figure:
     df = be.get_data_for_name(name)
     df["Year"] = df["Year"].astype(int)

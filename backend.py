@@ -27,8 +27,15 @@ def get_data_for_name(name: str) -> pd.DataFrame:
     return df_all.loc[df_all["Name"] == name].copy()
 
 
-def get_table_df() -> pd.DataFrame:
-    return df_all.drop(columns=["State", "County", "Place"])
+def get_data_for_year(year: int) -> pd.DataFrame:
+    return df_all.loc[df_all["Year"] == year].copy()
+
+
+def get_table_df(year: int | None) -> pd.DataFrame:
+    df = df_all.drop(columns=["State", "County", "Place"])
+    if year:
+        df = df[df["Year"] == year]
+    return df
 
 
 def get_demographic_statistics() -> list[str]:
@@ -45,8 +52,8 @@ def style_table_df(df: pd.DataFrame) -> Styler:
     return df.style.format(fmt)  # type: ignore[arg-type]
 
 
-def get_table_df_styled() -> Styler:
-    df = get_table_df()
+def get_table_df_styled(year: int, column: str) -> Styler:
+    df = get_table_df(year).sort_values(column, ascending=False)
     return style_table_df(df)
 
 
@@ -60,7 +67,7 @@ def get_compare_df(year1: int, year2: int, column: str) -> pd.DataFrame:
     for the given location and column.
     """
     # Pivot so we can easily compare years
-    df = get_table_df()
+    df = get_table_df(None)
     df_wide = df.pivot(index="Name", columns="Year", values=column).reset_index()
     df_wide.columns.name = None
 

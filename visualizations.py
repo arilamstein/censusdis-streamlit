@@ -51,6 +51,61 @@ def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
     return fig
 
 
+def get_single_year_violinplot(
+    year: int, column: str, name_to_highlight: str | None = None
+) -> go.Figure:
+    df = be.get_data_for_year(year)
+
+    fig = go.Figure()
+
+    violin_hover = (
+        "%{customdata[0]}<br>" + column + ": %{customdata[1]:,.1f}%<extra></extra>"
+    )
+    fig.add_trace(
+        go.Violin(
+            y=df[column],
+            x=[column] * len(df),
+            box_visible=True,
+            meanline_visible=False,
+            points="all",
+            hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
+            customdata=df[["Name", column]].values,
+            hovertemplate=violin_hover,
+            name=column,
+            showlegend=False,
+        )
+    )
+
+    # Optionally highlight a point
+    if name_to_highlight:
+        hdf = df[df["Name"] == name_to_highlight]
+
+        scatter_hover = (
+            "%{customdata[0]}<br>" + column + ": %{customdata[1]:,.1f}%<extra></extra>"
+        )
+        fig.add_trace(
+            go.Scatter(
+                x=[column],
+                y=hdf[column],
+                mode="markers",
+                marker=dict(color="red", size=12, symbol="star"),
+                name=name_to_highlight,
+                customdata=hdf[["Name", column]].values,
+                hovertemplate=scatter_hover,
+            )
+        )
+
+    fig.update_layout(
+        title=f"{column} in {year}",
+        xaxis=dict(visible=False),
+        yaxis=dict(title=column, tickformat=","),
+    )
+
+    _add_source_footer(fig)
+
+    return fig
+
+
 def get_compare_violinplot(
     year1: int, year2: int, column: str, name_to_highlight: str | None = None
 ) -> go.Figure:

@@ -15,7 +15,7 @@ import streamlit as st
 
 import backend as be
 
-VALID_TABS = ["line", "compare"]
+VALID_TABS = ["line", "compare", "all"]
 
 
 def validate_tab(tab: str) -> None:

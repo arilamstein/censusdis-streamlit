@@ -36,7 +36,19 @@ with compare_tab:
     st.dataframe(df, hide_index=True)
 
 with table_tab:
-    df = be.get_table_df_styled()
+    years = be.get_years()
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        location = ui.location_selector("all")
+    with col2:
+        column = ui.demographic_selector("all")
+    with col3:
+        year = st.selectbox("Year:", years, years.index(2019))
+
+    fig = viz.get_single_year_violinplot(year, column, location)
+    st.plotly_chart(fig)
+
+    df = be.get_table_df_styled(year, column)
     st.dataframe(df, hide_index=True)
 
 with about_tab, open("text/about.md") as about_file:

@@ -8,11 +8,11 @@ st.title("How has America Changed Since Covid?")
 with open("text/intro.md") as intro_file:
     st.write(intro_file.read())
 
-line_tab, compare_tab, table_tab, about_tab = st.tabs(
-    ["📈 Trends", "🔍 Compare Years", "📋 All Data", "ℹ️ About"]
+trend_tab, compare_tab, ranking_tab, about_tab = st.tabs(
+    ["📈 Trends", "🔍 Compare Years", "📊 Rankings", "ℹ️ About"]
 )
-with line_tab:
-    location, column = ui.location_and_demographic_block("line")
+with trend_tab:
+    location, column = ui.location_and_demographic_block("trend")
 
     fig = viz.get_line_graph(location, column)
     st.plotly_chart(fig)
@@ -35,13 +35,13 @@ with compare_tab:
     df = be.get_compare_df_styled(year1, year2, column)
     st.dataframe(df, hide_index=True)
 
-with table_tab:
+with ranking_tab:
     years = be.get_years()
     col1, col2, col3 = st.columns(3)
     with col1:
-        location = ui.location_selector("all")
+        location = ui.location_selector("ranking")
     with col2:
-        column = ui.demographic_selector("all")
+        column = ui.demographic_selector("ranking")
     with col3:
         year = st.selectbox("Year:", years, years.index(2019))
 

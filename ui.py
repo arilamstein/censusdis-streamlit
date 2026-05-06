@@ -15,7 +15,7 @@ import streamlit as st
 
 import backend as be
 
-VALID_TABS = ["line", "compare", "all"]
+VALID_TABS = ["trend", "compare", "ranking"]
 
 
 def validate_tab(tab: str) -> None:
@@ -78,7 +78,7 @@ def location_selector(tab: str) -> str:
 def location_and_demographic_block(tab: str) -> tuple[str, str]:
     st.markdown(
         "**Start typing** the name of a State, County, or City to search for it. "
-        "Leave blank to view United States totals."
+        "Leave blank to view national totals."
     )
     col1, col2 = st.columns(2)
 

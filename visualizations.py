@@ -21,6 +21,21 @@ def _add_source_footer(
     )
 
 
+def _get_prefix_for_column(column: str) -> str:
+    formats = {
+        "Total Population": "",
+        "Total Worked from Home": "",
+        "Total With Public Assistance": "",
+        "Median Household Income": "$",
+        "Median Rent": "$",
+    }
+
+    if column not in formats:
+        raise ValueError(f"Unknown variable: {column}")
+
+    return formats[column]
+
+
 def get_single_year_violinplot(
     year: int,
     column: str,
@@ -40,8 +55,12 @@ def get_single_year_violinplot(
     fig = go.Figure()
 
     violin_hover = (
-        "%{customdata[0]}<br>" + column + ": %{customdata[1]:,.1f}%<extra></extra>"
+        "%{customdata[0]}<br>"
+        f"{column}: {_get_prefix_for_column(column)}"
+        "%{customdata[1]:,}"
+        "<extra></extra>"
     )
+
     fig.add_trace(
         go.Violin(
             y=df[column],

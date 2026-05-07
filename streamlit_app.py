@@ -31,6 +31,9 @@ with compare_tab:
     fig = viz.get_compare_violinplot(year1, year2, column, location)
     st.plotly_chart(fig)
 
+    with open("text/table.md") as table_file:
+        st.write(table_file.read().format(var=column, year1=year1, year2=year2))
+
     df = be.get_compare_df_styled(year1, year2, column)
     st.dataframe(df, hide_index=True)
 

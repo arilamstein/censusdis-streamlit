@@ -1,4 +1,3 @@
-import plotly.express as px
 import plotly.graph_objects as go
 
 import backend as be
@@ -20,35 +19,6 @@ def _add_source_footer(
         align="left",
         font=dict(size=12, color="gray"),
     )
-
-
-def get_compare_boxplot(year1: int, year2: int, column: str) -> go.Figure:
-    df = be.get_compare_df(year1, year2, column)
-
-    fig = px.box(
-        df,
-        y="Percent Change",
-        custom_data=["Name", "Percent Change"],
-        title=f"Percent Change in {column}, {year1}-{year2}",
-        points="all",
-    )
-    fig.update_traces(
-        hovertemplate=(
-            "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
-        )
-    )
-    fig.update_layout(
-        title={
-            "text": f"Percent Change in {column}, {year1}-{year2}",
-            "x": 0.5,
-            "xanchor": "center",
-        },
-        dragmode=False,
-    )
-
-    _add_source_footer(fig)
-
-    return fig
 
 
 def get_single_year_violinplot(

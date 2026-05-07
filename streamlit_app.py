@@ -41,9 +41,15 @@ with ranking_tab:
     with col1:
         location = ui.location_selector("ranking")
     with col2:
-        column = ui.demographic_selector("ranking")
+        options = be.get_demographic_statistics()
+        column = st.selectbox(
+            "Demographic:",
+            options=options,
+            index = options.index("Median Household Income")
+        )
+
     with col3:
-        year = st.selectbox("Year:", years, years.index(2019))
+        year = st.selectbox("Year:", years, len(years) - 1)
 
     col_n, col_s, col_c, col_p = st.columns(4)
     with col_n:

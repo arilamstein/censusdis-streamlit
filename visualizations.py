@@ -36,6 +36,16 @@ def _get_prefix_for_column(column: str) -> str:
     return formats[column]
 
 
+def _get_ranking_hovertext(column: str) -> str:
+    prefix = _get_prefix_for_column(column)
+    return (
+        "%{customdata[0]}<br>"  # Line 1: location
+        f"{column}: {prefix}"  # Line 2: start with column name and optional $
+        "%{customdata[1]:,}"  # Add location's value, formatted with , but no .
+        "<extra></extra>"  # Suppress trace name
+    )
+
+
 def get_single_year_violinplot(
     year: int,
     column: str,
@@ -54,13 +64,6 @@ def get_single_year_violinplot(
 
     fig = go.Figure()
 
-    violin_hover = (
-        "%{customdata[0]}<br>"
-        f"{column}: {_get_prefix_for_column(column)}"
-        "%{customdata[1]:,}"
-        "<extra></extra>"
-    )
-
     fig.add_trace(
         go.Violin(
             y=df[column],
@@ -70,7 +73,7 @@ def get_single_year_violinplot(
             points="all",
             hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
             customdata=df[["Name", column]].values,
-            hovertemplate=violin_hover,
+            hovertemplate=_get_ranking_hovertext(column),
             name=column,
             showlegend=False,
         )
@@ -80,9 +83,6 @@ def get_single_year_violinplot(
     if name_to_highlight:
         hdf = df[df["Name"] == name_to_highlight]
 
-        scatter_hover = (
-            "%{customdata[0]}<br>" + column + ": %{customdata[1]:,.1f}%<extra></extra>"
-        )
         fig.add_trace(
             go.Scatter(
                 x=[column],
@@ -91,7 +91,7 @@ def get_single_year_violinplot(
                 marker=dict(color="red", size=12, symbol="star"),
                 name=name_to_highlight,
                 customdata=hdf[["Name", column]].values,
-                hovertemplate=scatter_hover,
+                hovertemplate=_get_ranking_hovertext(column),
             )
         )
 

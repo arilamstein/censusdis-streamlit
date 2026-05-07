@@ -78,7 +78,7 @@ def location_selector(tab: str) -> str:
 def location_and_demographic_block(tab: str) -> tuple[str, str]:
     st.markdown(
         "**Start typing** the name of a State, County, or City to search for it. "
-        "Leave blank to view national totals."
+        "Leave blank to view national data."
     )
     col1, col2 = st.columns(2)
 

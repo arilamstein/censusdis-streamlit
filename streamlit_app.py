@@ -5,8 +5,7 @@ import ui
 import visualizations as viz
 
 st.title("How has America Changed Since Covid?")
-with open("text/intro.md") as intro_file:
-    st.write(intro_file.read())
+st.write("Explore how US demographics have changed since Covid.")
 
 trend_tab, compare_tab, ranking_tab, about_tab = st.tabs(
     ["📈 Trends", "🔍 Compare Years", "📊 Rankings", "ℹ️ About"]
@@ -45,7 +44,7 @@ with ranking_tab:
         column = st.selectbox(
             "Demographic:",
             options=options,
-            index = options.index("Median Household Income")
+            index=options.index("Median Household Income"),
         )
 
     with col3:

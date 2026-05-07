@@ -45,10 +45,15 @@ with ranking_tab:
     with col3:
         year = st.selectbox("Year:", years, years.index(2019))
 
-    include_nation = st.checkbox("Nation", True)
-    include_states = st.checkbox("States", True)
-    include_counties = st.checkbox("Counties", True)
-    include_places = st.checkbox("Cities", True)
+    col_n, col_s, col_c, col_p = st.columns(4)
+    with col_n:
+        include_nation = st.checkbox("Nation", True)
+    with col_s:
+        include_states = st.checkbox("States", True)
+    with col_c:
+        include_counties = st.checkbox("Counties", True)
+    with col_p:
+        include_places = st.checkbox("Cities", True)
 
     fig = viz.get_single_year_violinplot(
         year,

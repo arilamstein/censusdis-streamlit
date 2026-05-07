@@ -174,6 +174,21 @@ def _get_line_hovertext(column: str) -> str:
     )
 
 
+def _get_axis_unit_for_column(column: str) -> str:
+    units = {
+        "Total Population": "People",
+        "Total Worked from Home": "People",
+        "Total With Public Assistance": "People",
+        "Median Household Income": "Dollars",
+        "Median Rent": "Dollars",
+    }
+
+    if column not in units:
+        raise ValueError(f"Unknown variable: {column}")
+
+    return units[column]
+
+
 def get_line_graph(name: str, col: str) -> go.Figure:
     df = be.get_data_for_name(name)
     df["Year"] = df["Year"].astype(int)
@@ -241,6 +256,7 @@ def get_line_graph(name: str, col: str) -> go.Figure:
         ),
         yaxis=dict(
             tickformat=",",
+            title=_get_axis_unit_for_column(col),
         ),
         legend=dict(
             orientation="h",

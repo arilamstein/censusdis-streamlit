@@ -106,6 +106,15 @@ def get_single_year_violinplot(
     return fig
 
 
+def _get_compare_hovertext() -> str:
+    return (
+        "%{customdata[0]}<br>"  # Line 1: location
+        # Line 2: format with 1 decimal point and trailing %
+        "Percent Change: %{customdata[1]:,.1f}%"
+        "<extra></extra>"  # Suppress trace name
+    )
+
+
 def get_compare_violinplot(
     year1: int, year2: int, column: str, name_to_highlight: str | None = None
 ) -> go.Figure:
@@ -113,9 +122,6 @@ def get_compare_violinplot(
 
     fig = go.Figure()
 
-    violin_hover = (
-        "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
-    )
     fig.add_trace(
         go.Violin(
             y=df["Percent Change"],
@@ -125,7 +131,7 @@ def get_compare_violinplot(
             points="all",
             hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
             customdata=df[["Name", "Percent Change"]].values,
-            hovertemplate=violin_hover,
+            hovertemplate=_get_compare_hovertext(),
             name="Percent Change",
             showlegend=False,
         )
@@ -135,9 +141,6 @@ def get_compare_violinplot(
     if name_to_highlight:
         hdf = df[df["Name"] == name_to_highlight]
 
-        scatter_hover = (
-            "%{customdata[0]}<br>Percent Change: %{customdata[1]:,.1f}%<extra></extra>"
-        )
         fig.add_trace(
             go.Scatter(
                 x=["Percent Change"],
@@ -146,7 +149,7 @@ def get_compare_violinplot(
                 marker=dict(color="red", size=12, symbol="star"),
                 name=name_to_highlight,
                 customdata=hdf[["Name", "Percent Change"]].values,
-                hovertemplate=scatter_hover,
+                hovertemplate=_get_compare_hovertext(),
             )
         )
 
@@ -159,6 +162,16 @@ def get_compare_violinplot(
     _add_source_footer(fig)
 
     return fig
+
+
+def _get_line_hovertext(column: str) -> str:
+    prefix = _get_prefix_for_column(column)
+    return (
+        "Year: %{x}<br>"  # Line 1: year
+        f"{column}: {prefix}"  # Line 2: Start with variable name and optional $
+        "%{y:,}"  # format number with commas and no .
+        "<extra></extra>"  # Suppress trace name
+    )
 
 
 def get_line_graph(name: str, col: str) -> go.Figure:
@@ -181,7 +194,7 @@ def get_line_graph(name: str, col: str) -> go.Figure:
             line=dict(color=pre_covid_color),
             marker=dict(color=pre_covid_color),
             name="Pre‑Covid",
-            hovertemplate="Year: %{x}<br>" + f"{col}: " + "%{y:,.0f}<extra></extra>",
+            hovertemplate=_get_line_hovertext(col),
         )
     )
 
@@ -195,7 +208,7 @@ def get_line_graph(name: str, col: str) -> go.Figure:
             line=dict(color=post_covid_color),
             marker=dict(color=post_covid_color),
             name="Post‑Covid",
-            hovertemplate="Year: %{x}<br>" + f"{col}: " + "%{y:,.0f}<extra></extra>",
+            hovertemplate=_get_line_hovertext(col),
         )
     )
 

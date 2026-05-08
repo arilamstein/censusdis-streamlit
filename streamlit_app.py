@@ -63,21 +63,29 @@ with ranking_tab:
     with col_p:
         include_places = st.checkbox("Cities", True)
 
-    fig = viz.get_single_year_scatterplot(
-        year,
-        column,
-        location,
-        include_nation,
-        include_states,
-        include_counties,
-        include_places,
-    )
-    st.plotly_chart(fig)
+    if sum([include_nation, include_states, include_counties, include_places]) == 0:
+        st.warning("Please select at least one region.")
+    else:
+        fig = viz.get_single_year_scatterplot(
+            year,
+            column,
+            location,
+            include_nation,
+            include_states,
+            include_counties,
+            include_places,
+        )
+        st.plotly_chart(fig)
 
-    df = be.get_table_df_styled(
-        year, column, include_nation, include_states, include_counties, include_places
-    )
-    st.dataframe(df, hide_index=True)
+        df = be.get_table_df_styled(
+            year,
+            column,
+            include_nation,
+            include_states,
+            include_counties,
+            include_places,
+        )
+        st.dataframe(df, hide_index=True)
 
 with about_tab, open("text/about.md") as about_file:
     st.write(about_file.read())

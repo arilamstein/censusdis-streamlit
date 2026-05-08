@@ -1,3 +1,4 @@
+import numpy as np
 import plotly.graph_objects as go
 
 import backend as be
@@ -156,6 +157,63 @@ def get_compare_violinplot(
     fig.update_layout(
         title=f"Percent Change in {column}<br><sup>{year1}–{year2}</sup>",
         xaxis=dict(visible=False),
+        yaxis=dict(title="Percent Change", tickformat=","),
+    )
+
+    _add_source_footer(fig)
+
+    return fig
+
+
+def get_compare_scatterplot(
+    year1: int, year2: int, column: str, name_to_highlight: str | None = None
+) -> go.Figure:
+    df = be.get_compare_df(year1, year2, column).reset_index(drop=True)
+
+    rng = np.random.default_rng(seed=42)
+    jitter = rng.uniform(-0.25, 0.25, size=len(df))
+
+    fig = go.Figure()
+
+    fig.add_trace(
+        go.Scatter(
+            y=df["Percent Change"],
+            x=jitter,
+            mode="markers",
+            marker=dict(size=8, opacity=0.5),
+            customdata=df[["Name", "Percent Change"]].values,
+            hovertemplate=_get_compare_hovertext(),
+            name="Percent Change",
+            showlegend=False,
+        )
+    )
+
+    if name_to_highlight:
+        hdf = df[df["Name"] == name_to_highlight]
+
+    fig.add_trace(
+        go.Scatter(
+            x=[0],
+            y=hdf["Percent Change"],
+            mode="markers",
+            marker=dict(
+                color="gold",
+                size=14,
+                symbol="star",
+                line=dict(color="darkorange", width=1.5),
+            ),
+            name=name_to_highlight,
+            customdata=hdf[["Name", "Percent Change"]].values,
+            hovertemplate=_get_compare_hovertext(),
+        )
+    )
+
+    fig.update_layout(
+        title=(
+            f"Percent Change in {column}, {year1}–{year2}<br>"
+            "<sup>Each point represents a location. Hover to explore.</sup>"
+        ),
+        xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title="Percent Change", tickformat=","),
     )
 

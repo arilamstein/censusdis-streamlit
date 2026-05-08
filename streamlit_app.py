@@ -28,7 +28,7 @@ with compare_tab:
     with col4:
         year2 = st.selectbox("Second Year:", years, years.index(2021))
 
-    fig = viz.get_compare_violinplot(year1, year2, column, location)
+    fig = viz.get_compare_scatterplot(year1, year2, column, location)
     st.plotly_chart(fig)
 
     with open("text/table.md") as table_file:

@@ -2277,6 +2277,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "censusdis" },
     { name = "ipykernel" },
+    { name = "numpy" },
     { name = "pandas" },
     { name = "plotly" },
     { name = "streamlit" },
@@ -2294,6 +2295,7 @@ dev = [
 requires-dist = [
     { name = "censusdis", specifier = ">=1.4.0" },
     { name = "ipykernel", specifier = ">=6.29.5" },
+    { name = "numpy", specifier = ">=2.4.4" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "plotly", specifier = ">=6.7.0" },
     { name = "streamlit", specifier = ">=1.45.1" },

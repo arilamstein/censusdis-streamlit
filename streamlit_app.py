@@ -18,7 +18,7 @@ with trend_tab:
 
 with compare_tab:
     years = be.get_years()
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns([35, 35, 15, 15])
     with col1:
         location = ui.location_selector("compare")
     with col2:
@@ -39,7 +39,7 @@ with compare_tab:
 
 with ranking_tab:
     years = be.get_years()
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns([40, 40, 20])
     with col1:
         location = ui.location_selector("ranking")
     with col2:

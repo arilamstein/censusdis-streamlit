@@ -63,7 +63,7 @@ with ranking_tab:
     with col_p:
         include_places = st.checkbox("Cities", True)
 
-    fig = viz.get_single_year_violinplot(
+    fig = viz.get_single_year_scatterplot(
         year,
         column,
         location,

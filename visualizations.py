@@ -47,7 +47,7 @@ def _get_ranking_hovertext(column: str) -> str:
     )
 
 
-def get_single_year_violinplot(
+def get_single_year_scatterplot(
     year: int,
     column: str,
     name_to_highlight: str | None = None,
@@ -56,23 +56,22 @@ def get_single_year_violinplot(
     include_counties: bool = True,
     include_places: bool = True,
 ) -> go.Figure:
-    df = be.get_data_for_year(year)
-
     df = be.get_data_by_geo(
         include_nation, include_states, include_counties, include_places
     )
-    df = df[df["Year"] == year]
+    df = df[df["Year"] == year].reset_index(drop=True)
+
+    rng = np.random.default_rng(seed=42)
+    jitter = rng.uniform(-0.3, 0.3, size=len(df))
 
     fig = go.Figure()
 
     fig.add_trace(
-        go.Violin(
+        go.Scatter(
             y=df[column],
-            x=[column] * len(df),
-            box_visible=True,
-            meanline_visible=False,
-            points="all",
-            hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
+            x=jitter,
+            mode="markers",
+            marker=dict(size=8, opacity=0.5),
             customdata=df[["Name", column]].values,
             hovertemplate=_get_ranking_hovertext(column),
             name=column,
@@ -80,16 +79,20 @@ def get_single_year_violinplot(
         )
     )
 
-    # Optionally highlight a point
     if name_to_highlight:
         hdf = df[df["Name"] == name_to_highlight]
 
         fig.add_trace(
             go.Scatter(
-                x=[column],
+                x=[0],
                 y=hdf[column],
                 mode="markers",
-                marker=dict(color="red", size=12, symbol="star"),
+                marker=dict(
+                    color="gold",
+                    size=14,
+                    symbol="star",
+                    line=dict(color="darkorange", width=1.5),
+                ),
                 name=name_to_highlight,
                 customdata=hdf[["Name", column]].values,
                 hovertemplate=_get_ranking_hovertext(column),
@@ -97,8 +100,11 @@ def get_single_year_violinplot(
         )
 
     fig.update_layout(
-        title=f"{column} in {year}",
-        xaxis=dict(visible=False),
+        title=(
+            f"{column}, {year}<br><sup>Each point represents a location. "
+            "Hover to explore.</sup>"
+        ),
+        xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title=column, tickformat=","),
     )
 
@@ -114,55 +120,6 @@ def _get_compare_hovertext() -> str:
         "Percent Change: %{customdata[1]:,.1f}%"
         "<extra></extra>"  # Suppress trace name
     )
-
-
-def get_compare_violinplot(
-    year1: int, year2: int, column: str, name_to_highlight: str | None = None
-) -> go.Figure:
-    df = be.get_compare_df(year1, year2, column)
-
-    fig = go.Figure()
-
-    fig.add_trace(
-        go.Violin(
-            y=df["Percent Change"],
-            x=["Percent Change"] * len(df),
-            box_visible=True,
-            meanline_visible=False,
-            points="all",
-            hoveron="points",  # Removes the violin/box stat hovers, keeps point hovers
-            customdata=df[["Name", "Percent Change"]].values,
-            hovertemplate=_get_compare_hovertext(),
-            name="Percent Change",
-            showlegend=False,
-        )
-    )
-
-    # Optionally highlight a point
-    if name_to_highlight:
-        hdf = df[df["Name"] == name_to_highlight]
-
-        fig.add_trace(
-            go.Scatter(
-                x=["Percent Change"],
-                y=hdf["Percent Change"],
-                mode="markers",
-                marker=dict(color="red", size=12, symbol="star"),
-                name=name_to_highlight,
-                customdata=hdf[["Name", "Percent Change"]].values,
-                hovertemplate=_get_compare_hovertext(),
-            )
-        )
-
-    fig.update_layout(
-        title=f"Percent Change in {column}<br><sup>{year1}–{year2}</sup>",
-        xaxis=dict(visible=False),
-        yaxis=dict(title="Percent Change", tickformat=","),
-    )
-
-    _add_source_footer(fig)
-
-    return fig
 
 
 def get_compare_scatterplot(

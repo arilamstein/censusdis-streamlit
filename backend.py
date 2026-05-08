@@ -25,10 +25,6 @@ def get_data_for_name(name: str) -> pd.DataFrame:
     return df_all.loc[df_all["Name"] == name].copy()
 
 
-def get_data_for_year(year: int) -> pd.DataFrame:
-    return df_all.loc[df_all["Year"] == year].copy()
-
-
 def get_data_by_geo(
     include_nation: bool,
     include_states: bool,

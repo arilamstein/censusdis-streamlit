@@ -108,6 +108,7 @@ def get_single_year_scatterplot(
         ),
         xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title=column, tickformat=","),
+        dragmode=False,
     )
     _add_source_footer(fig)
 
@@ -175,6 +176,7 @@ def get_compare_scatterplot(
         ),
         xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title="Percent Change", tickformat=","),
+        dragmode=False,
     )
     _add_source_footer(fig)
 

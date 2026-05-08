@@ -59,13 +59,13 @@ def get_single_year_scatterplot(
     df = be.get_data_by_geo(
         include_nation, include_states, include_counties, include_places
     )
-    df = df[df["Year"] == year].reset_index(drop=True)
-
-    rng = np.random.default_rng(seed=42)
-    jitter = rng.uniform(-0.3, 0.3, size=len(df))
-
     fig = go.Figure()
 
+    df = df[df["Year"] == year].reset_index(drop=True)
+
+    # A scatterplot with jitter
+    rng = np.random.default_rng(seed=42)
+    jitter = rng.uniform(-0.3, 0.3, size=len(df))
     fig.add_trace(
         go.Scatter(
             y=df[column],
@@ -79,6 +79,7 @@ def get_single_year_scatterplot(
         )
     )
 
+    # Optionally highlight a point
     if name_to_highlight:
         hdf = df[df["Name"] == name_to_highlight]
 
@@ -99,6 +100,7 @@ def get_single_year_scatterplot(
             )
         )
 
+    # Title and footer
     fig.update_layout(
         title=(
             f"{column}, {year}<br><sup>Each point represents a location. "
@@ -107,7 +109,6 @@ def get_single_year_scatterplot(
         xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title=column, tickformat=","),
     )
-
     _add_source_footer(fig)
 
     return fig
@@ -125,13 +126,13 @@ def _get_compare_hovertext() -> str:
 def get_compare_scatterplot(
     year1: int, year2: int, column: str, name_to_highlight: str | None = None
 ) -> go.Figure:
-    df = be.get_compare_df(year1, year2, column).reset_index(drop=True)
-
-    rng = np.random.default_rng(seed=42)
-    jitter = rng.uniform(-0.25, 0.25, size=len(df))
-
     fig = go.Figure()
 
+    df = be.get_compare_df(year1, year2, column).reset_index(drop=True)
+
+    # A scatterplot with jitter
+    rng = np.random.default_rng(seed=42)
+    jitter = rng.uniform(-0.25, 0.25, size=len(df))
     fig.add_trace(
         go.Scatter(
             y=df["Percent Change"],
@@ -145,26 +146,28 @@ def get_compare_scatterplot(
         )
     )
 
+    # Optionally put a star to highlight a point
     if name_to_highlight:
         hdf = df[df["Name"] == name_to_highlight]
 
-    fig.add_trace(
-        go.Scatter(
-            x=[0],
-            y=hdf["Percent Change"],
-            mode="markers",
-            marker=dict(
-                color="gold",
-                size=14,
-                symbol="star",
-                line=dict(color="darkorange", width=1.5),
-            ),
-            name=name_to_highlight,
-            customdata=hdf[["Name", "Percent Change"]].values,
-            hovertemplate=_get_compare_hovertext(),
+        fig.add_trace(
+            go.Scatter(
+                x=[0],
+                y=hdf["Percent Change"],
+                mode="markers",
+                marker=dict(
+                    color="gold",
+                    size=14,
+                    symbol="star",
+                    line=dict(color="darkorange", width=1.5),
+                ),
+                name=name_to_highlight,
+                customdata=hdf[["Name", "Percent Change"]].values,
+                hovertemplate=_get_compare_hovertext(),
+            )
         )
-    )
 
+    # Title and footer
     fig.update_layout(
         title=(
             f"Percent Change in {column}, {year1}–{year2}<br>"
@@ -173,7 +176,6 @@ def get_compare_scatterplot(
         xaxis=dict(visible=False, range=[-1, 1]),
         yaxis=dict(title="Percent Change", tickformat=","),
     )
-
     _add_source_footer(fig)
 
     return fig

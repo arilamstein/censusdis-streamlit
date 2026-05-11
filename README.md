@@ -1,3 +1,5 @@
+[![CI](https://github.com/arilamstein/censusdis-streamlit/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/arilamstein/censusdis-streamlit/actions/workflows/lint.yml)
+
 This [app](https://census-explorer.streamlit.app/) uses data from the American Community Survey to help people understand how America has changed since Covid-19. 
 
 In addition to informing the public, I hope that this project will inspire others to use Python to explore Census data. If you'd like to use this repo as a starting off point for your own project, see [DEVELOPER.md](DEVELOPER.md).

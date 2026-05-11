@@ -16,6 +16,10 @@ with trend_tab:
     fig = viz.get_line_graph(location, column)
     st.plotly_chart(fig)
 
+    df = be.get_trend_df_styled(location, column)
+    st.dataframe(df, hide_index=True)
+
+
 with compare_tab:
     years = be.get_years()
     col1, col2, col3, col4 = st.columns([35, 35, 15, 15])

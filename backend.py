@@ -25,6 +25,12 @@ def get_data_for_name(name: str) -> pd.DataFrame:
     return df_all.loc[df_all["Name"] == name].copy()
 
 
+def get_trend_df_styled(name: str, column: str) -> Styler:
+    df = get_data_for_name(name)
+    df = df[["Name", "Year", column]]
+    return style_table_df(df)
+
+
 def get_data_by_geo(
     include_nation: bool,
     include_states: bool,

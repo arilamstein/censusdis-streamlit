@@ -1,3 +1,4 @@
+# Covid Demographics Explorer
 [![CI](https://github.com/arilamstein/censusdis-streamlit/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/arilamstein/censusdis-streamlit/actions/workflows/lint.yml)
 
 This [app](https://census-explorer.streamlit.app/) uses data from the American Community Survey to help people understand how America has changed since Covid-19. 

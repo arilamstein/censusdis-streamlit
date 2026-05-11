@@ -44,7 +44,8 @@ def get_data_by_geo(
     if not frames:
         return pd.DataFrame()
 
-    return pd.concat(frames)
+    df = pd.concat(frames)
+    return df.drop_duplicates(subset=["Name", "Year"]).reset_index(drop=True)
 
 
 def get_table_df(
@@ -57,7 +58,6 @@ def get_table_df(
     df = get_data_by_geo(
         include_nation, include_states, include_counties, include_places
     )
-    df = df_all.drop(columns=["State", "County", "Place"])
     if year:
         df = df[df["Year"] == year]
     return df

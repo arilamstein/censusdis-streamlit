@@ -4,7 +4,7 @@ import backend as be
 import ui
 import visualizations as viz
 
-st.title("How has America Changed Since Covid?")
+st.title("How has Covid changed America?")
 st.write("Explore how US demographics have changed since Covid.")
 
 trend_tab, compare_tab, ranking_tab, about_tab = st.tabs(

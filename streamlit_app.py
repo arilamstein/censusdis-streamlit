@@ -65,7 +65,7 @@ with ranking_tab:
         include_places = st.checkbox("Cities", True)
 
     if sum([include_nation, include_states, include_counties, include_places]) == 0:
-        st.warning("Please select at least one region.")
+        st.warning("Please select at least one geography.")
     else:
         fig = viz.get_single_year_scatterplot(
             year,

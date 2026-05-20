@@ -6,6 +6,7 @@ ACS data for 2020 was not published due to the pandemic. Data for 2025 is expect
 
 You can learn more about the project in these posts and talks:
 
+ * [How Remote Work Has Grown — and Shrunk — Since Covid](https://arilamstein.com/blog/2026/05/18/how-remote-work-has-grown-and-shrunk-since-covid/) covers the app's biggest update yet: new geographies, the new "Compare Years" tab, an interactive scatterplot for comparing years, and 2024 data.
  * [New Release: Covid Demographics Explorer v2](https://arilamstein.com/blog/2025/06/02/new-release-covid-demographics-explorer-v2/) discusses the addition of the swarm plot as well as improvements to the codebase.
  * In June 2024 I spoke about this project at the San Francisco Python Meetup. You can watch a recording of that talk [here](https://www.youtube.com/watch?v=sdmR5YxGS4g&t=25s).
  * [Creating Time Series Data from the American Community Survey (ACS)](https://arilamstein.com/blog/2024/05/28/creating-time-series-data-from-the-american-community-survey-acs/) explains how the dataset is generated.

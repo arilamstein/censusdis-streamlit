@@ -8,7 +8,7 @@ st.title("How has Covid changed America?")
 st.write("Explore how US demographics have changed since Covid.")
 
 trend_tab, compare_tab, ranking_tab, about_tab = st.tabs(
-    ["📈 Trends", "🔍 Compare Years", "📊 Rankings", "ℹ️ About"]
+    ["📈 Trends", "🔍 Compare Years", "🏆 Rankings", "ℹ️ About"]
 )
 with trend_tab:
     location, column = ui.location_and_demographic_block("trend")

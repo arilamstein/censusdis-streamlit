@@ -20,7 +20,6 @@ with trend_tab:
     st.dataframe(df, hide_index=True)
     st.caption("Tip: click a column header to sort.")
 
-
 with compare_tab:
     years = be.get_years()
     col1, col2, col3, col4 = st.columns([35, 35, 15, 15])

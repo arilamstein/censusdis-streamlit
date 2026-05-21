@@ -32,11 +32,14 @@ with compare_tab:
     with col4:
         year2 = st.selectbox("Second Year:", years, years.index(2021))
 
-    fig = viz.get_compare_scatterplot(year1, year2, column, location)
-    st.plotly_chart(fig)
+    if year1 == year2:
+        st.warning("Please select two different years.")
+    else:
+        fig = viz.get_compare_scatterplot(year1, year2, column, location)
+        st.plotly_chart(fig)
 
-    df = be.get_compare_df_styled(year1, year2, column)
-    st.dataframe(df, hide_index=True)
+        df = be.get_compare_df_styled(year1, year2, column)
+        st.dataframe(df, hide_index=True)
 
 with ranking_tab:
     years = be.get_years()

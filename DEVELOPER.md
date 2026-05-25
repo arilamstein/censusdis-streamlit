@@ -10,17 +10,10 @@ I used `uv` to manage my virtual environment while developing this project. To r
 
 ## Modifying the App
 
-The front end code is in `streamlit_app.py`.
+The front end code is in `streamlit_app.py`. The data that powers the app is in `/data`, and the scripts that generate the data are in `/scripts`. 
 
-The data which powers the app is in `data/county_data.csv`.
-
-To modify the data which the app uses, see `data/gen_county_data.py`.
+If you want to regenerate the data, type `make data` from the project root.
 
 ## Linting
 
-This repo has a workflow enabled that runs `ruff` on each PR. If you are making a PR to this repo, please run the following commands prior to making a PR:
-
-```
-uv run ruff format .
-uv run ruff check .
-```
+This repo has a workflow enabled that runs `ruff` on each PR. If you are making a PR to this repo, please run `make check` from the project root prior to making a PR.

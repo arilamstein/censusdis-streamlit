@@ -1,4 +1,4 @@
-This tool lets you explore how Covid‑19 reshaped demographic and economic patterns across the United States using American Community Survey (ACS) 1‑year estimates from 2013–2024. You can view trends for the nation, all states, and all counties and places (i.e., cities) with populations of 65,000 or more.
+This tool lets you explore how Covid‑19 reshaped demographic and economic patterns across the United States using American Community Survey (ACS) 1‑year estimates from 2005–2024. You can view trends for the nation, all states, and all counties and places (i.e., cities) with populations of 65,000 or more.
 
 Covid may feel distant now, but its effects are still visible in the data. The rise in people working from home is the clearest example, but you can also see population shifts out of major cities and a sharp increase in households receiving public assistance during the pandemic. This app helps you explore those patterns in your community and compare them with trends across the country.
 
